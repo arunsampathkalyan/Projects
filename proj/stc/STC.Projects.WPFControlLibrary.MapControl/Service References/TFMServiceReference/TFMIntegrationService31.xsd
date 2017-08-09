@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://aghqsrv453/WCFServices/TFMIntegrationService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfPatrolLastLocationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PatrolLastLocationDTO" nillable="true" type="tns:PatrolLastLocationDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPatrolLastLocationDTO" nillable="true" type="tns:ArrayOfPatrolLastLocationDTO" />
+  <xs:complexType name="PatrolLastLocationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Altitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="CreationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ETATime" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="IsNoticed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRecommended" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="LocationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="NumberOfAssignedIncident" type="xs:int" />
+      <xs:element minOccurs="0" name="OfficerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatrolCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatrolId" type="xs:long" />
+      <xs:element minOccurs="0" name="PatrolImage" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="PatrolLatLocationId" type="xs:long" />
+      <xs:element minOccurs="0" name="PatrolOriginalId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PatrolPlateNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Speed" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="isDeleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isPatrol" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatrolLastLocationDTO" nillable="true" type="tns:PatrolLastLocationDTO" />
+  <xs:complexType name="PatrolOfficersDetailsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsAvailable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Officers" nillable="true" type="tns:ArrayOfStaffPatrolModel" />
+      <xs:element minOccurs="0" name="PatrolAllocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatrolCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatrolPlateNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusArabic" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusEnglish" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatrolOfficersDetailsDTO" nillable="true" type="tns:PatrolOfficersDetailsDTO" />
+  <xs:complexType name="ArrayOfStaffPatrolModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StaffPatrolModel" nillable="true" type="tns:StaffPatrolModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStaffPatrolModel" nillable="true" type="tns:ArrayOfStaffPatrolModel" />
+  <xs:complexType name="StaffPatrolModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImagePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MilitaryNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StaffPatrolModel" nillable="true" type="tns:StaffPatrolModel" />
+</xs:schema>

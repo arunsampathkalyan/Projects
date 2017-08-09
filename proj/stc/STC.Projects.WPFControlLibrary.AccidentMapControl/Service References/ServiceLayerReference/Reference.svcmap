@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="99e10c09-39bf-495d-841c-e49f0b13c6fb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://stc-connect.cloudapp.net:8013/WCFService/ServiceLayer.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceLayer.wsdl" MetadataType="Wsdl" ID="c293ea90-4ccd-4b4a-9e3a-f8738beb02a4" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net:8013/WCFService/ServiceLayer.svc?wsdl" />
+    <MetadataFile FileName="ServiceLayer7.xsd" MetadataType="Schema" ID="c080a165-c6ce-4a06-a3c0-8ef1f3ac422c" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net:8013/WCFService/ServiceLayer.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceLayer.xsd" MetadataType="Schema" ID="2f9a1316-fd13-44f0-9ffb-76f9d36eb641" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net:8013/WCFService/ServiceLayer.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceLayer1.xsd" MetadataType="Schema" ID="fb721bd6-b70e-46fe-91e3-f868a95b4bb4" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net:8013/WCFService/ServiceLayer.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServiceLayer2.xsd" MetadataType="Schema" ID="f4123cc2-ecee-4aae-bc29-da10b71293c3" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net:8013/WCFService/ServiceLayer.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceLayer3.xsd" MetadataType="Schema" ID="13eba2fc-3585-43b4-9593-cea014ea0b6b" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net:8013/WCFService/ServiceLayer.svc?xsd=xsd5" />
+    <MetadataFile FileName="ServiceLayer4.xsd" MetadataType="Schema" ID="e8d3dab1-b5fc-43cb-84bd-4625e20cd977" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net:8013/WCFService/ServiceLayer.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServiceLayer5.xsd" MetadataType="Schema" ID="90c1a5fd-26d5-45b9-8a44-e9e60d296e8c" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net:8013/WCFService/ServiceLayer.svc?xsd=xsd7" />
+    <MetadataFile FileName="ServiceLayer6.xsd" MetadataType="Schema" ID="e8259986-0a0d-4039-93b0-60ef874356c7" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net:8013/WCFService/ServiceLayer.svc?xsd=xsd6" />
+    <MetadataFile FileName="ServiceLayer8.xsd" MetadataType="Schema" ID="5df07bb1-3fa4-4102-a705-9074405cb03e" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net:8013/WCFService/ServiceLayer.svc?xsd=xsd8" />
+    <MetadataFile FileName="ServiceLayer.disco" MetadataType="Disco" ID="b71cd808-f42a-429a-9d16-bf12099bb5da" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net:8013/WCFService/ServiceLayer.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

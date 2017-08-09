@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8e69777b-c012-43b9-a785-a4bb8d12dded" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://stc-01.cloudapp.net/wcfservice/TFMIntegrationService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TFMIntegrationService.wsdl" MetadataType="Wsdl" ID="c815c549-75b0-4054-8f42-0942607b60fb" SourceId="1" SourceUrl="http://stc-01.cloudapp.net/WCFService/TFMIntegrationService.svc?wsdl" />
+    <MetadataFile FileName="TFMIntegrationService1.xsd" MetadataType="Schema" ID="b0ee2cee-8fc0-4b78-bd75-cbb1596b4314" SourceId="1" SourceUrl="http://stc-01.cloudapp.net/WCFService/TFMIntegrationService.svc?xsd=xsd3" />
+    <MetadataFile FileName="TFMIntegrationService11.xsd" MetadataType="Schema" ID="add5fd55-78ad-416e-81c2-0941587a90d0" SourceId="1" SourceUrl="http://stc-01.cloudapp.net/WCFService/TFMIntegrationService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TFMIntegrationService.disco" MetadataType="Disco" ID="c04c3a68-fc70-46f3-a7aa-4556512093b5" SourceId="1" SourceUrl="http://stc-01.cloudapp.net/WCFService/TFMIntegrationService.svc?disco" />
+    <MetadataFile FileName="TFMIntegrationService12.xsd" MetadataType="Schema" ID="1376fe95-2090-4ce7-b92b-bdea882d844f" SourceId="1" SourceUrl="http://stc-01.cloudapp.net/WCFService/TFMIntegrationService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TFMIntegrationService13.xsd" MetadataType="Schema" ID="ed569034-dabf-4303-884d-0f08f53b616e" SourceId="1" SourceUrl="http://stc-01.cloudapp.net/WCFService/TFMIntegrationService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

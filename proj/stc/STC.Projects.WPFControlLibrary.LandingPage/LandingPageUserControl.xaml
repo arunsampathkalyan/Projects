@@ -1,0 +1,2080 @@
+﻿<UserControl x:Class="STC.Projects.WPFControlLibrary.LandingPage.LandingPageUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ChartUserControls="clr-namespace:STC.Projects.WPFControlLibrary.LandingPage.ChartsUserControls"
+             xmlns:ViewModel="clr-namespace:STC.Projects.WPFControlLibrary.LandingPage.ViewModel"
+             xmlns:Converter="clr-namespace:STC.Projects.ClassLibrary.Common.Converters;assembly=STC.Projects.ClassLibrary.Common" 
+             xmlns:p="clr-namespace:STC.Projects.WPFControlLibrary.LandingPage.Properties"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ViewModel:BarChartViewModel x:Key="BarChartViewModel"/>
+
+        <Style TargetType="TextBlock">
+
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#00ffcc"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="2" Opacity=".6" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--<Style TargetType="Button">
+            <Setter Property="Foreground" Value="#00ffcc" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="5" Opacity=".5" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="#00ffcc">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>                       
+
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#49b13c" TargetName="bg" />
+                                <Setter Property="Foreground" Value="#ffffff" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>-->
+
+        <Style TargetType="TextBox">
+
+
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#00ffcc"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="BorderBrush" Value="#00ffcc"/>
+            <!--<Setter Property="BorderThickness" Value="1"/>-->
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="4" Opacity=".6" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="CheckBox">
+
+
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#00ffcc"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#00ffcc"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="4" Opacity=".6" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--<Style TargetType="RadioButton">
+
+
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#00ffcc"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="4" Opacity=".9" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+
+
+
+        </Style>-->
+
+        <Style x:Key="ComboBoxItemStyle1" TargetType="{x:Type ComboBoxItem}">
+            <Setter Property="Background" Value="Yellow"/>
+        </Style>
+
+        <!--<Style TargetType="ComboBox">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#00ffcc"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="IsEditable" Value="True"/>
+            <Setter Property="BorderBrush" Value="#00ffcc"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="4" Opacity=".6" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+        </Style>-->
+
+        <Style x:Key="RadioButtonFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border>
+                            <Rectangle 
+            Margin="15,0,0,0"
+            StrokeThickness="1"
+            Stroke="#60000000"
+            StrokeDashArray="1 2"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+        <!-- Fill Brushes -->
+
+        <LinearGradientBrush x:Key="NormalBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#FFF" Offset="0.0"/>
+                    <GradientStop Color="#CCC" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="HorizontalNormalBrush" StartPoint="0,0" EndPoint="1,0">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#FFF" Offset="0.0"/>
+                    <GradientStop Color="#CCC" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="LightBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#FFF" Offset="0.0"/>
+                    <GradientStop Color="#EEE" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="HorizontalLightBrush" StartPoint="0,0" EndPoint="1,0">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#FFF" Offset="0.0"/>
+                    <GradientStop Color="#EEE" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="DarkBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#FFF" Offset="0.0"/>
+                    <GradientStop Color="#AAA" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="PressedBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#BBB" Offset="0.0"/>
+                    <GradientStop Color="#EEE" Offset="0.1"/>
+                    <GradientStop Color="#EEE" Offset="0.9"/>
+                    <GradientStop Color="#FFF" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
+
+        <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="#EEE" />
+
+        <SolidColorBrush x:Key="WindowBackgroundBrush" Color="#FFF" />
+
+        <SolidColorBrush x:Key="SelectedBackgroundBrush" Color="#DDD" />
+
+        <!-- Border Brushes -->
+
+        <LinearGradientBrush x:Key="NormalBorderBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#CCC" Offset="0.0"/>
+                    <GradientStop Color="#444" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="HorizontalNormalBorderBrush" StartPoint="0,0" EndPoint="1,0">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#CCC" Offset="0.0"/>
+                    <GradientStop Color="#444" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="DefaultedBorderBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#777" Offset="0.0"/>
+                    <GradientStop Color="#000" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="PressedBorderBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#444" Offset="0.0"/>
+                    <GradientStop Color="#888" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <SolidColorBrush x:Key="DisabledBorderBrush" Color="#AAA" />
+
+        <SolidColorBrush x:Key="SolidBorderBrush" Color="#888" />
+
+        <SolidColorBrush x:Key="LightBorderBrush" Color="#AAA" />
+
+        <!-- Miscellaneous Brushes -->
+        <SolidColorBrush x:Key="GlyphBrush" Color="#00ffcc" />
+
+        <SolidColorBrush x:Key="LightColorBrush" Color="#DDD" />
+
+
+        <Style x:Key="{x:Type RadioButton}" TargetType="{x:Type RadioButton}">
+            <Setter Property="Foreground" Value="#00ffcc"/>
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="2" Opacity=".9" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FocusVisualStyle"    Value="{StaticResource RadioButtonFocusVisual}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                        <BulletDecorator Background="Transparent">
+                            <BulletDecorator.Bullet>
+                                <Grid Width="13"  Background="Transparent"
+              Height="13" VerticalAlignment="Bottom" >
+                                    <Ellipse x:Name="Border"  
+                Fill="Transparent"
+                StrokeThickness="1"
+                Stroke="{StaticResource NormalBorderBrush}" />
+                                    <Ellipse x:Name="CheckMark"
+                Margin="3"
+                Fill="{StaticResource GlyphBrush}" />
+                                </Grid>
+                            </BulletDecorator.Bullet>
+                            <ContentPresenter 
+            Margin="5,-2,0,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            RecognizesAccessKey="True"/>
+                        </BulletDecorator>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="false">
+                                <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="Border" Property="Fill" Value="{StaticResource DarkBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="Border" Property="Fill" Value="{StaticResource PressedBrush}" />
+                                <Setter TargetName="Border" Property="Stroke" Value="{StaticResource GlyphBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter TargetName="Border" Property="Fill" Value="{StaticResource DisabledBackgroundBrush}" />
+                                <Setter TargetName="Border" Property="Stroke" Value="#40000000" />
+                                <Setter Property="Foreground" Value="#80000000"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+
+    </UserControl.Resources>
+
+    <UserControl.DataContext>
+        <ViewModel:LandingPageUserControlViewModel/>
+    </UserControl.DataContext>
+
+    <Canvas HorizontalAlignment="Stretch" MinHeight="900">
+        <Canvas.Background>
+            <ImageBrush ImageSource="Images/dotted_bg.png" Stretch="None"/>
+        </Canvas.Background>
+
+
+
+        <Grid x:Name="mainGrid" MinHeight="800" VerticalAlignment="Center" MinWidth="1550" HorizontalAlignment="Center" Margin="20,20,20,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="gridLeftPane" Grid.Row="0" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="270"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+
+                <Grid x:Name="gridDiffCategories" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Height="35" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" Command="{Binding GeneralButtonCommand}" Margin="0,3,0,0">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border  x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="#00ffcc">
+                                    <StackPanel x:Name ="spBtn" Orientation="Horizontal" Height="35" Width="250" >
+                                        <Image x:Name="imgName"  Source="Images\left_icons_general.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0"/>
+                                        <Image x:Name="imgName1"  Source="Images\left_icons_general_hover.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0" Visibility="Collapsed"/>
+                                        <TextBlock x:Name="txtBlkBtnName"  Foreground="#00ffcc" VerticalAlignment="Center"  Width="200" Text="{x:Static p:Resources.strGeneral}" HorizontalAlignment="Right" />
+                                    </StackPanel>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver"   Value="true">
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                        <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                        <Setter TargetName="imgName1"  Property="Visibility" Value="Visible" />
+                                        <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                        <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                        <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                    </Trigger>
+
+                                    <DataTrigger Binding="{Binding Path=ActiveMainButtonCategory}" Value="{x:Static p:Resources.strGeneral}">
+                                        <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                        <Setter TargetName="imgName1" Property="Visibility" Value="Visible" />
+                                        <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                        <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                        <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                    </DataTrigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+
+                        </Button.Template>
+
+                    </Button>
+
+
+                    <Button  Height="35" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent"
+                                Grid.Row="1" Command="{Binding Path=ViolationsButtonCommand}">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border  x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="#00ffcc">
+                                    <StackPanel x:Name ="spBtn" Orientation="Horizontal" Height="35" Width="250">
+                                        <Image x:Name="imgName"  Source="Images\left_icons_voilation.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0"/>
+                                        <Image x:Name="imgName1"  Source="Images\left_icons_voilation_hover.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0" Visibility="Collapsed"/>
+                                        <TextBlock x:Name="txtBlkBtnName"  Foreground="#00ffcc" VerticalAlignment="Center"  Width="200" Text="{x:Static p:Resources.strViolations}" HorizontalAlignment="Right" />
+                                    </StackPanel>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver"   Value="true">
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                        <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                        <Setter TargetName="imgName1"  Property="Visibility" Value="Visible" />
+                                        <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                        <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                        <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                    </Trigger>
+
+                                    <DataTrigger Binding="{Binding Path=ActiveMainButtonCategory}" Value="{x:Static p:Resources.strViolations}">
+                                        <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                        <Setter TargetName="imgName1" Property="Visibility" Value="Visible" />
+                                        <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                        <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                        <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                    </DataTrigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+
+                        </Button.Template>
+                    </Button>
+                    <!--<Button Height="35" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                Grid.Row="1" Command="{Binding Path=ViolationsButtonCommand}">
+                        <Button.ContentTemplate>
+                            <DataTemplate>
+                                <StackPanel x:Name ="spBtn" Orientation="Horizontal" Height="35" Width="250">
+                                    <Image x:Name="imgName"  Source="Images\left_icons_voilation.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0"/>
+                                    <TextBlock x:Name="txtBlkBtnName"  Foreground="#00ffcc" VerticalAlignment="Center"  Width="200" Text="{x:Static p:Resources.strViolations}" HorizontalAlignment="Right" />
+                                </StackPanel>
+                                <DataTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="imgName" Property="Source" Value="Images\left_icons_voilation_hover.png"/>
+                                        <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                        <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                    </Trigger>
+                                </DataTemplate.Triggers>
+                            </DataTemplate>
+                        </Button.ContentTemplate>
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="Transparent" />
+                                <Setter Property="BorderBrush" Value="#00ffcc" />
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                <Setter Property="VerticalAlignment" Value="Center" />
+
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="#00ffcc">
+                                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+
+                                                    <Setter Property="BorderBrush" TargetName="bg" Value="Transparent"/>
+
+                                                    <Setter Property="Foreground" Value="Transparent" />
+                                                    <Setter Property="Background" Value="#ffd452"/>
+                                                    <Setter Property="BorderBrush" Value="Transparent" />
+                                                    <Setter Property="Opacity" Value="1"></Setter>
+
+                                                </Trigger>
+
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>-->
+                    <Button Height="35" HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                            Background="Transparent"
+                                Grid.Row="2" Command="{Binding Path=AccidentsButtonCommand}">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border  x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="#00ffcc">
+                                    <StackPanel x:Name ="spBtn" Orientation="Horizontal" Height="35" Width="250">
+                                        <Image x:Name="imgName"  Source="Images\left_icons_accident.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0"/>
+                                        <Image x:Name="imgName1"  Source="Images\left_icons_accident_hover.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0" Visibility="Collapsed"/>
+                                        <TextBlock x:Name="txtBlkBtnName"  Foreground="#00ffcc" VerticalAlignment="Center"  Width="200" Text="{x:Static p:Resources.strAccidents}" HorizontalAlignment="Right" />
+                                    </StackPanel>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver"   Value="true">
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                        <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                        <Setter TargetName="imgName1"  Property="Visibility" Value="Visible" />
+                                        <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                        <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                        <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                    </Trigger>
+
+                                    <DataTrigger Binding="{Binding Path=ActiveMainButtonCategory}" Value="{x:Static p:Resources.strAccidents}">
+                                        <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                        <Setter TargetName="imgName1" Property="Visibility" Value="Visible" />
+                                        <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                        <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                        <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                    </DataTrigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+
+                        </Button.Template>
+                    </Button>
+                    <Button Height="35" HorizontalAlignment="Stretch" Background="Transparent"
+                                VerticalAlignment="Stretch"
+                                Grid.Row="3" Command="{Binding Path=TruckPermissionsButtonCommand}">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border  x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="#00ffcc">
+                                    <StackPanel x:Name ="spBtn" Orientation="Horizontal" Height="35" Width="250">
+                                        <Image x:Name="imgName"  Source="Images\left_icons_truck_permission.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0"/>
+                                        <Image x:Name="imgName1"  Source="Images\left_icons_truck_permission_hover.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0" Visibility="Collapsed"/>
+                                        <TextBlock x:Name="txtBlkBtnName"  Foreground="#00ffcc" VerticalAlignment="Center"  Width="200" Text="{x:Static p:Resources.strTruckPermissions}" HorizontalAlignment="Right" />
+                                    </StackPanel>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver"   Value="true">
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                        <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                        <Setter TargetName="imgName1"  Property="Visibility" Value="Visible" />
+                                        <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                        <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                        <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                    </Trigger>
+
+                                    <DataTrigger Binding="{Binding Path=ActiveMainButtonCategory}" Value="{x:Static p:Resources.strTruckPermissions}">
+                                        <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                        <Setter TargetName="imgName1" Property="Visibility" Value="Visible" />
+                                        <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                        <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                        <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                    </DataTrigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+
+                        </Button.Template>
+                    </Button>
+                    <Button Height="35" HorizontalAlignment="Stretch" 
+                                VerticalAlignment="Stretch" Background="Transparent"
+                                Grid.Row="4" Command="{Binding Path=DangerousViolatorButtonCommand}">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border  x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="#00ffcc">
+                                    <StackPanel x:Name ="spBtn" Orientation="Horizontal" Height="35" Width="250">
+                                        <Image x:Name="imgName"  Source="Images\left_icons_dangerous_voilator.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0"/>
+                                        <Image x:Name="imgName1"  Source="Images\left_icons_dangerous_voilator_hover.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0" Visibility="Collapsed"/>
+                                        <TextBlock x:Name="txtBlkBtnName"  Foreground="#00ffcc" VerticalAlignment="Center"  Width="200" Text="{x:Static p:Resources.strDangerousViolator}" HorizontalAlignment="Right" />
+                                    </StackPanel>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver"   Value="true">
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                        <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                        <Setter TargetName="imgName1"  Property="Visibility" Value="Visible" />
+                                        <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                        <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                        <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                    </Trigger>
+
+                                    <DataTrigger Binding="{Binding Path=ActiveMainButtonCategory}" Value="{x:Static p:Resources.strDangerousViolator}">
+                                        <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                        <Setter TargetName="imgName1" Property="Visibility" Value="Visible" />
+                                        <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                        <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                        <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                    </DataTrigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+
+                        </Button.Template>
+                    </Button>
+                    <Button Height="35" HorizontalAlignment="Stretch" Background="Transparent"
+                                VerticalAlignment="Stretch"
+                                Grid.Row="5" Command="{Binding Path=WorkZonesButtonCommand}">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border  x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="#00ffcc">
+                                    <StackPanel x:Name ="spBtn" Orientation="Horizontal" Height="35" Width="250">
+                                        <Image x:Name="imgName"  Source="Images\left_icons_workzone.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0"/>
+                                        <Image x:Name="imgName1"  Source="Images\left_icons_workzone_hover.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0" Visibility="Collapsed"/>
+                                        <TextBlock x:Name="txtBlkBtnName"  Foreground="#00ffcc" VerticalAlignment="Center"  Width="200" Text="{x:Static p:Resources.strWorkZones}" HorizontalAlignment="Right" />
+                                    </StackPanel>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver"   Value="true">
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                        <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                        <Setter TargetName="imgName1"  Property="Visibility" Value="Visible" />
+                                        <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                        <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                        <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                    </Trigger>
+
+                                    <DataTrigger Binding="{Binding Path=ActiveMainButtonCategory}" Value="{x:Static p:Resources.strWorkZones}">
+                                        <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                        <Setter TargetName="imgName1" Property="Visibility" Value="Visible" />
+                                        <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                        <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                        <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                    </DataTrigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+
+                        </Button.Template>
+                    </Button>
+                    <Button Height="35" HorizontalAlignment="Stretch" 
+                                VerticalAlignment="Stretch" Background="Transparent"
+                                Grid.Row="6" Command="{Binding Path=PatrolButtonCommand}">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border  x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="#00ffcc">
+                                    <StackPanel x:Name ="spBtn" Orientation="Horizontal" Height="35" Width="250">
+                                        <Image x:Name="imgName"  Source="Images\left_icons_patrol.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0"/>
+                                        <Image x:Name="imgName1"  Source="Images\left_icons_patrol_hover.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0" Visibility="Collapsed"/>
+                                        <TextBlock x:Name="txtBlkBtnName"  Foreground="#00ffcc" VerticalAlignment="Center"  Width="200" Text="{x:Static p:Resources.strPatrolCar}" HorizontalAlignment="Right" />
+                                    </StackPanel>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver"   Value="true">
+                                        <Setter Property="Cursor" Value="Hand"/>
+                                        <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                        <Setter TargetName="imgName1"  Property="Visibility" Value="Visible" />
+                                        <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                        <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                        <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                    </Trigger>
+
+                                    <DataTrigger Binding="{Binding Path=ActiveMainButtonCategory}" Value="{x:Static p:Resources.strPatrolCar}">
+                                        <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                        <Setter TargetName="imgName1" Property="Visibility" Value="Visible" />
+                                        <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                        <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                        <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                    </DataTrigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+
+                        </Button.Template>
+                    </Button>
+                </Grid>
+            </Grid>
+
+            <Grid x:Name="gridTabsAndCharts" Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid x:Name="gridKPIButtons" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="5,5,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition/>
+                        <!--<ColumnDefinition/>-->
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Grid.ColumnSpan="5">
+
+                        <Button VerticalAlignment="Stretch" Background="Transparent"
+                                Grid.Row="0" Grid.Column="0" Margin="5,5,0,0" Padding="5,5,5,5"
+                            Command="{Binding Path=HomeButtonCommand}"
+                            IsEnabled="{Binding Path=CanEnableGeneralOverViewButton}">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border  x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="#00ffcc">
+                                        <StackPanel x:Name ="spBtn" Orientation="Horizontal" Height="35" MinWidth="200" MaxWidth="250" >
+                                            <Image x:Name="imgName"  Source="Images\top_icons_home.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0"/>
+                                            <Image x:Name="imgName1"  Source="Images\top_icons_home_hover.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0" Visibility="Collapsed"/>
+                                            <TextBlock x:Name="txtBlkBtnName"  Foreground="#00ffcc" VerticalAlignment="Center" MaxWidth="200" Text="{x:Static p:Resources.strOverview}" HorizontalAlignment="Right" Margin="5,0,10,0"/>
+                                        </StackPanel>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver"   Value="true">
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                            <Setter TargetName="imgName1"  Property="Visibility" Value="Visible" />
+                                            <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                            <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding Path=ActiveSubButtonCategory}" Value="{x:Static p:Resources.strOverview}">
+                                            <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                            <Setter TargetName="imgName1" Property="Visibility" Value="Visible" />
+                                            <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                            <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                        </DataTrigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+
+                            </Button.Template>
+
+                        </Button>
+                        <Button VerticalAlignment="Stretch" Background="Transparent"
+                                Grid.Row="0" Grid.Column="1" Margin="5,5,0,0" 
+                            Command="{Binding Path=AnalysisButtonCommand}"
+                            IsEnabled="{Binding Path=CanEnableStatisticsButton}">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border  x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="#00ffcc">
+                                        <StackPanel x:Name ="spBtn" Orientation="Horizontal" Height="35" MinWidth="200" MaxWidth="250"  >
+                                            <Image x:Name="imgName"  Source="Images\top_icons_analysis.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0"/>
+                                            <Image x:Name="imgName1"  Source="Images\top_icons_analysis_hover.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0" Visibility="Collapsed"/>
+                                            <TextBlock x:Name="txtBlkBtnName"  Foreground="#00ffcc" VerticalAlignment="Center"  MaxWidth="200" Text="{x:Static p:Resources.strStatistics}" HorizontalAlignment="Right" />
+                                        </StackPanel>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver"   Value="true">
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                            <Setter TargetName="imgName1"  Property="Visibility" Value="Visible" />
+                                            <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                            <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding Path=ActiveSubButtonCategory}" Value="{x:Static p:Resources.strStatistics}">
+                                            <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                            <Setter TargetName="imgName1" Property="Visibility" Value="Visible" />
+                                            <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                            <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                        </DataTrigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+
+                            </Button.Template>
+                        </Button>
+
+                        <!--<Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                Grid.Row="0" Grid.Column="2" Margin="5,5,0,0">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="Images\top_icons_KPIs.png" Width="40" HorizontalAlignment="Left" Margin="5,0,5,0"/>
+                                <TextBlock Text="KPI's" HorizontalAlignment="Left" />
+                            </StackPanel>
+                        </Button>-->
+                        <Button VerticalAlignment="Stretch" Background="Transparent"
+                                Grid.Row="0" Grid.Column="2" Margin="5,5,0,0" Command="{Binding Path=PerformanceButtonCommand}"
+                            IsEnabled="{Binding Path=CanEnablePerformanceButton}">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border  x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="#00ffcc">
+                                        <StackPanel x:Name ="spBtn" Orientation="Horizontal" Height="35" MinWidth="200" MaxWidth="250" >
+                                            <Image x:Name="imgName"  Source="Images\Performance_Icon.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0"/>
+                                            <Image x:Name="imgName1"  Source="Images\Performance_Selected_Icon.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0" Visibility="Collapsed"/>
+                                            <TextBlock x:Name="txtBlkBtnName"  Foreground="#00ffcc" VerticalAlignment="Center"  MaxWidth="200" Text="{x:Static p:Resources.strPerformance}" HorizontalAlignment="Right" />
+                                        </StackPanel>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver"   Value="true">
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                            <Setter TargetName="imgName1"  Property="Visibility" Value="Visible" />
+                                            <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                            <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding Path=ActiveMainButtonCategory}" Value="{x:Static p:Resources.strViolations}">
+                                            <Setter Property="IsEnabled" Value="True"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Path=ActiveMainButtonCategory}" Value="{x:Static p:Resources.strAccidents}">
+                                            <Setter Property="IsEnabled" Value="True"/>
+                                        </DataTrigger>
+
+                                        <DataTrigger Binding="{Binding Path=ActiveSubButtonCategory}" Value="{x:Static p:Resources.strPerformance}">
+                                            <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                            <Setter TargetName="imgName1" Property="Visibility" Value="Visible" />
+                                            <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                            <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                        </DataTrigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+
+                            </Button.Template>
+                        </Button>
+                        <Button VerticalAlignment="Stretch" Background="Transparent"
+                                Grid.Row="0" Grid.Column="3" Margin="5,5,0,0" Command="{Binding Path=HeatMapButtonCommand}" IsEnabled="{Binding CanEnableHeatMapButton}">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border  x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="#00ffcc">
+                                        <StackPanel x:Name ="spBtn" Orientation="Horizontal" Height="35" MinWidth="200" MaxWidth="250" >
+                                            <Image x:Name="imgName"  Source="Images\top_icons_heatmap.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0"/>
+                                            <Image x:Name="imgName1"  Source="Images\top_icons_heatmap_hover.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0" Visibility="Collapsed"/>
+                                            <TextBlock x:Name="txtBlkBtnName"  Foreground="#00ffcc" VerticalAlignment="Center"  MaxWidth="200" Text="{x:Static p:Resources.strHeatMap}" HorizontalAlignment="Right" />
+                                        </StackPanel>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver"   Value="true">
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                            <Setter TargetName="imgName1"  Property="Visibility" Value="Visible" />
+                                            <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                            <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding Path=ActiveSubButtonCategory}" Value="{x:Static p:Resources.strHeatMap}">
+                                            <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                            <Setter TargetName="imgName1" Property="Visibility" Value="Visible" />
+                                            <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                            <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                        </DataTrigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+
+                            </Button.Template>
+                        </Button>
+                        <Button VerticalAlignment="Stretch" Background="Transparent"
+                                Grid.Row="0" Grid.Column="4" Margin="5,5,0,0" Command="{Binding Path=ForeCastButtonCommand}">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border  x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="#00ffcc">
+                                        <StackPanel x:Name ="spBtn" Orientation="Horizontal" Height="35" MinWidth="200" MaxWidth="250" >
+                                            <Image x:Name="imgName"  Source="Images\Prediction_Icon.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0"/>
+                                            <Image x:Name="imgName1"  Source="Images\Prediction_Selected_Icon.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0" Visibility="Collapsed"/>
+                                            <TextBlock x:Name="txtBlkBtnName"  Foreground="#00ffcc" VerticalAlignment="Center"  MaxWidth="200" Text="{x:Static p:Resources.strPrediction}" HorizontalAlignment="Right" />
+                                        </StackPanel>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver"   Value="true">
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                            <Setter TargetName="imgName1"  Property="Visibility" Value="Visible" />
+                                            <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                            <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding Path=ActiveSubButtonCategory}" Value="{x:Static p:Resources.strPrediction}">
+                                            <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                            <Setter TargetName="imgName1" Property="Visibility" Value="Visible" />
+                                            <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                            <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                        </DataTrigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+
+                            </Button.Template>
+                        </Button>
+                        <Button VerticalAlignment="Stretch" Background="Transparent"
+                                Grid.Row="0" Grid.Column="4" Margin="5,5,0,0" Command="{Binding Path=ManualKPIButtonCommand}"
+                                IsEnabled="{Binding CanEnableManualKPIButton}">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border  x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="#00ffcc">
+                                        <StackPanel x:Name ="spBtn" Orientation="Horizontal" Height="35" MinWidth="200" MaxWidth="250" >
+                                            <Image x:Name="imgName"  Source="Images\Prediction_Icon.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0"/>
+                                            <Image x:Name="imgName1"  Source="Images\Prediction_Selected_Icon.png" Width="40" HorizontalAlignment="Left" Margin="5,0,10,0" Visibility="Collapsed"/>
+                                            <TextBlock x:Name="txtBlkBtnName"  Foreground="#00ffcc" VerticalAlignment="Center"  MaxWidth="200" Text="{x:Static p:Resources.strManualKPI}" HorizontalAlignment="Right" />
+                                        </StackPanel>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver"   Value="true">
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                            <Setter TargetName="imgName1"  Property="Visibility" Value="Visible" />
+                                            <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                            <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding Path=ActiveMainButtonCategory}" Value="{x:Static p:Resources.strGeneral}">
+                                            <Setter Property="IsEnabled" Value="True"/>
+                                        </DataTrigger>
+
+                                        <DataTrigger Binding="{Binding Path=ActiveSubButtonCategory}" Value="{x:Static p:Resources.strManualKPI}">
+                                            <Setter TargetName="bg" Property="BorderBrush" Value="#ffd452"/>
+                                            <Setter TargetName="imgName1" Property="Visibility" Value="Visible" />
+                                            <Setter TargetName="imgName" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="spBtn" Property="Background" Value="#ffd452"/>
+                                            <Setter TargetName="txtBlkBtnName" Property="Foreground" Value="Black"/>
+                                        </DataTrigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+
+                            </Button.Template>
+                        </Button>
+
+                    </StackPanel>
+                </Grid>
+
+                <Grid x:Name="gridNavigationTabsAndChartAreas" Grid.Row="1">
+                    <Grid x:Name="gridGeneralMainDashBord" Background="Transparent" Visibility="{Binding ShowMainDashBrdChartArea, Converter={StaticResource BoolToVisibilityConverter}}">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid x:Name="gridDashBrdReportIndicators" Grid.Row="0">
+                            <ChartUserControls:MainIndicatorsUserControl/>
+                        </Grid>
+                        <Grid x:Name="gridMainDashBrdCharts" Grid.Row="1" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1.5*"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid x:Name="gridMainFatalityTarget" Grid.Row="0" Grid.ColumnSpan="2">
+                                <Border BorderThickness=".2" BorderBrush="#00ffcc" Margin="5">
+                                    <Grid>
+                                        <ChartUserControls:MainFatalityTargetUserControl/>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+
+                            <Grid Grid.Row="1" Grid.Column="0" DataContext="{StaticResource BarChartViewModel}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Border Margin="5">
+                                    <Grid>
+                                        <ChartUserControls:BarChartUserControl x:Name="NoOfFactiltyChart"  Header="{x:Static p:Resources.strNoOfFatalities}" DataItemSource="{Binding NoOfFatalityViewModelDataList}"/>
+                                    </Grid>
+                                </Border>
+                                <Border  Margin="5" Grid.Column="1">
+                                    <Grid>
+                                        <ChartUserControls:BarChartUserControl  Header="{x:Static p:Resources.strNoofDangerousViolations}"  DataItemSource="{Binding NoOfDangerousVilationViewModelDataList}"/>
+                                    </Grid>
+                                </Border>
+                                <Border  Margin="5" Grid.Column="2">
+                                    <Grid>
+                                        <ChartUserControls:BarChartUserControl  Header="{x:Static p:Resources.strNoSevereAccident}"  DataItemSource="{Binding NoOfServiceAccidentsViewmodelDataList}"/>
+                                    </Grid>
+                                </Border>
+                                <Border  Margin="5" Grid.Column="3">
+                                    <Grid>
+                                        <ChartUserControls:BarChartUserControl  Header="{x:Static p:Resources.strNoofaccidentwithfatality}"  DataItemSource="{Binding NoOfAccidentWithFatalityViewModelDataList}"/>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+                    <Grid x:Name="gridKPIperformanceArea" Grid.Row="1" Background="Transparent" Visibility="{Binding ShowKPITableChartArea, Converter={StaticResource BoolToVisibilityConverter}}">
+
+                        <Grid x:Name="gridKPIperformanceViolation" Background="Transparent" Visibility="{Binding ShowKPITableChartViolationArea, Converter={StaticResource BoolToVisibilityConverter}}">
+
+
+                            <ChartUserControls:ViolationKPITableChartUserControl/>
+                        </Grid>
+                        <Grid DataContext="{StaticResource BarChartViewModel}" x:Name="gridKPIperformanceAccidents" Background="Transparent" Visibility="{Binding ShowKPITableChartAccidentArea, Converter={StaticResource BoolToVisibilityConverter}}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1.5*"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                            <Border Grid.Row="0" BorderThickness=".2" BorderBrush="#00ffcc" Margin="5" Width="600"  HorizontalAlignment="Left" >
+                                            <ChartUserControls:BarChartUserControl  Header="{x:Static p:Resources.strNoOfFatalities}" DataItemSource="{Binding NoOfFatalityViewModelDataList}" />
+                                    </Border>
+                                <Grid Grid.Row="1" Grid.Column="0" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Margin="5">
+                                            <ChartUserControls:BarChartUserControl  Header="{x:Static p:Resources.strNoOfFatalities}"  DataItemSource="{Binding NoOfFatalityViewModelDataList}"/>
+                                    </Border>
+                                    <Border  Margin="5" Grid.Column="1">
+                                            <ChartUserControls:BarChartUserControl  Header="{x:Static p:Resources.strNoOfinjuries}"  DataItemSource="{Binding NoOfInjuiriesViewModelDataList}"/>
+                                    </Border>
+                                    <Border Margin="5" Grid.Column="3">
+                                            <!--<ChartUserControls:BarChartUserControl DataContext="{StaticResource NoOfServiceAccidentsViewmodel}" Header="{x:Static p:Resources.strNoSevereAccident}"/>-->
+                                    </Border>
+                                    <Border  Margin="5" Grid.Column="2">
+                                            <ChartUserControls:BarChartUserControl  Header="{x:Static p:Resources.strNoofaccidentwithfatality}"  DataItemSource="{Binding NoOfAccidentWithFatalityViewModelDataList}"/>
+                                    </Border>
+                                </Grid>
+                        </Grid>
+
+                    </Grid>
+
+                    <Grid x:Name="gridIncidentHeatMapKPIArea" Grid.Row="1" Background="Transparent" Visibility="{Binding ShowIncidentHeatMapKPIArea, Converter={StaticResource BoolToVisibilityConverter}}">
+
+                        <Grid x:Name="gridIncidentHeatMapKPIContent" Background="Transparent">
+
+
+
+                            <Border BorderBrush="#00ffcc" BorderThickness="0.4" Margin="15,25,15,15">
+                                <WebBrowser x:Name="webBrowserInciHeatMapKPI" Loaded="webBrowserInciHeatMapKPI_Loaded" Margin="5,5"></WebBrowser>
+                            </Border>
+
+                        </Grid>
+
+
+                    </Grid>
+
+                    <Grid x:Name="gridManualKPIArea" Grid.Row="1" Background="Transparent" Visibility="{Binding ShowManualKPIArea, Converter={StaticResource BoolToVisibilityConverter}}">
+
+                        <Grid x:Name="gridManaulKPIContent" Background="Transparent">
+
+                            <!--<StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,50">
+                                <TextBlock Text="Manaul KPI URL : "  Margin="5,5"/>
+                                <TextBlock Margin="5,5">
+                                    <Hyperlink x:Name="hyperLinkManualKPI"  NavigateUri="{Binding ManualKPIurl}" RequestNavigate="hyperLinkManualKPI_RequestNavigate"><Run Text="{Binding ManualKPIurl}" Foreground="Blue"></Run></Hyperlink>
+                                </TextBlock>
+                            </StackPanel>-->
+
+                            <Border BorderBrush="#00ffcc" BorderThickness="0.4" Margin="15,25,15,15">
+                                <WebBrowser x:Name="webBrowserManualKPI" Loaded="webBrowserManualKPI_Loaded" Margin="5,5"></WebBrowser>
+                            </Border>
+
+                        </Grid>
+
+
+                    </Grid>
+
+
+                    <TabControl Background="Transparent" BorderBrush="Transparent" SelectedIndex="{Binding ActiveAnalsisCategory}" Visibility="{Binding ShowChartArea, Converter={StaticResource BoolToVisibilityConverter}}">
+                        <TabControl.Resources>
+                            <Style TargetType="TabItem" x:Name="tabItemStyle">
+
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="TabItem">
+                                            <Grid Name="Panel" Background="Transparent">
+                                                <ContentPresenter>
+                                                    <ContentPresenter.Content>
+                                                        <Grid>
+
+                                                            <TextBlock Name="txtBlkHeaderName" Text="{TemplateBinding Header}" Margin="7,0,5,0"/>
+                                                            <!--<TextBlock Name="txtBlkLine" Text="______________________" Margin="5,-10,0,0" Grid.Row="1"></TextBlock>-->
+                                                        </Grid>
+
+                                                    </ContentPresenter.Content>
+                                                </ContentPresenter>
+                                            </Grid>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsSelected" Value="True">
+
+                                                    <Setter TargetName="Panel" Property="Background" Value="Transparent" />
+                                                    <Setter TargetName="txtBlkHeaderName" Property="Foreground" Value="#ffd452"/>
+                                                    <!--<Setter TargetName="txtBlkLine" Property="Foreground" Value="#ffd452"/>-->
+
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Cursor" Value="Hand"/>
+                                                    <Setter TargetName="Panel" Property="Background" Value="Transparent" />
+                                                    <Setter TargetName="txtBlkHeaderName" Property="Foreground" Value="#ffd452"/>
+                                                    <!--<Setter TargetName="txtBlkLine" Property="Foreground" Value="#ffd452"/>-->
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </TabControl.Resources>
+
+                        <TabItem Header="{x:Static p:Resources.strTrendAnalysis}" Foreground="#00ffcc" Height="31" VerticalAlignment="Bottom">
+                            <Grid>
+                                <Grid x:Name="gridViolationTrendAnalysis" Visibility="{Binding ShowChartAreaViolationTrend, Converter={StaticResource BoolToVisibilityConverter}}">
+                                    <Grid x:Name="gridChartAreaViolnTrend" MinWidth="960">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="20"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="0">
+                                            <Grid Margin="0,0,0,0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="0"/>
+                                                    <RowDefinition Height="*"/>
+
+                                                </Grid.RowDefinitions>
+
+                                                <!--<TextBlock Text="Violation Quarterly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                <Grid Grid.Row="1">
+                                                    <ChartUserControls:ViolationQuarterlyTrendUserControl/>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+                                        <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="2">
+                                            <Grid Margin="0,0,0,0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="0"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+
+                                                <!--<TextBlock Text="Violation Monthly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                <Grid Grid.Row="1">
+                                                    <ChartUserControls:ViolationMonthlyTrendUserControl/>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+
+                                        <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="0">
+                                            <Grid Margin="0,10,0,0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="0"/>
+                                                    <RowDefinition Height="*"/>
+
+                                                </Grid.RowDefinitions>
+
+                                                <!--<TextBlock Text="Violation Weekly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                <Grid Grid.Row="1">
+                                                    <ChartUserControls:ViolationWeeklyTrendUserControl/>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+
+                                        <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="2">
+                                            <Grid Margin="0,10,0,0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="0"/>
+                                                    <RowDefinition Height="*"/>
+
+                                                </Grid.RowDefinitions>
+
+                                                <!--<TextBlock Text="Violation Daily Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                <Grid Grid.Row="1">
+                                                    <ChartUserControls:ViolationDailyTrendUserControl/>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+
+                                    </Grid>
+                                </Grid>
+
+                                <Grid x:Name="gridAccidentsTrendAnalysis" Visibility="{Binding ShowChartAreaAccidentsTrend, Converter={StaticResource BoolToVisibilityConverter}}">
+                                    <Grid x:Name="gridChartAreaAccidTrend" HorizontalAlignment="Stretch">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="20"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="0">
+                                            <Grid Margin="0,0,0,0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="0"/>
+                                                    <RowDefinition Height="*"/>
+
+                                                </Grid.RowDefinitions>
+
+                                                <!--<TextBlock Text="Violation Quarterly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                <Grid Grid.Row="1">
+                                                    <ChartUserControls:AccidentsQuarterlyTrendUserControl/>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+                                        <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="2">
+                                            <Grid Margin="0,0,0,0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="0"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+
+                                                <!--<TextBlock Text="Violation Monthly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                <Grid Grid.Row="1">
+                                                    <ChartUserControls:AccidentsMonthlyTrendUserControl/>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+
+                                        <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="0">
+                                            <Grid Margin="0,10,0,0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="0"/>
+                                                    <RowDefinition Height="*"/>
+
+                                                </Grid.RowDefinitions>
+
+                                                <!--<TextBlock Text="Violation Weekly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                <Grid Grid.Row="1">
+                                                    <ChartUserControls:AccidentsWeeklyTrendUserControl/>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+
+                                        <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="2">
+                                            <Grid Margin="0,10,0,0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="0"/>
+                                                    <RowDefinition Height="*"/>
+
+                                                </Grid.RowDefinitions>
+
+                                                <!--<TextBlock Text="Violation Daily Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                <Grid Grid.Row="1">
+                                                    <ChartUserControls:AccidentsDailyTrendUserControl/>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+
+                                    </Grid>
+                                </Grid>
+
+                                <Grid x:Name="gridTruckPermTrendAnalysis" Visibility="{Binding ShowChartAreaTruckPermTrend, Converter={StaticResource BoolToVisibilityConverter}}">
+                                    <Grid x:Name="gridChartAreaTruckPermTrend" MinWidth="960">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="20"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="0">
+                                            <Grid Margin="0,0,0,0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="0"/>
+                                                    <RowDefinition Height="*"/>
+
+                                                </Grid.RowDefinitions>
+
+                                                <!--<TextBlock Text="Violation Quarterly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                <Grid Grid.Row="1">
+                                                    <ChartUserControls:TruckPermissionQuarterlyTrendUserControl/>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+                                        <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="2">
+                                            <Grid Margin="0,0,0,0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="0"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+
+                                                <!--<TextBlock Text="Violation Monthly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                <Grid Grid.Row="1">
+                                                    <ChartUserControls:TruckPermissionMonthlyTrendUserControl/>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+
+                                        <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="0">
+                                            <Grid Margin="0,10,0,0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="0"/>
+                                                    <RowDefinition Height="*"/>
+
+                                                </Grid.RowDefinitions>
+
+                                                <!--<TextBlock Text="Violation Weekly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                <Grid Grid.Row="1">
+                                                    <ChartUserControls:TruckPermissionWeeklyTrendUserControl/>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+
+                                        <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="2">
+                                            <Grid Margin="0,10,0,0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="0"/>
+                                                    <RowDefinition Height="*"/>
+
+                                                </Grid.RowDefinitions>
+
+                                                <!--<TextBlock Text="Violation Daily Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                <Grid Grid.Row="1">
+                                                    <ChartUserControls:TruckPermissionDailyTrendUserControl/>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+
+                                    </Grid>
+                                </Grid>
+
+                                <Grid x:Name="gridDangerViolationTrendAnalysis" Visibility="{Binding ShowChartAreaDangerViolnTrend, Converter={StaticResource BoolToVisibilityConverter}}">
+                                    <Grid x:Name="gridChartAreaDangerViolnTrend" MinWidth="960">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="20"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="0">
+                                            <Grid Margin="0,0,0,0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="0"/>
+                                                    <RowDefinition Height="*"/>
+
+                                                </Grid.RowDefinitions>
+
+                                                <!--<TextBlock Text="Violation Quarterly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                <Grid Grid.Row="1">
+                                                    <ChartUserControls:DangerousViolationQuarterlyTrendUserControl/>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+                                        <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="2">
+                                            <Grid Margin="0,0,0,0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="0"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+
+                                                <!--<TextBlock Text="Violation Monthly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                <Grid Grid.Row="1">
+                                                    <ChartUserControls:DangerousViolationMonthlyTrendUserControl/>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+
+                                        <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="0">
+                                            <Grid Margin="0,10,0,0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="0"/>
+                                                    <RowDefinition Height="*"/>
+
+                                                </Grid.RowDefinitions>
+
+                                                <!--<TextBlock Text="Violation Weekly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                <Grid Grid.Row="1">
+                                                    <ChartUserControls:DangerousViolationWeeklyTrendUserControl/>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+
+                                        <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="2">
+                                            <Grid Margin="0,10,0,0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="0"/>
+                                                    <RowDefinition Height="*"/>
+
+                                                </Grid.RowDefinitions>
+
+                                                <!--<TextBlock Text="Violation Daily Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                <Grid Grid.Row="1">
+                                                    <ChartUserControls:DangerousViolationDailyTrendUserControl/>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+
+                                    </Grid>
+                                </Grid>
+
+                            </Grid>
+
+                        </TabItem>
+                        <TabItem Header="{x:Static p:Resources.strDashboard}" Foreground="#00ffcc">
+                            <Grid>
+                                <Grid Visibility="{Binding ShowChartAreaViolationStatistics, Converter={StaticResource BoolToVisibilityConverter}}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Right" Background="Transparent">
+                                        <RadioButton Name="rbVlnStReg" Content="RegionWise"  Margin="5" IsEnabled="False" Visibility="Collapsed"/>
+                                        <!--IsChecked="{Binding ShowChartAreaViolationByRegionStatistics}"-->
+                                        <RadioButton Name="rbVlnStType" Content="{x:Static p:Resources.strByType}" IsChecked="{Binding ShowChartAreaViolationByTypeStatistics}" Margin="5"/>
+                                        <RadioButton Name="rbVlnStComp" Content="{x:Static p:Resources.strByComparison}" IsChecked="{Binding ShowChartAreaViolationByCompStatistics}" Margin="5"/>
+                                    </StackPanel>
+                                    <Grid x:Name="gridViolationStatisticsRegAnalysis" Grid.Row="1" Visibility="{Binding ShowChartAreaViolationByRegionStatistics, Converter={StaticResource BoolToVisibilityConverter}}">
+                                        <Grid x:Name="gridChartAreaVionRegStatistics" MinWidth="960">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition Width="20"/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="0">
+                                                <Grid Margin="0,0,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Quarterly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:ViolationYearlyStatisticsUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="2">
+                                                <Grid Margin="0,0,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Monthly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:ViolationMonthlyStatisticsUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="0">
+                                                <Grid Margin="0,10,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Weekly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:ViolationWeeklyStatisticsUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="2">
+                                                <Grid Margin="0,10,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Daily Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:ViolationDailyStatisticsUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                        </Grid>
+                                    </Grid>
+                                    <Grid x:Name="gridViolationStatisticsByTypeAnalysis" Grid.Row="1" Visibility="{Binding ShowChartAreaViolationByTypeStatistics, Converter={StaticResource BoolToVisibilityConverter}}">
+                                        <Grid x:Name="gridChartAreaVionStatisticsByType" MinWidth="960">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition Width="20"/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="0">
+                                                <Grid Margin="0,0,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Quarterly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:ViolationsYearlyStatisticalByTypeUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="2">
+                                                <Grid Margin="0,0,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Monthly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:ViolationsMonthlyStatisticalByTypeUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="0">
+                                                <Grid Margin="0,10,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Weekly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:ViolationsWeeklyStatisticalByTypeUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="2">
+                                                <Grid Margin="0,10,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Daily Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:ViolationsDailtyStatisticalByTypeUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                        </Grid>
+                                    </Grid>
+
+                                    <Grid x:Name="gridViolationStatisticsByCompAnalysis" Grid.Row="1" Visibility="{Binding ShowChartAreaViolationByCompStatistics, Converter={StaticResource BoolToVisibilityConverter}}">
+                                        <Grid x:Name="gridChartAreaVionStatisticsByComp" MinWidth="960">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition Width="20"/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="0">
+                                                <Grid Margin="0,0,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Quarterly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:ViolationsYearlyComparisonStatisticalUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="2">
+                                                <Grid Margin="0,0,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Monthly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:ViolationsMonthlyComparisonStatisticalUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="0">
+                                                <Grid Margin="0,10,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Weekly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:ViolationsWeeklyComparisonStatisticalUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="2">
+                                                <Grid Margin="0,10,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Daily Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:ViolationsDailtyComparisonStatisticalUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                        </Grid>
+                                    </Grid>
+
+                                </Grid>
+
+
+
+                                <Grid x:Name="gridAccidentsStatisticsAnalysis" Visibility="{Binding ShowChartAreaAccidentsStatistics, Converter={StaticResource BoolToVisibilityConverter}}">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Right" Background="Transparent">
+
+                                        <RadioButton Name="rbAccidentstType" Content="{x:Static p:Resources.strByType}" IsChecked="{Binding ShowChartAreaAccidentsByTypeStatistics}" Margin="5"/>
+                                        <RadioButton Name="rbAccidentsComp" Content="{x:Static p:Resources.strByComparison}" IsChecked="{Binding ShowChartAreaAccidentsByCompStatistics}" Margin="5"/>
+                                    </StackPanel>
+
+                                    <Grid x:Name="gridAccidentsStatisticsByTypeAnalysis" Grid.Row="1" Visibility="{Binding ShowChartAreaAccidentsByTypeStatistics, Converter={StaticResource BoolToVisibilityConverter}}">
+                                        <Grid x:Name="gridChartAreaAccidentsStatisticsByType" MinWidth="960">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition Width="20"/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="0">
+                                                <Grid Margin="0,0,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Quarterly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:AccidentsYearlyStatisticalByTypeUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="2">
+                                                <Grid Margin="0,0,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Monthly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:AccidentsMonthlyStatisticalByTypeUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="0">
+                                                <Grid Margin="0,10,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Weekly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:AccidentsWeeklyStatisticalByTypeUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="2">
+                                                <Grid Margin="0,10,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Daily Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:AccidentsDailyStatisticalByTypeUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                        </Grid>
+                                    </Grid>
+                                    <Grid x:Name="gridAccidentsStatisticsByCompAnalysis" Grid.Row="1" Visibility="{Binding ShowChartAreaAccidentsByCompStatistics, Converter={StaticResource BoolToVisibilityConverter}}">
+                                        <Grid x:Name="gridChartAreaAccidStatistics" MinWidth="960">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition Width="20"/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="0">
+                                                <Grid Margin="0,0,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Quarterly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:AccidentsYearlyStatisticsUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="2">
+                                                <Grid Margin="0,0,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Monthly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:AccidentsMonthlyStatisticsUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="0">
+                                                <Grid Margin="0,10,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Weekly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:AccidentsWeeklyStatisticsUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="2">
+                                                <Grid Margin="0,10,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Daily Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:AccidentsDailyStatisticsUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+
+
+                                <Grid x:Name="gridDanViolnStatisticsAnalysis" Visibility="{Binding ShowChartAreaDangerViolnStatistics, Converter={StaticResource BoolToVisibilityConverter}}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Right" Background="Transparent">
+
+                                        <RadioButton Name="rbDangtType" Content="{x:Static p:Resources.strByType}" IsChecked="{Binding ShowChartAreaDangByTypeStatistics}" Margin="5"/>
+                                        <RadioButton Name="rbDangComp" Content="{x:Static p:Resources.strByComparison}" IsChecked="{Binding ShowChartAreaDangByCompStatistics}" Margin="5"/>
+                                    </StackPanel>
+
+                                    <Grid x:Name="gridDangStatisticsByTypeAnalysis" Grid.Row="1" Visibility="{Binding ShowChartAreaDangByTypeStatistics, Converter={StaticResource BoolToVisibilityConverter}}">
+                                        <Grid x:Name="gridChartAreaDangStatisticsByType" MinWidth="960">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition Width="20"/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="0">
+                                                <Grid Margin="0,0,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Quarterly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:DangerViolationYearlyStatisticalByTypeUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="2">
+                                                <Grid Margin="0,0,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Monthly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:DangerViolationMonthlyStatisticalByTypeUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="0">
+                                                <Grid Margin="0,10,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Weekly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:DangerViolationWeeklyStatisticalByTypeUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="2">
+                                                <Grid Margin="0,10,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Daily Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:DangerViolationDailyStatisticalByTypeUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                        </Grid>
+                                    </Grid>
+                                    <Grid x:Name="gridDangStatisticsByCompAnalysis" Grid.Row="1" Visibility="{Binding ShowChartAreaDangByCompStatistics, Converter={StaticResource BoolToVisibilityConverter}}">
+                                        <Grid x:Name="gridChartAreaDanViolnStatistics" MinWidth="960">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition Width="20"/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="0">
+                                                <Grid Margin="0,0,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Quarterly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:DangerousViolationYearlyStatisticsUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="2">
+                                                <Grid Margin="0,0,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Monthly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:DangerousViolationMonthlyStatisticsUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="0">
+                                                <Grid Margin="0,10,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Weekly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:DangerousViolationWeeklyStatisticsUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="2">
+                                                <Grid Margin="0,10,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Daily Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:DangerousViolationDailyStatisticsUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+
+                                <Grid x:Name="gridTruckStatisticsAnalysis" Visibility="{Binding ShowChartAreaTruckPermStatistics, Converter={StaticResource BoolToVisibilityConverter}}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Right" Background="Transparent">
+
+                                        <RadioButton Name="rbTruckType" Content="{x:Static p:Resources.strByType}" IsChecked="{Binding ShowChartAreaTruckByTypeStatistics}" Margin="5"/>
+                                        <RadioButton Name="rbTruckComp" Content="{x:Static p:Resources.strByComparison}" IsChecked="{Binding ShowChartAreaTruckByCompStatistics}" Margin="5"/>
+                                    </StackPanel>
+
+                                    <Grid x:Name="gridTruckStatisticsByTypeAnalysis" Grid.Row="1" Visibility="{Binding ShowChartAreaTruckByTypeStatistics, Converter={StaticResource BoolToVisibilityConverter}}">
+                                        <Grid x:Name="gridChartAreaTruckStatisticsByType" MinWidth="960">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition Width="20"/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="0">
+                                                <Grid Margin="0,0,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Quarterly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:TruckViolationYearlyStatisticalByTypeUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="2">
+                                                <Grid Margin="0,0,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Monthly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:TruckViolationMonthlyStatisticalByTypeUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="0">
+                                                <Grid Margin="0,10,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Weekly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:TruckViolationWeeklyStatisticalByTypeUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="2">
+                                                <Grid Margin="0,10,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Daily Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:TruckViolationDailyStatisticalByTypeUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                        </Grid>
+                                    </Grid>
+                                    <Grid x:Name="gridTruckStatisticsByCompAnalysis" Grid.Row="1" Visibility="{Binding ShowChartAreaTruckByCompStatistics, Converter={StaticResource BoolToVisibilityConverter}}">
+
+                                        <Grid x:Name="gridChartAreaTruckPermStatistics" MinWidth="960">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition Width="20"/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="0">
+                                                <Grid Margin="0,0,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Quarterly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:TruckViolationYearlyCompStatisticsUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="0" Grid.Column="2">
+                                                <Grid Margin="0,0,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Monthly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:TruckViolationMonthlyCompStatisticsUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="0">
+                                                <Grid Margin="0,10,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Weekly Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:TruckViolationWeeklyCompStatisticsUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                            <Border BorderThickness=".2" BorderBrush="#00ffcc"  Margin="5" Grid.Row="1" Grid.Column="2">
+                                                <Grid Margin="0,10,0,0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="0"/>
+                                                        <RowDefinition Height="*"/>
+
+                                                    </Grid.RowDefinitions>
+
+                                                    <!--<TextBlock Text="Violation Daily Trend" HorizontalAlignment="Left" Margin="5,0,0,0" FontSize="16"></TextBlock>-->
+                                                    <Grid Grid.Row="1">
+                                                        <ChartUserControls:TruckViolationDailyCompStatisticsUserControl/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+
+                                        </Grid>
+
+                                    </Grid>
+                                </Grid>
+
+
+                            </Grid>
+
+                        </TabItem>
+                        <!--<TabItem Header="{x:Static p:Resources.strKPITableCharts}" Foreground="#00ffcc"></TabItem>-->
+                    </TabControl>
+
+                    <!--<Label Content="Navigation Tabs and Chart Areas comes here" Foreground="Red" VerticalAlignment="Center"></Label>-->
+                </Grid>
+
+
+            </Grid>
+        </Grid>
+
+    </Canvas>
+
+
+</UserControl>

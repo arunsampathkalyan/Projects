@@ -1,0 +1,80 @@
+﻿<LayersConfiguration>
+  <!--Network Assets-->
+  <Layer ID="0" Index="0" Name="Network Assets" Where="1=1" KeyFieldID="0" DisplayFieldID="0">
+    <Fields>
+      <Field ID="0" />
+      <Field ID="1" />
+    </Fields>
+    <Coverage Type="Field" CoverageFieldID="1"/>
+    <HighlightSymbol>
+      <Pictrure>Marker.png</Pictrure>
+      <Color>50, 255, 0,255</Color>
+      <Style>Triangle</Style>
+      <Size>40</Size>
+      <YOffSet>24</YOffSet>
+    </HighlightSymbol>
+  <MapTip>
+      <Fields>
+        <Field ID="0"/>
+      </Fields>
+    </MapTip>
+  </Layer>
+  
+  
+  <!--Mobile Assets-->
+  <Layer ID="1" Index="1" Name="Mobile Assets" Where="1=1" KeyFieldID="0" DisplayFieldID="0">
+    <Fields>
+      <Field ID="3" />
+    </Fields>
+  </Layer>
+
+  <!--Incidents-->
+  <Layer ID="2" Index="2" Name="Incidents" Where="1=1" KeyFieldID="0" DisplayFieldID="0">
+    <Fields>
+      <Field ID="4" />
+    </Fields>
+  </Layer>
+</LayersConfiguration>
+
+<!--<LayersConfiguration>
+<Layer ID="10" FeatureLayer="True" Index="0" Name="test" KeyFieldID="4" DisplayFieldID="4">
+    <Fields>
+      <Field ID="4" />
+    </Fields>
+    <MapTip>
+      <Fields>
+        <Field ID="4"/>
+         <Field ID="4"/>
+      </Fields>
+    </MapTip>
+  </Layer>
+  <Layer ID="0" Index="0" Name="Network Assets" Where="1=1" KeyFieldID="0" DisplayFieldID="1">
+    <Fields>
+      <Field ID="0" />
+      <Field ID="1" />
+      <Field ID="2" />
+    </Fields>
+    <Coverage Type="Field" CoverageFieldID="1" LayerId="0" KeyFieldId="0" />
+    <HighlightSymbol>
+      <Pictrure>Marker.png</Pictrure>
+      <Color>50, 255, 0,255</Color>
+      <Style>Triangle</Style>
+      <Size>10</Size>
+      <YOffSet>24</YOffSet>
+    </HighlightSymbol>
+  </Layer>
+  <Layer ID="0" Index="0" Name="Network Assets" Where="1=1" KeyFieldID="0" DisplayFieldID="1">
+    <Fields>
+      <Field ID="0" />
+      <Field ID="1" />
+      <Field ID="2" />
+    </Fields>
+    <Coverage Type="Field" CoverageFieldID="1" />
+    <HighlightSymbol>
+      <Pictrure>Marker.png</Pictrure>
+      <Color>50, 255, 0,255</Color>
+      <Style>Triangle</Style>
+      <Size>1000</Size>
+    </HighlightSymbol>
+  </Layer>
+</LayersConfiguration>-->

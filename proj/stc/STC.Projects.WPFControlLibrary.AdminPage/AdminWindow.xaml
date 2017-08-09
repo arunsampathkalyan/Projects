@@ -1,0 +1,14 @@
+﻿<Window x:Class="STC.Projects.WPFControlLibrary.AdminPage.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:VM="clr-namespace:STC.Projects.WPFControlLibrary.AdminPage"
+        Title="AdminWindow">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <VM:AdminGridPanelUserControl></VM:AdminGridPanelUserControl>
+        <VM:AdminPageUserControl x:Name="grdUserControl" Grid.Row="1"></VM:AdminPageUserControl>
+    </Grid>
+</Window>

@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceLayer" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8082/ServiceLayer.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8082/ServiceLayer.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8082/ServiceLayer.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" />
+      <xsd:import schemaLocation="http://localhost:8082/ServiceLayer.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceLayer_GetWantedCarRadius_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWantedCarRadius" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetWantedCarRadius_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWantedCarRadiusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsListGroupedByLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsListGroupedByLocation" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsListGroupedByLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsListGroupedByLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetUpdatedViolationsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUpdatedViolationsList" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetUpdatedViolationsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUpdatedViolationsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsListByDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsListByDate" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsListByDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsListByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetIncidentsListByDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsListByDate" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetIncidentsListByDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsListByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsDetailsForLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsDetailsForLocation" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsDetailsForLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsDetailsForLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetActiveIncidentsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveIncidentsList" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetActiveIncidentsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveIncidentsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetIncidentDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentDetails" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetIncidentDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetAssetsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssetsList" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetAssetsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssetsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetAssetsLastStatusList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssetsLastStatusList" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetAssetsLastStatusList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssetsLastStatusListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetPatrolsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatrolsList" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetPatrolsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatrolsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetEventsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventsList" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetEventsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetPatrolStatusList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatrolStatusList" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetPatrolStatusList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatrolStatusListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetAssetTypesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssetTypesList" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetAssetTypesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssetTypesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetAssetStatusList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssetStatusList" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetAssetStatusList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssetStatusListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationTypesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationTypesList" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationTypesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationTypesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsCountPerDayOfWeek_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsCountPerDayOfWeek" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsCountPerDayOfWeek_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsCountPerDayOfWeekResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsCountPerDayOfWeekAndHour_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsCountPerDayOfWeekAndHour" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsCountPerDayOfWeekAndHour_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsCountPerDayOfWeekAndHourResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsCountGroupedByType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsCountGroupedByType" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsCountGroupedByType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsCountGroupedByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsCountGroupedByTypePerDayOfWeek_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsCountGroupedByTypePerDayOfWeek" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsCountGroupedByTypePerDayOfWeek_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsCountGroupedByTypePerDayOfWeekResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsCountGroupedByTypePerDayOfWeekAndHour_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsCountGroupedByTypePerDayOfWeekAndHour" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsCountGroupedByTypePerDayOfWeekAndHour_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsCountGroupedByTypePerDayOfWeekAndHourResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsCountGroupedByLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsCountGroupedByLocation" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsCountGroupedByLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsCountGroupedByLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsCountGroupedByLocationPerDayOfWeek_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsCountGroupedByLocationPerDayOfWeek" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsCountGroupedByLocationPerDayOfWeek_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsCountGroupedByLocationPerDayOfWeekResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsCountGroupedByLocationPerDayOfWeekAndHour_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsCountGroupedByLocationPerDayOfWeekAndHour" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationsCountGroupedByLocationPerDayOfWeekAndHour_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsCountGroupedByLocationPerDayOfWeekAndHourResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetMaxNotificationsCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxNotificationsCount" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetMaxNotificationsCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaxNotificationsCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetIncidentFullDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentFullDetails" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetIncidentFullDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentFullDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationDetailsByAsset_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationDetailsByAsset" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetViolationDetailsByAsset_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationDetailsByAssetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetPatrolDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatrolDetails" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetPatrolDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatrolDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetAllUsersList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsersList" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetAllUsersList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsersListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_SaveSendControlToUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSendControlToUsers" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_SaveSendControlToUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSendControlToUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetMessageTypeSOP_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageTypeSOP" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetMessageTypeSOP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageTypeSOPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetNearByTowersByLatLon_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNearByTowersByLatLon" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetNearByTowersByLatLon_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNearByTowersByLatLonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetNearByRadarsByLatLon_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNearByRadarsByLatLon" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetNearByRadarsByLatLon_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNearByRadarsByLatLonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetNearByCamerasByLatLon_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNearByCamerasByLatLon" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetNearByCamerasByLatLon_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNearByCamerasByLatLonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetAllTowerActions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTowerActions" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetAllTowerActions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTowerActionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetRadiusForNearByAssets_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRadiusForNearByAssets" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetRadiusForNearByAssets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRadiusForNearByAssetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_ConvertXML_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertXML" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_ConvertXML_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetAllTowerCameras_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTowerCameras" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetAllTowerCameras_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTowerCamerasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetOfficersList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfficersList" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetOfficersList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfficersListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetNearByPatrolsByLatLon_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNearByPatrolsByLatLon" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetNearByPatrolsByLatLon_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNearByPatrolsByLatLonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetVehicleDetailsByPlateNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleDetailsByPlateNumber" />
+  </wsdl:message>
+  <wsdl:message name="IServiceLayer_GetVehicleDetailsByPlateNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleDetailsByPlateNumberResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceLayer">
+    <wsdl:operation name="GetWantedCarRadius">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetWantedCarRadius" message="tns:IServiceLayer_GetWantedCarRadius_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetWantedCarRadiusResponse" message="tns:IServiceLayer_GetWantedCarRadius_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsListGroupedByLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsListGroupedByLocation" message="tns:IServiceLayer_GetViolationsListGroupedByLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsListGroupedByLocationResponse" message="tns:IServiceLayer_GetViolationsListGroupedByLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdatedViolationsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetUpdatedViolationsList" message="tns:IServiceLayer_GetUpdatedViolationsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetUpdatedViolationsListResponse" message="tns:IServiceLayer_GetUpdatedViolationsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsListByDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsListByDate" message="tns:IServiceLayer_GetViolationsListByDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsListByDateResponse" message="tns:IServiceLayer_GetViolationsListByDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsListByDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetIncidentsListByDate" message="tns:IServiceLayer_GetIncidentsListByDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetIncidentsListByDateResponse" message="tns:IServiceLayer_GetIncidentsListByDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsDetailsForLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsDetailsForLocation" message="tns:IServiceLayer_GetViolationsDetailsForLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsDetailsForLocationResponse" message="tns:IServiceLayer_GetViolationsDetailsForLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveIncidentsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetActiveIncidentsList" message="tns:IServiceLayer_GetActiveIncidentsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetActiveIncidentsListResponse" message="tns:IServiceLayer_GetActiveIncidentsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetIncidentDetails" message="tns:IServiceLayer_GetIncidentDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetIncidentDetailsResponse" message="tns:IServiceLayer_GetIncidentDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetAssetsList" message="tns:IServiceLayer_GetAssetsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetAssetsListResponse" message="tns:IServiceLayer_GetAssetsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetsLastStatusList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetAssetsLastStatusList" message="tns:IServiceLayer_GetAssetsLastStatusList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetAssetsLastStatusListResponse" message="tns:IServiceLayer_GetAssetsLastStatusList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatrolsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetPatrolsList" message="tns:IServiceLayer_GetPatrolsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetPatrolsListResponse" message="tns:IServiceLayer_GetPatrolsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEventsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetEventsList" message="tns:IServiceLayer_GetEventsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetEventsListResponse" message="tns:IServiceLayer_GetEventsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatrolStatusList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetPatrolStatusList" message="tns:IServiceLayer_GetPatrolStatusList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetPatrolStatusListResponse" message="tns:IServiceLayer_GetPatrolStatusList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetTypesList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetAssetTypesList" message="tns:IServiceLayer_GetAssetTypesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetAssetTypesListResponse" message="tns:IServiceLayer_GetAssetTypesList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetStatusList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetAssetStatusList" message="tns:IServiceLayer_GetAssetStatusList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetAssetStatusListResponse" message="tns:IServiceLayer_GetAssetStatusList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationTypesList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationTypesList" message="tns:IServiceLayer_GetViolationTypesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationTypesListResponse" message="tns:IServiceLayer_GetViolationTypesList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsCountPerDayOfWeek">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsCountPerDayOfWeek" message="tns:IServiceLayer_GetViolationsCountPerDayOfWeek_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsCountPerDayOfWeekResponse" message="tns:IServiceLayer_GetViolationsCountPerDayOfWeek_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsCountPerDayOfWeekAndHour">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsCountPerDayOfWeekAndHour" message="tns:IServiceLayer_GetViolationsCountPerDayOfWeekAndHour_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsCountPerDayOfWeekAndHourResponse" message="tns:IServiceLayer_GetViolationsCountPerDayOfWeekAndHour_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsCountGroupedByType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsCountGroupedByType" message="tns:IServiceLayer_GetViolationsCountGroupedByType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsCountGroupedByTypeResponse" message="tns:IServiceLayer_GetViolationsCountGroupedByType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsCountGroupedByTypePerDayOfWeek">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsCountGroupedByTypePerDayOfWeek" message="tns:IServiceLayer_GetViolationsCountGroupedByTypePerDayOfWeek_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsCountGroupedByTypePerDayOfWeekResponse" message="tns:IServiceLayer_GetViolationsCountGroupedByTypePerDayOfWeek_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsCountGroupedByTypePerDayOfWeekAndHour">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsCountGroupedByTypePerDayOfWeekAndHour" message="tns:IServiceLayer_GetViolationsCountGroupedByTypePerDayOfWeekAndHour_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsCountGroupedByTypePerDayOfWeekAndHourResponse" message="tns:IServiceLayer_GetViolationsCountGroupedByTypePerDayOfWeekAndHour_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsCountGroupedByLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsCountGroupedByLocation" message="tns:IServiceLayer_GetViolationsCountGroupedByLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsCountGroupedByLocationResponse" message="tns:IServiceLayer_GetViolationsCountGroupedByLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsCountGroupedByLocationPerDayOfWeek">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsCountGroupedByLocationPerDayOfWeek" message="tns:IServiceLayer_GetViolationsCountGroupedByLocationPerDayOfWeek_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsCountGroupedByLocationPerDayOfWeekResponse" message="tns:IServiceLayer_GetViolationsCountGroupedByLocationPerDayOfWeek_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsCountGroupedByLocationPerDayOfWeekAndHour">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsCountGroupedByLocationPerDayOfWeekAndHour" message="tns:IServiceLayer_GetViolationsCountGroupedByLocationPerDayOfWeekAndHour_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationsCountGroupedByLocationPerDayOfWeekAndHourResponse" message="tns:IServiceLayer_GetViolationsCountGroupedByLocationPerDayOfWeekAndHour_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxNotificationsCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetMaxNotificationsCount" message="tns:IServiceLayer_GetMaxNotificationsCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetMaxNotificationsCountResponse" message="tns:IServiceLayer_GetMaxNotificationsCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentFullDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetIncidentFullDetails" message="tns:IServiceLayer_GetIncidentFullDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetIncidentFullDetailsResponse" message="tns:IServiceLayer_GetIncidentFullDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationDetailsByAsset">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationDetailsByAsset" message="tns:IServiceLayer_GetViolationDetailsByAsset_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetViolationDetailsByAssetResponse" message="tns:IServiceLayer_GetViolationDetailsByAsset_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatrolDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetPatrolDetails" message="tns:IServiceLayer_GetPatrolDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetPatrolDetailsResponse" message="tns:IServiceLayer_GetPatrolDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsersList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetAllUsersList" message="tns:IServiceLayer_GetAllUsersList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetAllUsersListResponse" message="tns:IServiceLayer_GetAllUsersList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSendControlToUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/SaveSendControlToUsers" message="tns:IServiceLayer_SaveSendControlToUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/SaveSendControlToUsersResponse" message="tns:IServiceLayer_SaveSendControlToUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageTypeSOP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetMessageTypeSOP" message="tns:IServiceLayer_GetMessageTypeSOP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetMessageTypeSOPResponse" message="tns:IServiceLayer_GetMessageTypeSOP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNearByTowersByLatLon">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetNearByTowersByLatLon" message="tns:IServiceLayer_GetNearByTowersByLatLon_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetNearByTowersByLatLonResponse" message="tns:IServiceLayer_GetNearByTowersByLatLon_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNearByRadarsByLatLon">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetNearByRadarsByLatLon" message="tns:IServiceLayer_GetNearByRadarsByLatLon_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetNearByRadarsByLatLonResponse" message="tns:IServiceLayer_GetNearByRadarsByLatLon_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNearByCamerasByLatLon">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetNearByCamerasByLatLon" message="tns:IServiceLayer_GetNearByCamerasByLatLon_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetNearByCamerasByLatLonResponse" message="tns:IServiceLayer_GetNearByCamerasByLatLon_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTowerActions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetAllTowerActions" message="tns:IServiceLayer_GetAllTowerActions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetAllTowerActionsResponse" message="tns:IServiceLayer_GetAllTowerActions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRadiusForNearByAssets">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetRadiusForNearByAssets" message="tns:IServiceLayer_GetRadiusForNearByAssets_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetRadiusForNearByAssetsResponse" message="tns:IServiceLayer_GetRadiusForNearByAssets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertXML">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/ConvertXML" message="tns:IServiceLayer_ConvertXML_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/ConvertXMLResponse" message="tns:IServiceLayer_ConvertXML_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTowerCameras">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetAllTowerCameras" message="tns:IServiceLayer_GetAllTowerCameras_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetAllTowerCamerasResponse" message="tns:IServiceLayer_GetAllTowerCameras_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOfficersList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetOfficersList" message="tns:IServiceLayer_GetOfficersList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetOfficersListResponse" message="tns:IServiceLayer_GetOfficersList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNearByPatrolsByLatLon">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetNearByPatrolsByLatLon" message="tns:IServiceLayer_GetNearByPatrolsByLatLon_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetNearByPatrolsByLatLonResponse" message="tns:IServiceLayer_GetNearByPatrolsByLatLon_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleDetailsByPlateNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceLayer/GetVehicleDetailsByPlateNumber" message="tns:IServiceLayer_GetVehicleDetailsByPlateNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceLayer/GetVehicleDetailsByPlateNumberResponse" message="tns:IServiceLayer_GetVehicleDetailsByPlateNumber_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceLayer" type="tns:IServiceLayer">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWantedCarRadius">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetWantedCarRadius" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsListGroupedByLocation">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetViolationsListGroupedByLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUpdatedViolationsList">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetUpdatedViolationsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsListByDate">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetViolationsListByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsListByDate">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetIncidentsListByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsDetailsForLocation">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetViolationsDetailsForLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveIncidentsList">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetActiveIncidentsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentDetails">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetIncidentDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetsList">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetAssetsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetsLastStatusList">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetAssetsLastStatusList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatrolsList">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetPatrolsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEventsList">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetEventsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatrolStatusList">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetPatrolStatusList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetTypesList">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetAssetTypesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetStatusList">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetAssetStatusList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationTypesList">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetViolationTypesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsCountPerDayOfWeek">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetViolationsCountPerDayOfWeek" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsCountPerDayOfWeekAndHour">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetViolationsCountPerDayOfWeekAndHour" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsCountGroupedByType">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetViolationsCountGroupedByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsCountGroupedByTypePerDayOfWeek">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetViolationsCountGroupedByTypePerDayOfWeek" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsCountGroupedByTypePerDayOfWeekAndHour">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetViolationsCountGroupedByTypePerDayOfWeekAndHour" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsCountGroupedByLocation">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetViolationsCountGroupedByLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsCountGroupedByLocationPerDayOfWeek">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetViolationsCountGroupedByLocationPerDayOfWeek" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsCountGroupedByLocationPerDayOfWeekAndHour">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetViolationsCountGroupedByLocationPerDayOfWeekAndHour" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxNotificationsCount">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetMaxNotificationsCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentFullDetails">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetIncidentFullDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationDetailsByAsset">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetViolationDetailsByAsset" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatrolDetails">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetPatrolDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsersList">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetAllUsersList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSendControlToUsers">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/SaveSendControlToUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageTypeSOP">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetMessageTypeSOP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNearByTowersByLatLon">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetNearByTowersByLatLon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNearByRadarsByLatLon">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetNearByRadarsByLatLon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNearByCamerasByLatLon">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetNearByCamerasByLatLon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTowerActions">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetAllTowerActions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRadiusForNearByAssets">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetRadiusForNearByAssets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertXML">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/ConvertXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTowerCameras">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetAllTowerCameras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfficersList">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetOfficersList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNearByPatrolsByLatLon">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetNearByPatrolsByLatLon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleDetailsByPlateNumber">
+      <soap:operation soapAction="http://tempuri.org/IServiceLayer/GetVehicleDetailsByPlateNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceLayer">
+    <wsdl:port name="BasicHttpBinding_IServiceLayer" binding="tns:BasicHttpBinding_IServiceLayer">
+      <soap:address location="http://localhost:8082/ServiceLayer.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

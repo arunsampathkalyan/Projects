@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="02b5da88-5ff0-4ac2-a032-c641a90063fa" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://fugrows.manufaktura.rs:82/timsarmsservice/TimsArmsService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TimsArmsService.xsd" MetadataType="Schema" ID="3da57751-8612-4b0d-a21f-f3b293f6a0e5" SourceId="1" SourceUrl="http://fugrows.manufaktura.rs:82/timsarmsservice/TimsArmsService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TimsArmsService1.xsd" MetadataType="Schema" ID="8e698d64-0b0e-4e25-a5b5-9c7057f75055" SourceId="1" SourceUrl="http://fugrows.manufaktura.rs:82/timsarmsservice/TimsArmsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TimsArmsService2.xsd" MetadataType="Schema" ID="e55b3970-50b2-4003-a706-196c8a4acabf" SourceId="1" SourceUrl="http://fugrows.manufaktura.rs:82/timsarmsservice/TimsArmsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TimsArmsService3.xsd" MetadataType="Schema" ID="0495806a-b0f4-4f1c-af08-e8279328b81a" SourceId="1" SourceUrl="http://fugrows.manufaktura.rs:82/timsarmsservice/TimsArmsService.svc?xsd=xsd3" />
+    <MetadataFile FileName="TimsArmsService.disco" MetadataType="Disco" ID="75c5061f-78d0-4e4e-9d2b-c6d4cb39447c" SourceId="1" SourceUrl="http://fugrows.manufaktura.rs:82/timsarmsservice/TimsArmsService.svc?disco" />
+    <MetadataFile FileName="TimsArmsServiceWeb.wsdl" MetadataType="Wsdl" ID="d45edb68-224d-40e5-b018-7fe5e544fecc" SourceId="1" SourceUrl="http://fugrows.manufaktura.rs:82/timsarmsservice/TimsArmsService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

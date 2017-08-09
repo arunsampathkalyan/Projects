@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f2520072-22f4-43f7-8d97-694e8672866f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://stc-connect.cloudapp.net/WCFService/SmartOfficerLayer.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SmartOfficerLayer.xsd" MetadataType="Schema" ID="62e1ff55-d520-48d0-a5c7-a52b0c1d8268" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net/WCFService/SmartOfficerLayer.svc?xsd=xsd3" />
+    <MetadataFile FileName="SmartOfficerLayer1.xsd" MetadataType="Schema" ID="43d5aae7-5da2-4613-8ef9-0043b11cd050" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net/WCFService/SmartOfficerLayer.svc?xsd=xsd2" />
+    <MetadataFile FileName="SmartOfficerLayer2.xsd" MetadataType="Schema" ID="39edc803-12e6-4993-9986-29584e90a897" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net/WCFService/SmartOfficerLayer.svc?xsd=xsd1" />
+    <MetadataFile FileName="SmartOfficerLayer3.xsd" MetadataType="Schema" ID="49031803-ed6b-4695-97a7-a3b2991c7e60" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net/WCFService/SmartOfficerLayer.svc?xsd=xsd0" />
+    <MetadataFile FileName="SmartOfficerLayer.wsdl" MetadataType="Wsdl" ID="e706de0b-c8c1-49f1-9585-3574f1d1e57a" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net/WCFService/SmartOfficerLayer.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

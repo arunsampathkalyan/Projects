@@ -1,0 +1,2232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="STCOperationalModelStoreContainer" CdmEntityContainer="STCOperationalDataContext">
+    <EntitySetMapping Name="AssetStatusDIMViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.AssetStatusDIMView">
+        <MappingFragment StoreEntitySet="AssetStatusDIMView">
+          <ScalarProperty Name="AssetStatus" ColumnName="AssetStatus" />
+          <ScalarProperty Name="AssetStatusId" ColumnName="AssetStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssetTypeDIMViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.AssetTypeDIMView">
+        <MappingFragment StoreEntitySet="AssetTypeDIMView">
+          <ScalarProperty Name="AssetTypeCode" ColumnName="AssetTypeCode" />
+          <ScalarProperty Name="AssetType" ColumnName="AssetType" />
+          <ScalarProperty Name="AssetTypeId" ColumnName="AssetTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CheckedInPatrolViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.CheckedInPatrolView">
+        <MappingFragment StoreEntitySet="CheckedInPatrolView">
+          <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+          <ScalarProperty Name="CheckInDate" ColumnName="CheckInDate" />
+          <ScalarProperty Name="PatrolCode" ColumnName="PatrolCode" />
+          <ScalarProperty Name="PatrolId" ColumnName="PatrolId" />
+          <ScalarProperty Name="CheckedInPatrolId" ColumnName="CheckedInPatrolId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CheckedInStaffViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.CheckedInStaffView">
+        <MappingFragment StoreEntitySet="CheckedInStaffView">
+          <ScalarProperty Name="CheckedInPatrolId" ColumnName="CheckedInPatrolId" />
+          <ScalarProperty Name="CheckInDate" ColumnName="CheckInDate" />
+          <ScalarProperty Name="StaffName" ColumnName="StaffName" />
+          <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+          <ScalarProperty Name="CheckedInStaffId" ColumnName="CheckedInStaffId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncidentDispatchViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.IncidentDispatchView">
+        <MappingFragment StoreEntitySet="IncidentDispatchView">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DispatchDate" ColumnName="DispatchDate" />
+          <ScalarProperty Name="IsByVehicle" ColumnName="IsByVehicle" />
+          <ScalarProperty Name="IncidentId" ColumnName="IncidentId" />
+          <ScalarProperty Name="IncidentDispatchId" ColumnName="IncidentDispatchId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncidentStatusLogViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.IncidentStatusLogView">
+        <MappingFragment StoreEntitySet="IncidentStatusLogView">
+          <ScalarProperty Name="StatusDate" ColumnName="StatusDate" />
+          <ScalarProperty Name="OldStatusName" ColumnName="OldStatusName" />
+          <ScalarProperty Name="OldStatusId" ColumnName="OldStatusId" />
+          <ScalarProperty Name="NewStatusName" ColumnName="NewStatusName" />
+          <ScalarProperty Name="NewStatusId" ColumnName="NewStatusId" />
+          <ScalarProperty Name="IncidentId" ColumnName="IncidentId" />
+          <ScalarProperty Name="IncidentStatusLogId" ColumnName="IncidentStatusLogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PatrolStatusDIMViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.PatrolStatusDIMView">
+        <MappingFragment StoreEntitySet="PatrolStatusDIMView">
+          <ScalarProperty Name="PatrolStatus" ColumnName="PatrolStatus" />
+          <ScalarProperty Name="PatrolStatusId" ColumnName="PatrolStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViolationTypesDIMViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.ViolationTypesDIMView">
+        <MappingFragment StoreEntitySet="ViolationTypesDIMView">
+          <ScalarProperty Name="ViolationType" ColumnName="ViolationType" />
+          <ScalarProperty Name="ViolationTypeId" ColumnName="ViolationTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conf_ControlPageMessages">
+      <EntityTypeMapping TypeName="STCOperationalModel.Conf_ControlPageMessages">
+        <MappingFragment StoreEntitySet="Conf_ControlPageMessages">
+          <ScalarProperty Name="UserControlMessageId" ColumnName="UserControlMessageId" />
+          <ScalarProperty Name="PageDetailsId" ColumnName="PageDetailsId" />
+          <ScalarProperty Name="ControlPageMessageId" ColumnName="ControlPageMessageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conf_Layout">
+      <EntityTypeMapping TypeName="STCOperationalModel.Conf_Layout">
+        <MappingFragment StoreEntitySet="Conf_Layout">
+          <ScalarProperty Name="Xaml" ColumnName="Xaml" />
+          <ScalarProperty Name="LayoutName" ColumnName="LayoutName" />
+          <ScalarProperty Name="LayoutId" ColumnName="LayoutId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conf_LayoutsPlaceHolders">
+      <EntityTypeMapping TypeName="STCOperationalModel.Conf_LayoutsPlaceHolders">
+        <MappingFragment StoreEntitySet="Conf_LayoutsPlaceHolders">
+          <ScalarProperty Name="LayoutId" ColumnName="LayoutId" />
+          <ScalarProperty Name="PlaceHolderID" ColumnName="PlaceHolderID" />
+          <ScalarProperty Name="LayoutPlaceHolderId" ColumnName="LayoutPlaceHolderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conf_PageDetails">
+      <EntityTypeMapping TypeName="STCOperationalModel.Conf_PageDetails">
+        <MappingFragment StoreEntitySet="Conf_PageDetails">
+          <ScalarProperty Name="UserControlId" ColumnName="UserControlId" />
+          <ScalarProperty Name="LayoutPlaceHolderId" ColumnName="LayoutPlaceHolderId" />
+          <ScalarProperty Name="PageId" ColumnName="PageId" />
+          <ScalarProperty Name="PageDetailsId" ColumnName="PageDetailsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conf_Pages">
+      <EntityTypeMapping TypeName="STCOperationalModel.Conf_Pages">
+        <MappingFragment StoreEntitySet="Conf_Pages">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PageId" ColumnName="PageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conf_PlaceHolder">
+      <EntityTypeMapping TypeName="STCOperationalModel.Conf_PlaceHolder">
+        <MappingFragment StoreEntitySet="Conf_PlaceHolder">
+          <ScalarProperty Name="PlaceHolderName" ColumnName="PlaceHolderName" />
+          <ScalarProperty Name="PlaceHolderId" ColumnName="PlaceHolderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conf_UserControl">
+      <EntityTypeMapping TypeName="STCOperationalModel.Conf_UserControl">
+        <MappingFragment StoreEntitySet="Conf_UserControl">
+          <ScalarProperty Name="UserControlName" ColumnName="UserControlName" />
+          <ScalarProperty Name="UserControlId" ColumnName="UserControlId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conf_UserControlMessage">
+      <EntityTypeMapping TypeName="STCOperationalModel.Conf_UserControlMessage">
+        <MappingFragment StoreEntitySet="Conf_UserControlMessage">
+          <ScalarProperty Name="UserControlMessageId" ColumnName="UserControlMessageId" />
+          <ScalarProperty Name="MessageTypeId" ColumnName="MessageTypeId" />
+          <ScalarProperty Name="UserControlId" ColumnName="UserControlId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conf_UsersPages">
+      <EntityTypeMapping TypeName="STCOperationalModel.Conf_UsersPages">
+        <MappingFragment StoreEntitySet="Conf_UsersPages">
+          <ScalarProperty Name="PageId" ColumnName="PageId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserPageId" ColumnName="UserPageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssetLastStatus">
+      <EntityTypeMapping TypeName="STCOperationalModel.AssetLastStatu">
+        <MappingFragment StoreEntitySet="AssetLastStatus">
+          <ScalarProperty Name="AssetTypeName" ColumnName="AssetTypeName" />
+          <ScalarProperty Name="AssetTypeId" ColumnName="AssetTypeId" />
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="DateChanged" ColumnName="DateChanged" />
+          <ScalarProperty Name="AssetStatusName" ColumnName="AssetStatusName" />
+          <ScalarProperty Name="AssetStatusId" ColumnName="AssetStatusId" />
+          <ScalarProperty Name="AssetCode" ColumnName="AssetCode" />
+          <ScalarProperty Name="AssetId" ColumnName="AssetId" />
+          <ScalarProperty Name="AssetLastStatusId" ColumnName="AssetLastStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssetLastStatusViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.AssetLastStatusView">
+        <MappingFragment StoreEntitySet="AssetLastStatusView">
+          <ScalarProperty Name="AssetTypeName" ColumnName="AssetTypeName" />
+          <ScalarProperty Name="AssetTypeId" ColumnName="AssetTypeId" />
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="DateChanged" ColumnName="DateChanged" />
+          <ScalarProperty Name="AssetStatusName" ColumnName="AssetStatusName" />
+          <ScalarProperty Name="AssetStatusId" ColumnName="AssetStatusId" />
+          <ScalarProperty Name="AssetCode" ColumnName="AssetCode" />
+          <ScalarProperty Name="AssetId" ColumnName="AssetId" />
+          <ScalarProperty Name="AssetLastStatusId" ColumnName="AssetLastStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conf_ControlPagePublisherMessages">
+      <EntityTypeMapping TypeName="STCOperationalModel.Conf_ControlPagePublisherMessages">
+        <MappingFragment StoreEntitySet="Conf_ControlPagePublisherMessages">
+          <ScalarProperty Name="PublisherExpression" ColumnName="PublisherExpression" />
+          <ScalarProperty Name="UserControlPublisherMessageId" ColumnName="UserControlPublisherMessageId" />
+          <ScalarProperty Name="PageDetailsId" ColumnName="PageDetailsId" />
+          <ScalarProperty Name="ControlPagePublisherMessageId" ColumnName="ControlPagePublisherMessageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conf_UserControlPublisherMessage">
+      <EntityTypeMapping TypeName="STCOperationalModel.Conf_UserControlPublisherMessage">
+        <MappingFragment StoreEntitySet="Conf_UserControlPublisherMessage">
+          <ScalarProperty Name="UserControlPublisherMessageId" ColumnName="UserControlPublisherMessageId" />
+          <ScalarProperty Name="MessageTypeId" ColumnName="MessageTypeId" />
+          <ScalarProperty Name="UserControlId" ColumnName="UserControlId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViolationsCountGroupedByTypePerDayOfWeekAndHourViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.ViolationsCountGroupedByTypePerDayOfWeekAndHourView">
+        <MappingFragment StoreEntitySet="ViolationsCountGroupedByTypePerDayOfWeekAndHourView">
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="ViolationTypeName" ColumnName="ViolationTypeName" />
+          <ScalarProperty Name="ViolationTypeId" ColumnName="ViolationTypeId" />
+          <ScalarProperty Name="ViolationHour" ColumnName="ViolationHour" />
+          <ScalarProperty Name="DayOfWeekName" ColumnName="DayOfWeekName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViolationsCountGroupedByTypePerDayOfWeekViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.ViolationsCountGroupedByTypePerDayOfWeekView">
+        <MappingFragment StoreEntitySet="ViolationsCountGroupedByTypePerDayOfWeekView">
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="ViolationTypeName" ColumnName="ViolationTypeName" />
+          <ScalarProperty Name="ViolationTypeId" ColumnName="ViolationTypeId" />
+          <ScalarProperty Name="DayOfWeekName" ColumnName="DayOfWeekName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViolationsCountGroupedByTypePerDayViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.ViolationsCountGroupedByTypePerDayView">
+        <MappingFragment StoreEntitySet="ViolationsCountGroupedByTypePerDayView">
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="ViolationTypeName" ColumnName="ViolationTypeName" />
+          <ScalarProperty Name="ViolationTypeId" ColumnName="ViolationTypeId" />
+          <ScalarProperty Name="DayOfWeekName" ColumnName="DayOfWeekName" />
+          <ScalarProperty Name="ViolationDate" ColumnName="ViolationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViolationsCountGroupedByTypeViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.ViolationsCountGroupedByTypeView">
+        <MappingFragment StoreEntitySet="ViolationsCountGroupedByTypeView">
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="ViolationTypeName" ColumnName="ViolationTypeName" />
+          <ScalarProperty Name="ViolationTypeId" ColumnName="ViolationTypeId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViolationsCountPerDayAndHourViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.ViolationsCountPerDayAndHourView">
+        <MappingFragment StoreEntitySet="ViolationsCountPerDayAndHourView">
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="ViolationHour" ColumnName="ViolationHour" />
+          <ScalarProperty Name="DayOfWeekName" ColumnName="DayOfWeekName" />
+          <ScalarProperty Name="ViolationDate" ColumnName="ViolationDate" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViolationsCountPerDayOfWeekAndHourViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.ViolationsCountPerDayOfWeekAndHourView">
+        <MappingFragment StoreEntitySet="ViolationsCountPerDayOfWeekAndHourView">
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="ViolationHour" ColumnName="ViolationHour" />
+          <ScalarProperty Name="DayOfWeekName" ColumnName="DayOfWeekName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViolationsCountPerDayOfWeekViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.ViolationsCountPerDayOfWeekView">
+        <MappingFragment StoreEntitySet="ViolationsCountPerDayOfWeekView">
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="DayOfWeekName" ColumnName="DayOfWeekName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViolationsCountPerDayViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.ViolationsCountPerDayView">
+        <MappingFragment StoreEntitySet="ViolationsCountPerDayView">
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="DayOfWeekName" ColumnName="DayOfWeekName" />
+          <ScalarProperty Name="ViolationDate" ColumnName="ViolationDate" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conf_MessageType">
+      <EntityTypeMapping TypeName="STCOperationalModel.Conf_MessageType">
+        <MappingFragment StoreEntitySet="Conf_MessageType">
+          <ScalarProperty Name="MessageTypeName" ColumnName="MessageTypeName" />
+          <ScalarProperty Name="MessageTypeId" ColumnName="MessageTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConfigurationViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.ConfigurationView">
+        <MappingFragment StoreEntitySet="ConfigurationView">
+          <ScalarProperty Name="FeatureId" ColumnName="FeatureId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="PublisherMessage" ColumnName="PublisherMessage" />
+          <ScalarProperty Name="SubscriberMessage" ColumnName="SubscriberMessage" />
+          <ScalarProperty Name="PublisherMessageTypeId" ColumnName="PublisherMessageTypeId" />
+          <ScalarProperty Name="MessageTypeId" ColumnName="MessageTypeId" />
+          <ScalarProperty Name="PublisherExpression" ColumnName="PublisherExpression" />
+          <ScalarProperty Name="UserControlName" ColumnName="UserControlName" />
+          <ScalarProperty Name="PlaceHolderName" ColumnName="PlaceHolderName" />
+          <ScalarProperty Name="Xaml" ColumnName="Xaml" />
+          <ScalarProperty Name="LayoutName" ColumnName="LayoutName" />
+          <ScalarProperty Name="LayoutId" ColumnName="LayoutId" />
+          <ScalarProperty Name="PlaceHolderID" ColumnName="PlaceHolderID" />
+          <ScalarProperty Name="PageDetailsId" ColumnName="PageDetailsId" />
+          <ScalarProperty Name="UserControlId" ColumnName="UserControlId" />
+          <ScalarProperty Name="LayoutPlaceHolderId" ColumnName="LayoutPlaceHolderId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PageId" ColumnName="PageId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViolationNotifications">
+      <EntityTypeMapping TypeName="STCOperationalModel.ViolationNotification">
+        <MappingFragment StoreEntitySet="ViolationNotification">
+          <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+          <ScalarProperty Name="IsCritical" ColumnName="IsCritical" />
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="ViolationStatusName" ColumnName="ViolationStatusName" />
+          <ScalarProperty Name="ViolationStatusId" ColumnName="ViolationStatusId" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+          <ScalarProperty Name="LaneNo" ColumnName="LaneNo" />
+          <ScalarProperty Name="DirectionName" ColumnName="DirectionName" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="PlateKindName" ColumnName="PlateKindName" />
+          <ScalarProperty Name="PlateTypeName" ColumnName="PlateTypeName" />
+          <ScalarProperty Name="PlateSourceName" ColumnName="PlateSourceName" />
+          <ScalarProperty Name="PlateColorName" ColumnName="PlateColorName" />
+          <ScalarProperty Name="VehicleTypeName" ColumnName="VehicleTypeName" />
+          <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
+          <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+          <ScalarProperty Name="CapturedSpeed" ColumnName="CapturedSpeed" />
+          <ScalarProperty Name="MesuredSpeed" ColumnName="MesuredSpeed" />
+          <ScalarProperty Name="SpeedLimit" ColumnName="SpeedLimit" />
+          <ScalarProperty Name="DateTaken" ColumnName="DateTaken" />
+          <ScalarProperty Name="ViolationTypeName" ColumnName="ViolationTypeName" />
+          <ScalarProperty Name="ViolationTypeId" ColumnName="ViolationTypeId" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="Altitude" ColumnName="Altitude" />
+          <ScalarProperty Name="GeoLocation" ColumnName="GeoLocation" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="AssetCode" ColumnName="AssetCode" />
+          <ScalarProperty Name="AssetId" ColumnName="AssetId" />
+          <ScalarProperty Name="LPRId" ColumnName="LPRId" />
+          <ScalarProperty Name="ViolationNotificationId" ColumnName="ViolationNotificationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncidentTypes">
+      <EntityTypeMapping TypeName="STCOperationalModel.IncidentType">
+        <MappingFragment StoreEntitySet="IncidentType">
+          <ScalarProperty Name="IncidentTypeNameEn" ColumnName="IncidentTypeNameEn" />
+          <ScalarProperty Name="IncidentTypeNameAr" ColumnName="IncidentTypeNameAr" />
+          <ScalarProperty Name="IncidentTypeId" ColumnName="IncidentTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Priorities">
+      <EntityTypeMapping TypeName="STCOperationalModel.Priority">
+        <MappingFragment StoreEntitySet="Priority">
+          <ScalarProperty Name="PriorityName" ColumnName="PriorityName" />
+          <ScalarProperty Name="PriorityId" ColumnName="PriorityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="fn_FilterViolations" FunctionName="STCOperationalModel.Store.fn_FilterViolations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="STCOperationalModel.fn_FilterViolations_Result">
+          <ScalarProperty Name="ViolationNotificationId" ColumnName="ViolationNotificationId" />
+          <ScalarProperty Name="AssetId" ColumnName="AssetId" />
+          <ScalarProperty Name="AssetCode" ColumnName="AssetCode" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Altitude" ColumnName="Altitude" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="ViolationTypeId" ColumnName="ViolationTypeId" />
+          <ScalarProperty Name="ViolationTypeName" ColumnName="ViolationTypeName" />
+          <ScalarProperty Name="ViolationStatusId" ColumnName="ViolationStatusId" />
+          <ScalarProperty Name="ViolationStatusName" ColumnName="ViolationStatusName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="fn_GetViolationsDetailsByLocation" FunctionName="STCOperationalModel.Store.fn_GetViolationsDetailsByLocation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="STCOperationalModel.fn_GetViolationsDetailsByLocation_Result">
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Altitude" ColumnName="Altitude" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="AssetId" ColumnName="AssetId" />
+          <ScalarProperty Name="AssetCode" ColumnName="AssetCode" />
+          <ScalarProperty Name="ViolationTypeId" ColumnName="ViolationTypeId" />
+          <ScalarProperty Name="ViolationTypeName" ColumnName="ViolationTypeName" />
+          <ScalarProperty Name="ViolationsCount" ColumnName="ViolationsCount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="fn_GroupViolationsByLocationAndType" FunctionName="STCOperationalModel.Store.fn_GroupViolationsByLocationAndType">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="STCOperationalModel.fn_GroupViolationsByLocationAndType_Result">
+          <ScalarProperty Name="ViolationCountByType" ColumnName="ViolationCountByType" />
+          <ScalarProperty Name="ViolationTypeId" ColumnName="ViolationTypeId" />
+          <ScalarProperty Name="ViolationTypeName" ColumnName="ViolationTypeName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="fn_GroupViolationsByLocationAndStatus" FunctionName="STCOperationalModel.Store.fn_GroupViolationsByLocationAndStatus">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="STCOperationalModel.fn_GroupViolationsByLocationAndStatus_Result">
+          <ScalarProperty Name="ViolationsCountByStatus" ColumnName="ViolationsCountByStatus" />
+          <ScalarProperty Name="ViolationStatusId" ColumnName="ViolationStatusId" />
+          <ScalarProperty Name="ViolationStatusName" ColumnName="ViolationStatusName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ViolationNotificationViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.ViolationNotificationView">
+        <MappingFragment StoreEntitySet="ViolationNotificationView">
+          <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+          <ScalarProperty Name="ViolationStatusName" ColumnName="ViolationStatusName" />
+          <ScalarProperty Name="LPRId" ColumnName="LPRId" />
+          <ScalarProperty Name="ViolationStatusId" ColumnName="ViolationStatusId" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+          <ScalarProperty Name="LaneNo" ColumnName="LaneNo" />
+          <ScalarProperty Name="DirectionName" ColumnName="DirectionName" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="IsCritical" ColumnName="IsCritical" />
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="PlateKindName" ColumnName="PlateKindName" />
+          <ScalarProperty Name="PlateTypeName" ColumnName="PlateTypeName" />
+          <ScalarProperty Name="PlateSourceName" ColumnName="PlateSourceName" />
+          <ScalarProperty Name="PlateColorName" ColumnName="PlateColorName" />
+          <ScalarProperty Name="VehicleTypeName" ColumnName="VehicleTypeName" />
+          <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
+          <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+          <ScalarProperty Name="CapturedSpeed" ColumnName="CapturedSpeed" />
+          <ScalarProperty Name="MesuredSpeed" ColumnName="MesuredSpeed" />
+          <ScalarProperty Name="SpeedLimit" ColumnName="SpeedLimit" />
+          <ScalarProperty Name="DateTaken" ColumnName="DateTaken" />
+          <ScalarProperty Name="ViolationTypeName" ColumnName="ViolationTypeName" />
+          <ScalarProperty Name="ViolationTypeId" ColumnName="ViolationTypeId" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="Altitude" ColumnName="Altitude" />
+          <ScalarProperty Name="GeoLocation" ColumnName="GeoLocation" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="AssetCode" ColumnName="AssetCode" />
+          <ScalarProperty Name="AssetId" ColumnName="AssetId" />
+          <ScalarProperty Name="ViolationNotificationId" ColumnName="ViolationNotificationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncidentViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.IncidentView">
+        <MappingFragment StoreEntitySet="IncidentView">
+          <ScalarProperty Name="PoliceStationId" ColumnName="PoliceStationId" />
+          <ScalarProperty Name="PConditionName" ColumnName="PConditionName" />
+          <ScalarProperty Name="WeatherName" ColumnName="WeatherName" />
+          <ScalarProperty Name="LocationTypeName" ColumnName="LocationTypeName" />
+          <ScalarProperty Name="RoadTypeName" ColumnName="RoadTypeName" />
+          <ScalarProperty Name="LightingName" ColumnName="LightingName" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="EmirateName" ColumnName="EmirateName" />
+          <ScalarProperty Name="IntersectionName" ColumnName="IntersectionName" />
+          <ScalarProperty Name="CrashTypeName" ColumnName="CrashTypeName" />
+          <ScalarProperty Name="CrashSeverityName" ColumnName="CrashSeverityName" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="CauseName" ColumnName="CauseName" />
+          <ScalarProperty Name="PoliceStation" ColumnName="PoliceStation" />
+          <ScalarProperty Name="ZoneDescription" ColumnName="ZoneDescription" />
+          <ScalarProperty Name="LocationDescription" ColumnName="LocationDescription" />
+          <ScalarProperty Name="IncidentDescription" ColumnName="IncidentDescription" />
+          <ScalarProperty Name="TotalInjuriesFatalities" ColumnName="TotalInjuriesFatalities" />
+          <ScalarProperty Name="Fatalities" ColumnName="Fatalities" />
+          <ScalarProperty Name="SevereInjuries" ColumnName="SevereInjuries" />
+          <ScalarProperty Name="MediumInjuries" ColumnName="MediumInjuries" />
+          <ScalarProperty Name="SlightInjuries" ColumnName="SlightInjuries" />
+          <ScalarProperty Name="LanesCount" ColumnName="LanesCount" />
+          <ScalarProperty Name="Speed" ColumnName="Speed" />
+          <ScalarProperty Name="WeatherId" ColumnName="WeatherId" />
+          <ScalarProperty Name="RoadTypeId" ColumnName="RoadTypeId" />
+          <ScalarProperty Name="PConditionId" ColumnName="PConditionId" />
+          <ScalarProperty Name="LocationTypeId" ColumnName="LocationTypeId" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="LightingId" ColumnName="LightingId" />
+          <ScalarProperty Name="IntersectionId" ColumnName="IntersectionId" />
+          <ScalarProperty Name="EmirateId" ColumnName="EmirateId" />
+          <ScalarProperty Name="CrashTypeId" ColumnName="CrashTypeId" />
+          <ScalarProperty Name="CrashSeverityId" ColumnName="CrashSeverityId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CauseId" ColumnName="CauseId" />
+          <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+          <ScalarProperty Name="IsCritical" ColumnName="IsCritical" />
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="ArrivedTime" ColumnName="ArrivedTime" />
+          <ScalarProperty Name="DispatcheTime" ColumnName="DispatcheTime" />
+          <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+          <ScalarProperty Name="DispatcherName" ColumnName="DispatcherName" />
+          <ScalarProperty Name="DispatcherId" ColumnName="DispatcherId" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="CallTakerName" ColumnName="CallTakerName" />
+          <ScalarProperty Name="CallTakerId" ColumnName="CallTakerId" />
+          <ScalarProperty Name="CallerLanguage" ColumnName="CallerLanguage" />
+          <ScalarProperty Name="CallerAddress" ColumnName="CallerAddress" />
+          <ScalarProperty Name="CallerNumber" ColumnName="CallerNumber" />
+          <ScalarProperty Name="CallerName" ColumnName="CallerName" />
+          <ScalarProperty Name="IncidentAddress" ColumnName="IncidentAddress" />
+          <ScalarProperty Name="GeoLocation" ColumnName="GeoLocation" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="IncidentTypeName" ColumnName="IncidentTypeName" />
+          <ScalarProperty Name="IncidentTypeId" ColumnName="IncidentTypeId" />
+          <ScalarProperty Name="IncidentNumber" ColumnName="IncidentNumber" />
+          <ScalarProperty Name="IncidentId" ColumnName="IncidentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PatrolLastLocationViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.PatrolLastLocationView">
+        <MappingFragment StoreEntitySet="PatrolLastLocationView">
+          <ScalarProperty Name="IsInTFM" ColumnName="IsInTFM" />
+          <ScalarProperty Name="CurrentTaskId" ColumnName="CurrentTaskId" />
+          <ScalarProperty Name="IsPatrol" ColumnName="IsPatrol" />
+          <ScalarProperty Name="OfficerName" ColumnName="OfficerName" />
+          <ScalarProperty Name="PatrolImage" ColumnName="PatrolImage" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="PatrolOriginalId" ColumnName="PatrolOriginalId" />
+          <ScalarProperty Name="PatrolPlateNo" ColumnName="PatrolPlateNo" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="LocationDate" ColumnName="LocationDate" />
+          <ScalarProperty Name="GeoLocation" ColumnName="GeoLocation" />
+          <ScalarProperty Name="Altitude" ColumnName="Altitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Speed" ColumnName="Speed" />
+          <ScalarProperty Name="PatrolCode" ColumnName="PatrolCode" />
+          <ScalarProperty Name="PatrolId" ColumnName="PatrolId" />
+          <ScalarProperty Name="PatrolLatLocationId" ColumnName="PatrolLatLocationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsersUserControls">
+      <EntityTypeMapping TypeName="STCOperationalModel.UsersUserControl">
+        <MappingFragment StoreEntitySet="UsersUserControls">
+          <ScalarProperty Name="PriorityId" ColumnName="PriorityId" />
+          <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="XML" ColumnName="XML" />
+          <ScalarProperty Name="UserUserControlsID" ColumnName="UserUserControlsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="STCOperationalModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Salt" ColumnName="Salt" />
+          <ScalarProperty Name="EncPassword" ColumnName="EncPassword" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsOwner" ColumnName="IsOwner" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RankId" ColumnName="RankId" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FullNameEn" ColumnName="FullNameEn" />
+          <ScalarProperty Name="FullNameAr" ColumnName="FullNameAr" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="fn_GroupViolationsByLocations" FunctionName="STCOperationalModel.Store.fn_GroupViolationsByLocations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="STCOperationalModel.fn_GroupViolationsByLocations_Result">
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Altitude" ColumnName="Altitude" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="ViolationsCount" ColumnName="ViolationsCount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ViolationsCountGroupedByLocationPerDayAndHourViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.ViolationsCountGroupedByLocationPerDayAndHourView">
+        <MappingFragment StoreEntitySet="ViolationsCountGroupedByLocationPerDayAndHourView">
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="ViolationHour" ColumnName="ViolationHour" />
+          <ScalarProperty Name="DayOfWeekName" ColumnName="DayOfWeekName" />
+          <ScalarProperty Name="ViolationDate" ColumnName="ViolationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViolationsCountGroupedByLocationPerDayOfWeekAndHourViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.ViolationsCountGroupedByLocationPerDayOfWeekAndHourView">
+        <MappingFragment StoreEntitySet="ViolationsCountGroupedByLocationPerDayOfWeekAndHourView">
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="ViolationHour" ColumnName="ViolationHour" />
+          <ScalarProperty Name="DayOfWeekName" ColumnName="DayOfWeekName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViolationsCountGroupedByLocationPerDayOfWeekViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.ViolationsCountGroupedByLocationPerDayOfWeekView">
+        <MappingFragment StoreEntitySet="ViolationsCountGroupedByLocationPerDayOfWeekView">
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="DayOfWeekName" ColumnName="DayOfWeekName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViolationsCountGroupedByLocationPerDayViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.ViolationsCountGroupedByLocationPerDayView">
+        <MappingFragment StoreEntitySet="ViolationsCountGroupedByLocationPerDayView">
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="DayOfWeekName" ColumnName="DayOfWeekName" />
+          <ScalarProperty Name="ViolationDate" ColumnName="ViolationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViolationsCountGroupedByLocationViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.ViolationsCountGroupedByLocationView">
+        <MappingFragment StoreEntitySet="ViolationsCountGroupedByLocationView">
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViolationsCountGroupedByTypeAndLocationPerDayAndHourViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.ViolationsCountGroupedByTypeAndLocationPerDayAndHourView">
+        <MappingFragment StoreEntitySet="ViolationsCountGroupedByTypeAndLocationPerDayAndHourView">
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="ViolationTypeName" ColumnName="ViolationTypeName" />
+          <ScalarProperty Name="ViolationTypeId" ColumnName="ViolationTypeId" />
+          <ScalarProperty Name="ViolationHour" ColumnName="ViolationHour" />
+          <ScalarProperty Name="DayOfWeekName" ColumnName="DayOfWeekName" />
+          <ScalarProperty Name="ViolationDate" ColumnName="ViolationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViolationsCountGroupedByTypeAndLocationPerDayOfWeekAndHourViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.ViolationsCountGroupedByTypeAndLocationPerDayOfWeekAndHourView">
+        <MappingFragment StoreEntitySet="ViolationsCountGroupedByTypeAndLocationPerDayOfWeekAndHourView">
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="ViolationTypeName" ColumnName="ViolationTypeName" />
+          <ScalarProperty Name="ViolationTypeId" ColumnName="ViolationTypeId" />
+          <ScalarProperty Name="ViolationHour" ColumnName="ViolationHour" />
+          <ScalarProperty Name="DayOfWeekName" ColumnName="DayOfWeekName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViolationsCountGroupedByTypeAndLocationPerDayOfWeekViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.ViolationsCountGroupedByTypeAndLocationPerDayOfWeekView">
+        <MappingFragment StoreEntitySet="ViolationsCountGroupedByTypeAndLocationPerDayOfWeekView">
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="ViolationTypeName" ColumnName="ViolationTypeName" />
+          <ScalarProperty Name="ViolationTypeId" ColumnName="ViolationTypeId" />
+          <ScalarProperty Name="DayOfWeekName" ColumnName="DayOfWeekName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViolationsCountGroupedByTypeAndLocationPerDayViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.ViolationsCountGroupedByTypeAndLocationPerDayView">
+        <MappingFragment StoreEntitySet="ViolationsCountGroupedByTypeAndLocationPerDayView">
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="ViolationTypeName" ColumnName="ViolationTypeName" />
+          <ScalarProperty Name="ViolationTypeId" ColumnName="ViolationTypeId" />
+          <ScalarProperty Name="DayOfWeekName" ColumnName="DayOfWeekName" />
+          <ScalarProperty Name="ViolationDate" ColumnName="ViolationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViolationsCountGroupedByTypePerDayAndHourViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.ViolationsCountGroupedByTypePerDayAndHourView">
+        <MappingFragment StoreEntitySet="ViolationsCountGroupedByTypePerDayAndHourView">
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="ViolationTypeName" ColumnName="ViolationTypeName" />
+          <ScalarProperty Name="ViolationTypeId" ColumnName="ViolationTypeId" />
+          <ScalarProperty Name="ViolationHour" ColumnName="ViolationHour" />
+          <ScalarProperty Name="DayOfWeekName" ColumnName="DayOfWeekName" />
+          <ScalarProperty Name="ViolationDate" ColumnName="ViolationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssetsDetailsViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.AssetsDetailsView">
+        <MappingFragment StoreEntitySet="AssetsDetailsView">
+          <ScalarProperty Name="CameraURL" ColumnName="CameraURL" />
+          <ScalarProperty Name="AssetId" ColumnName="AssetId" />
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssetsViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.AssetsView">
+        <MappingFragment StoreEntitySet="AssetsViews">
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="CurrentValue" ColumnName="CurrentValue" />
+          <ScalarProperty Name="FromNodeId" ColumnName="FromNodeId" />
+          <ScalarProperty Name="LinkId" ColumnName="LinkId" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+          <ScalarProperty Name="GeoLocation" ColumnName="GeoLocation" />
+          <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+          <ScalarProperty Name="AssetStatus" ColumnName="AssetStatus" />
+          <ScalarProperty Name="AssetType" ColumnName="AssetType" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="AssetStatusId" ColumnName="AssetStatusId" />
+          <ScalarProperty Name="AssetTypeId" ColumnName="AssetTypeId" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TowerActions">
+      <EntityTypeMapping TypeName="STCOperationalModel.TowerAction">
+        <MappingFragment StoreEntitySet="TowerActions">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TowerActionId" ColumnName="TowerActionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransformXMLs">
+      <EntityTypeMapping TypeName="STCOperationalModel.TransformXML">
+        <MappingFragment StoreEntitySet="TransformXML">
+          <ScalarProperty Name="XSLTMessage" ColumnName="XSLTMessage" />
+          <ScalarProperty Name="ConfMessageId" ColumnName="ConfMessageId" />
+          <ScalarProperty Name="GeneralTypeId" ColumnName="GeneralTypeId" />
+          <ScalarProperty Name="TransformXMLId" ColumnName="TransformXMLId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conf_SOPSourceSOPView">
+      <EntityTypeMapping TypeName="STCOperationalModel.Conf_SOPSourceSOPView">
+        <MappingFragment StoreEntitySet="Conf_SOPSourceSOPView">
+          <ScalarProperty Name="SOPViewListMessageId" ColumnName="SOPViewListMessageId" />
+          <ScalarProperty Name="SOPViewDetailsMessageId" ColumnName="SOPViewDetailsMessageId" />
+          <ScalarProperty Name="PriorityId" ColumnName="PriorityId" />
+          <ScalarProperty Name="MessageListXSLT" ColumnName="MessageListXSLT" />
+          <ScalarProperty Name="SOPViewListMessage" ColumnName="SOPViewListMessage" />
+          <ScalarProperty Name="MessageDetailsXSLT" ColumnName="MessageDetailsXSLT" />
+          <ScalarProperty Name="SOPViewDetailsMessage" ColumnName="SOPViewDetailsMessage" />
+          <ScalarProperty Name="SOPViewDetailsControl" ColumnName="SOPViewDetailsControl" />
+          <ScalarProperty Name="SOPViewModelType" ColumnName="SOPViewModelType" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="SOPContent" ColumnName="SOPContent" />
+          <ScalarProperty Name="SOPId" ColumnName="SOPId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Officers">
+      <EntityTypeMapping TypeName="STCOperationalModel.Officer">
+        <MappingFragment StoreEntitySet="Officers">
+          <ScalarProperty Name="CameraURL" ColumnName="CameraURL" />
+          <ScalarProperty Name="OfficerCode" ColumnName="OfficerCode" />
+          <ScalarProperty Name="OfficerName" ColumnName="OfficerName" />
+          <ScalarProperty Name="OfficerId" ColumnName="OfficerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OfficersLastLocations">
+      <EntityTypeMapping TypeName="STCOperationalModel.OfficersLastLocation">
+        <MappingFragment StoreEntitySet="OfficersLastLocation">
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="OfficerHeartPulse" ColumnName="OfficerHeartPulse" />
+          <ScalarProperty Name="LocationDate" ColumnName="LocationDate" />
+          <ScalarProperty Name="GeoLocation" ColumnName="GeoLocation" />
+          <ScalarProperty Name="Altitude" ColumnName="Altitude" />
+          <ScalarProperty Name="Longitde" ColumnName="Longitde" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Speed" ColumnName="Speed" />
+          <ScalarProperty Name="OfficerId" ColumnName="OfficerId" />
+          <ScalarProperty Name="OfficerLastLocationId" ColumnName="OfficerLastLocationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OfficersLastLocationsViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.OfficersLastLocationsView">
+        <MappingFragment StoreEntitySet="OfficersLastLocationsView">
+          <ScalarProperty Name="CameraURL" ColumnName="CameraURL" />
+          <ScalarProperty Name="OfficerCode" ColumnName="OfficerCode" />
+          <ScalarProperty Name="OfficerName" ColumnName="OfficerName" />
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="OfficerHeartPulse" ColumnName="OfficerHeartPulse" />
+          <ScalarProperty Name="LocationDate" ColumnName="LocationDate" />
+          <ScalarProperty Name="GeoLocation" ColumnName="GeoLocation" />
+          <ScalarProperty Name="Altitude" ColumnName="Altitude" />
+          <ScalarProperty Name="Longitde" ColumnName="Longitde" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Speed" ColumnName="Speed" />
+          <ScalarProperty Name="OfficerId" ColumnName="OfficerId" />
+          <ScalarProperty Name="OfficerLastLocationId" ColumnName="OfficerLastLocationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleLiveTrackings">
+      <EntityTypeMapping TypeName="STCOperationalModel.VehicleLiveTracking">
+        <MappingFragment StoreEntitySet="VehicleLiveTracking">
+          <ScalarProperty Name="PlateColor" ColumnName="PlateColor" />
+          <ScalarProperty Name="PlateSource" ColumnName="PlateSource" />
+          <ScalarProperty Name="PlateType" ColumnName="PlateType" />
+          <ScalarProperty Name="PlateKind" ColumnName="PlateKind" />
+          <ScalarProperty Name="CaptureTime" ColumnName="CaptureTime" />
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="IsWanted" ColumnName="IsWanted" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="TowerId" ColumnName="TowerId" />
+          <ScalarProperty Name="OwnerAge" ColumnName="OwnerAge" />
+          <ScalarProperty Name="OwnerNationality" ColumnName="OwnerNationality" />
+          <ScalarProperty Name="OwnerMobileNumber" ColumnName="OwnerMobileNumber" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="LicenseExpiryDate" ColumnName="LicenseExpiryDate" />
+          <ScalarProperty Name="LicenseNumber" ColumnName="LicenseNumber" />
+          <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Areas">
+      <EntityTypeMapping TypeName="STCOperationalModel.Area">
+        <MappingFragment StoreEntitySet="Area">
+          <ScalarProperty Name="AreaPolygon" ColumnName="AreaPolygon" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserAreas">
+      <EntityTypeMapping TypeName="STCOperationalModel.UserArea">
+        <MappingFragment StoreEntitySet="UserArea">
+          <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserAreaId" ColumnName="UserAreaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PatrolLastLocations">
+      <EntityTypeMapping TypeName="STCOperationalModel.PatrolLastLocation">
+        <MappingFragment StoreEntitySet="PatrolLastLocation">
+          <ScalarProperty Name="IsPatrol" ColumnName="IsPatrol" />
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="LocationDate" ColumnName="LocationDate" />
+          <ScalarProperty Name="GeoLocation" ColumnName="GeoLocation" />
+          <ScalarProperty Name="Altitude" ColumnName="Altitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Speed" ColumnName="Speed" />
+          <ScalarProperty Name="PatrolCode" ColumnName="PatrolCode" />
+          <ScalarProperty Name="PatrolId" ColumnName="PatrolId" />
+          <ScalarProperty Name="PatrolLatLocationId" ColumnName="PatrolLatLocationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patrols">
+      <EntityTypeMapping TypeName="STCOperationalModel.Patrol">
+        <MappingFragment StoreEntitySet="Patrol">
+          <ScalarProperty Name="IsInTFM" ColumnName="IsInTFM" />
+          <ScalarProperty Name="CurrentTaskId" ColumnName="CurrentTaskId" />
+          <ScalarProperty Name="IsPatrol" ColumnName="IsPatrol" />
+          <ScalarProperty Name="OfficerName" ColumnName="OfficerName" />
+          <ScalarProperty Name="PatrolImage" ColumnName="PatrolImage" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="PatrolOriginalId" ColumnName="PatrolOriginalId" />
+          <ScalarProperty Name="PatrolPlateNo" ColumnName="PatrolPlateNo" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="PatrolCode" ColumnName="PatrolCode" />
+          <ScalarProperty Name="PatrolId" ColumnName="PatrolId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WantedVehicles">
+      <EntityTypeMapping TypeName="STCOperationalModel.WantedVehicle">
+        <MappingFragment StoreEntitySet="WantedVehicles">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="WantedDate" ColumnName="WantedDate" />
+          <ScalarProperty Name="PlateColor" ColumnName="PlateColor" />
+          <ScalarProperty Name="PlateAuthority" ColumnName="PlateAuthority" />
+          <ScalarProperty Name="PlateCategory" ColumnName="PlateCategory" />
+          <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserUserControlUsers">
+      <EntityTypeMapping TypeName="STCOperationalModel.UserUserControlUser">
+        <MappingFragment StoreEntitySet="UserUserControlUsers">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserUserControlId" ColumnName="UserUserControlId" />
+          <ScalarProperty Name="UserUserControlUserId" ColumnName="UserUserControlUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserUserControlViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.UserUserControlView">
+        <MappingFragment StoreEntitySet="UserUserControlView">
+          <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="XML" ColumnName="XML" />
+          <ScalarProperty Name="UserUserControlsID" ColumnName="UserUserControlsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notifications">
+      <EntityTypeMapping TypeName="STCOperationalModel.Notification">
+        <MappingFragment StoreEntitySet="Notifications">
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="LastStatus" ColumnName="LastStatus" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotificationSOPLogs">
+      <EntityTypeMapping TypeName="STCOperationalModel.NotificationSOPLog">
+        <MappingFragment StoreEntitySet="NotificationSOPLog">
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="DateChanged" ColumnName="DateChanged" />
+          <ScalarProperty Name="EnglishLogText" ColumnName="EnglishLogText" />
+          <ScalarProperty Name="ArabicLogText" ColumnName="ArabicLogText" />
+          <ScalarProperty Name="CurrentValue" ColumnName="CurrentValue" />
+          <ScalarProperty Name="PreviousValue" ColumnName="PreviousValue" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="SOPCommandId" ColumnName="SOPCommandId" />
+          <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+          <ScalarProperty Name="SOPStepId" ColumnName="SOPStepId" />
+          <ScalarProperty Name="NotificationSOPLogId" ColumnName="NotificationSOPLogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotificationStatus">
+      <EntityTypeMapping TypeName="STCOperationalModel.NotificationStatu">
+        <MappingFragment StoreEntitySet="NotificationStatus">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="NotificationStatusId" ColumnName="NotificationStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOPCommands">
+      <EntityTypeMapping TypeName="STCOperationalModel.SOPCommand">
+        <MappingFragment StoreEntitySet="SOPCommand">
+          <ScalarProperty Name="EnglishDescription" ColumnName="EnglishDescription" />
+          <ScalarProperty Name="ArabicDescription" ColumnName="ArabicDescription" />
+          <ScalarProperty Name="SOPCommandId" ColumnName="SOPCommandId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotificationLogs">
+      <EntityTypeMapping TypeName="STCOperationalModel.NotificationLog">
+        <MappingFragment StoreEntitySet="NotificationLog">
+          <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+          <ScalarProperty Name="ChangeDate" ColumnName="ChangeDate" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="NewStatus" ColumnName="NewStatus" />
+          <ScalarProperty Name="OldStatus" ColumnName="OldStatus" />
+          <ScalarProperty Name="NotificationLogId" ColumnName="NotificationLogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="fn_GetRecentEventsNotification" FunctionName="STCOperationalModel.Store.fn_GetRecentEventsNotification">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="STCOperationalModel.fn_GetRecentEventsNotification_Result">
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="LastStatus" ColumnName="LastStatus" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+          <ScalarProperty Name="NotificationIsNoticed" ColumnName="NotificationIsNoticed" />
+          <ScalarProperty Name="UserUserControlsID" ColumnName="UserUserControlsID" />
+          <ScalarProperty Name="XML" ColumnName="XML" />
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserUserControlId" ColumnName="UserUserControlId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="fn_GetRecentViolationNotification" FunctionName="STCOperationalModel.Store.fn_GetRecentViolationNotification">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="STCOperationalModel.fn_GetRecentViolationNotification_Result">
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="LastStatus" ColumnName="LastStatus" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+          <ScalarProperty Name="NotificationIsNoticed" ColumnName="NotificationIsNoticed" />
+          <ScalarProperty Name="ViolationNotificationId" ColumnName="ViolationNotificationId" />
+          <ScalarProperty Name="LPRId" ColumnName="LPRId" />
+          <ScalarProperty Name="AssetId" ColumnName="AssetId" />
+          <ScalarProperty Name="AssetCode" ColumnName="AssetCode" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="GeoLocation" ColumnName="GeoLocation" />
+          <ScalarProperty Name="Altitude" ColumnName="Altitude" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="ViolationTypeName" ColumnName="ViolationTypeName" />
+          <ScalarProperty Name="ViolationTypeId" ColumnName="ViolationTypeId" />
+          <ScalarProperty Name="DateTaken" ColumnName="DateTaken" />
+          <ScalarProperty Name="SpeedLimit" ColumnName="SpeedLimit" />
+          <ScalarProperty Name="MesuredSpeed" ColumnName="MesuredSpeed" />
+          <ScalarProperty Name="CapturedSpeed" ColumnName="CapturedSpeed" />
+          <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+          <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
+          <ScalarProperty Name="VehicleTypeName" ColumnName="VehicleTypeName" />
+          <ScalarProperty Name="PlateColorName" ColumnName="PlateColorName" />
+          <ScalarProperty Name="PlateSourceName" ColumnName="PlateSourceName" />
+          <ScalarProperty Name="PlateTypeName" ColumnName="PlateTypeName" />
+          <ScalarProperty Name="PlateKindName" ColumnName="PlateKindName" />
+          <ScalarProperty Name="DirectionName" ColumnName="DirectionName" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="LaneNo" ColumnName="LaneNo" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="ViolationStatusId" ColumnName="ViolationStatusId" />
+          <ScalarProperty Name="ViolationStatusName" ColumnName="ViolationStatusName" />
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="IsCritical" ColumnName="IsCritical" />
+          <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Assets">
+      <EntityTypeMapping TypeName="STCOperationalModel.Asset">
+        <MappingFragment StoreEntitySet="Asset">
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="LocationArabic" ColumnName="LocationArabic" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="CurrentValue" ColumnName="CurrentValue" />
+          <ScalarProperty Name="FromNodeId" ColumnName="FromNodeId" />
+          <ScalarProperty Name="LinkId" ColumnName="LinkId" />
+          <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+          <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+          <ScalarProperty Name="GeoLocation" ColumnName="GeoLocation" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="AssetStatusId" ColumnName="AssetStatusId" />
+          <ScalarProperty Name="AssetTypeId" ColumnName="AssetTypeId" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BusinessRulePriorities">
+      <EntityTypeMapping TypeName="STCOperationalModel.BusinessRulePriority">
+        <MappingFragment StoreEntitySet="BusinessRulePriority">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="PriorityNameEn" ColumnName="PriorityNameEn" />
+          <ScalarProperty Name="PriorityNameAr" ColumnName="PriorityNameAr" />
+          <ScalarProperty Name="BusinessRulePriorityId" ColumnName="BusinessRulePriorityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CorrelationBusinessRules">
+      <EntityTypeMapping TypeName="STCOperationalModel.CorrelationBusinessRule">
+        <MappingFragment StoreEntitySet="CorrelationBusinessRules">
+          <ScalarProperty Name="NumberOfOccur" ColumnName="NumberOfOccur" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModifiedAt" ColumnName="LastModifiedAt" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="PriorityId" ColumnName="PriorityId" />
+          <ScalarProperty Name="RuleInterval" ColumnName="RuleInterval" />
+          <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
+          <ScalarProperty Name="TrafficCrossQty" ColumnName="TrafficCrossQty" />
+          <ScalarProperty Name="TrafficCrossTimesId" ColumnName="TrafficCrossTimesId" />
+          <ScalarProperty Name="IsTrafficCross" ColumnName="IsTrafficCross" />
+          <ScalarProperty Name="OutsideCityOverSpeedId" ColumnName="OutsideCityOverSpeedId" />
+          <ScalarProperty Name="OutsideCityOverSpeedQty" ColumnName="OutsideCityOverSpeedQty" />
+          <ScalarProperty Name="IsOverSpeedOutsideCity" ColumnName="IsOverSpeedOutsideCity" />
+          <ScalarProperty Name="InsideCityOverSpeedId" ColumnName="InsideCityOverSpeedId" />
+          <ScalarProperty Name="InsideCityOverSpeedQty" ColumnName="InsideCityOverSpeedQty" />
+          <ScalarProperty Name="IsOverSpeedInsideCity" ColumnName="IsOverSpeedInsideCity" />
+          <ScalarProperty Name="BusinessName" ColumnName="BusinessName" />
+          <ScalarProperty Name="BusinessRuleId" ColumnName="BusinessRuleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OverSpeeds">
+      <EntityTypeMapping TypeName="STCOperationalModel.OverSpeed">
+        <MappingFragment StoreEntitySet="OverSpeed">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="OverSpeedValue" ColumnName="OverSpeedValue" />
+          <ScalarProperty Name="OverSpeedId" ColumnName="OverSpeedId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrafficCrossTimes">
+      <EntityTypeMapping TypeName="STCOperationalModel.TrafficCrossTime">
+        <MappingFragment StoreEntitySet="TrafficCrossTime">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TrafficCrossTimeValue" ColumnName="TrafficCrossTimeValue" />
+          <ScalarProperty Name="TrafficCrossTimeId" ColumnName="TrafficCrossTimeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleTypes">
+      <EntityTypeMapping TypeName="STCOperationalModel.VehicleType">
+        <MappingFragment StoreEntitySet="VehicleTypes">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="VehicleTypeNameAr" ColumnName="VehicleTypeNameAr" />
+          <ScalarProperty Name="VehicleTypeNameEn" ColumnName="VehicleTypeNameEn" />
+          <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KPITargets">
+      <EntityTypeMapping TypeName="STCOperationalModel.KPITarget">
+        <MappingFragment StoreEntitySet="KPITargets">
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="TargetValue" ColumnName="TargetValue" />
+          <ScalarProperty Name="TargetDescriptionAr" ColumnName="TargetDescriptionAr" />
+          <ScalarProperty Name="TaregtDescriptionEn" ColumnName="TaregtDescriptionEn" />
+          <ScalarProperty Name="TargetName" ColumnName="TargetName" />
+          <ScalarProperty Name="TargetID" ColumnName="TargetID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Features">
+      <EntityTypeMapping TypeName="STCOperationalModel.Feature">
+        <MappingFragment StoreEntitySet="Features">
+          <ScalarProperty Name="FeatureNameEn" ColumnName="FeatureNameEn" />
+          <ScalarProperty Name="FeatureNameAr" ColumnName="FeatureNameAr" />
+          <ScalarProperty Name="PageId" ColumnName="PageId" />
+          <ScalarProperty Name="FeatureId" ColumnName="FeatureId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ranks">
+      <EntityTypeMapping TypeName="STCOperationalModel.Rank">
+        <MappingFragment StoreEntitySet="Ranks">
+          <ScalarProperty Name="RankNameEn" ColumnName="RankNameEn" />
+          <ScalarProperty Name="RankNameAr" ColumnName="RankNameAr" />
+          <ScalarProperty Name="RankId" ColumnName="RankId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="STCOperationalModel.UserRole">
+        <MappingFragment StoreEntitySet="UserRoles">
+          <ScalarProperty Name="UserRoleDescriptionEn" ColumnName="UserRoleDescriptionEn" />
+          <ScalarProperty Name="UserRoleDescriptionAr" ColumnName="UserRoleDescriptionAr" />
+          <ScalarProperty Name="UserRoleName" ColumnName="UserRoleName" />
+          <ScalarProperty Name="UserRoleId" ColumnName="UserRoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleFeatures">
+      <EntityTypeMapping TypeName="STCOperationalModel.RoleFeature">
+        <MappingFragment StoreEntitySet="RoleFeatures">
+          <ScalarProperty Name="FeatureId" ColumnName="FeatureId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleFeatureId" ColumnName="RoleFeatureId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTokens">
+      <EntityTypeMapping TypeName="STCOperationalModel.UserToken">
+        <MappingFragment StoreEntitySet="UserToken">
+          <ScalarProperty Name="ExpiresOn" ColumnName="ExpiresOn" />
+          <ScalarProperty Name="IssuedOn" ColumnName="IssuedOn" />
+          <ScalarProperty Name="AuthToken" ColumnName="AuthToken" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserTokenId" ColumnName="UserTokenId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactItems">
+      <EntityTypeMapping TypeName="STCOperationalModel.ContactItem">
+        <MappingFragment StoreEntitySet="ContactItem">
+          <ScalarProperty Name="EmergencyContactId" ColumnName="EmergencyContactId" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="ContactItemId" ColumnName="ContactItemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmergencyContacts">
+      <EntityTypeMapping TypeName="STCOperationalModel.EmergencyContact">
+        <MappingFragment StoreEntitySet="EmergencyContact">
+          <ScalarProperty Name="AuthorityName" ColumnName="AuthorityName" />
+          <ScalarProperty Name="EmergencyContactId" ColumnName="EmergencyContactId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FAQs">
+      <EntityTypeMapping TypeName="STCOperationalModel.FAQ">
+        <MappingFragment StoreEntitySet="FAQ">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="FAQId" ColumnName="FAQId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feedbacks">
+      <EntityTypeMapping TypeName="STCOperationalModel.Feedback">
+        <MappingFragment StoreEntitySet="Feedback">
+          <ScalarProperty Name="FeedbackType" ColumnName="FeedbackType" />
+          <ScalarProperty Name="Feedback1" ColumnName="Feedback" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+          <ScalarProperty Name="FeedbackId" ColumnName="FeedbackId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoadSafetyTips">
+      <EntityTypeMapping TypeName="STCOperationalModel.RoadSafetyTip">
+        <MappingFragment StoreEntitySet="RoadSafetyTip">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+          <ScalarProperty Name="RoadSafetyTipId" ColumnName="RoadSafetyTipId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Weathers">
+      <EntityTypeMapping TypeName="STCOperationalModel.Weather">
+        <MappingFragment StoreEntitySet="Weather">
+          <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Alert" ColumnName="Alert" />
+          <ScalarProperty Name="Lon" ColumnName="Lon" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="WeatherId" ColumnName="WeatherId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CrispSessions">
+      <EntityTypeMapping TypeName="STCOperationalModel.CrispSession">
+        <MappingFragment StoreEntitySet="CrispSession">
+          <ScalarProperty Name="MaxAllowedTimeMin" ColumnName="MaxAllowedTimeMin" />
+          <ScalarProperty Name="SessionName" ColumnName="SessionName" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="NodeXmlPath" ColumnName="NodeXmlPath" />
+          <ScalarProperty Name="EndHour" ColumnName="EndHour" />
+          <ScalarProperty Name="StartHour" ColumnName="StartHour" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nationalities">
+      <EntityTypeMapping TypeName="STCOperationalModel.Nationality">
+        <MappingFragment StoreEntitySet="Nationality">
+          <ScalarProperty Name="NationalityName" ColumnName="NationalityName" />
+          <ScalarProperty Name="NationalityId" ColumnName="NationalityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PublicUsers">
+      <EntityTypeMapping TypeName="STCOperationalModel.PublicUser">
+        <MappingFragment StoreEntitySet="PublicUser">
+          <ScalarProperty Name="NotificationToken" ColumnName="NotificationToken" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+          <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+          <ScalarProperty Name="NationalityId" ColumnName="NationalityId" />
+          <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="IdentityNumber" ColumnName="IdentityNumber" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Salt" ColumnName="Salt" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncidentDispatches">
+      <EntityTypeMapping TypeName="STCOperationalModel.IncidentDispatch">
+        <MappingFragment StoreEntitySet="IncidentDispatch">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DispatchDate" ColumnName="DispatchDate" />
+          <ScalarProperty Name="IsByVehicle" ColumnName="IsByVehicle" />
+          <ScalarProperty Name="PatrolId" ColumnName="PatrolId" />
+          <ScalarProperty Name="IncidentId" ColumnName="IncidentId" />
+          <ScalarProperty Name="IncidentDispatchId" ColumnName="IncidentDispatchId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehiclePlateClassifications">
+      <EntityTypeMapping TypeName="STCOperationalModel.VehiclePlateClassification">
+        <MappingFragment StoreEntitySet="VehiclePlateClassifications">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehiclePlateColors">
+      <EntityTypeMapping TypeName="STCOperationalModel.VehiclePlateColor">
+        <MappingFragment StoreEntitySet="VehiclePlateColor">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehiclePlateKinds">
+      <EntityTypeMapping TypeName="STCOperationalModel.VehiclePlateKind">
+        <MappingFragment StoreEntitySet="VehiclePlateKind">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehiclePlateSources">
+      <EntityTypeMapping TypeName="STCOperationalModel.VehiclePlateSource">
+        <MappingFragment StoreEntitySet="VehiclePlateSource">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleViolationClassifications">
+      <EntityTypeMapping TypeName="STCOperationalModel.VehicleViolationClassification">
+        <MappingFragment StoreEntitySet="VehicleViolationClassifications">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleViolationInterceptsTypes">
+      <EntityTypeMapping TypeName="STCOperationalModel.VehicleViolationInterceptsType">
+        <MappingFragment StoreEntitySet="VehicleViolationInterceptsTypes">
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conf_SOP">
+      <EntityTypeMapping TypeName="STCOperationalModel.Conf_SOP">
+        <MappingFragment StoreEntitySet="Conf_SOP">
+          <ScalarProperty Name="IsConfigure" ColumnName="IsConfigure" />
+          <ScalarProperty Name="SOPViewListMessageId" ColumnName="SOPViewListMessageId" />
+          <ScalarProperty Name="SOPViewDetailsMessageId" ColumnName="SOPViewDetailsMessageId" />
+          <ScalarProperty Name="SOPViewDetailsControl" ColumnName="SOPViewDetailsControl" />
+          <ScalarProperty Name="SOPViewModelType" ColumnName="SOPViewModelType" />
+          <ScalarProperty Name="SOPContent" ColumnName="SOPContent" />
+          <ScalarProperty Name="SOPId" ColumnName="SOPId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conf_SOPSourceSOP">
+      <EntityTypeMapping TypeName="STCOperationalModel.Conf_SOPSourceSOP">
+        <MappingFragment StoreEntitySet="Conf_SOPSourceSOP">
+          <ScalarProperty Name="PriorityId" ColumnName="PriorityId" />
+          <ScalarProperty Name="SOPViewListMessageId" ColumnName="SOPViewListMessageId" />
+          <ScalarProperty Name="SOPViewDetailsMessageId" ColumnName="SOPViewDetailsMessageId" />
+          <ScalarProperty Name="SOPViewDetailsControl" ColumnName="SOPViewDetailsControl" />
+          <ScalarProperty Name="SOPViewModelType" ColumnName="SOPViewModelType" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+          <ScalarProperty Name="SOPId" ColumnName="SOPId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleViolationsTypes">
+      <EntityTypeMapping TypeName="STCOperationalModel.VehicleViolationsType">
+        <MappingFragment StoreEntitySet="VehicleViolationsTypes">
+          <ScalarProperty Name="ViolationClassificationId" ColumnName="ViolationClassificationId" />
+          <ScalarProperty Name="PresenceAbsenceStatus" ColumnName="PresenceAbsenceStatus" />
+          <ScalarProperty Name="ViolationDuration" ColumnName="ViolationDuration" />
+          <ScalarProperty Name="FineValue" ColumnName="FineValue" />
+          <ScalarProperty Name="TrafficPoint" ColumnName="TrafficPoint" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conf_SOPSource">
+      <EntityTypeMapping TypeName="STCOperationalModel.Conf_SOPSource">
+        <MappingFragment StoreEntitySet="Conf_SOPSource">
+          <ScalarProperty Name="EnglishDescription" ColumnName="EnglishDescription" />
+          <ScalarProperty Name="ArabicDescription" ColumnName="ArabicDescription" />
+          <ScalarProperty Name="IsConfigure" ColumnName="IsConfigure" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportDangerous">
+      <EntityTypeMapping TypeName="STCOperationalModel.ReportDangerou">
+        <MappingFragment StoreEntitySet="ReportDangerous">
+          <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+          <ScalarProperty Name="MediaURL" ColumnName="MediaURL" />
+          <ScalarProperty Name="Lon" ColumnName="Lon" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="BusinessRuleId" ColumnName="BusinessRuleId" />
+          <ScalarProperty Name="PlateAuthority" ColumnName="PlateAuthority" />
+          <ScalarProperty Name="PlateColor" ColumnName="PlateColor" />
+          <ScalarProperty Name="PlateKind" ColumnName="PlateKind" />
+          <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+          <ScalarProperty Name="NotificationText" ColumnName="NotificationText" />
+          <ScalarProperty Name="SupervisorNotificationId" ColumnName="SupervisorNotificationId" />
+          <ScalarProperty Name="ReportDangerousId" ColumnName="ReportDangerousId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SupervisorNotifications">
+      <EntityTypeMapping TypeName="STCOperationalModel.SupervisorNotification">
+        <MappingFragment StoreEntitySet="SupervisorNotification">
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="ResponseToId" ColumnName="ResponseToId" />
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="ReceiverId" ColumnName="ReceiverId" />
+          <ScalarProperty Name="SenderId" ColumnName="SenderId" />
+          <ScalarProperty Name="NotificationTime" ColumnName="NotificationTime" />
+          <ScalarProperty Name="SupervisorNotificationId" ColumnName="SupervisorNotificationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MobileLookups">
+      <EntityTypeMapping TypeName="STCOperationalModel.MobileLookup">
+        <MappingFragment StoreEntitySet="MobileLookup">
+          <ScalarProperty Name="LookupValue" ColumnName="LookupValue" />
+          <ScalarProperty Name="LookupKey" ColumnName="LookupKey" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="LookupId" ColumnName="LookupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CorrelationDriverDetails">
+      <EntityTypeMapping TypeName="STCOperationalModel.CorrelationDriverDetail">
+        <MappingFragment StoreEntitySet="CorrelationDriverDetails">
+          <ScalarProperty Name="AgeTo" ColumnName="AgeTo" />
+          <ScalarProperty Name="AgeFrom" ColumnName="AgeFrom" />
+          <ScalarProperty Name="CorrelationDriverDetailsId" ColumnName="CorrelationDriverDetailsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CorrelationViolationDetails">
+      <EntityTypeMapping TypeName="STCOperationalModel.CorrelationViolationDetail">
+        <MappingFragment StoreEntitySet="CorrelationViolationDetails">
+          <ScalarProperty Name="ViolationQty" ColumnName="ViolationQty" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CorrelationRuleId" ColumnName="CorrelationRuleId" />
+          <ScalarProperty Name="TrraficCrossTimeDetailsId" ColumnName="TrraficCrossTimeDetailsId" />
+          <ScalarProperty Name="OverSpeedDetailsId" ColumnName="OverSpeedDetailsId" />
+          <ScalarProperty Name="ViolationTypeId" ColumnName="ViolationTypeId" />
+          <ScalarProperty Name="CorrelationViolationDetailsId" ColumnName="CorrelationViolationDetailsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Regions">
+      <EntityTypeMapping TypeName="STCOperationalModel.Region">
+        <MappingFragment StoreEntitySet="Region">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RegionPoints" ColumnName="RegionPoints" />
+          <ScalarProperty Name="RegionTypeId" ColumnName="RegionTypeId" />
+          <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleDetails">
+      <EntityTypeMapping TypeName="STCOperationalModel.VehicleDetail">
+        <MappingFragment StoreEntitySet="VehicleDetails">
+          <ScalarProperty Name="VehicleModelYear" ColumnName="VehicleModelYear" />
+          <ScalarProperty Name="VehicleBrandUTSId" ColumnName="VehicleBrandUTSId" />
+          <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
+          <ScalarProperty Name="VehicleDetailsId" ColumnName="VehicleDetailsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeDetails">
+      <EntityTypeMapping TypeName="STCOperationalModel.TimeDetail">
+        <MappingFragment StoreEntitySet="TimeDetails">
+          <ScalarProperty Name="ToTime" ColumnName="ToTime" />
+          <ScalarProperty Name="FromTime" ColumnName="FromTime" />
+          <ScalarProperty Name="WeekDays" ColumnName="WeekDays" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="TimeType" ColumnName="TimeType" />
+          <ScalarProperty Name="TimeDetailsId" ColumnName="TimeDetailsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewCorrelationRules">
+      <EntityTypeMapping TypeName="STCOperationalModel.NewCorrelationRule">
+        <MappingFragment StoreEntitySet="NewCorrelationRules">
+          <ScalarProperty Name="NumberOfOccur" ColumnName="NumberOfOccur" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeDetailsId" ColumnName="TimeDetailsId" />
+          <ScalarProperty Name="DriverDetailsId" ColumnName="DriverDetailsId" />
+          <ScalarProperty Name="VehicleDetailsId" ColumnName="VehicleDetailsId" />
+          <ScalarProperty Name="LocationDetailsId" ColumnName="LocationDetailsId" />
+          <ScalarProperty Name="IntervalPeriod" ColumnName="IntervalPeriod" />
+          <ScalarProperty Name="RulePriority" ColumnName="RulePriority" />
+          <ScalarProperty Name="RuleName" ColumnName="RuleName" />
+          <ScalarProperty Name="BusinessRuleId" ColumnName="BusinessRuleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleMakes">
+      <EntityTypeMapping TypeName="STCOperationalModel.VehicleMake">
+        <MappingFragment StoreEntitySet="VehicleMake">
+          <ScalarProperty Name="VEM_DESC_EN" ColumnName="VEM_DESC_EN" />
+          <ScalarProperty Name="VEM_DESC_AR" ColumnName="VEM_DESC_AR" />
+          <ScalarProperty Name="VEM_CODE" ColumnName="VEM_CODE" />
+          <ScalarProperty Name="VEM_ID" ColumnName="VEM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleUTSTypes">
+      <EntityTypeMapping TypeName="STCOperationalModel.VehicleUTSType">
+        <MappingFragment StoreEntitySet="VehicleUTSType">
+          <ScalarProperty Name="VET_DESC_EN" ColumnName="VET_DESC_EN" />
+          <ScalarProperty Name="VET_DESC_AR" ColumnName="VET_DESC_AR" />
+          <ScalarProperty Name="VET_CODE" ColumnName="VET_CODE" />
+          <ScalarProperty Name="VET_ID" ColumnName="VET_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CorrelationMessagesLogs">
+      <EntityTypeMapping TypeName="STCOperationalModel.CorrelationMessagesLog">
+        <MappingFragment StoreEntitySet="CorrelationMessagesLog">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PlateSource" ColumnName="PlateSource" />
+          <ScalarProperty Name="PlateColor" ColumnName="PlateColor" />
+          <ScalarProperty Name="PlateKind" ColumnName="PlateKind" />
+          <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+          <ScalarProperty Name="CorrelationDate" ColumnName="CorrelationDate" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="BusinessRuleId" ColumnName="BusinessRuleId" />
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CorrelationMessagesLogViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.CorrelationMessagesLogView">
+        <MappingFragment StoreEntitySet="CorrelationMessagesLogView">
+          <ScalarProperty Name="LogId" ColumnName="LogId" />
+          <ScalarProperty Name="CorrelationDate" ColumnName="CorrelationDate" />
+          <ScalarProperty Name="RuleName" ColumnName="RuleName" />
+          <ScalarProperty Name="PlateSource" ColumnName="PlateSource" />
+          <ScalarProperty Name="PlateKind" ColumnName="PlateKind" />
+          <ScalarProperty Name="PlateColor" ColumnName="PlateColor" />
+          <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+          <ScalarProperty Name="BusinessRuleId" ColumnName="BusinessRuleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncidentAreas">
+      <EntityTypeMapping TypeName="STCOperationalModel.IncidentArea">
+        <MappingFragment StoreEntitySet="IncidentArea">
+          <ScalarProperty Name="AreaNameEn" ColumnName="AreaNameEn" />
+          <ScalarProperty Name="AreaNameAr" ColumnName="AreaNameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncidentCauses">
+      <EntityTypeMapping TypeName="STCOperationalModel.IncidentCause">
+        <MappingFragment StoreEntitySet="IncidentCause">
+          <ScalarProperty Name="CauseNameEn" ColumnName="CauseNameEn" />
+          <ScalarProperty Name="CauseNameAr" ColumnName="CauseNameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncidentCities">
+      <EntityTypeMapping TypeName="STCOperationalModel.IncidentCity">
+        <MappingFragment StoreEntitySet="IncidentCity">
+          <ScalarProperty Name="CityNameEn" ColumnName="CityNameEn" />
+          <ScalarProperty Name="CityNameAr" ColumnName="CityNameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncidentCrashSeverities">
+      <EntityTypeMapping TypeName="STCOperationalModel.IncidentCrashSeverity">
+        <MappingFragment StoreEntitySet="IncidentCrashSeverity">
+          <ScalarProperty Name="CrashSeverityNameEn" ColumnName="CrashSeverityNameEn" />
+          <ScalarProperty Name="CrashSeverityNameAr" ColumnName="CrashSeverityNameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncidentCrashTypes">
+      <EntityTypeMapping TypeName="STCOperationalModel.IncidentCrashType">
+        <MappingFragment StoreEntitySet="IncidentCrashType">
+          <ScalarProperty Name="IncidentCrashTypeNameEn" ColumnName="IncidentCrashTypeNameEn" />
+          <ScalarProperty Name="IncidentCrashTypeNameAr" ColumnName="IncidentCrashTypeNameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncidentEmirates">
+      <EntityTypeMapping TypeName="STCOperationalModel.IncidentEmirate">
+        <MappingFragment StoreEntitySet="IncidentEmirate">
+          <ScalarProperty Name="EmirateNameEn" ColumnName="EmirateNameEn" />
+          <ScalarProperty Name="EmirateNameAr" ColumnName="EmirateNameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncidentIntersections">
+      <EntityTypeMapping TypeName="STCOperationalModel.IncidentIntersection">
+        <MappingFragment StoreEntitySet="IncidentIntersection">
+          <ScalarProperty Name="IntersectionNameEn" ColumnName="IntersectionNameEn" />
+          <ScalarProperty Name="IntersectionNameAr" ColumnName="IntersectionNameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncidentLightings">
+      <EntityTypeMapping TypeName="STCOperationalModel.IncidentLighting">
+        <MappingFragment StoreEntitySet="IncidentLighting">
+          <ScalarProperty Name="LightingNameEn" ColumnName="LightingNameEn" />
+          <ScalarProperty Name="LightingNameAr" ColumnName="LightingNameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncidentLocations">
+      <EntityTypeMapping TypeName="STCOperationalModel.IncidentLocation">
+        <MappingFragment StoreEntitySet="IncidentLocation">
+          <ScalarProperty Name="LocationNameEn" ColumnName="LocationNameEn" />
+          <ScalarProperty Name="LocationNameAr" ColumnName="LocationNameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncidentLocationTypes">
+      <EntityTypeMapping TypeName="STCOperationalModel.IncidentLocationType">
+        <MappingFragment StoreEntitySet="IncidentLocationType">
+          <ScalarProperty Name="LocationTypeNameEn" ColumnName="LocationTypeNameEn" />
+          <ScalarProperty Name="LocationTypeNameAr" ColumnName="LocationTypeNameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncidentPConditions">
+      <EntityTypeMapping TypeName="STCOperationalModel.IncidentPCondition">
+        <MappingFragment StoreEntitySet="IncidentPCondition">
+          <ScalarProperty Name="PConditionNameEn" ColumnName="PConditionNameEn" />
+          <ScalarProperty Name="PConditionNameAr" ColumnName="PConditionNameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncidentRoadTypes">
+      <EntityTypeMapping TypeName="STCOperationalModel.IncidentRoadType">
+        <MappingFragment StoreEntitySet="IncidentRoadType">
+          <ScalarProperty Name="RoadTypeNameEn" ColumnName="RoadTypeNameEn" />
+          <ScalarProperty Name="RoadTypeNameAr" ColumnName="RoadTypeNameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncidentWeathers">
+      <EntityTypeMapping TypeName="STCOperationalModel.IncidentWeather">
+        <MappingFragment StoreEntitySet="IncidentWeather">
+          <ScalarProperty Name="WeatherNameEn" ColumnName="WeatherNameEn" />
+          <ScalarProperty Name="WeatherNameAr" ColumnName="WeatherNameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="fn_GetRecentIncidentsNotification" FunctionName="STCOperationalModel.Store.fn_GetRecentIncidentsNotification">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="STCOperationalModel.fn_GetRecentIncidentsNotification_Result">
+          <ScalarProperty Name="IncidentId" ColumnName="IncidentId" />
+          <ScalarProperty Name="IncidentNumber" ColumnName="IncidentNumber" />
+          <ScalarProperty Name="IncidentTypeId" ColumnName="IncidentTypeId" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="GeoLocation" ColumnName="GeoLocation" />
+          <ScalarProperty Name="IncidentAddress" ColumnName="IncidentAddress" />
+          <ScalarProperty Name="CallerName" ColumnName="CallerName" />
+          <ScalarProperty Name="CallerNumber" ColumnName="CallerNumber" />
+          <ScalarProperty Name="CallerAddress" ColumnName="CallerAddress" />
+          <ScalarProperty Name="CallerLanguage" ColumnName="CallerLanguage" />
+          <ScalarProperty Name="CallTakerId" ColumnName="CallTakerId" />
+          <ScalarProperty Name="CallTakerName" ColumnName="CallTakerName" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="DispatcherId" ColumnName="DispatcherId" />
+          <ScalarProperty Name="DispatcherName" ColumnName="DispatcherName" />
+          <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+          <ScalarProperty Name="DispatcheTime" ColumnName="DispatcheTime" />
+          <ScalarProperty Name="ArrivedTime" ColumnName="ArrivedTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="IsCritical" ColumnName="IsCritical" />
+          <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="LastStatus" ColumnName="LastStatus" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+          <ScalarProperty Name="NotificationIsNoticed" ColumnName="NotificationIsNoticed" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="IncidentStatus">
+      <EntityTypeMapping TypeName="STCOperationalModel.IncidentStatus">
+        <MappingFragment StoreEntitySet="IncidentStatus">
+          <ScalarProperty Name="StatusNameEn" ColumnName="StatusNameEn" />
+          <ScalarProperty Name="StatusNameAr" ColumnName="StatusNameAr" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncidentPoliceStation">
+      <EntityTypeMapping TypeName="STCOperationalModel.IncidentPoliceStation">
+        <MappingFragment StoreEntitySet="IncidentPoliceStation">
+          <ScalarProperty Name="PoliceStationNameEn" ColumnName="PoliceStationNameEn" />
+          <ScalarProperty Name="PoliceStationNameAr" ColumnName="PoliceStationNameAr" />
+          <ScalarProperty Name="PoliceStationId" ColumnName="PoliceStationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Incident">
+      <EntityTypeMapping TypeName="STCOperationalModel.Incident">
+        <MappingFragment StoreEntitySet="Incident">
+          <ScalarProperty Name="OriginalFileId" ColumnName="OriginalFileId" />
+          <ScalarProperty Name="PoliceStationId" ColumnName="PoliceStationId" />
+          <ScalarProperty Name="ZoneDescription" ColumnName="ZoneDescription" />
+          <ScalarProperty Name="LocationDescription" ColumnName="LocationDescription" />
+          <ScalarProperty Name="IncidentDescription" ColumnName="IncidentDescription" />
+          <ScalarProperty Name="TotalInjuriesFatalities" ColumnName="TotalInjuriesFatalities" />
+          <ScalarProperty Name="Fatalities" ColumnName="Fatalities" />
+          <ScalarProperty Name="SevereInjuries" ColumnName="SevereInjuries" />
+          <ScalarProperty Name="MediumInjuries" ColumnName="MediumInjuries" />
+          <ScalarProperty Name="SlightInjuries" ColumnName="SlightInjuries" />
+          <ScalarProperty Name="LanesCount" ColumnName="LanesCount" />
+          <ScalarProperty Name="Speed" ColumnName="Speed" />
+          <ScalarProperty Name="WeatherId" ColumnName="WeatherId" />
+          <ScalarProperty Name="RoadTypeId" ColumnName="RoadTypeId" />
+          <ScalarProperty Name="PConditionId" ColumnName="PConditionId" />
+          <ScalarProperty Name="LocationTypeId" ColumnName="LocationTypeId" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="LightingId" ColumnName="LightingId" />
+          <ScalarProperty Name="IntersectionId" ColumnName="IntersectionId" />
+          <ScalarProperty Name="EmirateId" ColumnName="EmirateId" />
+          <ScalarProperty Name="CrashTypeId" ColumnName="CrashTypeId" />
+          <ScalarProperty Name="CrashSeverityId" ColumnName="CrashSeverityId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CauseId" ColumnName="CauseId" />
+          <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+          <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+          <ScalarProperty Name="IsCritical" ColumnName="IsCritical" />
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="ArrivedTime" ColumnName="ArrivedTime" />
+          <ScalarProperty Name="DispatcheTime" ColumnName="DispatcheTime" />
+          <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+          <ScalarProperty Name="DispatcherName" ColumnName="DispatcherName" />
+          <ScalarProperty Name="DispatcherId" ColumnName="DispatcherId" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="CallTakerName" ColumnName="CallTakerName" />
+          <ScalarProperty Name="CallTakerId" ColumnName="CallTakerId" />
+          <ScalarProperty Name="CallerLanguage" ColumnName="CallerLanguage" />
+          <ScalarProperty Name="CallerAddress" ColumnName="CallerAddress" />
+          <ScalarProperty Name="CallerNumber" ColumnName="CallerNumber" />
+          <ScalarProperty Name="CallerName" ColumnName="CallerName" />
+          <ScalarProperty Name="IncidentAddress" ColumnName="IncidentAddress" />
+          <ScalarProperty Name="GeoLocation" ColumnName="GeoLocation" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="IncidentTypeId" ColumnName="IncidentTypeId" />
+          <ScalarProperty Name="IncidentNumber" ColumnName="IncidentNumber" />
+          <ScalarProperty Name="IncidentId" ColumnName="IncidentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OfficerTask">
+      <EntityTypeMapping TypeName="STCOperationalModel.OfficerTask">
+        <MappingFragment StoreEntitySet="OfficerTask">
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="GeoLocation" ColumnName="GeoLocation" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="TaskTime" ColumnName="TaskTime" />
+          <ScalarProperty Name="TaskMessage" ColumnName="TaskMessage" />
+          <ScalarProperty Name="OfficerMilitaryId" ColumnName="OfficerMilitaryId" />
+          <ScalarProperty Name="OfficerTaskId" ColumnName="OfficerTaskId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OfficerTaskStatus">
+      <EntityTypeMapping TypeName="STCOperationalModel.OfficerTaskStatus">
+        <MappingFragment StoreEntitySet="OfficerTaskStatus">
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="GeoLocation" ColumnName="GeoLocation" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="StatusUpdateDate" ColumnName="StatusUpdateDate" />
+          <ScalarProperty Name="TaskStatusId" ColumnName="TaskStatusId" />
+          <ScalarProperty Name="OfficerTaskId" ColumnName="OfficerTaskId" />
+          <ScalarProperty Name="OfficerTaskStatusId" ColumnName="OfficerTaskStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaskStatus">
+      <EntityTypeMapping TypeName="STCOperationalModel.TaskStatus">
+        <MappingFragment StoreEntitySet="TaskStatus">
+          <ScalarProperty Name="AvailableToOfficer" ColumnName="AvailableToOfficer" />
+          <ScalarProperty Name="TaskStatusNameEn" ColumnName="TaskStatusNameEn" />
+          <ScalarProperty Name="TaskStatusNameAr" ColumnName="TaskStatusNameAr" />
+          <ScalarProperty Name="TaskStatusId" ColumnName="TaskStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AutomaticReportDiminsion">
+      <EntityTypeMapping TypeName="STCOperationalModel.AutomaticReportDiminsion">
+        <MappingFragment StoreEntitySet="AutomaticReportDiminsion">
+          <ScalarProperty Name="RelativeTypeId" ColumnName="RelativeTypeId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="RelativeValue" ColumnName="RelativeValue" />
+          <ScalarProperty Name="ExactValue" ColumnName="ExactValue" />
+          <ScalarProperty Name="IsStaticValue" ColumnName="IsStaticValue" />
+          <ScalarProperty Name="DiminsionId" ColumnName="DiminsionId" />
+          <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+          <ScalarProperty Name="ReportDiminsionId" ColumnName="ReportDiminsionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AutomaticReportGroups">
+      <EntityTypeMapping TypeName="STCOperationalModel.AutomaticReportGroups">
+        <MappingFragment StoreEntitySet="AutomaticReportGroups">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+          <ScalarProperty Name="ReportGroupId" ColumnName="ReportGroupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AutomaticReports">
+      <EntityTypeMapping TypeName="STCOperationalModel.AutomaticReports">
+        <MappingFragment StoreEntitySet="AutomaticReports">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsEnglish" ColumnName="IsEnglish" />
+          <ScalarProperty Name="IsArabic" ColumnName="IsArabic" />
+          <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+          <ScalarProperty Name="IsSMS" ColumnName="IsSMS" />
+          <ScalarProperty Name="IsEmail" ColumnName="IsEmail" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="ReportName" ColumnName="ReportName" />
+          <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AutomaticReportsLog">
+      <EntityTypeMapping TypeName="STCOperationalModel.AutomaticReportsLog">
+        <MappingFragment StoreEntitySet="AutomaticReportsLog">
+          <ScalarProperty Name="EnglishEmailText" ColumnName="EnglishEmailText" />
+          <ScalarProperty Name="EnglishSMSText" ColumnName="EnglishSMSText" />
+          <ScalarProperty Name="EmailSubject" ColumnName="EmailSubject" />
+          <ScalarProperty Name="SendDate" ColumnName="SendDate" />
+          <ScalarProperty Name="EmailText" ColumnName="EmailText" />
+          <ScalarProperty Name="SMSText" ColumnName="SMSText" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ReportGroupId" ColumnName="ReportGroupId" />
+          <ScalarProperty Name="LogId" ColumnName="LogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ParameterDiminsions">
+      <EntityTypeMapping TypeName="STCOperationalModel.ParameterDiminsions">
+        <MappingFragment StoreEntitySet="ParameterDiminsions">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsOneValue" ColumnName="IsOneValue" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DiminsionId" ColumnName="DiminsionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportSchedule">
+      <EntityTypeMapping TypeName="STCOperationalModel.ReportSchedule">
+        <MappingFragment StoreEntitySet="ReportSchedule">
+          <ScalarProperty Name="SendHour" ColumnName="SendHour" />
+          <ScalarProperty Name="ScheduleValues" ColumnName="ScheduleValues" />
+          <ScalarProperty Name="ScheduleTypeId" ColumnName="ScheduleTypeId" />
+          <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportsTemplate">
+      <EntityTypeMapping TypeName="STCOperationalModel.ReportsTemplate">
+        <MappingFragment StoreEntitySet="ReportsTemplate">
+          <ScalarProperty Name="EmailSubjectEnglish" ColumnName="EmailSubjectEnglish" />
+          <ScalarProperty Name="EmailSubjectArabic" ColumnName="EmailSubjectArabic" />
+          <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+          <ScalarProperty Name="LastModifiedUserId" ColumnName="LastModifiedUserId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedUserId" ColumnName="CreatedUserId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsSMS" ColumnName="IsSMS" />
+          <ScalarProperty Name="IsEmail" ColumnName="IsEmail" />
+          <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportTemplateParameter">
+      <EntityTypeMapping TypeName="STCOperationalModel.ReportTemplateParameter">
+        <MappingFragment StoreEntitySet="ReportTemplateParameter">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ParameterId" ColumnName="ParameterId" />
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="ReportTemplateParameterId" ColumnName="ReportTemplateParameterId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TemplateParameters">
+      <EntityTypeMapping TypeName="STCOperationalModel.TemplateParameters">
+        <MappingFragment StoreEntitySet="TemplateParameters">
+          <ScalarProperty Name="QueryFilePath" ColumnName="QueryFilePath" />
+          <ScalarProperty Name="IsCube" ColumnName="IsCube" />
+          <ScalarProperty Name="ConStringKey" ColumnName="ConStringKey" />
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="CubeName" ColumnName="CubeName" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ParameterIconPath" ColumnName="ParameterIconPath" />
+          <ScalarProperty Name="ParameterText" ColumnName="ParameterText" />
+          <ScalarProperty Name="ParameterName" ColumnName="ParameterName" />
+          <ScalarProperty Name="ParameterID" ColumnName="ParameterID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccidentExcelMaps">
+      <EntityTypeMapping TypeName="STCOperationalModel.AccidentExcelMap">
+        <MappingFragment StoreEntitySet="AccidentExcelMap">
+          <ScalarProperty Name="AccidentExcelMapFieldIndex" ColumnName="AccidentExcelMapFieldIndex" />
+          <ScalarProperty Name="AccidentExcelMapFieldName" ColumnName="AccidentExcelMapFieldName" />
+          <ScalarProperty Name="AccidentExcelMapId" ColumnName="AccidentExcelMapId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UploadedFiles">
+      <EntityTypeMapping TypeName="STCOperationalModel.UploadedFile">
+        <MappingFragment StoreEntitySet="UploadedFile">
+          <ScalarProperty Name="FileCorruptedRowsCount" ColumnName="FileCorruptedRowsCount" />
+          <ScalarProperty Name="FileDuplicatedRowsCount" ColumnName="FileDuplicatedRowsCount" />
+          <ScalarProperty Name="FileSourceType" ColumnName="FileSourceType" />
+          <ScalarProperty Name="FileUploadedBy" ColumnName="FileUploadedBy" />
+          <ScalarProperty Name="FileInsertedRowsCount" ColumnName="FileInsertedRowsCount" />
+          <ScalarProperty Name="FileUploadTime" ColumnName="FileUploadTime" />
+          <ScalarProperty Name="FileOriginalName" ColumnName="FileOriginalName" />
+          <ScalarProperty Name="FileId" ColumnName="FileId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="STCOperationalModel.Group">
+        <MappingFragment StoreEntitySet="Groups">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupUsers">
+      <EntityTypeMapping TypeName="STCOperationalModel.GroupUser">
+        <MappingFragment StoreEntitySet="GroupUsers">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="GroupUserId" ColumnName="GroupUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AgeClasses">
+      <EntityTypeMapping TypeName="STCOperationalModel.AgeClass">
+        <MappingFragment StoreEntitySet="AgeClass">
+          <ScalarProperty Name="AgeClassName" ColumnName="AgeClassName" />
+          <ScalarProperty Name="AgeClassId" ColumnName="AgeClassId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genders">
+      <EntityTypeMapping TypeName="STCOperationalModel.Gender">
+        <MappingFragment StoreEntitySet="Gender">
+          <ScalarProperty Name="GenderName" ColumnName="GenderName" />
+          <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LevelOfEducations">
+      <EntityTypeMapping TypeName="STCOperationalModel.LevelOfEducation">
+        <MappingFragment StoreEntitySet="LevelOfEducation">
+          <ScalarProperty Name="LevelOfEducationName" ColumnName="LevelOfEducationName" />
+          <ScalarProperty Name="LevelOfEducationId" ColumnName="LevelOfEducationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManualViolations">
+      <EntityTypeMapping TypeName="STCOperationalModel.ManualViolation">
+        <MappingFragment StoreEntitySet="ManualViolation">
+          <ScalarProperty Name="RoadSpeed" ColumnName="RoadSpeed" />
+          <ScalarProperty Name="MaritalStatusId" ColumnName="MaritalStatusId" />
+          <ScalarProperty Name="LevelOfEducationId" ColumnName="LevelOfEducationId" />
+          <ScalarProperty Name="AgeClassId" ColumnName="AgeClassId" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+          <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
+          <ScalarProperty Name="PlateKindId" ColumnName="PlateKindId" />
+          <ScalarProperty Name="PlateSourceId" ColumnName="PlateSourceId" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="OwnerTCFNumber" ColumnName="OwnerTCFNumber" />
+          <ScalarProperty Name="LicenseIssueDate" ColumnName="LicenseIssueDate" />
+          <ScalarProperty Name="LicenseSourceId" ColumnName="LicenseSourceId" />
+          <ScalarProperty Name="TCFNumber" ColumnName="TCFNumber" />
+          <ScalarProperty Name="Lon" ColumnName="Lon" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="EmirateId" ColumnName="EmirateId" />
+          <ScalarProperty Name="RadarTypeId" ColumnName="RadarTypeId" />
+          <ScalarProperty Name="RadarClassId" ColumnName="RadarClassId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="ReasonId" ColumnName="ReasonId" />
+          <ScalarProperty Name="ViolationTime" ColumnName="ViolationTime" />
+          <ScalarProperty Name="ViolationDate" ColumnName="ViolationDate" />
+          <ScalarProperty Name="StreetName" ColumnName="StreetName" />
+          <ScalarProperty Name="ViolationNumber" ColumnName="ViolationNumber" />
+          <ScalarProperty Name="ViolationId" ColumnName="ViolationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManualViolationLicenseSources">
+      <EntityTypeMapping TypeName="STCOperationalModel.ManualViolationLicenseSource">
+        <MappingFragment StoreEntitySet="ManualViolationLicenseSource">
+          <ScalarProperty Name="LicenseSource" ColumnName="LicenseSource" />
+          <ScalarProperty Name="LicenseSourceId" ColumnName="LicenseSourceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManualViolationRadarClasses">
+      <EntityTypeMapping TypeName="STCOperationalModel.ManualViolationRadarClass">
+        <MappingFragment StoreEntitySet="ManualViolationRadarClass">
+          <ScalarProperty Name="RadarClass" ColumnName="RadarClass" />
+          <ScalarProperty Name="RadarClassId" ColumnName="RadarClassId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManualViolationRadarTypes">
+      <EntityTypeMapping TypeName="STCOperationalModel.ManualViolationRadarType">
+        <MappingFragment StoreEntitySet="ManualViolationRadarType">
+          <ScalarProperty Name="RadarType" ColumnName="RadarType" />
+          <ScalarProperty Name="RadarTypeId" ColumnName="RadarTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManualViolationReasons">
+      <EntityTypeMapping TypeName="STCOperationalModel.ManualViolationReason">
+        <MappingFragment StoreEntitySet="ManualViolationReason">
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="ReasonCode" ColumnName="ReasonCode" />
+          <ScalarProperty Name="ReasonId" ColumnName="ReasonId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManualViolationTypes">
+      <EntityTypeMapping TypeName="STCOperationalModel.ManualViolationType">
+        <MappingFragment StoreEntitySet="ManualViolationType">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ManualViolationVehicleTypes">
+      <EntityTypeMapping TypeName="STCOperationalModel.ManualViolationVehicleType">
+        <MappingFragment StoreEntitySet="ManualViolationVehicleType">
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+          <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaritalStatus">
+      <EntityTypeMapping TypeName="STCOperationalModel.MaritalStatu">
+        <MappingFragment StoreEntitySet="MaritalStatus">
+          <ScalarProperty Name="MaritalStatusName" ColumnName="MaritalStatusName" />
+          <ScalarProperty Name="MaritalStatusId" ColumnName="MaritalStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DiminsionRelativeTypeIds">
+      <EntityTypeMapping TypeName="STCOperationalModel.DiminsionRelativeTypeId">
+        <MappingFragment StoreEntitySet="DiminsionRelativeTypeId">
+          <ScalarProperty Name="RelativeTypeNameEN" ColumnName="RelativeTypeNameEN" />
+          <ScalarProperty Name="RelativeTypeNameAR" ColumnName="RelativeTypeNameAR" />
+          <ScalarProperty Name="RelativeTypeId" ColumnName="RelativeTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SmartOfficerNews">
+      <EntityTypeMapping TypeName="STCOperationalModel.SmartOfficerNew">
+        <MappingFragment StoreEntitySet="SmartOfficerNews">
+          <ScalarProperty Name="IsNoticed" ColumnName="IsNoticed" />
+          <ScalarProperty Name="OfficerNewsCreatedBy" ColumnName="OfficerNewsCreatedBy" />
+          <ScalarProperty Name="OfficerNewsDate" ColumnName="OfficerNewsDate" />
+          <ScalarProperty Name="OfficerNewsImage" ColumnName="OfficerNewsImage" />
+          <ScalarProperty Name="OfficerNewsText" ColumnName="OfficerNewsText" />
+          <ScalarProperty Name="OfficerNewsId" ColumnName="OfficerNewsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SearchForDangerousViolatorViews">
+      <EntityTypeMapping TypeName="STCOperationalModel.SearchForDangerousViolatorView">
+        <MappingFragment StoreEntitySet="SearchForDangerousViolatorView">
+          <ScalarProperty Name="PlateColorName" ColumnName="PlateColorName" />
+          <ScalarProperty Name="PlateSourceName" ColumnName="PlateSourceName" />
+          <ScalarProperty Name="PlateKindName" ColumnName="PlateKindName" />
+          <ScalarProperty Name="RuleName" ColumnName="RuleName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PlateSource" ColumnName="PlateSource" />
+          <ScalarProperty Name="PlateColor" ColumnName="PlateColor" />
+          <ScalarProperty Name="PlateKind" ColumnName="PlateKind" />
+          <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+          <ScalarProperty Name="CorrelationDate" ColumnName="CorrelationDate" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="BusinessRuleId" ColumnName="BusinessRuleId" />
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssetStatusThresholds">
+      <EntityTypeMapping TypeName="STCOperationalModel.AssetStatusThreshold">
+        <MappingFragment StoreEntitySet="AssetStatusThreshold">
+          <ScalarProperty Name="Threshold" ColumnName="Threshold" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

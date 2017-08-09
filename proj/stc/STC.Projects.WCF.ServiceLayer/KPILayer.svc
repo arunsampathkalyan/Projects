@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="STC.Projects.WCF.ServiceLayer.KPILayer" CodeBehind="KPILayer.svc.cs" %>

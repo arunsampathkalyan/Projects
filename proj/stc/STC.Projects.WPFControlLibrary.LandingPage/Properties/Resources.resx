@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="strAccidents" xml:space="preserve">
+    <value>ACCIDENTS</value>
+  </data>
+  <data name="strAccidentsDailyTrend" xml:space="preserve">
+    <value>Incidents Daily Trend</value>
+  </data>
+  <data name="strAccidentsMonthTrend" xml:space="preserve">
+    <value>Incidents Monthly Trend</value>
+  </data>
+  <data name="strAccidentsQtrTrend" xml:space="preserve">
+    <value>Incidents Quarterly Trend</value>
+  </data>
+  <data name="strAccidentsWeeklyTrend" xml:space="preserve">
+    <value>Incidents Weekly Trend</value>
+  </data>
+  <data name="strAnalysis" xml:space="preserve">
+    <value>ANALYSIS</value>
+  </data>
+  <data name="strDangerousViolationsDailyTrend" xml:space="preserve">
+    <value>Dangerous Violations Daily Trend</value>
+  </data>
+  <data name="strDangerousViolationsWeeklyTrend" xml:space="preserve">
+    <value>Dangerous Violations Weekly Trend</value>
+  </data>
+  <data name="strDangerousViolator" xml:space="preserve">
+    <value>DANGEROUS VIOLATOR</value>
+  </data>
+  <data name="strDangerousVoilationsMonthTrend" xml:space="preserve">
+    <value>Dangerous Violations Monthly Trend</value>
+  </data>
+  <data name="strDangerViolationQtrTrend" xml:space="preserve">
+    <value>Dangerous Violation Quarterly Trend</value>
+  </data>
+  <data name="strForeCast" xml:space="preserve">
+    <value>FORECAST</value>
+  </data>
+  <data name="strFrom" xml:space="preserve">
+    <value>from</value>
+  </data>
+  <data name="strGeneral" xml:space="preserve">
+    <value>GENERAL</value>
+  </data>
+  <data name="strHeatMap" xml:space="preserve">
+    <value>HEAT MAPS</value>
+  </data>
+  <data name="strHighestQuarter" xml:space="preserve">
+    <value>Highest Quarter</value>
+  </data>
+  <data name="strHome" xml:space="preserve">
+    <value>HOME</value>
+  </data>
+  <data name="strKPITableCharts" xml:space="preserve">
+    <value>KPI's TABLE CHARTS</value>
+  </data>
+  <data name="strPatrolCar" xml:space="preserve">
+    <value>PATROL CAR</value>
+  </data>
+  <data name="strStatisticsAnalysis" xml:space="preserve">
+    <value>STATISTICS ANALYSIS</value>
+  </data>
+  <data name="strTargets" xml:space="preserve">
+    <value>TARGETS</value>
+  </data>
+  <data name="strTo" xml:space="preserve">
+    <value>to</value>
+  </data>
+  <data name="strTrendAnalysis" xml:space="preserve">
+    <value>TREND ANALYSIS</value>
+  </data>
+  <data name="strTruckPermissionDailyTrend" xml:space="preserve">
+    <value>Truck Violation Daily Trend</value>
+  </data>
+  <data name="strTruckPermissionMonthTrend" xml:space="preserve">
+    <value>Truck Violation Monthly Trend</value>
+  </data>
+  <data name="strTruckPermissionQtrTrend" xml:space="preserve">
+    <value>Truck Violation Quarterly Trend</value>
+  </data>
+  <data name="strTruckPermissions" xml:space="preserve">
+    <value>TRUCK PERMISSIONS</value>
+  </data>
+  <data name="strTruckPermissionWeeklyTrend" xml:space="preserve">
+    <value>Truck Violation Weekly Trend</value>
+  </data>
+  <data name="strViolationQtrTrend" xml:space="preserve">
+    <value>Violation Quarterly Trend</value>
+  </data>
+  <data name="strViolations" xml:space="preserve">
+    <value>VIOLATIONS</value>
+  </data>
+  <data name="strViolationsDailyTrend" xml:space="preserve">
+    <value>Violations Daily Trend</value>
+  </data>
+  <data name="strViolationsMonthTrend" xml:space="preserve">
+    <value>Violations Monthly Trend</value>
+  </data>
+  <data name="strViolationsWeeklyTrend" xml:space="preserve">
+    <value>Violations Weekly Trend</value>
+  </data>
+  <data name="strWorkZones" xml:space="preserve">
+    <value>WORK ZONES</value>
+  </data>
+  <data name="strAccidentsDailyStatis" xml:space="preserve">
+    <value>Accidents Count Comparision with Daily</value>
+  </data>
+  <data name="strAccidentsMonthsStatis" xml:space="preserve">
+    <value>Accidents Count Comparision with Monthly</value>
+  </data>
+  <data name="strAccidentsWeekStatis" xml:space="preserve">
+    <value>Accidents Count Comparision with Weekly</value>
+  </data>
+  <data name="strAccidentsYearStatis" xml:space="preserve">
+    <value>Accidents Count Comparision with Yearly </value>
+  </data>
+  <data name="strDangViolnDailyStatis" xml:space="preserve">
+    <value>Dangerous Violations Count Comparision with Daily</value>
+  </data>
+  <data name="strDangViolnMonthsStatis" xml:space="preserve">
+    <value>Dangerous Violations Count Comparision with Monthly</value>
+  </data>
+  <data name="strDangViolnWeekStatis" xml:space="preserve">
+    <value>Dangerous Violations Count Comparision with Weekly</value>
+  </data>
+  <data name="strDangViolnYearStatis" xml:space="preserve">
+    <value>Dangerous Violations Count Comparision with Yearly </value>
+  </data>
+  <data name="strViolationsDailyStatis" xml:space="preserve">
+    <value>Violations Count by Region Comparision with Daily</value>
+  </data>
+  <data name="strViolationsMonthsStatis" xml:space="preserve">
+    <value>Violations Count by Region Comparision with Monthly</value>
+  </data>
+  <data name="strViolationsWeekStatis" xml:space="preserve">
+    <value>Violations Count by Region Comparision with Weekly</value>
+  </data>
+  <data name="strViolationsYearStatis" xml:space="preserve">
+    <value>Violations Count by Region Comparision with Yearly </value>
+  </data>
+  <data name="strViolationsComparisonDaily" xml:space="preserve">
+    <value>Violations Count Comparison With Daily</value>
+  </data>
+  <data name="strViolationsComparisonMonthly" xml:space="preserve">
+    <value>Violations Count Comparison With Monthly</value>
+  </data>
+  <data name="strViolationsComparisonWeekly" xml:space="preserve">
+    <value>Violations Count Comparison With Weekly</value>
+  </data>
+  <data name="strViolationsComparisonYearly" xml:space="preserve">
+    <value>Violations Count Comparison With Yearly</value>
+  </data>
+  <data name="strViolationsCountDaily" xml:space="preserve">
+    <value>Violations Count Daily</value>
+  </data>
+  <data name="strViolationsCountMonthly" xml:space="preserve">
+    <value>Violations Count Monthly</value>
+  </data>
+  <data name="strViolationsCountWeekly" xml:space="preserve">
+    <value>Violations Count Weekly</value>
+  </data>
+  <data name="strViolationsCountYearly" xml:space="preserve">
+    <value>Violations Count Yearly</value>
+  </data>
+  <data name="strHighestDay" xml:space="preserve">
+    <value>Highest Day</value>
+  </data>
+  <data name="strHighestMonth" xml:space="preserve">
+    <value>Highest Month</value>
+  </data>
+  <data name="strHighestWeek" xml:space="preserve">
+    <value>Highest Week</value>
+  </data>
+  <data name="strFatality" xml:space="preserve">
+    <value>Fatality Target by 2030</value>
+  </data>
+  <data name="strIncidentsReasons" xml:space="preserve">
+    <value>Incidents Reasons Comparison</value>
+  </data>
+  <data name="strMainAccidentsYearRegion" xml:space="preserve">
+    <value>Accidents Comparison with</value>
+  </data>
+  <data name="strand" xml:space="preserve">
+    <value>and</value>
+  </data>
+  <data name="strOverview" xml:space="preserve">
+    <value>OVERVIEW</value>
+  </data>
+  <data name="strPerformance" xml:space="preserve">
+    <value>PERFORMANCE</value>
+  </data>
+  <data name="strPrediction" xml:space="preserve">
+    <value>PREDICTION</value>
+  </data>
+  <data name="strStatistics" xml:space="preserve">
+    <value>STATISTICS</value>
+  </data>
+  <data name="strDashboard" xml:space="preserve">
+    <value>DASHBOARD</value>
+  </data>
+  <data name="strMainIncidentsCount" xml:space="preserve">
+    <value>Incidents Count</value>
+  </data>
+  <data name="strMainViolationsComparisonYearly" xml:space="preserve">
+    <value>Violations Comparison With</value>
+  </data>
+  <data name="strMainViolationsCount" xml:space="preserve">
+    <value>Violations Count</value>
+  </data>
+  <data name="strTrcukViolationsComparisonDaily" xml:space="preserve">
+    <value>Truck Violations Count Comparison With Daily</value>
+  </data>
+  <data name="strTrcukViolationsComparisonMonthly" xml:space="preserve">
+    <value>Truck Violations Count Comparison With Monthly</value>
+  </data>
+  <data name="strTrcukViolationsComparisonWeekly" xml:space="preserve">
+    <value>Truck Violations Count Comparison With Weekly</value>
+  </data>
+  <data name="strTrcukViolationsComparisonYearly" xml:space="preserve">
+    <value>Truck Violations Count Comparison With Yearly</value>
+  </data>
+  <data name="strActualPercentage" xml:space="preserve">
+    <value>Actual Percentage</value>
+  </data>
+  <data name="strCurrentValue" xml:space="preserve">
+    <value>Current Value</value>
+  </data>
+  <data name="strKPIName" xml:space="preserve">
+    <value>KPI Name</value>
+  </data>
+  <data name="strKPITableChart" xml:space="preserve">
+    <value>KPIs Table Chart</value>
+  </data>
+  <data name="strPercentage" xml:space="preserve">
+    <value>Percentage</value>
+  </data>
+  <data name="strPreviousValue" xml:space="preserve">
+    <value>Previous Value</value>
+  </data>
+  <data name="strTargetValue" xml:space="preserve">
+    <value>Target Value</value>
+  </data>
+  <data name="strAccidentsCountDaily" xml:space="preserve">
+    <value>Accidents Count Daily</value>
+  </data>
+  <data name="strAccidentsCountMonthly" xml:space="preserve">
+    <value>Accidents Count Monthly</value>
+  </data>
+  <data name="strAccidentsCountWeekly" xml:space="preserve">
+    <value>Accidents Count Weekly</value>
+  </data>
+  <data name="strAccidentsCountYearly" xml:space="preserve">
+    <value>Accidents Count Yearly</value>
+  </data>
+  <data name="strDangerViolationsCountDaily" xml:space="preserve">
+    <value>Dangererous Violations Count Daily</value>
+  </data>
+  <data name="strDangerViolationsCountMonthly" xml:space="preserve">
+    <value>Dangererous Violations Count Monthly</value>
+  </data>
+  <data name="strDangerViolationsCountWeekly" xml:space="preserve">
+    <value>Dangererous Violations Count Weekly</value>
+  </data>
+  <data name="strDangerViolationsCountYearly" xml:space="preserve">
+    <value>Dangererous Violations Count Yearly</value>
+  </data>
+  <data name="strTruckViolationsCountDaily" xml:space="preserve">
+    <value>Truck Violations Count Daily</value>
+  </data>
+  <data name="strTruckViolationsCountMonthly" xml:space="preserve">
+    <value>Truck Violations Count Monthly</value>
+  </data>
+  <data name="strTruckViolationsCountWeekly" xml:space="preserve">
+    <value>Truck Violations Count Weekly</value>
+  </data>
+  <data name="strTruckViolationsCountYearly" xml:space="preserve">
+    <value>Truck Violations Count Yearly</value>
+  </data>
+  <data name="strByComparison" xml:space="preserve">
+    <value>By Comparision</value>
+  </data>
+  <data name="strByType" xml:space="preserve">
+    <value>By Type</value>
+  </data>
+  <data name="strManualKPI" xml:space="preserve">
+    <value>MANUAL KPI</value>
+  </data>
+  <data name="strNoofaccidentwithfatality" xml:space="preserve">
+    <value>No of accident with fatality</value>
+  </data>
+  <data name="strNoofDangerousViolations" xml:space="preserve">
+    <value>No of  Dangerous Violations</value>
+  </data>
+  <data name="strNoOfFatalities" xml:space="preserve">
+    <value>No Of Fatalities</value>
+  </data>
+  <data name="strNoOfinjuries" xml:space="preserve">
+    <value>No Of Injuries</value>
+  </data>
+  <data name="strNoSevereAccident" xml:space="preserve">
+    <value>No Severe Accident</value>
+  </data>
+  <data name="strValue" xml:space="preserve">
+    <value>Value</value>
+  </data>
+</root>

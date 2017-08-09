@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://194.170.200.102/trafficwebservices/VehiclesServices.asmx?wsdl" docRef="http://194.170.200.102/trafficwebservices/VehiclesServices.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://194.170.200.102/trafficwebservices/VehiclesServices.asmx" xmlns:q1="http://adpolice.gov.ae/" binding="q1:VehiclesServicesSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://194.170.200.102/trafficwebservices/VehiclesServices.asmx" xmlns:q2="http://adpolice.gov.ae/" binding="q2:VehiclesServicesSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

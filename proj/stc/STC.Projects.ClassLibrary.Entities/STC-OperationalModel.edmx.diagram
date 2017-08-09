@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="32e73c298ae34716b190a2bb9279e8cd" Name="Diagram1" ZoomLevel="54">
+        <EntityTypeShape EntityType="STCOperationalModel.AssetStatusDIMView" Width="1.5" PointX="5.75" PointY="11.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.AssetTypeDIMView" Width="1.5" PointX="10.75" PointY="2.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.CheckedInPatrolView" Width="1.5" PointX="10.75" PointY="5.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.CheckedInStaffView" Width="1.5" PointX="10.75" PointY="8.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.IncidentDispatchView" Width="1.5" PointX="10.75" PointY="11.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.IncidentStatusLogView" Width="1.5" PointX="12.75" PointY="2.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.PatrolStatusDIMView" Width="1.5" PointX="12.75" PointY="6.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.ViolationTypesDIMView" Width="1.5" PointX="5.75" PointY="14.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.Conf_ControlPageMessages" Width="1.5" PointX="8.25" PointY="7.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.Conf_Layout" Width="1.5" PointX="1.5" PointY="12.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.Conf_LayoutsPlaceHolders" Width="1.5" PointX="3.75" PointY="11.375" />
+        <EntityTypeShape EntityType="STCOperationalModel.Conf_PageDetails" Width="1.5" PointX="6" PointY="6.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.Conf_Pages" Width="1.5" PointX="3.75" PointY="0.875" />
+        <EntityTypeShape EntityType="STCOperationalModel.Conf_PlaceHolder" Width="1.5" PointX="1.5" PointY="10.375" />
+        <EntityTypeShape EntityType="STCOperationalModel.Conf_UserControl" Width="1.5" PointX="0.75" PointY="7.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.Conf_UserControlMessage" Width="1.5" PointX="3" PointY="7.125" />
+        <EntityTypeShape EntityType="STCOperationalModel.Conf_UsersPages" Width="1.5" PointX="6" PointY="0.75" />
+        <AssociationConnector Association="STCOperationalModel.FK_Conf_ControlPageMessages_Conf_PageDetails" />
+        <AssociationConnector Association="STCOperationalModel.FK_Conf_ControlPageMessages_Conf_UserControlMessage" />
+        <AssociationConnector Association="STCOperationalModel.FK_Conf_LayoutsPlaceHolders_Conf_Layout" />
+        <AssociationConnector Association="STCOperationalModel.FK_Conf_LayoutsPlaceHolders_Conf_PlaceHolder" />
+        <AssociationConnector Association="STCOperationalModel.FK_Conf_PageDetails_Conf_LayoutsPlaceHolders" />
+        <AssociationConnector Association="STCOperationalModel.FK_Conf_PageDetails_Conf_Pages" />
+        <AssociationConnector Association="STCOperationalModel.FK_Conf_PageDetails_Conf_UserControl" />
+        <AssociationConnector Association="STCOperationalModel.FK_Conf_UsersPages_Conf_Pages" />
+        <AssociationConnector Association="STCOperationalModel.FK_Conf_UserControlMessage_Conf_UserControl" />
+        <EntityTypeShape EntityType="STCOperationalModel.AssetLastStatu" Width="1.5" PointX="12.75" PointY="9.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.AssetLastStatusView" Width="1.5" PointX="10.75" PointY="14.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.Conf_ControlPagePublisherMessages" Width="1.5" PointX="8.25" PointY="3.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.Conf_UserControlPublisherMessage" Width="1.5" PointX="3.25" PointY="3.375" />
+        <AssociationConnector Association="STCOperationalModel.FK_Conf_ControlPagePublisherMessages_Conf_PageDetails" />
+        <AssociationConnector Association="STCOperationalModel.FK_Conf_ControlPagePublisherMessages_Conf_UserControlPublisherMessage" />
+        <AssociationConnector Association="STCOperationalModel.FK_Conf_UserControlPublisherMessage_Conf_UserControl" />
+        <EntityTypeShape EntityType="STCOperationalModel.ViolationsCountGroupedByTypePerDayOfWeekAndHourView" Width="1.5" PointX="12.75" PointY="13.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.ViolationsCountGroupedByTypePerDayOfWeekView" Width="1.5" PointX="14.75" PointY="2.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.ViolationsCountGroupedByTypePerDayView" Width="1.5" PointX="0.75" PointY="16.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.ViolationsCountGroupedByTypeView" Width="1.5" PointX="14.75" PointY="5.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.ViolationsCountPerDayAndHourView" Width="1.5" PointX="14.75" PointY="8.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.ViolationsCountPerDayOfWeekAndHourView" Width="1.5" PointX="14.75" PointY="11.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.ViolationsCountPerDayOfWeekView" Width="1.5" PointX="14.75" PointY="14.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.ViolationsCountPerDayView" Width="1.5" PointX="5.75" PointY="17.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.Conf_MessageType" Width="1.5" PointX="1" PointY="3" />
+        <AssociationConnector Association="STCOperationalModel.FK_Conf_UserControlMessage_Conf_MessageType" />
+        <AssociationConnector Association="STCOperationalModel.FK_Conf_UserControlPublisherMessage_Conf_MessageType" />
+        <EntityTypeShape EntityType="STCOperationalModel.ConfigurationView" Width="1.5" PointX="12.75" PointY="17.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.ViolationNotification" Width="1.5" PointX="8.75" PointY="10.25" />
+        <AssociationConnector Association="STCOperationalModel.FK_ViolationNotification_ViolationNotification" />
+        <EntityTypeShape EntityType="STCOperationalModel.IncidentType" Width="1.5" PointX="14.75" PointY="17.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.Priority" Width="1.5" PointX="16.75" PointY="2.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.ViolationNotificationView" Width="1.5" PointX="16.75" PointY="5.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.IncidentView" Width="1.5" PointX="9.75" PointY="19.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.PatrolLastLocationView" Width="1.75" PointX="18.75" PointY="2.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.UsersUserControl" Width="1.5" PointX="4.75" PointY="20.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.User" Width="1.5" PointX="3.75" PointY="15.125" />
+        <AssociationConnector Association="STCOperationalModel.FK_Conf_UsersPages_Users" />
+        <EntityTypeShape EntityType="STCOperationalModel.ViolationsCountGroupedByLocationPerDayAndHourView" Width="1.5" PointX="18.75" PointY="7.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.ViolationsCountGroupedByLocationPerDayOfWeekAndHourView" Width="1.5" PointX="18.75" PointY="11.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.ViolationsCountGroupedByLocationPerDayOfWeekView" Width="1.5" PointX="18.75" PointY="14.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.ViolationsCountGroupedByLocationPerDayView" Width="1.5" PointX="14.75" PointY="20.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.ViolationsCountGroupedByLocationView" Width="1.5" PointX="18.75" PointY="17.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.ViolationsCountGroupedByTypeAndLocationPerDayAndHourView" Width="1.5" PointX="18.875" PointY="20.125" />
+        <EntityTypeShape EntityType="STCOperationalModel.ViolationsCountGroupedByTypeAndLocationPerDayOfWeekAndHourView" Width="1.5" PointX="16.5" PointY="19.875" />
+        <EntityTypeShape EntityType="STCOperationalModel.ViolationsCountGroupedByTypeAndLocationPerDayOfWeekView" Width="1.5" PointX="0.75" PointY="21.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.ViolationsCountGroupedByTypeAndLocationPerDayView" Width="1.5" PointX="20.75" PointY="2.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.ViolationsCountGroupedByTypePerDayAndHourView" Width="1.5" PointX="20.75" PointY="6.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.AssetsDetailsView" PointX="25.5" PointY="12.625" Width="1.5" />
+        <EntityTypeShape EntityType="STCOperationalModel.AssetsView" Width="1.5" PointX="23.25" PointY="11.625" />
+        <AssociationConnector Association="STCOperationalModel.AssetsViewAssetsDetailsView" />
+        <EntityTypeShape EntityType="STCOperationalModel.TowerAction" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.TransformXML" Width="1.5" PointX="3" PointY="23.375" />
+        <AssociationConnector Association="STCOperationalModel.FK_TransformXML_TransformXML" />
+        <EntityTypeShape EntityType="STCOperationalModel.Conf_SOPSourceSOPView" Width="1.5" PointX="21.375" PointY="16.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.Officer" Width="1.5" PointX="21.375" PointY="21.5" />
+        <EntityTypeShape EntityType="STCOperationalModel.OfficersLastLocation" Width="1.5" PointX="23.625" PointY="21" />
+        <EntityTypeShape EntityType="STCOperationalModel.OfficersLastLocationsView" Width="1.5" PointX="23.375" PointY="0.75" />
+        <AssociationConnector Association="STCOperationalModel.FK_OfficersLastLocation_Officers" />
+        <EntityTypeShape EntityType="STCOperationalModel.VehicleLiveTracking" Width="1.5" PointX="23.625" PointY="5" />
+        <EntityTypeShape EntityType="STCOperationalModel.Area" Width="1.5" PointX="9.75" PointY="26.125" />
+        <EntityTypeShape EntityType="STCOperationalModel.UserArea" Width="1.5" PointX="12" PointY="23" />
+        <AssociationConnector Association="STCOperationalModel.FK_UserArea_Area" />
+        <AssociationConnector Association="STCOperationalModel.FK_UserArea_User" />
+        <EntityTypeShape EntityType="STCOperationalModel.PatrolLastLocation" Width="1.5" PointX="5.375" PointY="23.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.Patrol" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.WantedVehicle" Width="1.5" PointX="14.375" PointY="23.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.UserUserControlUser" Width="1.5" PointX="7" PointY="20.75" />
+        <AssociationConnector Association="STCOperationalModel.FK_UserUserControlUsers_Users" />
+        <AssociationConnector Association="STCOperationalModel.FK_UserUserControlUsers_UserUserControlUsers" />
+        <EntityTypeShape EntityType="STCOperationalModel.UserUserControlView" Width="1.5" PointX="20.25" PointY="24.375" />
+        <EntityTypeShape EntityType="STCOperationalModel.Notification" Width="1.5" PointX="12" PointY="25.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.NotificationSOPLog" Width="1.5" PointX="19.25" PointY="25.125" />
+        <EntityTypeShape EntityType="STCOperationalModel.NotificationStatu" Width="1.5" PointX="9.75" PointY="29.5" />
+        <EntityTypeShape EntityType="STCOperationalModel.SOPCommand" Width="1.5" PointX="17" PointY="27.125" />
+        <AssociationConnector Association="STCOperationalModel.FK_Notifications_NotificationStatus" />
+        <AssociationConnector Association="STCOperationalModel.FK_Notifications_Users" />
+        <AssociationConnector Association="STCOperationalModel.FK_NotificationSOPLog_Notifications" />
+        <AssociationConnector Association="STCOperationalModel.FK_UsersUserControls_Notifications" />
+        <AssociationConnector Association="STCOperationalModel.FK_ViolationNotification_Notifications" />
+        <AssociationConnector Association="STCOperationalModel.FK_NotificationSOPLog_SOPCommand" />
+        <AssociationConnector Association="STCOperationalModel.FK_NotificationSOPLog_Users" />
+        <EntityTypeShape EntityType="STCOperationalModel.NotificationLog" Width="1.5" PointX="14.25" PointY="26.875" />
+        <AssociationConnector Association="STCOperationalModel.FK_NotificationLog_Notifications" />
+        <AssociationConnector Association="STCOperationalModel.FK_NotificationLog_NotificationStatus" />
+        <AssociationConnector Association="STCOperationalModel.FK_NotificationLog_NotificationStatus1" />
+        <AssociationConnector Association="STCOperationalModel.FK_NotificationLog_Users" />
+        <AssociationConnector Association="STCOperationalModel.FK_Notifications_Users1" />
+        <EntityTypeShape EntityType="STCOperationalModel.Asset" Width="1.5" PointX="12" PointY="31.125" />
+        <EntityTypeShape EntityType="STCOperationalModel.BusinessRulePriority" Width="1.5" PointX="3.75" PointY="28.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.CorrelationBusinessRule" Width="1.5" PointX="6" PointY="28.625" />
+        <EntityTypeShape EntityType="STCOperationalModel.OverSpeed" Width="1.5" PointX="3.75" PointY="34.125" />
+        <EntityTypeShape EntityType="STCOperationalModel.TrafficCrossTime" Width="1.5" PointX="3.75" PointY="36.875" />
+        <EntityTypeShape EntityType="STCOperationalModel.VehicleType" Width="1.5" PointX="3.75" PointY="31.375" />
+        <AssociationConnector Association="STCOperationalModel.FK_CorrelationBusinessRules_BusinessRulePriority" />
+        <AssociationConnector Association="STCOperationalModel.FK_CorrelationBusinessRules_OverSpeed" />
+        <AssociationConnector Association="STCOperationalModel.FK_CorrelationBusinessRules_OverSpeed1" />
+        <AssociationConnector Association="STCOperationalModel.FK_CorrelationBusinessRules_TrafficCrossTime" />
+        <AssociationConnector Association="STCOperationalModel.FK_CorrelationBusinessRules_Users" />
+        <AssociationConnector Association="STCOperationalModel.FK_CorrelationBusinessRules_Users1" />
+        <AssociationConnector Association="STCOperationalModel.FK_CorrelationBusinessRules_VehicleTypes" />
+        <EntityTypeShape EntityType="STCOperationalModel.KPITarget" Width="1.5" PointX="25.375" PointY="0.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.Feature" Width="1.5" PointX="4.875" PointY="39" />
+        <EntityTypeShape EntityType="STCOperationalModel.Rank" Width="1.5" PointX="1.5" PointY="26.875" />
+        <EntityTypeShape EntityType="STCOperationalModel.UserRole" Width="1.5" PointX="9.5" PointY="34.75" />
+        <AssociationConnector Association="STCOperationalModel.FK_Conf_Pages_Features" />
+        <AssociationConnector Association="STCOperationalModel.FK_Users_Ranks" />
+        <AssociationConnector Association="STCOperationalModel.FK_Users_UserRoles" />
+        <EntityTypeShape EntityType="STCOperationalModel.RoleFeature" Width="1.5" PointX="11.375" PointY="38.625" />
+        <AssociationConnector Association="STCOperationalModel.FK_RoleFeatures_Features" />
+        <AssociationConnector Association="STCOperationalModel.FK_RoleFeatures_Roles" />
+        <EntityTypeShape EntityType="STCOperationalModel.UserToken" Width="1.5" PointX="6" PointY="36" />
+        <AssociationConnector Association="STCOperationalModel.FK_UserToken_Users" />
+        <EntityTypeShape EntityType="STCOperationalModel.ContactItem" Width="1.5" PointX="23.625" PointY="25.875" />
+        <EntityTypeShape EntityType="STCOperationalModel.EmergencyContact" Width="1.5" PointX="21.375" PointY="26.125" />
+        <EntityTypeShape EntityType="STCOperationalModel.FAQ" Width="1.5" PointX="6" PointY="45.625" />
+        <EntityTypeShape EntityType="STCOperationalModel.Feedback" Width="1.5" PointX="6" PointY="42.625" />
+        <EntityTypeShape EntityType="STCOperationalModel.RoadSafetyTip" Width="1.5" PointX="25.375" PointY="9.75" />
+        <AssociationConnector Association="STCOperationalModel.FK_ContactItem_EmergencyContact" />
+        <AssociationConnector Association="STCOperationalModel.FK_FAQ_Users" />
+        <AssociationConnector Association="STCOperationalModel.FK_Feedback_Users" />
+        <EntityTypeShape EntityType="STCOperationalModel.Weather" Width="1.5" PointX="26.375" PointY="4.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.CrispSession" Width="1.5" PointX="6" PointY="48.625" />
+        <AssociationConnector Association="STCOperationalModel.FK_CrispSession_Users" />
+        <AssociationConnector Association="STCOperationalModel.FK_CrispSession_Users1" />
+        <EntityTypeShape EntityType="STCOperationalModel.Nationality" Width="1.5" PointX="26.375" PointY="21.125" />
+        <EntityTypeShape EntityType="STCOperationalModel.PublicUser" Width="1.5" PointX="28.625" PointY="20" />
+        <AssociationConnector Association="STCOperationalModel.FK_PublicUser_Nationality" />
+        <EntityTypeShape EntityType="STCOperationalModel.IncidentDispatch" Width="1.5" PointX="21" PointY="10.5" />
+        <AssociationConnector Association="STCOperationalModel.FK_InidentDispatch_CheckedInStaff" />
+        <AssociationConnector Association="STCOperationalModel.FK_InidentDispatch_Incident1" />
+        <EntityTypeShape EntityType="STCOperationalModel.VehiclePlateClassification" Width="1.5" PointX="26.375" PointY="24.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.VehiclePlateColor" Width="1.5" PointX="27.375" PointY="0.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.VehiclePlateKind" Width="1.5" PointX="27.375" PointY="7.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.VehiclePlateSource" Width="1.5" PointX="26.375" PointY="27.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.VehicleViolationClassification" Width="1.5" PointX="28.375" PointY="3.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.VehicleViolationInterceptsType" Width="1.5" PointX="28.375" PointY="10.75" />
+        <AssociationConnector Association="STCOperationalModel.FK_UsersUserControls_BusinessRulePriority" />
+        <EntityTypeShape EntityType="STCOperationalModel.Conf_SOP" Width="1.5" PointX="11.75" PointY="41.625" />
+        <EntityTypeShape EntityType="STCOperationalModel.Conf_SOPSourceSOP" Width="1.5" PointX="14" PointY="36.375" />
+        <AssociationConnector Association="STCOperationalModel.FK_Conf_SOPSourceSOP_BusinessRulePriority" />
+        <AssociationConnector Association="STCOperationalModel.FK_Conf_SOPSourceSOP_Conf_SOP" />
+        <AssociationConnector Association="STCOperationalModel.FK_NotificationSOPLog_Conf_SOP" />
+        <AssociationConnector Association="STCOperationalModel.FK_UserToken_Users1" />
+        <EntityTypeShape EntityType="STCOperationalModel.VehicleViolationsType" Width="1.5" PointX="30.625" PointY="3.125" />
+        <AssociationConnector Association="STCOperationalModel.FK_FAQ_Users1" />
+        <AssociationConnector Association="STCOperationalModel.FK_VehicleViolationsTypes_VehicleViolationClassifications" />
+        <EntityTypeShape EntityType="STCOperationalModel.Conf_SOPSource" Width="1.5" PointX="21.375" PointY="28.875" />
+        <AssociationConnector Association="STCOperationalModel.FK_Conf_SOPSourceSOP_Conf_SOPSource" />
+        <EntityTypeShape EntityType="STCOperationalModel.ReportDangerou" Width="1.5" PointX="27.625" PointY="16.125" />
+        <EntityTypeShape EntityType="STCOperationalModel.SupervisorNotification" Width="1.5" PointX="25.375" PointY="16" />
+        <AssociationConnector Association="STCOperationalModel.FK_SupervisorNotificationReportDangerous_SupervisorNotificationReportDangerous" />
+        <AssociationConnector Association="STCOperationalModel.FK_SupervisorNotification_SupervisorNotification" />
+        <EntityTypeShape EntityType="STCOperationalModel.MobileLookup" Width="1.5" PointX="28.375" PointY="25.75" />
+        <AssociationConnector Association="STCOperationalModel.FK_Feedback_Users1" />
+        <EntityTypeShape EntityType="STCOperationalModel.CorrelationDriverDetail" Width="1.5" PointX="28.375" PointY="30.125" />
+        <EntityTypeShape EntityType="STCOperationalModel.CorrelationViolationDetail" Width="1.5" PointX="32.875" PointY="32.625" />
+        <EntityTypeShape EntityType="STCOperationalModel.Region" Width="1.5" PointX="28.375" PointY="32.875" />
+        <AssociationConnector Association="STCOperationalModel.FK_CorrelationViolationDetails_OverSpeed" />
+        <AssociationConnector Association="STCOperationalModel.FK_CorrelationViolationDetails_TrafficCrossTime" />
+        <EntityTypeShape EntityType="STCOperationalModel.VehicleDetail" Width="1.5" PointX="0.75" PointY="29.875" />
+        <EntityTypeShape EntityType="STCOperationalModel.TimeDetail" Width="1.5" PointX="29.375" PointY="7" />
+        <EntityTypeShape EntityType="STCOperationalModel.NewCorrelationRule" Width="1.5" PointX="31.625" PointY="18.75" />
+        <AssociationConnector Association="STCOperationalModel.FK_NewCorrelationRules_CorrelationDriverDetails" />
+        <AssociationConnector Association="STCOperationalModel.FK_CorrelationViolationDetails_CorrelationViolationDetails" />
+        <AssociationConnector Association="STCOperationalModel.FK_NewCorrelationRules_Region" />
+        <AssociationConnector Association="STCOperationalModel.FK_NewCorrelationRules_TimeDetails" />
+        <AssociationConnector Association="STCOperationalModel.FK_NewCorrelationRules_VehicleDetails" />
+        <EntityTypeShape EntityType="STCOperationalModel.VehicleMake" Width="1.5" PointX="16.375" PointY="29.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.VehicleUTSType" Width="1.5" PointX="30.375" PointY="10.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.CorrelationMessagesLog" Width="1.5" PointX="33.875" PointY="19.375" />
+        <EntityTypeShape EntityType="STCOperationalModel.CorrelationMessagesLogView" Width="1.5" PointX="23.375" PointY="28.75" />
+        <AssociationConnector Association="STCOperationalModel.FK_CorrelationMessagesLog_CorrelationBusinessRules" />
+        <AssociationConnector Association="STCOperationalModel.FK_CorrelationMessagesLog_UsersUserControls" />
+        <EntityTypeShape EntityType="STCOperationalModel.IncidentArea" Width="1.5" PointX="14.5" PointY="60" />
+        <EntityTypeShape EntityType="STCOperationalModel.IncidentCause" Width="1.5" PointX="14.5" PointY="62.625" />
+        <EntityTypeShape EntityType="STCOperationalModel.IncidentCity" Width="1.5" PointX="14.5" PointY="52.5" />
+        <EntityTypeShape EntityType="STCOperationalModel.IncidentCrashSeverity" Width="1.5" PointX="14.5" PointY="55" />
+        <EntityTypeShape EntityType="STCOperationalModel.IncidentCrashType" Width="1.5" PointX="14.5" PointY="49.875" />
+        <EntityTypeShape EntityType="STCOperationalModel.IncidentEmirate" Width="1.5" PointX="14.5" PointY="47.375" />
+        <EntityTypeShape EntityType="STCOperationalModel.IncidentIntersection" Width="1.5" PointX="14.5" PointY="0.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.IncidentLighting" Width="1.5" PointX="14.5" PointY="44.875" />
+        <EntityTypeShape EntityType="STCOperationalModel.IncidentLocation" Width="1.5" PointX="14.5" PointY="42.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.IncidentLocationType" Width="1.5" PointX="14.5" PointY="34.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.IncidentPCondition" Width="1.5" PointX="14.5" PointY="65.125" />
+        <EntityTypeShape EntityType="STCOperationalModel.IncidentRoadType" Width="1.5" PointX="14.5" PointY="57.5" />
+        <EntityTypeShape EntityType="STCOperationalModel.IncidentWeather" Width="1.5" PointX="30.375" PointY="15.375" />
+        <EntityTypeShape EntityType="STCOperationalModel.IncidentStatus" Width="1.5" PointX="18.375" PointY="30.875" />
+        <EntityTypeShape EntityType="STCOperationalModel.IncidentPoliceStation" Width="1.5" PointX="30.375" PointY="25.875" />
+        <EntityTypeShape EntityType="STCOperationalModel.Incident" Width="1.5" PointX="35.625" PointY="30.125" />
+        <AssociationConnector Association="STCOperationalModel.FK_Incident_IncidentArea" />
+        <AssociationConnector Association="STCOperationalModel.FK_Incident_IncidentCause" />
+        <AssociationConnector Association="STCOperationalModel.FK_Incident_IncidentCity" />
+        <AssociationConnector Association="STCOperationalModel.FK_Incident_IncidentCrashSeverity" />
+        <AssociationConnector Association="STCOperationalModel.FK_Incident_IncidentCrashType" />
+        <AssociationConnector Association="STCOperationalModel.FK_Incident_IncidentEmirate" />
+        <AssociationConnector Association="STCOperationalModel.FK_Incident_IncidentIntersection" />
+        <AssociationConnector Association="STCOperationalModel.FK_Incident_IncidentLighting" />
+        <AssociationConnector Association="STCOperationalModel.FK_Incident_IncidentLocation" />
+        <AssociationConnector Association="STCOperationalModel.FK_Incident_IncidentLocationType" />
+        <AssociationConnector Association="STCOperationalModel.FK_Incident_IncidentPCondition" />
+        <AssociationConnector Association="STCOperationalModel.FK_Incident_IncidentPoliceStation" />
+        <AssociationConnector Association="STCOperationalModel.FK_Incident_IncidentRoadType" />
+        <AssociationConnector Association="STCOperationalModel.FK_Incident_IncidentStatus" />
+        <AssociationConnector Association="STCOperationalModel.FK_Incident_IncidentType" />
+        <AssociationConnector Association="STCOperationalModel.FK_Incident_IncidentWeather" />
+        <AssociationConnector Association="STCOperationalModel.FK_Incident_Notifications" />
+        <EntityTypeShape EntityType="STCOperationalModel.OfficerTask" Width="1.5" PointX="6" PointY="54" />
+        <EntityTypeShape EntityType="STCOperationalModel.OfficerTaskStatus" Width="1.5" PointX="8.25" PointY="54.375" />
+        <EntityTypeShape EntityType="STCOperationalModel.TaskStatus" Width="1.5" PointX="6" PointY="58.625" />
+        <AssociationConnector Association="STCOperationalModel.FK_OfficerTask_Users" />
+        <AssociationConnector Association="STCOperationalModel.FK_OfficerTaskStatus_OfficerTask" />
+        <AssociationConnector Association="STCOperationalModel.FK_OfficerTaskStatus_TaskStatus" />
+        <EntityTypeShape EntityType="STCOperationalModel.AutomaticReportDiminsion" Width="1.5" PointX="16.5" PointY="37.875" />
+        <EntityTypeShape EntityType="STCOperationalModel.AutomaticReportGroups" Width="1.5" PointX="10.5" PointY="45.625" />
+        <EntityTypeShape EntityType="STCOperationalModel.AutomaticReports" Width="1.5" PointX="8.25" PointY="37.875" />
+        <EntityTypeShape EntityType="STCOperationalModel.AutomaticReportsLog" Width="1.5" PointX="16.75" PointY="33.875" />
+        <EntityTypeShape EntityType="STCOperationalModel.ParameterDiminsions" Width="1.5" PointX="14.25" PointY="68.125" />
+        <EntityTypeShape EntityType="STCOperationalModel.ReportSchedule" Width="1.5" PointX="6" PointY="66.375" />
+        <EntityTypeShape EntityType="STCOperationalModel.ReportsTemplate" Width="1.5" PointX="6" PointY="61.5" />
+        <EntityTypeShape EntityType="STCOperationalModel.ReportTemplateParameter" Width="1.5" PointX="8.25" PointY="62.375" />
+        <EntityTypeShape EntityType="STCOperationalModel.TemplateParameters" Width="1.5" PointX="6" PointY="69.375" />
+        <AssociationConnector Association="STCOperationalModel.FK_AutomaticReportDiminsion_AutomaticReports" />
+        <AssociationConnector Association="STCOperationalModel.FK_AutomaticReportDiminsion_ParameterDiminsions" />
+        <AssociationConnector Association="STCOperationalModel.FK_AutomaticReportGroups_AutomaticReports" />
+        <AssociationConnector Association="STCOperationalModel.FK_AutomaticReportsLog_AutomaticReportGroups" />
+        <AssociationConnector Association="STCOperationalModel.FK_AutomaticReports_ReportSchedule" />
+        <AssociationConnector Association="STCOperationalModel.FK_AutomaticReports_ReportsTemplate" />
+        <AssociationConnector Association="STCOperationalModel.FK_AutomaticReports_Users" />
+        <AssociationConnector Association="STCOperationalModel.FK_AutomaticReports_Users1" />
+        <AssociationConnector Association="STCOperationalModel.FK_AutomaticReportsLog_Users" />
+        <AssociationConnector Association="STCOperationalModel.FK_ReportsTemplate_Users" />
+        <AssociationConnector Association="STCOperationalModel.FK_ReportsTemplate_Users1" />
+        <AssociationConnector Association="STCOperationalModel.FK_ReportTemplateParameter_ReportsTemplate" />
+        <AssociationConnector Association="STCOperationalModel.FK_ReportTemplateParameter_TemplateParameters" />
+        <AssociationConnector Association="STCOperationalModel.FK_Asset_Area" />
+        <EntityTypeShape EntityType="STCOperationalModel.AccidentExcelMap" Width="1.5" PointX="16.375" PointY="23.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.UploadedFile" Width="1.5" PointX="25.375" PointY="30.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.Group" Width="1.5" PointX="18.75" PointY="38.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.GroupUser" Width="1.5" PointX="21" PointY="32.125" />
+        <AssociationConnector Association="STCOperationalModel.FK_AutomaticReportGroups_Groups" />
+        <AssociationConnector Association="STCOperationalModel.FK_GroupUsers_GroupUsers" />
+        <AssociationConnector Association="STCOperationalModel.FK_GroupUsers_Users" />
+        <EntityTypeShape EntityType="STCOperationalModel.AgeClass" Width="1.5" PointX="28.375" PointY="58" />
+        <EntityTypeShape EntityType="STCOperationalModel.Gender" Width="1.5" PointX="28.375" PointY="46.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.LevelOfEducation" Width="2.625" PointX="28.375" PointY="48.625" />
+        <EntityTypeShape EntityType="STCOperationalModel.ManualViolation" Width="1.5" PointX="30.625" PointY="31.625" />
+        <EntityTypeShape EntityType="STCOperationalModel.ManualViolationLicenseSource" Width="1.5" PointX="28.375" PointY="55.625" />
+        <EntityTypeShape EntityType="STCOperationalModel.ManualViolationRadarClass" Width="1.5" PointX="28.375" PointY="53.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.ManualViolationRadarType" Width="1.5" PointX="28.375" PointY="39.25" />
+        <EntityTypeShape EntityType="STCOperationalModel.ManualViolationReason" Width="1.5" PointX="28.375" PointY="36.625" />
+        <EntityTypeShape EntityType="STCOperationalModel.ManualViolationType" Width="1.5" PointX="28.375" PointY="41.5" />
+        <EntityTypeShape EntityType="STCOperationalModel.ManualViolationVehicleType" Width="1.5" PointX="28.375" PointY="50.875" />
+        <EntityTypeShape EntityType="STCOperationalModel.MaritalStatu" Width="2.625" PointX="28.375" PointY="43.875" />
+        <AssociationConnector Association="STCOperationalModel.FK_ManualViolation_AgeClass" />
+        <AssociationConnector Association="STCOperationalModel.FK_ManualViolation_Gender" />
+        <AssociationConnector Association="STCOperationalModel.FK_ManualViolation_IncidentCity" />
+        <AssociationConnector Association="STCOperationalModel.FK_ManualViolation_IncidentEmirate" />
+        <AssociationConnector Association="STCOperationalModel.FK_ManualViolation_LevelOfEducation" />
+        <AssociationConnector Association="STCOperationalModel.FK_ManualViolation_ManualViolationLicenseSource" />
+        <AssociationConnector Association="STCOperationalModel.FK_ManualViolation_ManualViolationRadarClass" />
+        <AssociationConnector Association="STCOperationalModel.FK_ManualViolation_ManualViolationRadarType" />
+        <AssociationConnector Association="STCOperationalModel.FK_ManualViolation_ManualViolationReason" />
+        <AssociationConnector Association="STCOperationalModel.FK_ManualViolation_ManualViolationType" />
+        <AssociationConnector Association="STCOperationalModel.FK_ManualViolation_ManualViolationVehicleType" />
+        <AssociationConnector Association="STCOperationalModel.FK_ManualViolation_MaritalStatus" />
+        <AssociationConnector Association="STCOperationalModel.FK_ManualViolation_VehiclePlateKind" />
+        <AssociationConnector Association="STCOperationalModel.FK_ManualViolation_VehiclePlateSource" />
+        <EntityTypeShape EntityType="STCOperationalModel.DiminsionRelativeTypeId" Width="1.5" PointX="30.375" PointY="28.875" />
+        <AssociationConnector Association="STCOperationalModel.FK_AutomaticReportDiminsion_DiminsionRelativeTypeId" />
+        <EntityTypeShape EntityType="STCOperationalModel.SmartOfficerNew" Width="1.5" PointX="31.375" PointY="6.75" />
+        <EntityTypeShape EntityType="STCOperationalModel.SearchForDangerousViolatorView" Width="1.5" PointX="0.75" PointY="32.75" />
+        <AssociationConnector Association="STCOperationalModel.FK_ReportDangerous_ReportDangerous" />
+        <EntityTypeShape EntityType="STCOperationalModel.AssetStatusThreshold" Width="1.5" PointX="29.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

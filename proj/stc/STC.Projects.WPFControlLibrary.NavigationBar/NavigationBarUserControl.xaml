@@ -1,0 +1,1159 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:p="clr-namespace:STC.Projects.WPFControlLibrary.NavigationBar.Properties"
+             xmlns:local="clr-namespace:STC.Projects.WPFControlLibrary.NavigationBar"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:customControl="clr-namespace:STC.Projects.WPFControlLibrary.NavigationBar.CustomControl"
+    x:Class="STC.Projects.WPFControlLibrary.NavigationBar.NavigationBarUserControl"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <Style x:Key="IsMoseOvernone" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="#ffffff" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Transparent">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="bg">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="Images/icons_hover.png" />
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="Foreground" Value="Transparent" />
+                                <Setter Property="BorderBrush" Value="Transparent" />
+                                <Setter Property="Opacity" Value="1"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Storyboard x:Key="SupervisorSwitchSB">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="OperatorRadialPanel">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseIn" Amplitude="0.2"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="OperatorRadialPanel">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseIn" Amplitude="0.2"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="AdminRadialPanel">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseOut" Amplitude="0.5"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="AdminRadialPanel">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseOut" Amplitude="0.5"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="OperatorSwitchSb">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="AdminRadialPanel">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseIn" Amplitude="0.2"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="AdminRadialPanel">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseIn" Amplitude="0.2"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="OperatorRadialPanel">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseOut" Amplitude="0.5"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="OperatorRadialPanel">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase EasingMode="EaseOut" Amplitude="0.5"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Intro">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="OperatorRadialPanel">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="image">
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="OperatorRadialPanel">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="OperatorRadialPanel">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Intro}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btnLive">
+            <BeginStoryboard x:Name="OperatorSwitchSb_BeginStoryboard" Storyboard="{StaticResource OperatorSwitchSb}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btn_admin">
+            <BeginStoryboard Storyboard="{StaticResource SupervisorSwitchSB}"/>
+        </EventTrigger>
+    </UserControl.Triggers>
+
+
+    <!--<UserControl.DataContext>
+        <local:ViewModel/>
+    </UserControl.DataContext>-->
+
+    <Grid Height="250" Width="260">
+        <customControl:RadialPanel x:Name="OperatorRadialPanel" Margin="5" RenderTransformOrigin="0.5,0.5"  >
+            <customControl:RadialPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0" ScaleY="0"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-720"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </customControl:RadialPanel.RenderTransform>
+            <Button x:Name="btn_admin" Cursor="Hand" ToolTip="{x:Static p:Resources.strAdmin}" HorizontalAlignment="Center" Width="65" Height="65" BorderBrush="{x:Null}" Click="TogAdmin_OnClick" Visibility="Collapsed" >
+                <Button.Background>
+                    <ImageBrush  ImageSource="Images/icons_Admin.png"/>
+                </Button.Background>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="BorderBrush" Value="Transparent" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <!--<Setter Property="Foreground" Value="#ffffff" />-->
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Transparent" RenderTransformOrigin="0.5,0.5">
+                                        <Border.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform/>
+                                                <SkewTransform/>
+                                                <RotateTransform/>
+                                                <TranslateTransform/>
+                                            </TransformGroup>
+                                        </Border.RenderTransform>
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup x:Name="CommonStates">
+                                                <VisualState x:Name="Normal"/>
+                                                <VisualState x:Name="MouseOver"/>
+                                                <VisualState x:Name="Pressed"/>
+                                                <VisualState x:Name="Disabled"/>
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_Admin_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding CheckBtn}" Value="Admin">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_Admin_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </DataTrigger>
+
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Button x:Name="btnTraffic" Cursor="Hand" ToolTip="{x:Static p:Resources.strTraffic}" HorizontalAlignment="Center" Width="65" Height="65"
+        		BorderBrush="{x:Null}"  Click="btnTraffic_Click" Visibility="Collapsed">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons_signal.png"/>
+                </Button.Background>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="BorderBrush" Value="Transparent" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <!--<Setter Property="Foreground" Value="#ffffff" />-->
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Transparent">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_signal_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding CheckBtn}" Value="Traffic">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_signal_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </DataTrigger>
+
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Button x:Name="btnDangerousViolator" Cursor="Hand" ToolTip="{x:Static p:Resources.strDangerousViolator}" HorizontalAlignment="Center" Width="65" Height="65"
+        		BorderBrush="{x:Null}" Click="btnDangerousViolator_Click" Visibility="Collapsed">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons_dangViolator_Normal.png"/>
+                </Button.Background>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="BorderBrush" Value="Transparent" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <!--<Setter Property="Foreground" Value="#ffffff" />-->
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Transparent">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_dangViolator_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding CheckBtn}" Value="DangerousViolator">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_dangViolator_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </DataTrigger>
+
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Button x:Name="btnViolation" Cursor="Hand" ToolTip="{x:Static p:Resources.strViolation}" HorizontalAlignment="Center" Width="65" Height="65"
+        		BorderBrush="{x:Null}" Click="btnViolation_Click" Visibility="Collapsed">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons_voilation.png"/>
+                </Button.Background>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="BorderBrush" Value="Transparent" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <!--<Setter Property="Foreground" Value="#ffffff" />-->
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Transparent">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_voilation_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding CheckBtn}" Value="Violation">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_voilation_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </DataTrigger>
+
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Button x:Name="btnPatrol" Cursor="Hand" ToolTip="{x:Static p:Resources.strPatrol}" HorizontalAlignment="Center" Width="65" Height="65"
+        		BorderBrush="{x:Null}" Click="btnPatrol_Click" Visibility="Collapsed">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons_patrol.png"/>
+                </Button.Background>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="BorderBrush" Value="Transparent" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <!--<Setter Property="Foreground" Value="#ffffff" />-->
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Transparent">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_patrol_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding CheckBtn}" Value="Patrol">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_patrol_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </DataTrigger>
+
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Button x:Name="btnAccident" Cursor="Hand" ToolTip="{x:Static p:Resources.strAccident}" HorizontalAlignment="Center" Width="65" Height="65"
+        		BorderBrush="{x:Null}" Click="btnAccident_Click" Visibility="Collapsed">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons_accident.png"/>
+                </Button.Background>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="BorderBrush" Value="Transparent" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <!--<Setter Property="Foreground" Value="#ffffff" />-->
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Transparent">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_accident_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding CheckBtn}" Value="Accident">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_accident_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </DataTrigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Button x:Name="btnTruckPermissions" Cursor="Hand" ToolTip="{x:Static p:Resources.strTruckPermissions}" HorizontalAlignment="Center" Width="66" Height="65" BorderBrush="{x:Null}" Click="btnTruckPermissions_Click" Visibility="Collapsed">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons_truck.png"/>
+                </Button.Background>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="BorderBrush" Value="Transparent" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <!--<Setter Property="Foreground" Value="#ffffff" />-->
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Transparent">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_truck_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding CheckBtn}" Value="TruckPermissions">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_truck_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </DataTrigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Button  x:Name="btnworkZone" Cursor="Hand" ToolTip="{x:Static p:Resources.strWorkZones}" HorizontalAlignment="Center" Width="65" Height="65" BorderBrush="{x:Null}" Click="btnworkZone_Click" Visibility="Collapsed">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons_menatwork.png"/>
+                </Button.Background>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="BorderBrush" Value="Transparent" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <!--<Setter Property="Foreground" Value="#ffffff" />-->
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Transparent">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_menatwork_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding CheckBtn}" Value="WorkZone">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_menatwork_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </DataTrigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Button x:Name="btnDashboard" Cursor="Hand" ToolTip="{x:Static p:Resources.strDashboard}" HorizontalAlignment="Center" Width="65" Height="65"
+        		BorderBrush="{x:Null}" Click="btnDashboard_Click" Visibility="Collapsed">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons_report.png"/>
+                </Button.Background>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="BorderBrush" Value="Transparent" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <!--<Setter Property="Foreground" Value="#ffffff" />-->
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Transparent">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_report_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding CheckBtn}" Value="Dashboard">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_report_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </DataTrigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+
+
+
+
+
+        </customControl:RadialPanel>
+        <customControl:RadialPanel x:Name="AdminRadialPanel" Margin="5" RenderTransformOrigin="0.5,0.5">
+            <customControl:RadialPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0" ScaleY="0"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </customControl:RadialPanel.RenderTransform>
+            <Button x:Name="btnAdminDangerousViolator" Cursor="Hand" ToolTip="{x:Static p:Resources.strDangerousViolator}" HorizontalAlignment="Center" Width="65" Height="65"
+        		BorderBrush="{x:Null}" Click="BtnAdminDangerousViolator_OnClick" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons_dangViolator_Normal.png"/>
+                </Button.Background>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="BorderBrush" Value="Transparent" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <!--<Setter Property="Foreground" Value="#ffffff" />-->
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Transparent">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_dangViolator_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding CheckBtn}" Value="AdminDangerousViolator">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_dangViolator_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </DataTrigger>
+
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Button x:Name="btnAdminPatrol" Cursor="Hand" ToolTip="{x:Static p:Resources.strPatrol}" HorizontalAlignment="Center" Width="65" Height="65"
+        		BorderBrush="{x:Null}" Click="BtnAdminPatrol_OnClick" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons_patrol.png"/>
+                </Button.Background>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="BorderBrush" Value="Transparent" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <!--<Setter Property="Foreground" Value="#ffffff" />-->
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Transparent">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_patrol_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding CheckBtn}" Value="AdminPatrol">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_patrol_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </DataTrigger>
+
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+
+            <Button x:Name="btnAdminKPI" Cursor="Hand" ToolTip="{x:Static p:Resources.strKPIAdmin}" HorizontalAlignment="Center" Width="65" Height="65"
+        		BorderBrush="{x:Null}" Click="btnAdminKPI_Click" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons_KPIAdmin.png"/>
+                </Button.Background>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="BorderBrush" Value="Transparent" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <!--<Setter Property="Foreground" Value="#ffffff" />-->
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Transparent">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_KPIAdmin_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding CheckBtn}" Value="AdminKPI">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_KPIAdmin_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </DataTrigger>
+
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Button x:Name="btnAdminMessage" Cursor="Hand" ToolTip="{x:Static p:Resources.strAdminMessage}" HorizontalAlignment="Center" Width="65" Height="65"
+        		BorderBrush="{x:Null}" Click="btnAdminMessage_Click" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons_adminMessage.png"/>
+                </Button.Background>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="BorderBrush" Value="Transparent" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <!--<Setter Property="Foreground" Value="#ffffff" />-->
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Transparent">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_adminMessage_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding CheckBtn}" Value="AdminMessage">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_adminMessage_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </DataTrigger>
+
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+
+            <Button x:Name="btnAdminTruckPermissions"   Cursor="Hand" ToolTip="{x:Static p:Resources.strTruckPermissions}" HorizontalAlignment="Center" Width="66" Height="65" BorderBrush="{x:Null}" Click="BtnAdminTruckPermissions_OnClick" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons_truck.png"/>
+                </Button.Background>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="BorderBrush" Value="Transparent" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <!--<Setter Property="Foreground" Value="#ffffff" />-->
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Transparent">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_truck_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding CheckBtn}" Value="AdminTruckPermissions">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_truck_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </DataTrigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="btnAdminworkZone" IsEnabled="False" Opacity=".6" Cursor="Hand" ToolTip="{x:Static p:Resources.strWorkZones}" HorizontalAlignment="Center" Width="65" Height="65" BorderBrush="{x:Null}" Click="BtnAdminworkZone_OnClick" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/icons_menatwork.png"/>
+                </Button.Background>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="BorderBrush" Value="Transparent" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <!--<Setter Property="Foreground" Value="#ffffff" />-->
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Transparent">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_menatwork_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding CheckBtn}" Value="WorkZone">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_menatwork_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </DataTrigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+        </customControl:RadialPanel>
+        <Canvas >
+
+            <!--<Image Width="100" Height="100" Panel.ZIndex="3" Source="Images/stc_logo.png"/>-->
+
+            <Image x:Name="image" Source="Images/center_wheel.png" Canvas.Left="53" Canvas.Top="50" Width="150" Height="150" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-1080"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+
+            <Button x:Name="btnLive" Cursor="Hand" ToolTip="{x:Static p:Resources.strLive}" HorizontalAlignment="Center" Width="65" Height="65" BorderBrush="{x:Null}" Click="btnLive_Click" Canvas.Left="95" Canvas.Top="93" >
+                <Button.Background>
+                    <ImageBrush  ImageSource="Images/icons_home.png"/>
+                </Button.Background>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="BorderBrush" Value="Transparent" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <!--<Setter Property="Foreground" Value="#ffffff" />-->
+
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Transparent">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_live_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </Trigger>
+
+                                        <DataTrigger Binding="{Binding CheckBtn}" Value="Live">
+                                            <Setter Property="Background" TargetName="bg">
+                                                <Setter.Value>
+                                                    <ImageBrush ImageSource="Images/icons_live_hover.png" />
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="Foreground" Value="Transparent" />
+                                            <Setter Property="BorderBrush" Value="Transparent" />
+                                            <Setter Property="Opacity" Value="1"/>
+                                        </DataTrigger>
+
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Button x:Name="btnSearchKPI" Visibility="Collapsed" ToolTip="{x:Static p:Resources.strSearch}" HorizontalAlignment="Center" Width="65" Height="65"
+			Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource IsMoseOvernone}" Click="btnSearchKPI_Click" Canvas.Left="3" Canvas.Top="53">
+                <Image x:Name="imgSearchKPI" FlowDirection="{Binding ImgFlowDirection}" Width="auto" Height="auto" Source="Images/icons_search.png"/>
+            </Button>
+
+            <Button x:Name="btnViolationKPI" Visibility="Collapsed" ToolTip="{x:Static p:Resources.strViolationKPI}" HorizontalAlignment="Center" Width="65" Height="65"
+			Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource IsMoseOvernone}" Click="btnViolationKPI_Click" Canvas.Left="2" Canvas.Top="129">
+                <Image x:Name="imgViolationKPI" FlowDirection="{Binding ImgFlowDirection}" Width="auto" Height="auto" Source="Images/icons_voilation_KPI.png"/>
+            </Button>
+
+            <Button x:Name="btnIncidentsKPI" Visibility="Collapsed" ToolTip="{x:Static p:Resources.strIncidentsKPI}" HorizontalAlignment="Center" Width="65" Height="65"
+			Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource IsMoseOvernone}" Click="btnIncidentsKPI_Click" Canvas.Left="53" Canvas.Top="184">
+                <Image x:Name="imgIncidentKPI" FlowDirection="{Binding ImgFlowDirection}" Width="auto" Height="auto" Source="Images/icons_accident_KPI.png"/>
+            </Button>
+
+
+
+        </Canvas>
+    </Grid>
+</UserControl>

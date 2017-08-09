@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Request" />
+  <xs:import schemaLocation="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Response" />
+  <xs:import schemaLocation="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" />
+  <xs:element name="GetTrafficProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Request" minOccurs="0" name="req" nillable="true" type="q1:TrafficProfileRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrafficProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Response" minOccurs="0" name="GetTrafficProfileResult" nillable="true" type="q2:TrafficProfileResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonIsWanted">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Request" minOccurs="0" name="req" nillable="true" type="q3:PersonDetailsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPersonIsWantedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPersonIsWantedResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleIsWanted">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Request" minOccurs="0" name="req" nillable="true" type="q4:VehicleDetailsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleIsWantedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetVehicleIsWantedResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Request" minOccurs="0" name="req" nillable="true" type="q5:VehicleDetailsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Response" minOccurs="0" name="GetVehicleDetailsResult" nillable="true" type="q6:VehicleDetailsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrfNoByNID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Request" minOccurs="0" name="req" nillable="true" type="q7:NationalIDRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrfNoByNIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Response" minOccurs="0" name="GetTrfNoByNIDResult" nillable="true" type="q8:TrafficNoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrfNoByUID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Request" minOccurs="0" name="req" nillable="true" type="q9:UnifiedIDRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrfNoByUIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Response" minOccurs="0" name="GetTrfNoByUIDResult" nillable="true" type="q10:TrafficNoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTicketDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Request" minOccurs="0" name="req" nillable="true" type="q11:TicketsDetailsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTicketDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Response" minOccurs="0" name="GetTicketDetailsResult" nillable="true" type="q12:ArrayOfTicketsDetailsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewTicket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Request" minOccurs="0" name="req" nillable="true" type="q13:NewTicketRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewTicketResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Response" minOccurs="0" name="CreateNewTicketResult" nillable="true" type="q14:NewTicketResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLocationsLookup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLocationsLookupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Response" minOccurs="0" name="GetLocationsLookupResult" nillable="true" type="q15:ArrayOfLookupRecordResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLicenseDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Request" minOccurs="0" name="req" nillable="true" type="q16:LicenseDetailsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLicenseDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Response" minOccurs="0" name="GetLicenseDetailsResult" nillable="true" type="q17:LicenseDetailsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehiclePlateClassifications">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehiclePlateClassificationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetVehiclePlateClassificationsResult" nillable="true" type="q18:ArrayOfVehiclePlateClassificationsDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehiclePlateColor">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehiclePlateColorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetVehiclePlateColorResult" nillable="true" type="q19:ArrayOfVehiclePlateColorDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehiclePlateKind">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehiclePlateKindResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetVehiclePlateKindResult" nillable="true" type="q20:ArrayOfVehiclePlateKindDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehiclePlateSource">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehiclePlateSourceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetVehiclePlateSourceResult" nillable="true" type="q21:ArrayOfVehiclePlateSourceDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleViolationClassifications">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleViolationClassificationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetVehicleViolationClassificationsResult" nillable="true" type="q22:ArrayOfVehicleViolationClassificationsDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleViolationInterceptsTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleViolationInterceptsTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetVehicleViolationInterceptsTypesResult" nillable="true" type="q23:ArrayOfVehicleViolationInterceptsTypesDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleViolationsTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleViolationsTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetVehicleViolationsTypesResult" nillable="true" type="q24:ArrayOfVehicleViolationsTypesDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleUTSTypes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleUTSTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetVehicleUTSTypesResult" nillable="true" type="q25:ArrayOfVehicleUTSTypeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleUTSModels">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleUTSModelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetVehicleUTSModelsResult" nillable="true" type="q26:ArrayOfVehicleModelDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

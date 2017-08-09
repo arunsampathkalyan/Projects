@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ElrocModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="elroc">
+    <Key>
+      <PropertyRef Name="no" />
+    </Key>
+    <Property Name="no" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date_time" Type="datetime" />
+    <Property Name="server_no" Type="int" />
+    <Property Name="camera_no" Type="int" />
+    <Property Name="license_plate" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="color_code" Type="varchar" MaxLength="5" />
+    <Property Name="plate_kind" Type="int" />
+    <Property Name="plate_type" Type="int" />
+    <Property Name="plate_source" Type="int" />
+    <Property Name="plate_color" Type="int" />
+    <Property Name="speed" Type="int" />
+    <Property Name="speed_limit" Type="int" />
+    <Property Name="captured_speed" Type="int" />
+    <Property Name="alarm_info" Type="int" />
+    <Property Name="alarm_status" Type="int" />
+    <Property Name="size_class" Type="int" />
+    <Property Name="latitude" Type="nvarchar" MaxLength="15" />
+    <Property Name="longtitude" Type="nvarchar" MaxLength="15" />
+    <Property Name="altitude" Type="nvarchar" MaxLength="15" />
+    <Property Name="direction" Type="int" />
+    <Property Name="lane_no" Type="int" />
+    <Property Name="pic_filename" Type="nvarchar" MaxLength="255" />
+    <Property Name="location_code" Type="int" />
+    <Property Name="old_elroc_no" Type="int" />
+    <Property Name="send_state" Type="bit" />
+    <Property Name="gps_data" Type="varchar" MaxLength="25" />
+    <Property Name="webservice_state" Type="bit" />
+    <Property Name="plate_code" Type="int" />
+  </EntityType>
+  <EntityType Name="server">
+    <Key>
+      <PropertyRef Name="no" />
+    </Key>
+    <Property Name="no" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="location_code" Type="int" />
+    <Property Name="alias" Type="nvarchar" MaxLength="50" />
+    <Property Name="link_id" Type="bigint" />
+    <Property Name="ip_address" Type="varchar" MaxLength="50" />
+    <Property Name="isactive" Type="bit" />
+    <Property Name="radar_serial" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Elroc.dbo.ElrocView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityContainer Name="ElrocModelStoreContainer">
+    <EntitySet Name="elroc" EntityType="Self.elroc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="server" EntityType="Self.server" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

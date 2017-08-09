@@ -1,0 +1,242 @@
+﻿<UserControl x:Class="STC.Projects.WPFControlLibrary.AlertNotificationMapControl.AlertNotificationMapUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:Primitives="clr-namespace:Telerik.Windows.Controls.Primitives;assembly=Telerik.Windows.Controls.Navigation"
+             xmlns:TabControl="clr-namespace:Telerik.Windows.Controls.TabControl;assembly=Telerik.Windows.Controls.Navigation"
+             xmlns:Esri="http://schemas.esri.com/arcgis/runtime/2013"
+             xmlns:Telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:Converter="clr-namespace:STC.Projects.ClassLibrary.Common.Converters;assembly=STC.Projects.ClassLibrary.Common" 
+             xmlns:VM="clr-namespace:STC.Projects.WPFControlLibrary.AlertNotificationMapControl.ViewModel"
+             xmlns:UC="clr-namespace:STC.Projects.WPFControlLibrary.AlertNotificationMapControl.UserControls"
+             xmlns:p="clr-namespace:STC.Projects.WPFControlLibrary.AlertNotificationMapControl.Properties"
+             mc:Ignorable="d" x:Name="AlertNotificationUIcontorl" Loaded="AlertNotificationUIcontorl_Loaded">
+    <UserControl.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Style/style.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+
+    <!--<UserControl.DataContext>
+        <VM:AlertNotificationMapViewModel></VM:AlertNotificationMapViewModel>
+    </UserControl.DataContext>-->
+
+    <Grid RenderTransformOrigin="0.5,0.5" >
+        <!--<Grid.Style>
+            <Style>
+                <Style.Triggers>
+                    <EventTrigger RoutedEvent="UserControl.Loaded">
+                        <EventTrigger.Actions>
+                            <BeginStoryboard>
+                                <Storyboard>
+
+                                    <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+                                                    BeginTime="0:0:0.1" Duration="0:0:0.5"  From="1600" To="0"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>
+
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+
+        <Grid.Resources>
+            <DataTemplate x:Key="ListDataTemplate">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Text="{Binding Name}" />
+                    <TextBlock Grid.Column="1" Text="{Binding Value}" />
+                </Grid>
+            </DataTemplate>
+        </Grid.Resources>-->
+        <Canvas>
+            <Grid MouseDown="UIElement_OnMouseDown" x:Name="RootGrid" Cursor="Hand" Width="50" >
+
+                <Path Data="M13.950004,24.5L13.950004,28.299988 17.950004,28.299988 17.950004,24.5z M13.950004,10.399963L13.950004,21.699951 17.950004,21.699951 17.950004,10.399963z M15.950004,0C16.349998,0,16.750007,0.19995117,16.950004,0.69995117L31.750011,30.099976C31.949993,30.5 31.949993,31 31.750011,31.399963 31.549999,31.799988 31.150005,32 30.750011,32L1.1499981,32C0.75000406,32 0.34999478,31.799988 0.14999761,31.399963 -0.049999204,31 -0.049999204,30.5 0.14999761,30.099976L14.950004,0.69995117C15.150001,0.19995117,15.549995,0,15.950004,0z" Stretch="Uniform" Fill="#00ffcc" Width="26" Height="26" />
+                <Border 
+                    Margin="0,20,0,0"
+                        Height="25"
+                        Width="25"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Background="Red"
+                        CornerRadius="13"
+                   >
+                    <TextBlock HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontWeight="Bold"
+                               Text="{Binding NotificationsListHeaderCount}" Foreground="White"/>
+                </Border>
+            </Grid>
+            <ContentControl  x:Name="ListPopup" Visibility="Collapsed" >
+                <Grid  Height="1000" Margin="0,50,0,0" Width="360">
+                    <ListView SelectionChanged="Selector_OnSelectionChanged"  ItemsSource="{Binding SupervisorNotifications}" Background="Black" Opacity=".5" x:Name="SupervisorListView">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <!--<Border x:Name="border" Background="{x:Null}" HorizontalAlignment="Stretch" BorderBrush="#002b22"  BorderThickness="1" Padding="5">
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="45"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        --><!--Image x:Name="img" Width="20" Height="20" Source="{Binding NotificationImageURL}" Opacity="{Binding Opacity}" Stretch="Uniform" Margin="0" Grid.Column="0"/>--><!--
+
+                                        <TextBlock x:Name="MessageTextLine1" Foreground="#00ffcc" TextWrapping="Wrap" Opacity="1.5" FontSize="14" FontFamily="Helvetica" Text="{Binding Path=DangerousViolatorDetails.PlateNumber}" Padding="5" Margin="0" Grid.Column="1">
+
+
+                                        </TextBlock>
+                                        --><!--<TextBlock x:Name="MessageTextLine2" Foreground="#00ffcc" TextWrapping="Wrap" Opacity="1.5" FontSize="14" FontFamily="Helvetica" Text="{Binding Path=SupervisorNoticationId}" Padding="5" Margin="0" Grid.Column="2"/>-->
+
+                                        <!--<TextBlock x:Name="MessageTextLine2" Foreground="#00ffcc"   TextWrapping="Wrap" Opacity="1.5" FontFamily="Helvetica" FontSize="14" Text="{Binding MessageTextLine2}" Margin="0,0,0,0" Padding="3,5,5,5" Grid.Column="2" HorizontalAlignment="Left">
+
+                                            </TextBlock>--><!--
+
+                                    </Grid>
+                                </Border>-->
+                                <Grid MouseDown="ListItemSelection" Cursor="Hand">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="180"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Margin="10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock FontSize="16" Text="{x:Static p:Resources.strDangerousViolator}" Foreground="#00ffcc" />
+                                        <TextBlock Grid.Row="1" FontSize="16" Text="{Binding DangerousViolatorDetails.BusinessRuleName}" Foreground="White"/>
+                                    </Grid>
+                                <Border FlowDirection="LeftToRight" Grid.Column="1" Margin="5" Background="White" Width="160" HorizontalAlignment="Right"  BorderBrush="Black" BorderThickness="1"   CornerRadius="10" >
+                                    <Grid >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Border CornerRadius="10,0,0,10" Background="Red" Padding="5">
+                                            <TextBlock  FontSize="14" Text="10" VerticalAlignment="Center"  HorizontalAlignment="Left" Foreground="White" FontWeight="Bold"/>
+                                        </Border>
+                                            <StackPanel Grid.Column="1" Margin="5"  VerticalAlignment="Center"  HorizontalAlignment="Left" >
+                                            <TextBlock  Text="الامارات" VerticalAlignment="Center"  HorizontalAlignment="Center"  />
+                                            <TextBlock  Text="أبوظبي" VerticalAlignment="Center"  HorizontalAlignment="Center"  />
+                                        </StackPanel>
+                                            <TextBlock HorizontalAlignment="Left"  Grid.Column="2" Text="{Binding DangerousViolatorDetails.PlateNumber}" VerticalAlignment="Center"  FontSize="18" FontWeight="Bold"/>
+
+                                    </Grid>
+                                </Border>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </ContentControl>
+
+            <ContentControl Margin="-360,50,0,0"  x:Name="SubListPopup" Visibility="Collapsed" >
+
+                <ContentControl   Name="PopupCanvas" Background="Transparent" Opacity="1" Visibility="Visible"  VerticalAlignment="Center"  Panel.ZIndex="4"/>
+             </ContentControl>
+
+        </Canvas>
+        <Canvas Visibility="Collapsed">
+
+            <Grid x:Name="gridNotifiedViolatorDetails" Canvas.Bottom="240" 
+              ScrollViewer.VerticalScrollBarVisibility="Auto" MinWidth="350" Background="#0e171b">
+                <Grid.RenderTransform>
+                    <TranslateTransform X="500" />
+                </Grid.RenderTransform>
+
+
+
+
+            </Grid>
+
+         
+
+            <Grid x:Name="gridViolatorNotificationList" Canvas.Bottom="2" 
+               MaxHeight="250" MinWidth="400">
+                <!--<Grid.Background>
+                    <ImageBrush ImageSource="Images/dotted_bg.png"/>
+                </Grid.Background>-->
+                <!--<Border BorderBrush="#00ffcc" BorderThickness=".5" Margin="5,5">-->
+
+                <Border Visibility="Collapsed" MinHeight="100" MinWidth="400" Background="Transparent" BorderBrush="#00ffcc" BorderThickness="0" Padding="5,5">
+                    <Expander x:Name="expanderNotificationList" MinWidth="300" VerticalAlignment="Center" HorizontalAlignment="Center"
+                              Collapsed="expanderNotificationList_Collapsed" Background="#0a1114" Header="{Binding NotificationsListHeaderCount}"
+                              Style="{StaticResource ExpanderHeaderTemplateStyle}"  Margin="5,0,15,0">
+                        
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+
+                            <Telerik:RadPanelBar x:Name="radPanelBarNotfications" ItemsSource="{Binding SupervisorNotifications}" Style="{StaticResource RadPanelBarStyle1}"
+                                 ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                                                 ItemClick="radPanelBarNotfications_ItemClick" SelectedItem="{Binding SelectedSupervisorNotificationDTO}"
+                                                 BorderBrush="#00ffcc" BorderThickness="0.5" Margin="2,2" Background="#0e171b">
+                                <!--<Telerik:RadPanelBar.Background>
+                                    <ImageBrush ImageSource="Images/dotted_bg.png"/>
+                                </Telerik:RadPanelBar.Background>-->
+                                <Telerik:RadPanelBar.ItemTemplate>
+
+                                    <DataTemplate>
+                                        <Border x:Name="border" Background="{x:Null}" HorizontalAlignment="Stretch" BorderBrush="#002b22"  BorderThickness="1" Padding="5">
+
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="45"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <!--Image x:Name="img" Width="20" Height="20" Source="{Binding NotificationImageURL}" Opacity="{Binding Opacity}" Stretch="Uniform" Margin="0" Grid.Column="0"/>-->
+
+                                                <TextBlock x:Name="MessageTextLine1" Foreground="#00ffcc" TextWrapping="Wrap" Opacity="1.5" FontSize="14" FontFamily="Helvetica" Text="{Binding Path=DangerousViolatorDetails.PlateNumber}" Padding="5" Margin="0" Grid.Column="1">
+
+
+                                                </TextBlock>
+                                                <!--<TextBlock x:Name="MessageTextLine2" Foreground="#00ffcc" TextWrapping="Wrap" Opacity="1.5" FontSize="14" FontFamily="Helvetica" Text="{Binding Path=SupervisorNoticationId}" Padding="5" Margin="0" Grid.Column="2"/>-->
+
+                                                <!--<TextBlock x:Name="MessageTextLine2" Foreground="#00ffcc"   TextWrapping="Wrap" Opacity="1.5" FontFamily="Helvetica" FontSize="14" Text="{Binding MessageTextLine2}" Margin="0,0,0,0" Padding="3,5,5,5" Grid.Column="2" HorizontalAlignment="Left">
+
+                                            </TextBlock>-->
+
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+
+                                </Telerik:RadPanelBar.ItemTemplate>
+                            </Telerik:RadPanelBar>
+                        </ScrollViewer>
+                    </Expander>
+
+                </Border>
+                <!--</Border>-->
+            </Grid>
+
+
+            <!--<Canvas Canvas.Right="0"  Canvas.Bottom="882" Name="PopupCanvas" Background="Transparent" Opacity="1" Visibility="Visible"  VerticalAlignment="Center"  Panel.ZIndex="4"/>-->
+
+        </Canvas>
+
+    </Grid>
+</UserControl>
+

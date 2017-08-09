@@ -1,0 +1,1754 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="KPILayer" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://stc-01.cloudapp.net/WCFService/KPILayer.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://stc-01.cloudapp.net/WCFService/KPILayer.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://stc-01.cloudapp.net/WCFService/KPILayer.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" />
+      <xsd:import schemaLocation="http://stc-01.cloudapp.net/WCFService/KPILayer.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Windows.Media" />
+      <xsd:import schemaLocation="http://stc-01.cloudapp.net/WCFService/KPILayer.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Windows.Media.Animation" />
+      <xsd:import schemaLocation="http://stc-01.cloudapp.net/WCFService/KPILayer.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Windows" />
+      <xsd:import schemaLocation="http://stc-01.cloudapp.net/WCFService/KPILayer.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Windows.Threading" />
+      <xsd:import schemaLocation="http://stc-01.cloudapp.net/WCFService/KPILayer.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IKPILayer_GetViolationTypeTrendDaysOfWeek_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationTypeTrendDaysOfWeek" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationTypeTrendDaysOfWeek_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationTypeTrendDaysOfWeekResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationTypeTrendWeekOfYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationTypeTrendWeekOfYear" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationTypeTrendWeekOfYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationTypeTrendWeekOfYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationTypeTrendMonthOfYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationTypeTrendMonthOfYear" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationTypeTrendMonthOfYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationTypeTrendMonthOfYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationTypeTrendQuarterOfYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationTypeTrendQuarterOfYear" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationTypeTrendQuarterOfYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationTypeTrendQuarterOfYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentTrendDaysOfWeek_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentTrendDaysOfWeek" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentTrendDaysOfWeek_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentTrendDaysOfWeekResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentTrendWeekOfYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentTrendWeekOfYear" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentTrendWeekOfYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentTrendWeekOfYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentTrendMonthOfYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentTrendMonthOfYear" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentTrendMonthOfYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentTrendMonthOfYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentTrendQuarterOfYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentTrendQuarterOfYear" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentTrendQuarterOfYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentTrendQuarterOfYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsTrendDaysOfWeek_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsTrendDaysOfWeek" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsTrendDaysOfWeek_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsTrendDaysOfWeekResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsTrendWeekOfYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsTrendWeekOfYear" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsTrendWeekOfYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsTrendWeekOfYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsTrendMonthOfYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsTrendMonthOfYear" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsTrendMonthOfYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsTrendMonthOfYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsTrendQuarterOfYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsTrendQuarterOfYear" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsTrendQuarterOfYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsTrendQuarterOfYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationTrendDaysOfWeek_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationTrendDaysOfWeek" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationTrendDaysOfWeek_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationTrendDaysOfWeekResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationTrendWeekOfYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationTrendWeekOfYear" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationTrendWeekOfYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationTrendWeekOfYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationTrendMonthOfYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationTrendMonthOfYear" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationTrendMonthOfYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationTrendMonthOfYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationTrendQuarterOfYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationTrendQuarterOfYear" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationTrendQuarterOfYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationTrendQuarterOfYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationRegionYearly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationRegionYearly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationRegionYearly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationRegionYearlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationRegionMonthly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationRegionMonthly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationRegionMonthly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationRegionMonthlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationRegionWeekly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationRegionWeekly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationRegionWeekly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationRegionWeeklyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationRegionDaily_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationRegionDaily" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationRegionDaily_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationRegionDailyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationRegionWiseYearly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationRegionWiseYearly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationRegionWiseYearly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationRegionWiseYearlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationRegionWiseDaily_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationRegionWiseDaily" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationRegionWiseDaily_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationRegionWiseDailyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationRegionWiseMonthly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationRegionWiseMonthly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationRegionWiseMonthly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationRegionWiseMonthlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationRegionWiseWeekly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationRegionWiseWeekly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationRegionWiseWeekly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationRegionWiseWeeklyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsRegionWiseYearly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsRegionWiseYearly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsRegionWiseYearly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsRegionWiseYearlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsRegionWiseDaily_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsRegionWiseDaily" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsRegionWiseDaily_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsRegionWiseDailyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsRegionWiseMonthly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsRegionWiseMonthly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsRegionWiseMonthly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsRegionWiseMonthlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsRegionWiseWeekly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsRegionWiseWeekly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsRegionWiseWeekly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsRegionWiseWeeklyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsRegionWiseYearly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsRegionWiseYearly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsRegionWiseYearly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsRegionWiseYearlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsRegionWiseDaily_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsRegionWiseDaily" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsRegionWiseDaily_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsRegionWiseDailyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsRegionWiseMonthly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsRegionWiseMonthly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsRegionWiseMonthly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsRegionWiseMonthlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsRegionWiseWeekly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsRegionWiseWeekly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsRegionWiseWeekly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsRegionWiseWeeklyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsRegionComparisonYearly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsRegionComparisonYearly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsRegionComparisonYearly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsRegionComparisonYearlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsRegionComparisonMonthly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsRegionComparisonMonthly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsRegionComparisonMonthly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsRegionComparisonMonthlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsRegionComparisonWeekly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsRegionComparisonWeekly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsRegionComparisonWeekly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsRegionComparisonWeeklyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsRegionComparisonDaily_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsRegionComparisonDaily" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsRegionComparisonDaily_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsRegionComparisonDailyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsRegionComparisonYearly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsRegionComparisonYearly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsRegionComparisonYearly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsRegionComparisonYearlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsRegionComparisonMonthly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsRegionComparisonMonthly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsRegionComparisonMonthly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsRegionComparisonMonthlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsRegionComparisonWeekly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsRegionComparisonWeekly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsRegionComparisonWeekly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsRegionComparisonWeeklyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsRegionComparisonDaily_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsRegionComparisonDaily" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsRegionComparisonDaily_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsRegionComparisonDailyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsRegionComparisonYearly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsRegionComparisonYearly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsRegionComparisonYearly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsRegionComparisonYearlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsRegionComparisonMonthly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsRegionComparisonMonthly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsRegionComparisonMonthly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsRegionComparisonMonthlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsRegionComparisonWeekly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsRegionComparisonWeekly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsRegionComparisonWeekly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsRegionComparisonWeeklyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsRegionComparisonDaily_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsRegionComparisonDaily" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsRegionComparisonDaily_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsRegionComparisonDailyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsRegionComparisonYearly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsRegionComparisonYearly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsRegionComparisonYearly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsRegionComparisonYearlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsRegionComparisonMonthly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsRegionComparisonMonthly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsRegionComparisonMonthly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsRegionComparisonMonthlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsRegionComparisonWeekly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsRegionComparisonWeekly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsRegionComparisonWeekly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsRegionComparisonWeeklyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsRegionComparisonDaily_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsRegionComparisonDaily" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsRegionComparisonDaily_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsRegionComparisonDailyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsStatisticalYearly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsStatisticalYearly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsStatisticalYearly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsStatisticalYearlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsStaticsticalMonthly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsStaticsticalMonthly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsStaticsticalMonthly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsStaticsticalMonthlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsStaticsticalWeekly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsStaticsticalWeekly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsStaticsticalWeekly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsStaticsticalWeeklyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsStatisticalDaily_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsStatisticalDaily" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsStatisticalDaily_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsStatisticalDailyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsStatisticalYearly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsStatisticalYearly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsStatisticalYearly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsStatisticalYearlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsStaticsticalMonthly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsStaticsticalMonthly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsStaticsticalMonthly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsStaticsticalMonthlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsStaticsticalWeekly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsStaticsticalWeekly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsStaticsticalWeekly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsStaticsticalWeeklyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsStatisticalDaily_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsStatisticalDaily" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsStatisticalDaily_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsStatisticalDailyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsStatisticalYearly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsStatisticalYearly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsStatisticalYearly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsStatisticalYearlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsStaticsticalMonthly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsStaticsticalMonthly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsStaticsticalMonthly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsStaticsticalMonthlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsStaticsticalWeekly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsStaticsticalWeekly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsStaticsticalWeekly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsStaticsticalWeeklyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsStatisticalDaily_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsStatisticalDaily" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsStatisticalDaily_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsStatisticalDailyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsStatisticalYearly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsStatisticalYearly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsStatisticalYearly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsStatisticalYearlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsStaticsticalMonthly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsStaticsticalMonthly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsStaticsticalMonthly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsStaticsticalMonthlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsStaticsticalWeekly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsStaticsticalWeekly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsStaticsticalWeekly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsStaticsticalWeeklyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsStatisticalDaily_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsStatisticalDaily" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsStatisticalDaily_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsStatisticalDailyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsComparisonYearly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsComparisonYearly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsComparisonYearly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsComparisonYearlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsComparisonMonthly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsComparisonMonthly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsComparisonMonthly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsComparisonMonthlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsComparisonWeekly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsComparisonWeekly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsComparisonWeekly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsComparisonWeeklyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsComparisonDaily_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsComparisonDaily" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationsComparisonDaily_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationsComparisonDailyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsComparisonYearly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsComparisonYearly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsComparisonYearly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsComparisonYearlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsComparisonMonthly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsComparisonMonthly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsComparisonMonthly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsComparisonMonthlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsComparisonWeekly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsComparisonWeekly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsComparisonWeekly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsComparisonWeeklyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsComparisonDaily_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsComparisonDaily" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsComparisonDaily_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsComparisonDailyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsComparisonYearly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsComparisonYearly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsComparisonYearly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsComparisonYearlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsComparisonMonthly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsComparisonMonthly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsComparisonMonthly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsComparisonMonthlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsComparisonWeekly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsComparisonWeekly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsComparisonWeekly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsComparisonWeeklyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsComparisonDaily_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsComparisonDaily" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsComparisonDaily_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsComparisonDailyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsComparisonYearly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsComparisonYearly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsComparisonYearly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsComparisonYearlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsComparisonMonthly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsComparisonMonthly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsComparisonMonthly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsComparisonMonthlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsComparisonWeekly_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsComparisonWeekly" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsComparisonWeekly_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsComparisonWeeklyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsComparisonDaily_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsComparisonDaily" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationsComparisonDaily_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationsComparisonDailyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsTarget_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsTarget" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetViolationsTarget_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetViolationsTargetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationTarget_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationTarget" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTruckViolationTarget_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTruckViolationTargetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsTarget_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsTarget" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetIncidentsTarget_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncidentsTargetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationTarget_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationTarget" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolationTarget_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolationTargetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTotalInjuriesComparisonForDashboard_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalInjuriesComparisonForDashboard" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetTotalInjuriesComparisonForDashboard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalInjuriesComparisonForDashboardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetSevereAccidentsComparisonForDashboard_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSevereAccidentsComparisonForDashboard" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetSevereAccidentsComparisonForDashboard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSevereAccidentsComparisonForDashboardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetFatalitiesComparisonForDashboard_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFatalitiesComparisonForDashboard" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetFatalitiesComparisonForDashboard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFatalitiesComparisonForDashboardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolatorsComparisonForDashboard_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolatorsComparisonForDashboard" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetDangerousViolatorsComparisonForDashboard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDangerousViolatorsComparisonForDashboardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetAccidentsWithFatalitiesCountComparisonForDashboard_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccidentsWithFatalitiesCountComparisonForDashboard" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetAccidentsWithFatalitiesCountComparisonForDashboard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccidentsWithFatalitiesCountComparisonForDashboardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetMainDashboard_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMainDashboard" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetMainDashboard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMainDashboardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetFatalitiyTarget_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFatalitiyTarget" />
+  </wsdl:message>
+  <wsdl:message name="IKPILayer_GetFatalitiyTarget_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFatalitiyTargetResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IKPILayer">
+    <wsdl:operation name="GetViolationTypeTrendDaysOfWeek">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetViolationTypeTrendDaysOfWeek" message="tns:IKPILayer_GetViolationTypeTrendDaysOfWeek_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetViolationTypeTrendDaysOfWeekResponse" message="tns:IKPILayer_GetViolationTypeTrendDaysOfWeek_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationTypeTrendWeekOfYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetViolationTypeTrendWeekOfYear" message="tns:IKPILayer_GetViolationTypeTrendWeekOfYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetViolationTypeTrendWeekOfYearResponse" message="tns:IKPILayer_GetViolationTypeTrendWeekOfYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationTypeTrendMonthOfYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetViolationTypeTrendMonthOfYear" message="tns:IKPILayer_GetViolationTypeTrendMonthOfYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetViolationTypeTrendMonthOfYearResponse" message="tns:IKPILayer_GetViolationTypeTrendMonthOfYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationTypeTrendQuarterOfYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetViolationTypeTrendQuarterOfYear" message="tns:IKPILayer_GetViolationTypeTrendQuarterOfYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetViolationTypeTrendQuarterOfYearResponse" message="tns:IKPILayer_GetViolationTypeTrendQuarterOfYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentTrendDaysOfWeek">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentTrendDaysOfWeek" message="tns:IKPILayer_GetIncidentTrendDaysOfWeek_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentTrendDaysOfWeekResponse" message="tns:IKPILayer_GetIncidentTrendDaysOfWeek_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentTrendWeekOfYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentTrendWeekOfYear" message="tns:IKPILayer_GetIncidentTrendWeekOfYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentTrendWeekOfYearResponse" message="tns:IKPILayer_GetIncidentTrendWeekOfYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentTrendMonthOfYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentTrendMonthOfYear" message="tns:IKPILayer_GetIncidentTrendMonthOfYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentTrendMonthOfYearResponse" message="tns:IKPILayer_GetIncidentTrendMonthOfYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentTrendQuarterOfYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentTrendQuarterOfYear" message="tns:IKPILayer_GetIncidentTrendQuarterOfYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentTrendQuarterOfYearResponse" message="tns:IKPILayer_GetIncidentTrendQuarterOfYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsTrendDaysOfWeek">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsTrendDaysOfWeek" message="tns:IKPILayer_GetTruckViolationsTrendDaysOfWeek_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsTrendDaysOfWeekResponse" message="tns:IKPILayer_GetTruckViolationsTrendDaysOfWeek_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsTrendWeekOfYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsTrendWeekOfYear" message="tns:IKPILayer_GetTruckViolationsTrendWeekOfYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsTrendWeekOfYearResponse" message="tns:IKPILayer_GetTruckViolationsTrendWeekOfYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsTrendMonthOfYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsTrendMonthOfYear" message="tns:IKPILayer_GetTruckViolationsTrendMonthOfYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsTrendMonthOfYearResponse" message="tns:IKPILayer_GetTruckViolationsTrendMonthOfYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsTrendQuarterOfYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsTrendQuarterOfYear" message="tns:IKPILayer_GetTruckViolationsTrendQuarterOfYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsTrendQuarterOfYearResponse" message="tns:IKPILayer_GetTruckViolationsTrendQuarterOfYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationTrendDaysOfWeek">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationTrendDaysOfWeek" message="tns:IKPILayer_GetDangerousViolationTrendDaysOfWeek_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationTrendDaysOfWeekResponse" message="tns:IKPILayer_GetDangerousViolationTrendDaysOfWeek_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationTrendWeekOfYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationTrendWeekOfYear" message="tns:IKPILayer_GetDangerousViolationTrendWeekOfYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationTrendWeekOfYearResponse" message="tns:IKPILayer_GetDangerousViolationTrendWeekOfYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationTrendMonthOfYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationTrendMonthOfYear" message="tns:IKPILayer_GetDangerousViolationTrendMonthOfYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationTrendMonthOfYearResponse" message="tns:IKPILayer_GetDangerousViolationTrendMonthOfYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationTrendQuarterOfYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationTrendQuarterOfYear" message="tns:IKPILayer_GetDangerousViolationTrendQuarterOfYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationTrendQuarterOfYearResponse" message="tns:IKPILayer_GetDangerousViolationTrendQuarterOfYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationRegionYearly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationRegionYearly" message="tns:IKPILayer_GetTruckViolationRegionYearly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationRegionYearlyResponse" message="tns:IKPILayer_GetTruckViolationRegionYearly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationRegionMonthly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationRegionMonthly" message="tns:IKPILayer_GetTruckViolationRegionMonthly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationRegionMonthlyResponse" message="tns:IKPILayer_GetTruckViolationRegionMonthly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationRegionWeekly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationRegionWeekly" message="tns:IKPILayer_GetTruckViolationRegionWeekly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationRegionWeeklyResponse" message="tns:IKPILayer_GetTruckViolationRegionWeekly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationRegionDaily">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationRegionDaily" message="tns:IKPILayer_GetTruckViolationRegionDaily_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationRegionDailyResponse" message="tns:IKPILayer_GetTruckViolationRegionDaily_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationRegionWiseYearly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationRegionWiseYearly" message="tns:IKPILayer_GetDangerousViolationRegionWiseYearly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationRegionWiseYearlyResponse" message="tns:IKPILayer_GetDangerousViolationRegionWiseYearly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationRegionWiseDaily">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationRegionWiseDaily" message="tns:IKPILayer_GetDangerousViolationRegionWiseDaily_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationRegionWiseDailyResponse" message="tns:IKPILayer_GetDangerousViolationRegionWiseDaily_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationRegionWiseMonthly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationRegionWiseMonthly" message="tns:IKPILayer_GetDangerousViolationRegionWiseMonthly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationRegionWiseMonthlyResponse" message="tns:IKPILayer_GetDangerousViolationRegionWiseMonthly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationRegionWiseWeekly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationRegionWiseWeekly" message="tns:IKPILayer_GetDangerousViolationRegionWiseWeekly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationRegionWiseWeeklyResponse" message="tns:IKPILayer_GetDangerousViolationRegionWiseWeekly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsRegionWiseYearly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsRegionWiseYearly" message="tns:IKPILayer_GetIncidentsRegionWiseYearly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsRegionWiseYearlyResponse" message="tns:IKPILayer_GetIncidentsRegionWiseYearly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsRegionWiseDaily">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsRegionWiseDaily" message="tns:IKPILayer_GetIncidentsRegionWiseDaily_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsRegionWiseDailyResponse" message="tns:IKPILayer_GetIncidentsRegionWiseDaily_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsRegionWiseMonthly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsRegionWiseMonthly" message="tns:IKPILayer_GetIncidentsRegionWiseMonthly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsRegionWiseMonthlyResponse" message="tns:IKPILayer_GetIncidentsRegionWiseMonthly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsRegionWiseWeekly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsRegionWiseWeekly" message="tns:IKPILayer_GetIncidentsRegionWiseWeekly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsRegionWiseWeeklyResponse" message="tns:IKPILayer_GetIncidentsRegionWiseWeekly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsRegionWiseYearly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsRegionWiseYearly" message="tns:IKPILayer_GetViolationsRegionWiseYearly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsRegionWiseYearlyResponse" message="tns:IKPILayer_GetViolationsRegionWiseYearly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsRegionWiseDaily">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsRegionWiseDaily" message="tns:IKPILayer_GetViolationsRegionWiseDaily_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsRegionWiseDailyResponse" message="tns:IKPILayer_GetViolationsRegionWiseDaily_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsRegionWiseMonthly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsRegionWiseMonthly" message="tns:IKPILayer_GetViolationsRegionWiseMonthly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsRegionWiseMonthlyResponse" message="tns:IKPILayer_GetViolationsRegionWiseMonthly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsRegionWiseWeekly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsRegionWiseWeekly" message="tns:IKPILayer_GetViolationsRegionWiseWeekly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsRegionWiseWeeklyResponse" message="tns:IKPILayer_GetViolationsRegionWiseWeekly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsRegionComparisonYearly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsRegionComparisonYearly" message="tns:IKPILayer_GetTruckViolationsRegionComparisonYearly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsRegionComparisonYearlyResponse" message="tns:IKPILayer_GetTruckViolationsRegionComparisonYearly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsRegionComparisonMonthly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsRegionComparisonMonthly" message="tns:IKPILayer_GetTruckViolationsRegionComparisonMonthly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsRegionComparisonMonthlyResponse" message="tns:IKPILayer_GetTruckViolationsRegionComparisonMonthly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsRegionComparisonWeekly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsRegionComparisonWeekly" message="tns:IKPILayer_GetTruckViolationsRegionComparisonWeekly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsRegionComparisonWeeklyResponse" message="tns:IKPILayer_GetTruckViolationsRegionComparisonWeekly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsRegionComparisonDaily">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsRegionComparisonDaily" message="tns:IKPILayer_GetTruckViolationsRegionComparisonDaily_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsRegionComparisonDailyResponse" message="tns:IKPILayer_GetTruckViolationsRegionComparisonDaily_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsRegionComparisonYearly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsRegionComparisonYearly" message="tns:IKPILayer_GetViolationsRegionComparisonYearly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsRegionComparisonYearlyResponse" message="tns:IKPILayer_GetViolationsRegionComparisonYearly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsRegionComparisonMonthly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsRegionComparisonMonthly" message="tns:IKPILayer_GetViolationsRegionComparisonMonthly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsRegionComparisonMonthlyResponse" message="tns:IKPILayer_GetViolationsRegionComparisonMonthly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsRegionComparisonWeekly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsRegionComparisonWeekly" message="tns:IKPILayer_GetViolationsRegionComparisonWeekly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsRegionComparisonWeeklyResponse" message="tns:IKPILayer_GetViolationsRegionComparisonWeekly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsRegionComparisonDaily">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsRegionComparisonDaily" message="tns:IKPILayer_GetViolationsRegionComparisonDaily_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsRegionComparisonDailyResponse" message="tns:IKPILayer_GetViolationsRegionComparisonDaily_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsRegionComparisonYearly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsRegionComparisonYearly" message="tns:IKPILayer_GetIncidentsRegionComparisonYearly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsRegionComparisonYearlyResponse" message="tns:IKPILayer_GetIncidentsRegionComparisonYearly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsRegionComparisonMonthly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsRegionComparisonMonthly" message="tns:IKPILayer_GetIncidentsRegionComparisonMonthly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsRegionComparisonMonthlyResponse" message="tns:IKPILayer_GetIncidentsRegionComparisonMonthly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsRegionComparisonWeekly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsRegionComparisonWeekly" message="tns:IKPILayer_GetIncidentsRegionComparisonWeekly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsRegionComparisonWeeklyResponse" message="tns:IKPILayer_GetIncidentsRegionComparisonWeekly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsRegionComparisonDaily">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsRegionComparisonDaily" message="tns:IKPILayer_GetIncidentsRegionComparisonDaily_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsRegionComparisonDailyResponse" message="tns:IKPILayer_GetIncidentsRegionComparisonDaily_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsRegionComparisonYearly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsRegionComparisonYearly" message="tns:IKPILayer_GetDangerousViolationsRegionComparisonYearly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsRegionComparisonYearlyResponse" message="tns:IKPILayer_GetDangerousViolationsRegionComparisonYearly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsRegionComparisonMonthly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsRegionComparisonMonthly" message="tns:IKPILayer_GetDangerousViolationsRegionComparisonMonthly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsRegionComparisonMonthlyResponse" message="tns:IKPILayer_GetDangerousViolationsRegionComparisonMonthly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsRegionComparisonWeekly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsRegionComparisonWeekly" message="tns:IKPILayer_GetDangerousViolationsRegionComparisonWeekly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsRegionComparisonWeeklyResponse" message="tns:IKPILayer_GetDangerousViolationsRegionComparisonWeekly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsRegionComparisonDaily">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsRegionComparisonDaily" message="tns:IKPILayer_GetDangerousViolationsRegionComparisonDaily_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsRegionComparisonDailyResponse" message="tns:IKPILayer_GetDangerousViolationsRegionComparisonDaily_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsStatisticalYearly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsStatisticalYearly" message="tns:IKPILayer_GetTruckViolationsStatisticalYearly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsStatisticalYearlyResponse" message="tns:IKPILayer_GetTruckViolationsStatisticalYearly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsStaticsticalMonthly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsStaticsticalMonthly" message="tns:IKPILayer_GetTruckViolationsStaticsticalMonthly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsStaticsticalMonthlyResponse" message="tns:IKPILayer_GetTruckViolationsStaticsticalMonthly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsStaticsticalWeekly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsStaticsticalWeekly" message="tns:IKPILayer_GetTruckViolationsStaticsticalWeekly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsStaticsticalWeeklyResponse" message="tns:IKPILayer_GetTruckViolationsStaticsticalWeekly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsStatisticalDaily">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsStatisticalDaily" message="tns:IKPILayer_GetTruckViolationsStatisticalDaily_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsStatisticalDailyResponse" message="tns:IKPILayer_GetTruckViolationsStatisticalDaily_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsStatisticalYearly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsStatisticalYearly" message="tns:IKPILayer_GetViolationsStatisticalYearly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsStatisticalYearlyResponse" message="tns:IKPILayer_GetViolationsStatisticalYearly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsStaticsticalMonthly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsStaticsticalMonthly" message="tns:IKPILayer_GetViolationsStaticsticalMonthly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsStaticsticalMonthlyResponse" message="tns:IKPILayer_GetViolationsStaticsticalMonthly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsStaticsticalWeekly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsStaticsticalWeekly" message="tns:IKPILayer_GetViolationsStaticsticalWeekly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsStaticsticalWeeklyResponse" message="tns:IKPILayer_GetViolationsStaticsticalWeekly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsStatisticalDaily">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsStatisticalDaily" message="tns:IKPILayer_GetViolationsStatisticalDaily_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsStatisticalDailyResponse" message="tns:IKPILayer_GetViolationsStatisticalDaily_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsStatisticalYearly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsStatisticalYearly" message="tns:IKPILayer_GetIncidentsStatisticalYearly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsStatisticalYearlyResponse" message="tns:IKPILayer_GetIncidentsStatisticalYearly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsStaticsticalMonthly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsStaticsticalMonthly" message="tns:IKPILayer_GetIncidentsStaticsticalMonthly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsStaticsticalMonthlyResponse" message="tns:IKPILayer_GetIncidentsStaticsticalMonthly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsStaticsticalWeekly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsStaticsticalWeekly" message="tns:IKPILayer_GetIncidentsStaticsticalWeekly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsStaticsticalWeeklyResponse" message="tns:IKPILayer_GetIncidentsStaticsticalWeekly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsStatisticalDaily">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsStatisticalDaily" message="tns:IKPILayer_GetIncidentsStatisticalDaily_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsStatisticalDailyResponse" message="tns:IKPILayer_GetIncidentsStatisticalDaily_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsStatisticalYearly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsStatisticalYearly" message="tns:IKPILayer_GetDangerousViolationsStatisticalYearly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsStatisticalYearlyResponse" message="tns:IKPILayer_GetDangerousViolationsStatisticalYearly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsStaticsticalMonthly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsStaticsticalMonthly" message="tns:IKPILayer_GetDangerousViolationsStaticsticalMonthly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsStaticsticalMonthlyResponse" message="tns:IKPILayer_GetDangerousViolationsStaticsticalMonthly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsStaticsticalWeekly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsStaticsticalWeekly" message="tns:IKPILayer_GetDangerousViolationsStaticsticalWeekly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsStaticsticalWeeklyResponse" message="tns:IKPILayer_GetDangerousViolationsStaticsticalWeekly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsStatisticalDaily">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsStatisticalDaily" message="tns:IKPILayer_GetDangerousViolationsStatisticalDaily_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsStatisticalDailyResponse" message="tns:IKPILayer_GetDangerousViolationsStatisticalDaily_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsComparisonYearly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsComparisonYearly" message="tns:IKPILayer_GetTruckViolationsComparisonYearly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsComparisonYearlyResponse" message="tns:IKPILayer_GetTruckViolationsComparisonYearly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsComparisonMonthly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsComparisonMonthly" message="tns:IKPILayer_GetTruckViolationsComparisonMonthly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsComparisonMonthlyResponse" message="tns:IKPILayer_GetTruckViolationsComparisonMonthly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsComparisonWeekly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsComparisonWeekly" message="tns:IKPILayer_GetTruckViolationsComparisonWeekly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsComparisonWeeklyResponse" message="tns:IKPILayer_GetTruckViolationsComparisonWeekly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsComparisonDaily">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsComparisonDaily" message="tns:IKPILayer_GetTruckViolationsComparisonDaily_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationsComparisonDailyResponse" message="tns:IKPILayer_GetTruckViolationsComparisonDaily_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsComparisonYearly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsComparisonYearly" message="tns:IKPILayer_GetViolationsComparisonYearly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsComparisonYearlyResponse" message="tns:IKPILayer_GetViolationsComparisonYearly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsComparisonMonthly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsComparisonMonthly" message="tns:IKPILayer_GetViolationsComparisonMonthly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsComparisonMonthlyResponse" message="tns:IKPILayer_GetViolationsComparisonMonthly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsComparisonWeekly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsComparisonWeekly" message="tns:IKPILayer_GetViolationsComparisonWeekly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsComparisonWeeklyResponse" message="tns:IKPILayer_GetViolationsComparisonWeekly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsComparisonDaily">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsComparisonDaily" message="tns:IKPILayer_GetViolationsComparisonDaily_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsComparisonDailyResponse" message="tns:IKPILayer_GetViolationsComparisonDaily_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsComparisonYearly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsComparisonYearly" message="tns:IKPILayer_GetIncidentsComparisonYearly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsComparisonYearlyResponse" message="tns:IKPILayer_GetIncidentsComparisonYearly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsComparisonMonthly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsComparisonMonthly" message="tns:IKPILayer_GetIncidentsComparisonMonthly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsComparisonMonthlyResponse" message="tns:IKPILayer_GetIncidentsComparisonMonthly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsComparisonWeekly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsComparisonWeekly" message="tns:IKPILayer_GetIncidentsComparisonWeekly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsComparisonWeeklyResponse" message="tns:IKPILayer_GetIncidentsComparisonWeekly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsComparisonDaily">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsComparisonDaily" message="tns:IKPILayer_GetIncidentsComparisonDaily_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsComparisonDailyResponse" message="tns:IKPILayer_GetIncidentsComparisonDaily_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsComparisonYearly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsComparisonYearly" message="tns:IKPILayer_GetDangerousViolationsComparisonYearly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsComparisonYearlyResponse" message="tns:IKPILayer_GetDangerousViolationsComparisonYearly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsComparisonMonthly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsComparisonMonthly" message="tns:IKPILayer_GetDangerousViolationsComparisonMonthly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsComparisonMonthlyResponse" message="tns:IKPILayer_GetDangerousViolationsComparisonMonthly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsComparisonWeekly">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsComparisonWeekly" message="tns:IKPILayer_GetDangerousViolationsComparisonWeekly_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsComparisonWeeklyResponse" message="tns:IKPILayer_GetDangerousViolationsComparisonWeekly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsComparisonDaily">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsComparisonDaily" message="tns:IKPILayer_GetDangerousViolationsComparisonDaily_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationsComparisonDailyResponse" message="tns:IKPILayer_GetDangerousViolationsComparisonDaily_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsTarget">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsTarget" message="tns:IKPILayer_GetViolationsTarget_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetViolationsTargetResponse" message="tns:IKPILayer_GetViolationsTarget_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationTarget">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationTarget" message="tns:IKPILayer_GetTruckViolationTarget_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTruckViolationTargetResponse" message="tns:IKPILayer_GetTruckViolationTarget_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsTarget">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsTarget" message="tns:IKPILayer_GetIncidentsTarget_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetIncidentsTargetResponse" message="tns:IKPILayer_GetIncidentsTarget_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationTarget">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationTarget" message="tns:IKPILayer_GetDangerousViolationTarget_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolationTargetResponse" message="tns:IKPILayer_GetDangerousViolationTarget_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalInjuriesComparisonForDashboard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetTotalInjuriesComparisonForDashboard" message="tns:IKPILayer_GetTotalInjuriesComparisonForDashboard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetTotalInjuriesComparisonForDashboardResponse" message="tns:IKPILayer_GetTotalInjuriesComparisonForDashboard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSevereAccidentsComparisonForDashboard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetSevereAccidentsComparisonForDashboard" message="tns:IKPILayer_GetSevereAccidentsComparisonForDashboard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetSevereAccidentsComparisonForDashboardResponse" message="tns:IKPILayer_GetSevereAccidentsComparisonForDashboard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFatalitiesComparisonForDashboard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetFatalitiesComparisonForDashboard" message="tns:IKPILayer_GetFatalitiesComparisonForDashboard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetFatalitiesComparisonForDashboardResponse" message="tns:IKPILayer_GetFatalitiesComparisonForDashboard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolatorsComparisonForDashboard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolatorsComparisonForDashboard" message="tns:IKPILayer_GetDangerousViolatorsComparisonForDashboard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetDangerousViolatorsComparisonForDashboardResponse" message="tns:IKPILayer_GetDangerousViolatorsComparisonForDashboard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccidentsWithFatalitiesCountComparisonForDashboard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetAccidentsWithFatalitiesCountComparisonForDashboard" message="tns:IKPILayer_GetAccidentsWithFatalitiesCountComparisonForDashboard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetAccidentsWithFatalitiesCountComparisonForDashboardResponse" message="tns:IKPILayer_GetAccidentsWithFatalitiesCountComparisonForDashboard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMainDashboard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetMainDashboard" message="tns:IKPILayer_GetMainDashboard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetMainDashboardResponse" message="tns:IKPILayer_GetMainDashboard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFatalitiyTarget">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPILayer/GetFatalitiyTarget" message="tns:IKPILayer_GetFatalitiyTarget_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPILayer/GetFatalitiyTargetResponse" message="tns:IKPILayer_GetFatalitiyTarget_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IKPILayer" type="tns:IKPILayer">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetViolationTypeTrendDaysOfWeek">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetViolationTypeTrendDaysOfWeek" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationTypeTrendWeekOfYear">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetViolationTypeTrendWeekOfYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationTypeTrendMonthOfYear">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetViolationTypeTrendMonthOfYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationTypeTrendQuarterOfYear">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetViolationTypeTrendQuarterOfYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentTrendDaysOfWeek">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetIncidentTrendDaysOfWeek" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentTrendWeekOfYear">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetIncidentTrendWeekOfYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentTrendMonthOfYear">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetIncidentTrendMonthOfYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentTrendQuarterOfYear">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetIncidentTrendQuarterOfYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsTrendDaysOfWeek">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTruckViolationsTrendDaysOfWeek" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsTrendWeekOfYear">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTruckViolationsTrendWeekOfYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsTrendMonthOfYear">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTruckViolationsTrendMonthOfYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsTrendQuarterOfYear">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTruckViolationsTrendQuarterOfYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationTrendDaysOfWeek">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolationTrendDaysOfWeek" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationTrendWeekOfYear">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolationTrendWeekOfYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationTrendMonthOfYear">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolationTrendMonthOfYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationTrendQuarterOfYear">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolationTrendQuarterOfYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationRegionYearly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTruckViolationRegionYearly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationRegionMonthly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTruckViolationRegionMonthly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationRegionWeekly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTruckViolationRegionWeekly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationRegionDaily">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTruckViolationRegionDaily" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationRegionWiseYearly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolationRegionWiseYearly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationRegionWiseDaily">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolationRegionWiseDaily" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationRegionWiseMonthly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolationRegionWiseMonthly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationRegionWiseWeekly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolationRegionWiseWeekly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsRegionWiseYearly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetIncidentsRegionWiseYearly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsRegionWiseDaily">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetIncidentsRegionWiseDaily" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsRegionWiseMonthly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetIncidentsRegionWiseMonthly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsRegionWiseWeekly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetIncidentsRegionWiseWeekly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsRegionWiseYearly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetViolationsRegionWiseYearly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsRegionWiseDaily">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetViolationsRegionWiseDaily" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsRegionWiseMonthly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetViolationsRegionWiseMonthly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsRegionWiseWeekly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetViolationsRegionWiseWeekly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsRegionComparisonYearly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTruckViolationsRegionComparisonYearly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsRegionComparisonMonthly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTruckViolationsRegionComparisonMonthly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsRegionComparisonWeekly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTruckViolationsRegionComparisonWeekly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsRegionComparisonDaily">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTruckViolationsRegionComparisonDaily" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsRegionComparisonYearly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetViolationsRegionComparisonYearly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsRegionComparisonMonthly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetViolationsRegionComparisonMonthly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsRegionComparisonWeekly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetViolationsRegionComparisonWeekly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsRegionComparisonDaily">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetViolationsRegionComparisonDaily" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsRegionComparisonYearly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetIncidentsRegionComparisonYearly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsRegionComparisonMonthly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetIncidentsRegionComparisonMonthly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsRegionComparisonWeekly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetIncidentsRegionComparisonWeekly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsRegionComparisonDaily">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetIncidentsRegionComparisonDaily" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsRegionComparisonYearly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolationsRegionComparisonYearly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsRegionComparisonMonthly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolationsRegionComparisonMonthly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsRegionComparisonWeekly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolationsRegionComparisonWeekly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsRegionComparisonDaily">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolationsRegionComparisonDaily" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsStatisticalYearly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTruckViolationsStatisticalYearly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsStaticsticalMonthly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTruckViolationsStaticsticalMonthly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsStaticsticalWeekly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTruckViolationsStaticsticalWeekly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsStatisticalDaily">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTruckViolationsStatisticalDaily" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsStatisticalYearly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetViolationsStatisticalYearly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsStaticsticalMonthly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetViolationsStaticsticalMonthly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsStaticsticalWeekly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetViolationsStaticsticalWeekly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsStatisticalDaily">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetViolationsStatisticalDaily" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsStatisticalYearly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetIncidentsStatisticalYearly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsStaticsticalMonthly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetIncidentsStaticsticalMonthly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsStaticsticalWeekly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetIncidentsStaticsticalWeekly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsStatisticalDaily">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetIncidentsStatisticalDaily" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsStatisticalYearly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolationsStatisticalYearly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsStaticsticalMonthly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolationsStaticsticalMonthly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsStaticsticalWeekly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolationsStaticsticalWeekly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsStatisticalDaily">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolationsStatisticalDaily" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsComparisonYearly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTruckViolationsComparisonYearly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsComparisonMonthly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTruckViolationsComparisonMonthly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsComparisonWeekly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTruckViolationsComparisonWeekly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationsComparisonDaily">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTruckViolationsComparisonDaily" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsComparisonYearly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetViolationsComparisonYearly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsComparisonMonthly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetViolationsComparisonMonthly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsComparisonWeekly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetViolationsComparisonWeekly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsComparisonDaily">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetViolationsComparisonDaily" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsComparisonYearly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetIncidentsComparisonYearly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsComparisonMonthly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetIncidentsComparisonMonthly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsComparisonWeekly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetIncidentsComparisonWeekly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsComparisonDaily">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetIncidentsComparisonDaily" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsComparisonYearly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolationsComparisonYearly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsComparisonMonthly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolationsComparisonMonthly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsComparisonWeekly">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolationsComparisonWeekly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationsComparisonDaily">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolationsComparisonDaily" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetViolationsTarget">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetViolationsTarget" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTruckViolationTarget">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTruckViolationTarget" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentsTarget">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetIncidentsTarget" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolationTarget">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolationTarget" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalInjuriesComparisonForDashboard">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetTotalInjuriesComparisonForDashboard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSevereAccidentsComparisonForDashboard">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetSevereAccidentsComparisonForDashboard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFatalitiesComparisonForDashboard">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetFatalitiesComparisonForDashboard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDangerousViolatorsComparisonForDashboard">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetDangerousViolatorsComparisonForDashboard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccidentsWithFatalitiesCountComparisonForDashboard">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetAccidentsWithFatalitiesCountComparisonForDashboard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMainDashboard">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetMainDashboard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFatalitiyTarget">
+      <soap:operation soapAction="http://tempuri.org/IKPILayer/GetFatalitiyTarget" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="KPILayer">
+    <wsdl:port name="BasicHttpBinding_IKPILayer" binding="tns:BasicHttpBinding_IKPILayer">
+      <soap:address location="http://stc-01.cloudapp.net/WCFService/KPILayer.svc/kpisoap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

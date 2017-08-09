@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SmartOfficerLayer" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://stc-connect.cloudapp.net/WCFService/SmartOfficerLayer.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://stc-connect.cloudapp.net/WCFService/SmartOfficerLayer.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://stc-connect.cloudapp.net/WCFService/SmartOfficerLayer.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://stc-connect.cloudapp.net/WCFService/SmartOfficerLayer.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISmartOfficerLayer_UpdateOfficerLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOfficerLocation" />
+  </wsdl:message>
+  <wsdl:message name="ISmartOfficerLayer_UpdateOfficerLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOfficerLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartOfficerLayer_AddNewOfficer_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewOfficer" />
+  </wsdl:message>
+  <wsdl:message name="ISmartOfficerLayer_AddNewOfficer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewOfficerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartOfficerLayer_GetAvailablePatrolPlateNumbers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailablePatrolPlateNumbers" />
+  </wsdl:message>
+  <wsdl:message name="ISmartOfficerLayer_GetAvailablePatrolPlateNumbers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAvailablePatrolPlateNumbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartOfficerLayer_GetOfficer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfficer" />
+  </wsdl:message>
+  <wsdl:message name="ISmartOfficerLayer_GetOfficer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOfficerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartOfficerLayer_AddTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTask" />
+  </wsdl:message>
+  <wsdl:message name="ISmartOfficerLayer_AddTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartOfficerLayer_ChangeTaskStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeTaskStatus" />
+  </wsdl:message>
+  <wsdl:message name="ISmartOfficerLayer_ChangeTaskStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeTaskStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISmartOfficerLayer">
+    <wsdl:operation name="UpdateOfficerLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartOfficerLayer/UpdateOfficerLocation" message="tns:ISmartOfficerLayer_UpdateOfficerLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartOfficerLayer/UpdateOfficerLocationResponse" message="tns:ISmartOfficerLayer_UpdateOfficerLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewOfficer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartOfficerLayer/AddNewOfficer" message="tns:ISmartOfficerLayer_AddNewOfficer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartOfficerLayer/AddNewOfficerResponse" message="tns:ISmartOfficerLayer_AddNewOfficer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailablePatrolPlateNumbers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartOfficerLayer/GetAvailablePatrolPlateNumbers" message="tns:ISmartOfficerLayer_GetAvailablePatrolPlateNumbers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartOfficerLayer/GetAvailablePatrolPlateNumbersResponse" message="tns:ISmartOfficerLayer_GetAvailablePatrolPlateNumbers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOfficer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartOfficerLayer/GetOfficer" message="tns:ISmartOfficerLayer_GetOfficer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartOfficerLayer/GetOfficerResponse" message="tns:ISmartOfficerLayer_GetOfficer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartOfficerLayer/AddTask" message="tns:ISmartOfficerLayer_AddTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartOfficerLayer/AddTaskResponse" message="tns:ISmartOfficerLayer_AddTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeTaskStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartOfficerLayer/ChangeTaskStatus" message="tns:ISmartOfficerLayer_ChangeTaskStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartOfficerLayer/ChangeTaskStatusResponse" message="tns:ISmartOfficerLayer_ChangeTaskStatus_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISmartOfficerLayer" type="tns:ISmartOfficerLayer">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateOfficerLocation">
+      <soap:operation soapAction="http://tempuri.org/ISmartOfficerLayer/UpdateOfficerLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewOfficer">
+      <soap:operation soapAction="http://tempuri.org/ISmartOfficerLayer/AddNewOfficer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailablePatrolPlateNumbers">
+      <soap:operation soapAction="http://tempuri.org/ISmartOfficerLayer/GetAvailablePatrolPlateNumbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfficer">
+      <soap:operation soapAction="http://tempuri.org/ISmartOfficerLayer/GetOfficer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTask">
+      <soap:operation soapAction="http://tempuri.org/ISmartOfficerLayer/AddTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeTaskStatus">
+      <soap:operation soapAction="http://tempuri.org/ISmartOfficerLayer/ChangeTaskStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SmartOfficerLayer">
+    <wsdl:port name="BasicHttpBinding_ISmartOfficerLayer" binding="tns:BasicHttpBinding_ISmartOfficerLayer">
+      <soap:address location="http://stc-connect.cloudapp.net/WCFService/SmartOfficerLayer.svc/smartofficersoap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

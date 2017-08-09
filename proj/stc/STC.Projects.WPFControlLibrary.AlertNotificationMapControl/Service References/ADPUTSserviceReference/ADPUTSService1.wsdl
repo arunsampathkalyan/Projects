@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ADPUTSService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Request" />
+      <xsd:import schemaLocation="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Response" />
+      <xsd:import schemaLocation="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Class" />
+      <xsd:import schemaLocation="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IADPUTSService_GetTrafficProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTrafficProfile" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetTrafficProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTrafficProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetPersonIsWanted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonIsWanted" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetPersonIsWanted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonIsWantedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehicleIsWanted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleIsWanted" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehicleIsWanted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleIsWantedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehicleDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleDetails" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehicleDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetTrfNoByNID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTrfNoByNID" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetTrfNoByNID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTrfNoByNIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetTrfNoByUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTrfNoByUID" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetTrfNoByUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTrfNoByUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetTicketDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicketDetails" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetTicketDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicketDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_CreateNewTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewTicket" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_CreateNewTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetLocationsLookup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationsLookup" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetLocationsLookup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationsLookupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetLicenseDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicenseDetails" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetLicenseDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLicenseDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehiclePlateClassifications_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehiclePlateClassifications" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehiclePlateClassifications_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehiclePlateClassificationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehiclePlateColor_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehiclePlateColor" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehiclePlateColor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehiclePlateColorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehiclePlateKind_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehiclePlateKind" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehiclePlateKind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehiclePlateKindResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehiclePlateSource_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehiclePlateSource" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehiclePlateSource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehiclePlateSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehicleViolationClassifications_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleViolationClassifications" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehicleViolationClassifications_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleViolationClassificationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehicleViolationInterceptsTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleViolationInterceptsTypes" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehicleViolationInterceptsTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleViolationInterceptsTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehicleViolationsTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleViolationsTypes" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehicleViolationsTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleViolationsTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehicleUTSTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleUTSTypes" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehicleUTSTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleUTSTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehicleUTSModels_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleUTSModels" />
+  </wsdl:message>
+  <wsdl:message name="IADPUTSService_GetVehicleUTSModels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleUTSModelsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IADPUTSService">
+    <wsdl:operation name="GetTrafficProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IADPUTSService/GetTrafficProfile" message="tns:IADPUTSService_GetTrafficProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IADPUTSService/GetTrafficProfileResponse" message="tns:IADPUTSService_GetTrafficProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonIsWanted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IADPUTSService/GetPersonIsWanted" message="tns:IADPUTSService_GetPersonIsWanted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IADPUTSService/GetPersonIsWantedResponse" message="tns:IADPUTSService_GetPersonIsWanted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleIsWanted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IADPUTSService/GetVehicleIsWanted" message="tns:IADPUTSService_GetVehicleIsWanted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IADPUTSService/GetVehicleIsWantedResponse" message="tns:IADPUTSService_GetVehicleIsWanted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IADPUTSService/GetVehicleDetails" message="tns:IADPUTSService_GetVehicleDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IADPUTSService/GetVehicleDetailsResponse" message="tns:IADPUTSService_GetVehicleDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrfNoByNID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IADPUTSService/GetTrfNoByNID" message="tns:IADPUTSService_GetTrfNoByNID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IADPUTSService/GetTrfNoByNIDResponse" message="tns:IADPUTSService_GetTrfNoByNID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrfNoByUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IADPUTSService/GetTrfNoByUID" message="tns:IADPUTSService_GetTrfNoByUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IADPUTSService/GetTrfNoByUIDResponse" message="tns:IADPUTSService_GetTrfNoByUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IADPUTSService/GetTicketDetails" message="tns:IADPUTSService_GetTicketDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IADPUTSService/GetTicketDetailsResponse" message="tns:IADPUTSService_GetTicketDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewTicket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IADPUTSService/CreateNewTicket" message="tns:IADPUTSService_CreateNewTicket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IADPUTSService/CreateNewTicketResponse" message="tns:IADPUTSService_CreateNewTicket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationsLookup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IADPUTSService/GetLocationsLookup" message="tns:IADPUTSService_GetLocationsLookup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IADPUTSService/GetLocationsLookupResponse" message="tns:IADPUTSService_GetLocationsLookup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IADPUTSService/GetLicenseDetails" message="tns:IADPUTSService_GetLicenseDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IADPUTSService/GetLicenseDetailsResponse" message="tns:IADPUTSService_GetLicenseDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclePlateClassifications">
+      <wsdl:input wsaw:Action="http://tempuri.org/IADPUTSService/GetVehiclePlateClassifications" message="tns:IADPUTSService_GetVehiclePlateClassifications_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IADPUTSService/GetVehiclePlateClassificationsResponse" message="tns:IADPUTSService_GetVehiclePlateClassifications_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclePlateColor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IADPUTSService/GetVehiclePlateColor" message="tns:IADPUTSService_GetVehiclePlateColor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IADPUTSService/GetVehiclePlateColorResponse" message="tns:IADPUTSService_GetVehiclePlateColor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclePlateKind">
+      <wsdl:input wsaw:Action="http://tempuri.org/IADPUTSService/GetVehiclePlateKind" message="tns:IADPUTSService_GetVehiclePlateKind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IADPUTSService/GetVehiclePlateKindResponse" message="tns:IADPUTSService_GetVehiclePlateKind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclePlateSource">
+      <wsdl:input wsaw:Action="http://tempuri.org/IADPUTSService/GetVehiclePlateSource" message="tns:IADPUTSService_GetVehiclePlateSource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IADPUTSService/GetVehiclePlateSourceResponse" message="tns:IADPUTSService_GetVehiclePlateSource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleViolationClassifications">
+      <wsdl:input wsaw:Action="http://tempuri.org/IADPUTSService/GetVehicleViolationClassifications" message="tns:IADPUTSService_GetVehicleViolationClassifications_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IADPUTSService/GetVehicleViolationClassificationsResponse" message="tns:IADPUTSService_GetVehicleViolationClassifications_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleViolationInterceptsTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IADPUTSService/GetVehicleViolationInterceptsTypes" message="tns:IADPUTSService_GetVehicleViolationInterceptsTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IADPUTSService/GetVehicleViolationInterceptsTypesResponse" message="tns:IADPUTSService_GetVehicleViolationInterceptsTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleViolationsTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IADPUTSService/GetVehicleViolationsTypes" message="tns:IADPUTSService_GetVehicleViolationsTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IADPUTSService/GetVehicleViolationsTypesResponse" message="tns:IADPUTSService_GetVehicleViolationsTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleUTSTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IADPUTSService/GetVehicleUTSTypes" message="tns:IADPUTSService_GetVehicleUTSTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IADPUTSService/GetVehicleUTSTypesResponse" message="tns:IADPUTSService_GetVehicleUTSTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleUTSModels">
+      <wsdl:input wsaw:Action="http://tempuri.org/IADPUTSService/GetVehicleUTSModels" message="tns:IADPUTSService_GetVehicleUTSModels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IADPUTSService/GetVehicleUTSModelsResponse" message="tns:IADPUTSService_GetVehicleUTSModels_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IADPUTSService" type="tns:IADPUTSService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTrafficProfile">
+      <soap:operation soapAction="http://tempuri.org/IADPUTSService/GetTrafficProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonIsWanted">
+      <soap:operation soapAction="http://tempuri.org/IADPUTSService/GetPersonIsWanted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleIsWanted">
+      <soap:operation soapAction="http://tempuri.org/IADPUTSService/GetVehicleIsWanted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleDetails">
+      <soap:operation soapAction="http://tempuri.org/IADPUTSService/GetVehicleDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrfNoByNID">
+      <soap:operation soapAction="http://tempuri.org/IADPUTSService/GetTrfNoByNID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrfNoByUID">
+      <soap:operation soapAction="http://tempuri.org/IADPUTSService/GetTrfNoByUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketDetails">
+      <soap:operation soapAction="http://tempuri.org/IADPUTSService/GetTicketDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewTicket">
+      <soap:operation soapAction="http://tempuri.org/IADPUTSService/CreateNewTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationsLookup">
+      <soap:operation soapAction="http://tempuri.org/IADPUTSService/GetLocationsLookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLicenseDetails">
+      <soap:operation soapAction="http://tempuri.org/IADPUTSService/GetLicenseDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclePlateClassifications">
+      <soap:operation soapAction="http://tempuri.org/IADPUTSService/GetVehiclePlateClassifications" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclePlateColor">
+      <soap:operation soapAction="http://tempuri.org/IADPUTSService/GetVehiclePlateColor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclePlateKind">
+      <soap:operation soapAction="http://tempuri.org/IADPUTSService/GetVehiclePlateKind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehiclePlateSource">
+      <soap:operation soapAction="http://tempuri.org/IADPUTSService/GetVehiclePlateSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleViolationClassifications">
+      <soap:operation soapAction="http://tempuri.org/IADPUTSService/GetVehicleViolationClassifications" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleViolationInterceptsTypes">
+      <soap:operation soapAction="http://tempuri.org/IADPUTSService/GetVehicleViolationInterceptsTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleViolationsTypes">
+      <soap:operation soapAction="http://tempuri.org/IADPUTSService/GetVehicleViolationsTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleUTSTypes">
+      <soap:operation soapAction="http://tempuri.org/IADPUTSService/GetVehicleUTSTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleUTSModels">
+      <soap:operation soapAction="http://tempuri.org/IADPUTSService/GetVehicleUTSModels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ADPUTSService">
+    <wsdl:port name="BasicHttpBinding_IADPUTSService" binding="tns:BasicHttpBinding_IADPUTSService">
+      <soap:address location="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

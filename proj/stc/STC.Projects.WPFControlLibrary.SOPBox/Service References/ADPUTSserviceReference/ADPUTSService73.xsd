@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Request" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Request" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Class" />
+  <xs:import schemaLocation="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="TrafficProfileRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TcfNo" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TrafficProfileRequest" nillable="true" type="tns:TrafficProfileRequest" />
+  <xs:complexType name="PersonDetailsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TcfNo" type="xs:long" />
+      <xs:element minOccurs="0" name="UnifiedId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonDetailsRequest" nillable="true" type="tns:PersonDetailsRequest" />
+  <xs:complexType name="VehicleDetailsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChassisNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChassisNoExist" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PlateColorCode" type="xs:int" />
+      <xs:element minOccurs="0" name="PlateKindCode" type="xs:int" />
+      <xs:element minOccurs="0" name="PlateNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateOrgNo" type="xs:long" />
+      <xs:element minOccurs="0" name="PlateSourceCode" type="xs:int" />
+      <xs:element minOccurs="0" name="PlateTypeCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleDetailsRequest" nillable="true" type="tns:VehicleDetailsRequest" />
+  <xs:complexType name="NationalIDRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NationalNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NationalIDRequest" nillable="true" type="tns:NationalIDRequest" />
+  <xs:complexType name="UnifiedIDRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UnifiedID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UnifiedIDRequest" nillable="true" type="tns:UnifiedIDRequest" />
+  <xs:complexType name="TicketsDetailsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateFrom" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateTo" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LicenseNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="LicenseSourceCode" type="xs:int" />
+      <xs:element minOccurs="0" name="PlateColorCode" type="xs:int" />
+      <xs:element minOccurs="0" name="PlateKindCode" type="xs:int" />
+      <xs:element minOccurs="0" name="PlateNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateOrgNo" type="xs:long" />
+      <xs:element minOccurs="0" name="PlateSourceCode" type="xs:int" />
+      <xs:element minOccurs="0" name="PlateTypeCode" type="xs:int" />
+      <xs:element minOccurs="0" name="TcfNo" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TicketsDetailsRequest" nillable="true" type="tns:TicketsDetailsRequest" />
+  <xs:complexType name="NewTicketRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CapturedSpeed" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DriverName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DriverTcfNo" nillable="true" type="xs:long" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Class" minOccurs="0" name="LicenseInfo" nillable="true" type="q1:LicenseKey" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Class" minOccurs="0" name="Location" nillable="true" type="q2:GPSLocation" />
+      <xs:element minOccurs="0" name="LocationCode" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MaterialsCodes" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="MeasuredSpeed" nillable="true" type="xs:int" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Class" minOccurs="0" name="PlateInfo" nillable="true" type="q4:PlateKey" />
+      <xs:element minOccurs="0" name="RadarKindCode" type="xs:int" />
+      <xs:element minOccurs="0" name="RadarTypeCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpeedLimit" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TicketDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TicketNo" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TicketType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleColorCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleMakeCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleModelCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleOwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleOwnerTcfNo" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="VehicleTypeCode" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NewTicketRequest" nillable="true" type="tns:NewTicketRequest" />
+  <xs:complexType name="LicenseDetailsRequest">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Class" minOccurs="0" name="LicenseInfo" nillable="true" type="q5:LicenseKey" />
+      <xs:element minOccurs="0" name="SystemCode" type="xs:int" />
+      <xs:element minOccurs="0" name="TcfNo" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TicketDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LicenseDetailsRequest" nillable="true" type="tns:LicenseDetailsRequest" />
+</xs:schema>

@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TimsArmsServiceWeb" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://fugrows.manufaktura.rs:82/timsarmsservice/TimsArmsService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://fugrows.manufaktura.rs:82/timsarmsservice/TimsArmsService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://fugrows.manufaktura.rs:82/timsarmsservice/TimsArmsService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" />
+      <xsd:import schemaLocation="http://fugrows.manufaktura.rs:82/timsarmsservice/TimsArmsService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="TimsArmsService_syncLocalDbForOnlineDb_InputMessage">
+    <wsdl:part name="parameters" element="tns:syncLocalDbForOnlineDb" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_syncLocalDbForOnlineDb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:syncLocalDbForOnlineDbResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_getComboboxValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:getComboboxValues" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_getComboboxValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getComboboxValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_insertAccidentToDb_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertAccidentToDb" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_insertAccidentToDb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertAccidentToDbResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_insertInjuredToDb_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertInjuredToDb" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_insertInjuredToDb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertInjuredToDbResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_insertACCCommentToDb_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertACCCommentToDb" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_insertACCCommentToDb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertACCCommentToDbResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_getAccidentComments_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAccidentComments" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_getAccidentComments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAccidentCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_insertAccidentImageToDb_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertAccidentImageToDb" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_insertAccidentImageToDb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertAccidentImageToDbResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_insertAccidentImageToFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertAccidentImageToFile" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_insertAccidentImageToFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertAccidentImageToFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_sendAccident_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendAccident" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_sendAccident_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendAccidentResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_getAccident_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAccident" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_getAccident_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAccidentResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchVehicleInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:fetchVehicleInfo" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchVehicleInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fetchVehicleInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_getDescription_InputMessage">
+    <wsdl:part name="parameters" element="tns:getDescription" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_getDescription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getDescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchBannedDriverInfoViaTCF_InputMessage">
+    <wsdl:part name="parameters" element="tns:fetchBannedDriverInfoViaTCF" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchBannedDriverInfoViaTCF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fetchBannedDriverInfoViaTCFResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchWantedVehicleInfoViaTCF_InputMessage">
+    <wsdl:part name="parameters" element="tns:fetchWantedVehicleInfoViaTCF" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchWantedVehicleInfoViaTCF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fetchWantedVehicleInfoViaTCFResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchImageViaTCF_InputMessage">
+    <wsdl:part name="parameters" element="tns:fetchImageViaTCF" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchImageViaTCF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fetchImageViaTCFResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchWantedVehicleInfoViaVIN_InputMessage">
+    <wsdl:part name="parameters" element="tns:fetchWantedVehicleInfoViaVIN" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchWantedVehicleInfoViaVIN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fetchWantedVehicleInfoViaVINResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchWantedVehicleInfoViaPlate_InputMessage">
+    <wsdl:part name="parameters" element="tns:fetchWantedVehicleInfoViaPlate" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchWantedVehicleInfoViaPlate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fetchWantedVehicleInfoViaPlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchTicketInfoViaTCF_InputMessage">
+    <wsdl:part name="parameters" element="tns:fetchTicketInfoViaTCF" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchTicketInfoViaTCF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fetchTicketInfoViaTCFResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchTicketInfoViaPlate_InputMessage">
+    <wsdl:part name="parameters" element="tns:fetchTicketInfoViaPlate" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchTicketInfoViaPlate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fetchTicketInfoViaPlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchTicketInfoViaLic_InputMessage">
+    <wsdl:part name="parameters" element="tns:fetchTicketInfoViaLic" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchTicketInfoViaLic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fetchTicketInfoViaLicResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchTicketInfoByNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:fetchTicketInfoByNo" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchTicketInfoByNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fetchTicketInfoByNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_getTicketTableLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTicketTableLog" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_getTicketTableLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTicketTableLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchDiplomaticVehicleInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:fetchDiplomaticVehicleInfo" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchDiplomaticVehicleInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fetchDiplomaticVehicleInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchPoliceInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:fetchPoliceInfo" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchPoliceInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fetchPoliceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_customSql_InputMessage">
+    <wsdl:part name="parameters" element="tns:customSql" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_customSql_OutputMessage">
+    <wsdl:part name="parameters" element="tns:customSqlResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchUserInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:fetchUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchUserInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fetchUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchLicenseInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:fetchLicenseInfo" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchLicenseInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fetchLicenseInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchLicenseInfoBasic_InputMessage">
+    <wsdl:part name="parameters" element="tns:fetchLicenseInfoBasic" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchLicenseInfoBasic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fetchLicenseInfoBasicResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchLicenseInfoViaTCF_InputMessage">
+    <wsdl:part name="parameters" element="tns:fetchLicenseInfoViaTCF" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchLicenseInfoViaTCF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fetchLicenseInfoViaTCFResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchDriverInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:fetchDriverInfo" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchDriverInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fetchDriverInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_vehicleSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:vehicleSearch" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_vehicleSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:vehicleSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchPersonalAccInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:fetchPersonalAccInfo" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchPersonalAccInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fetchPersonalAccInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchPersonalInfoViaTCF_InputMessage">
+    <wsdl:part name="parameters" element="tns:fetchPersonalInfoViaTCF" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchPersonalInfoViaTCF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fetchPersonalInfoViaTCFResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_getNextAccidentRepNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getNextAccidentRepNo" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_getNextAccidentRepNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getNextAccidentRepNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_insertTrafficControlToDb_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertTrafficControlToDb" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_insertTrafficControlToDb_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertTrafficControlToDbResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_getAccidentCoordinates_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAccidentCoordinates" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_getAccidentCoordinates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAccidentCoordinatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchPolice_InputMessage">
+    <wsdl:part name="parameters" element="tns:fetchPolice" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchPolice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fetchPoliceResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_SaveTicketInfoToOracleXYZ_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTicketInfoToOracleXYZ" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_SaveTicketInfoToOracleXYZ_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTicketInfoToOracleXYZResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_LoginUsr_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginUsr" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_LoginUsr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginUsrResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_returnDateTimeFormat_InputMessage">
+    <wsdl:part name="parameters" element="tns:returnDateTimeFormat" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_returnDateTimeFormat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:returnDateTimeFormatResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchPersonalName_InputMessage">
+    <wsdl:part name="parameters" element="tns:fetchPersonalName" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_fetchPersonalName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fetchPersonalNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_searchMonitoredRequests_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchMonitoredRequests" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_searchMonitoredRequests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchMonitoredRequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_getNextRepNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getNextRepNo" />
+  </wsdl:message>
+  <wsdl:message name="TimsArmsService_getNextRepNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getNextRepNoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TimsArmsService">
+    <wsdl:operation name="syncLocalDbForOnlineDb">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/syncLocalDbForOnlineDb" message="tns:TimsArmsService_syncLocalDbForOnlineDb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/syncLocalDbForOnlineDbResponse" message="tns:TimsArmsService_syncLocalDbForOnlineDb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getComboboxValues">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/getComboboxValues" message="tns:TimsArmsService_getComboboxValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/getComboboxValuesResponse" message="tns:TimsArmsService_getComboboxValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertAccidentToDb">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/insertAccidentToDb" message="tns:TimsArmsService_insertAccidentToDb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/insertAccidentToDbResponse" message="tns:TimsArmsService_insertAccidentToDb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertInjuredToDb">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/insertInjuredToDb" message="tns:TimsArmsService_insertInjuredToDb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/insertInjuredToDbResponse" message="tns:TimsArmsService_insertInjuredToDb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertACCCommentToDb">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/insertACCCommentToDb" message="tns:TimsArmsService_insertACCCommentToDb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/insertACCCommentToDbResponse" message="tns:TimsArmsService_insertACCCommentToDb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAccidentComments">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/getAccidentComments" message="tns:TimsArmsService_getAccidentComments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/getAccidentCommentsResponse" message="tns:TimsArmsService_getAccidentComments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertAccidentImageToDb">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/insertAccidentImageToDb" message="tns:TimsArmsService_insertAccidentImageToDb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/insertAccidentImageToDbResponse" message="tns:TimsArmsService_insertAccidentImageToDb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertAccidentImageToFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/insertAccidentImageToFile" message="tns:TimsArmsService_insertAccidentImageToFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/insertAccidentImageToFileResponse" message="tns:TimsArmsService_insertAccidentImageToFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendAccident">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/sendAccident" message="tns:TimsArmsService_sendAccident_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/sendAccidentResponse" message="tns:TimsArmsService_sendAccident_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAccident">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/getAccident" message="tns:TimsArmsService_getAccident_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/getAccidentResponse" message="tns:TimsArmsService_getAccident_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchVehicleInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/fetchVehicleInfo" message="tns:TimsArmsService_fetchVehicleInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/fetchVehicleInfoResponse" message="tns:TimsArmsService_fetchVehicleInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDescription">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/getDescription" message="tns:TimsArmsService_getDescription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/getDescriptionResponse" message="tns:TimsArmsService_getDescription_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchBannedDriverInfoViaTCF">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/fetchBannedDriverInfoViaTCF" message="tns:TimsArmsService_fetchBannedDriverInfoViaTCF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/fetchBannedDriverInfoViaTCFResponse" message="tns:TimsArmsService_fetchBannedDriverInfoViaTCF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchWantedVehicleInfoViaTCF">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/fetchWantedVehicleInfoViaTCF" message="tns:TimsArmsService_fetchWantedVehicleInfoViaTCF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/fetchWantedVehicleInfoViaTCFResponse" message="tns:TimsArmsService_fetchWantedVehicleInfoViaTCF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchImageViaTCF">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/fetchImageViaTCF" message="tns:TimsArmsService_fetchImageViaTCF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/fetchImageViaTCFResponse" message="tns:TimsArmsService_fetchImageViaTCF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchWantedVehicleInfoViaVIN">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/fetchWantedVehicleInfoViaVIN" message="tns:TimsArmsService_fetchWantedVehicleInfoViaVIN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/fetchWantedVehicleInfoViaVINResponse" message="tns:TimsArmsService_fetchWantedVehicleInfoViaVIN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchWantedVehicleInfoViaPlate">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/fetchWantedVehicleInfoViaPlate" message="tns:TimsArmsService_fetchWantedVehicleInfoViaPlate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/fetchWantedVehicleInfoViaPlateResponse" message="tns:TimsArmsService_fetchWantedVehicleInfoViaPlate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchTicketInfoViaTCF">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/fetchTicketInfoViaTCF" message="tns:TimsArmsService_fetchTicketInfoViaTCF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/fetchTicketInfoViaTCFResponse" message="tns:TimsArmsService_fetchTicketInfoViaTCF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchTicketInfoViaPlate">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/fetchTicketInfoViaPlate" message="tns:TimsArmsService_fetchTicketInfoViaPlate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/fetchTicketInfoViaPlateResponse" message="tns:TimsArmsService_fetchTicketInfoViaPlate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchTicketInfoViaLic">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/fetchTicketInfoViaLic" message="tns:TimsArmsService_fetchTicketInfoViaLic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/fetchTicketInfoViaLicResponse" message="tns:TimsArmsService_fetchTicketInfoViaLic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchTicketInfoByNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/fetchTicketInfoByNo" message="tns:TimsArmsService_fetchTicketInfoByNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/fetchTicketInfoByNoResponse" message="tns:TimsArmsService_fetchTicketInfoByNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTicketTableLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/getTicketTableLog" message="tns:TimsArmsService_getTicketTableLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/getTicketTableLogResponse" message="tns:TimsArmsService_getTicketTableLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchDiplomaticVehicleInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/fetchDiplomaticVehicleInfo" message="tns:TimsArmsService_fetchDiplomaticVehicleInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/fetchDiplomaticVehicleInfoResponse" message="tns:TimsArmsService_fetchDiplomaticVehicleInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchPoliceInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/fetchPoliceInfo" message="tns:TimsArmsService_fetchPoliceInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/fetchPoliceInfoResponse" message="tns:TimsArmsService_fetchPoliceInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="customSql">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/customSql" message="tns:TimsArmsService_customSql_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/customSqlResponse" message="tns:TimsArmsService_customSql_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchUserInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/fetchUserInfo" message="tns:TimsArmsService_fetchUserInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/fetchUserInfoResponse" message="tns:TimsArmsService_fetchUserInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchLicenseInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/fetchLicenseInfo" message="tns:TimsArmsService_fetchLicenseInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/fetchLicenseInfoResponse" message="tns:TimsArmsService_fetchLicenseInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchLicenseInfoBasic">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/fetchLicenseInfoBasic" message="tns:TimsArmsService_fetchLicenseInfoBasic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/fetchLicenseInfoBasicResponse" message="tns:TimsArmsService_fetchLicenseInfoBasic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchLicenseInfoViaTCF">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/fetchLicenseInfoViaTCF" message="tns:TimsArmsService_fetchLicenseInfoViaTCF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/fetchLicenseInfoViaTCFResponse" message="tns:TimsArmsService_fetchLicenseInfoViaTCF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchDriverInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/fetchDriverInfo" message="tns:TimsArmsService_fetchDriverInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/fetchDriverInfoResponse" message="tns:TimsArmsService_fetchDriverInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="vehicleSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/vehicleSearch" message="tns:TimsArmsService_vehicleSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/vehicleSearchResponse" message="tns:TimsArmsService_vehicleSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchPersonalAccInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/fetchPersonalAccInfo" message="tns:TimsArmsService_fetchPersonalAccInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/fetchPersonalAccInfoResponse" message="tns:TimsArmsService_fetchPersonalAccInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchPersonalInfoViaTCF">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/fetchPersonalInfoViaTCF" message="tns:TimsArmsService_fetchPersonalInfoViaTCF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/fetchPersonalInfoViaTCFResponse" message="tns:TimsArmsService_fetchPersonalInfoViaTCF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getNextAccidentRepNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/getNextAccidentRepNo" message="tns:TimsArmsService_getNextAccidentRepNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/getNextAccidentRepNoResponse" message="tns:TimsArmsService_getNextAccidentRepNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertTrafficControlToDb">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/insertTrafficControlToDb" message="tns:TimsArmsService_insertTrafficControlToDb_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/insertTrafficControlToDbResponse" message="tns:TimsArmsService_insertTrafficControlToDb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAccidentCoordinates">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/getAccidentCoordinates" message="tns:TimsArmsService_getAccidentCoordinates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/getAccidentCoordinatesResponse" message="tns:TimsArmsService_getAccidentCoordinates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchPolice">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/fetchPolice" message="tns:TimsArmsService_fetchPolice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/fetchPoliceResponse" message="tns:TimsArmsService_fetchPolice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTicketInfoToOracleXYZ">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/SaveTicketInfoToOracleXYZ" message="tns:TimsArmsService_SaveTicketInfoToOracleXYZ_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/SaveTicketInfoToOracleXYZResponse" message="tns:TimsArmsService_SaveTicketInfoToOracleXYZ_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginUsr">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/LoginUsr" message="tns:TimsArmsService_LoginUsr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/LoginUsrResponse" message="tns:TimsArmsService_LoginUsr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="returnDateTimeFormat">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/returnDateTimeFormat" message="tns:TimsArmsService_returnDateTimeFormat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/returnDateTimeFormatResponse" message="tns:TimsArmsService_returnDateTimeFormat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchPersonalName">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/fetchPersonalName" message="tns:TimsArmsService_fetchPersonalName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/fetchPersonalNameResponse" message="tns:TimsArmsService_fetchPersonalName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchMonitoredRequests">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/searchMonitoredRequests" message="tns:TimsArmsService_searchMonitoredRequests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/searchMonitoredRequestsResponse" message="tns:TimsArmsService_searchMonitoredRequests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getNextRepNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/TimsArmsService/getNextRepNo" message="tns:TimsArmsService_getNextRepNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/TimsArmsService/getNextRepNoResponse" message="tns:TimsArmsService_getNextRepNo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="TimsArmsServiceWeb" />
+</wsdl:definitions>

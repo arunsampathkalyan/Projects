@@ -1,0 +1,83 @@
+﻿<IncidentsConfiguration>
+  <Layer ID="2"/>
+  <Fields>
+    <Field ID="8"/>
+  </Fields>
+  <PriorityField ID="5"/>
+  <StatusField ID="6"/>
+  <TypeField ID="7"/>
+  <DefaultSymbol>
+    <Pictrure>DefauleIncident.png</Pictrure>
+    <Color>50, 255, 0,255</Color>
+    <Style>Triangle</Style>
+    <Size>20</Size>
+    <YOffSet>0</YOffSet>
+  </DefaultSymbol>
+  <RendererRules>
+    <Rule Priority="2" Type="6" Status="3">
+      <Symbol>
+        <Pictrure>Incident1.png</Pictrure>
+        <Color>255, 255, 0,255</Color>
+        <Style>Circle</Style>
+        <Size>20</Size>
+        <YOffSet>0</YOffSet>
+      </Symbol>
+    </Rule>
+    <Rule Priority="1" Type="7" Status="3">
+      <Symbol>
+        <Pictrure>Incident2.png</Pictrure>
+        <Color>255, 0, 255,255</Color>
+        <Style>Triangle</Style>
+        <Size>20</Size>
+        <YOffSet>0</YOffSet>
+      </Symbol>
+    </Rule>
+    <Rule Priority="3" Type="7" Status="3">
+      <Symbol>
+        <Pictrure>Incident3.png</Pictrure>
+        <Color>255, 0, 255,255</Color>
+        <Style>Triangle</Style>
+        <Size>20</Size>
+        <YOffSet>0</YOffSet>
+      </Symbol>
+    </Rule>
+  </RendererRules>
+</IncidentsConfiguration>
+
+
+<!--<IncidentsConfiguration>
+  <Layer ID="2"/>
+  <Fields>
+    <Field ID="100"/>
+    <Field ID="150"/>
+  </Fields>
+  <PriorityField ID="5"/>
+  <StatusField ID="6"/>
+  <TypeField ID="7"/>
+  <DefaultSymbol>
+    <Pictrure>Marker.png</Pictrure>
+    <Color>50, 255, 0,255</Color>
+    <Style>Triangle</Style>
+    <Size>1</Size>
+    <YOffSet>20</YOffSet>
+  </DefaultSymbol>
+  <RendererRules>
+    <Rule Priority="sdfsdf" Type="sdfdsf" Status="sdfsdf">
+      <Symbol>
+        <Pictrure>Marker.png</Pictrure>
+        <Color>255, 255, 0,255</Color>
+        <Style>Circle</Style>
+        <Size>10</Size>
+        <YOffSet>20</YOffSet>
+      </Symbol>
+    </Rule>
+    <Rule Priority="1" Type="7" Status="3">
+      <Symbol>
+        <Pictrure>Marker.png</Pictrure>
+        <Color>255, 0, 255,255</Color>
+        <Style>Triangle</Style>
+        <Size>10</Size>
+      </Symbol>
+    </Rule>
+  </RendererRules>
+</IncidentsConfiguration>-->

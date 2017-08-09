@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="IncidentMarkerHigh" xml:space="preserve">
+    <value>Images\marker\icon_heavy_Incidents.png</value>
+  </data>
+  <data name="PatrolAvailableMarker" xml:space="preserve">
+    <value>Images\marker\icon_patrol.png</value>
+  </data>
+  <data name="ViolationMarker" xml:space="preserve">
+    <value>Images\marker\icon_count_voilation.png</value>
+  </data>
+  <data name="NotificationMarker" xml:space="preserve">
+    <value>Images\marker\noti-marker.png</value>
+  </data>
+  <data name="PatrolAcknowledgedMarker" xml:space="preserve">
+    <value>Images\marker\patrol_acknowledged.png</value>
+  </data>
+  <data name="PatrolArrivedMarker" xml:space="preserve">
+    <value>Images\marker\patrol_arrived.png</value>
+  </data>
+  <data name="PatrolAssignedMarker" xml:space="preserve">
+    <value>Images\marker\patrol_dispatched.png</value>
+  </data>
+  <data name="PatrolDispatchedMarker" xml:space="preserve">
+    <value>Images\marker\patrol_dispatched.png</value>
+  </data>
+  <data name="PatrolOnTheWayMarker" xml:space="preserve">
+    <value>Images\marker\patrol_on_the_way.png</value>
+  </data>
+  <data name="PatrolUnderMaintenanceMarker" xml:space="preserve">
+    <value>Images\marker\patrol-marker.png</value>
+  </data>
+  <data name="AssetMarkerDOTcounters" xml:space="preserve">
+    <value>Images\marker\Dot_counters.png</value>
+  </data>
+  <data name="AssetMarkerDOTcountersDisabled" xml:space="preserve">
+    <value>Images\marker\Dot_counters_not_working.png</value>
+  </data>
+  <data name="AssetMarkerDOTcountersUnderMaintenance" xml:space="preserve">
+    <value>Images\marker\Dot_counters_maint.png</value>
+  </data>
+  <data name="AssetMarkerEkinRedLightCamera" xml:space="preserve">
+    <value>Images\marker\icon_IKEN.png</value>
+  </data>
+  <data name="AssetMarkerEkinRedLightCameraDisabled" xml:space="preserve">
+    <value>Images\marker\ekin_red_light_camera_not_working.png</value>
+  </data>
+  <data name="AssetMarkerEkinRedLightCameraUnderMaintenance" xml:space="preserve">
+    <value>Images\marker\ekin_red_light_camera_maint.png</value>
+  </data>
+  <data name="AssetMarkerSmartTowers" xml:space="preserve">
+    <value>Images\marker\icon_Tower.png</value>
+  </data>
+  <data name="AssetMarkerSmartTowersDisabled" xml:space="preserve">
+    <value>Images\marker\s_tower_cctv_camera_not_working.png</value>
+  </data>
+  <data name="AssetMarkerSmartTowersUnderMaintenance" xml:space="preserve">
+    <value>Images\marker\s_tower_cctv_camera_maint.png</value>
+  </data>
+  <data name="AssetMarkerSpeedGuns" xml:space="preserve">
+    <value>Images\marker\speed_guns.png</value>
+  </data>
+  <data name="AssetMarkerSpeedGunsDisabled" xml:space="preserve">
+    <value>Images\marker\speed_guns_not_working.png</value>
+  </data>
+  <data name="AssetMarkerSpeedGunsUnderMaintenance" xml:space="preserve">
+    <value>Images\marker\speed_guns_maint.png</value>
+  </data>
+  <data name="AssetMarkerVitronicMobileRadars" xml:space="preserve">
+    <value>Images\marker\assets-marker.png</value>
+  </data>
+  <data name="AssetMarkerVitronicMobileRadarsDisabled" xml:space="preserve">
+    <value>Images\marker\assets-not-work.png</value>
+  </data>
+  <data name="AssetMarkerVitronicMobileRadarsUnderMaintenance" xml:space="preserve">
+    <value>Images\marker\assets-not-work.png</value>
+  </data>
+  <data name="AssetMarkerVitronicRadars" xml:space="preserve">
+    <value>Images\marker\icon_Vitronic.png</value>
+  </data>
+  <data name="AssetMarkerVitronicRadarsDisabled" xml:space="preserve">
+    <value>Images\marker\vitronic_radars_not_working.png</value>
+  </data>
+  <data name="AssetMarkerVitronicRadarsUnderMaintenance" xml:space="preserve">
+    <value>Images\marker\vitronic_radars_maint.png</value>
+  </data>
+  <data name="IncidentMarkerLow" xml:space="preserve">
+    <value>Images\marker\icon_low_Incidents.png</value>
+  </data>
+  <data name="IncidentMarkerMed" xml:space="preserve">
+    <value>Images\marker\icon_medium_Incidents.png</value>
+  </data>
+  <data name="ViolationMarkerDirectionReversing" xml:space="preserve">
+    <value>Images\noti_icon\direction_reversing.png</value>
+  </data>
+  <data name="ViolationMarkerP2P" xml:space="preserve">
+    <value>Images\marker\icon_count_voilation.png</value>
+  </data>
+  <data name="ViolationMarkerRedLight" xml:space="preserve">
+    <value>Images\noti_icon\traffic_light.png</value>
+  </data>
+  <data name="ViolationMarkerRouteDeviation" xml:space="preserve">
+    <value>Images\marker\icon_count_voilation.png</value>
+  </data>
+  <data name="ViolationMarkerShoulderSpeeding" xml:space="preserve">
+    <value>Images\marker\icon_count_voilation.png</value>
+  </data>
+  <data name="ViolationMarkerSpeed" xml:space="preserve">
+    <value>Images\noti_icon\speed_car.png</value>
+  </data>
+  <data name="ViolationMarkerTailgating" xml:space="preserve">
+    <value>Images\noti_icon\tailgating.png</value>
+  </data>
+  <data name="FogTowerMarker" xml:space="preserve">
+    <value>Images\marker\s_tower_fog.png</value>
+  </data>
+  <data name="SmartOfficerMarker" xml:space="preserve">
+    <value>Images\marker\military_army_officer.png</value>
+  </data>
+  <data name="WantedCarIcon" xml:space="preserve">
+    <value>Images\marker\truck_speed_violation.png</value>
+  </data>
+  <data name="WantedCarTrackIcon" xml:space="preserve">
+    <value>Images\marker\track_violator_car_light_alert.png</value>
+  </data>
+  <data name="TruckViolation" xml:space="preserve">
+    <value>Images\marker\truck_violation.png</value>
+  </data>
+  <data name="ViolationCountHigh" xml:space="preserve">
+    <value>Images\marker\count_alert_high_smal.png</value>
+  </data>
+  <data name="ViolationCountLow" xml:space="preserve">
+    <value>Images\marker\count_alert_medium.png</value>
+  </data>
+  <data name="ViolationCountNormal" xml:space="preserve">
+    <value>Images\marker\count_alert_low.png</value>
+  </data>
+  <data name="CarPlateNumber" xml:space="preserve">
+    <value>Images\marker\car_num_showing.png</value>
+  </data>
+  <data name="ClusterMarkerIcon" xml:space="preserve">
+    <value>Images\marker\Cluster.png</value>
+  </data>
+  <data name="RecommendedPatrolAcknowledgedMarker" xml:space="preserve">
+    <value>Images\marker\Recommended_patrol_acknowledged.png</value>
+  </data>
+  <data name="RecommendedPatrolArrivedMarker" xml:space="preserve">
+    <value>Images\marker\Recommended_patrol_arrived.png</value>
+  </data>
+  <data name="RecommendedPatrolAssignedMarker" xml:space="preserve">
+    <value>Images\marker\Recommended_patrol_dispatched.png</value>
+  </data>
+  <data name="RecommendedPatrolAvailableMarker" xml:space="preserve">
+    <value>Images\marker\Recommended_icon_patrol.png</value>
+  </data>
+  <data name="RecommendedPatrolDispatchedMarker" xml:space="preserve">
+    <value>Images\marker\Recommended_patrol_dispatched.png</value>
+  </data>
+  <data name="RecommendedPatrolOnTheWayMarker" xml:space="preserve">
+    <value>Images\marker\Recommended_patrol_on_the_way.png</value>
+  </data>
+  <data name="RecommendedPatrolUnderMaintenanceMarker" xml:space="preserve">
+    <value>Images\marker\Recommended_patrol-marker.png</value>
+  </data>
+  <data name="TrackingPin" xml:space="preserve">
+    <value>Images\marker\Tracking_pin.png</value>
+  </data>
+  <data name="LastWantedCarPlace" xml:space="preserve">
+    <value>Images\marker\track_violator_car_light_alert_last.png</value>
+  </data>
+  <data name="IncidentMarkerFatality" xml:space="preserve">
+    <value>Images\marker\icon_fatality_Incidents.png</value>
+  </data>
+  <data name="PatrolBusyMarker" xml:space="preserve">
+    <value>Images\marker\Marker-patrol-busy.png</value>
+  </data>
+  <data name="PatrolMarker" xml:space="preserve">
+    <value>Images\marker\Marker-patrol.png</value>
+  </data>
+  <data name="PatrolRecommendedMarker" xml:space="preserve">
+    <value>Images\marker\Marker-patrol-rec.png</value>
+  </data>
+  <data name="PatrolSuggestedMarker" xml:space="preserve">
+    <value>Images\marker\Marker-patrol-sugg.png</value>
+  </data>
+  <data name="SmartOfficerBusyMarker" xml:space="preserve">
+    <value>Images\marker\Marker-officer-busy.png</value>
+  </data>
+  <data name="SmartOfficerRecommendedMarker" xml:space="preserve">
+    <value>Images\marker\Marker-officer-rec.png</value>
+  </data>
+  <data name="SmartOfficerSuggestedMarker" xml:space="preserve">
+    <value>Images\marker\Marker-officer-sugg.png</value>
+  </data>
+  <data name="SmrtOfficerMarker" xml:space="preserve">
+    <value>Images\marker\Marker-officer.png</value>
+  </data>
+</root>

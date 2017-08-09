@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://stc-01.cloudapp.net/WCFService/KPILayer.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Windows.Media" />
+  <xs:complexType name="ArrayOfCubeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CubeDTO" nillable="true" type="tns:CubeDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCubeDTO" nillable="true" type="tns:ArrayOfCubeDTO" />
+  <xs:complexType name="CubeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Details" nillable="true" type="tns:ArrayOfCubeDetailsDTO" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Windows.Media" minOccurs="0" name="LegendColor" nillable="true" type="q1:Brush" />
+      <xs:element minOccurs="0" name="LegendName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineDetails" nillable="true" type="tns:ArrayOfCubeDetailsDTO" />
+      <xs:element minOccurs="0" name="StatisticalAnalysis" nillable="true" type="tns:ArrayOfCubeFacts" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CubeDTO" nillable="true" type="tns:CubeDTO" />
+  <xs:complexType name="ArrayOfCubeDetailsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CubeDetailsDTO" nillable="true" type="tns:CubeDetailsDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCubeDetailsDTO" nillable="true" type="tns:ArrayOfCubeDetailsDTO" />
+  <xs:complexType name="CubeDetailsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Orientation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Percentage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetValue" type="xs:double" />
+      <xs:element minOccurs="0" name="Value" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CubeDetailsDTO" nillable="true" type="tns:CubeDetailsDTO" />
+  <xs:complexType name="ArrayOfCubeFacts">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CubeFacts" nillable="true" type="tns:CubeFacts" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCubeFacts" nillable="true" type="tns:ArrayOfCubeFacts" />
+  <xs:complexType name="CubeFacts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FactColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FactKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FactValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CubeFacts" nillable="true" type="tns:CubeFacts" />
+</xs:schema>

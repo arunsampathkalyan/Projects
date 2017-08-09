@@ -1,0 +1,16 @@
+﻿<FieldsConfiguration>
+  <!--Network Assets Fields-->
+  <Field ID="0" Name="OBJECTID" IsBasicInfo="True" />
+  <Field ID="1" Name="Coverage"/>
+  <Field ID="2" Name="CalculatedCoverage" Value="[Coverage] + 7"/>
+
+  <!--Mobile Assets Fields-->
+  <Field ID="3" Name="OBJECTID" IsBasicInfo="True" />
+
+  <!--Incidents-->
+  <Field ID="4" Name="OBJECTID" IsBasicInfo="True" />
+  <Field ID="5" Name="PRIORITYCODE"/>
+  <Field ID="6" Name="STATUSCODE"/>
+  <Field ID="7" Name="TYPECODE"/>
+  <Field ID="8" Name="OCCURRENCE_DATETIME"/>
+</FieldsConfiguration>

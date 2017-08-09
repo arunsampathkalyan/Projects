@@ -1,0 +1,1161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://adpolice.gov.ae/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://adpolice.gov.ae/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://adpolice.gov.ae/">
+      <s:element name="GetTickets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetTicketsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTicketsRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseInfo" type="tns:LicenseKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrafficProfile" type="tns:TrafficNo" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateFrom" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateTo" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PlateKey">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PlateNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateOrgNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateColorCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateKindCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateTypeCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateSourceCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateColorArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateColorEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateSourceArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateSourceEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateKindArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateKindEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateTypeArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateTypeEnglishDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LicenseKey">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseSourceCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseSourceArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseSourceEnglishDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TrafficNo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TcfNo" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTicketsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTicketsResult" type="tns:GetTicketsResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTicketsResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Tickets" type="tns:ArrayOfTicket" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTicket">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Ticket" nillable="true" type="tns:Ticket" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Ticket">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TicketID" type="tns:TicketID" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TicketType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocationDescAr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocationDescEn" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DriverTcfNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseInfo" type="tns:LicenseKey" />
+          <s:element minOccurs="1" maxOccurs="1" name="VehicleOwnerTcfNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsWebPayable" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="LateCharges" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalAmount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="DiscountRate" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalAmountAfterDiscount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="BlackPoints" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaterialsList" type="tns:ArrayOfTicketMaterial" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TicketID">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TicketNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketYear" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketSourceCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsExternalTicket" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTicketMaterial">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TicketMaterial" nillable="true" type="tns:TicketMaterial" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TicketMaterial">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MaterialCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaterialArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaterialEnglishDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaterialAmount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DiscountRate" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmountAfterDiscount" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ADPSoapHeaderIn" type="tns:ADPSoapHeaderIn" />
+      <s:complexType name="ADPSoapHeaderIn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="ErrorHeader" type="tns:ErrorHeader" />
+      <s:complexType name="ErrorHeader">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorEnglishDesc" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetTicketInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetTicketInfoRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTicketInfoRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TicketID" type="tns:TicketID" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTicketInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTicketInfoResult" type="tns:GetTicketsResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTicketsHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetTicketsHistoryRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTicketsHistoryRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseInfo" type="tns:LicenseKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrafficProfile" type="tns:TrafficNo" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateFrom" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateTo" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTicketsHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTicketsHistoryResult" type="tns:GetTicketsResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTicketsSummary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetTicketsSummaryRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTicketsSummaryRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TrafficProfile" type="tns:TrafficNo" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTicketsSummaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTicketsSummaryResult" type="tns:GetTicketsSummaryResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTicketsSummaryResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BlackPoints" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketsCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketsAmount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HistoryTicketsAmount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HistoryBlackPoints" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HistoryTicketsCount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CalculateTicketsExtraFees">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CalculateTicketsExtraFeesRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CalculateTicketsExtraFeesRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceCenterCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CalculateTicketsExtraFeesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalculateTicketsExtraFeesResult" type="tns:CalculateTicketsExtraFeesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CalculateTicketsExtraFeesResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ExtraFees" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateTicketsPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CreateTicketsPaymentRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateTicketsPaymentRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseInfo" type="tns:LicenseKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrafficProfile" type="tns:TrafficNo" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceCenterCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransferRemarks" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentTotalAmount" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tickets" type="tns:SelectedTickets" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaidByTrafficProfile" type="tns:TrafficNo" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentIP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SelectedTickets">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Tickets" type="tns:ArrayOfTicketID" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTicketID">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TicketID" nillable="true" type="tns:TicketID" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateTicketsPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateTicketsPaymentResult" type="tns:CreateTicketsPaymentResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateTicketsPaymentResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SerialNo" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ApproveTicketsPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:ApproveTicketsPaymentRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ApproveTicketsPaymentRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SerialNo" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ApproveTicketsPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ApproveTicketsPaymentResult" type="tns:ApproveTicketsPaymentResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ApproveTicketsPaymentResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ReceiptNo" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiptDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiptTime" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CancelTicketsPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CancelTicketsPaymentRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CancelTicketsPaymentRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SerialNo" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CancelTicketsPaymentResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateNewTicket">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CreateNewTicketRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateNewTicketRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketDateTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TicketType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LocationCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseInfo" type="tns:LicenseKey" />
+          <s:element minOccurs="1" maxOccurs="1" name="DriverTcfNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="DriverName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VehicleMakeCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VehicleTypeCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VehicleModelCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VehicleColorCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VehicleOwnerTcfNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="VehicleOwnerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaterialsCodes" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="Location" type="tns:GPSLocation" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MeasuredSpeed" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CapturedSpeed" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SpeedLimit" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RadarKindCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RadarTypeCode" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GPSLocation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="X" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Y" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateNewTicketResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateNewTicketResult" type="tns:CreateNewTicketResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateNewTicketResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TicketNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketSourceCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TransferTicketstoDrivingLicense">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:TransferTicketstoDrivingLicenseRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransferTicketstoDrivingLicenseRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceCenterCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tickets" type="tns:SelectedTickets" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="1" maxOccurs="1" name="OwnerTCFNumber" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="DriverTCFNumber" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseInfo" type="tns:LicenseKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransferReason" type="tns:TransferReason" />
+          <s:element minOccurs="0" maxOccurs="1" name="OtherReason" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="TransferReason">
+        <s:restriction base="s:string">
+          <s:enumeration value="Delay" />
+          <s:enumeration value="CivilCase" />
+          <s:enumeration value="Circulate" />
+          <s:enumeration value="FineError" />
+          <s:enumeration value="Death" />
+          <s:enumeration value="Order_Court" />
+          <s:enumeration value="Other" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="TransferTicketstoDrivingLicenseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransferTicketstoDrivingLicenseResult" type="tns:TransferTicketstoDrivingLicenseResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransferTicketstoDrivingLicenseResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationNo" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IssueTicketsClearanceCertificate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:IssueTicketsClearanceCertificateRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IssueTicketsClearanceCertificateRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceCenterCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrafficProfile" type="tns:TrafficNo" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseInfo" type="tns:LicenseKey" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnifiedID" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IssueTicketsClearanceCertificateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IssueTicketsClearanceCertificateResult" type="tns:IssueTicketsClearanceCertificateResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="IssueTicketsClearanceCertificateResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsClear" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ClearCertifiedNo" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryOfRemainingPeriodOfTheLicensesWithdrawn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:QueryOfRemainingPeriodOfTheLicensesWithdrawnRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="QueryOfRemainingPeriodOfTheLicensesWithdrawnRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TrafficProfile" type="tns:TrafficNo" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseInfo" type="tns:LicenseKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryOfRemainingPeriodOfTheLicensesWithdrawnResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryOfRemainingPeriodOfTheLicensesWithdrawnResult" type="tns:QueryOfRemainingPeriodOfTheLicensesWithdrawnResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="QueryOfRemainingPeriodOfTheLicensesWithdrawnResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ExpiryDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTransferableTickets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetTransferableTicketsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTransferableTicketsRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrafficProfile" type="tns:TrafficNo" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseInfo" type="tns:LicenseKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceKind" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTransferableTicketsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransferableTicketsResult" type="tns:GetTransferableTicketsResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTransferableTicketsResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Tickets" type="tns:ArrayOfTicket" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getTicketPhotosPaths">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetTicketPhotosPathsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTicketPhotosPathsRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TicketID" type="tns:TicketID" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getTicketPhotosPathsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTicketPhotosPathsResult" type="tns:GetTicketPhotosPathsResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTicketPhotosPathsResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PhotosPaths" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UploadPicture">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:UploadPictureRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UploadPictureRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TicketID" type="tns:TicketID" />
+          <s:element minOccurs="0" maxOccurs="1" name="Image1" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Image2" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UploadPictureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadPictureResult" type="tns:UploadPictureResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UploadPictureResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetTicketsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTickets" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTicketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketsADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketsErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTicketInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTicketInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketInfoADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketInfoErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketsHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetTicketsHistory" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketsHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetTicketsHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketsHistoryADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketsHistoryErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketsSummarySoapIn">
+    <wsdl:part name="parameters" element="tns:GetTicketsSummary" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketsSummarySoapOut">
+    <wsdl:part name="parameters" element="tns:GetTicketsSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketsSummaryADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketsSummaryErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="CalculateTicketsExtraFeesSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateTicketsExtraFees" />
+  </wsdl:message>
+  <wsdl:message name="CalculateTicketsExtraFeesSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateTicketsExtraFeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateTicketsExtraFeesADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="CalculateTicketsExtraFeesErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateTicketsPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTicketsPayment" />
+  </wsdl:message>
+  <wsdl:message name="CreateTicketsPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTicketsPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTicketsPaymentADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="CreateTicketsPaymentErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="ApproveTicketsPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:ApproveTicketsPayment" />
+  </wsdl:message>
+  <wsdl:message name="ApproveTicketsPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:ApproveTicketsPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApproveTicketsPaymentADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="ApproveTicketsPaymentErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="CancelTicketsPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelTicketsPayment" />
+  </wsdl:message>
+  <wsdl:message name="CancelTicketsPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelTicketsPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelTicketsPaymentADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="CancelTicketsPaymentErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewTicketSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateNewTicket" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewTicketSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateNewTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewTicketADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="CreateNewTicketErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="TransferTicketstoDrivingLicenseSoapIn">
+    <wsdl:part name="parameters" element="tns:TransferTicketstoDrivingLicense" />
+  </wsdl:message>
+  <wsdl:message name="TransferTicketstoDrivingLicenseSoapOut">
+    <wsdl:part name="parameters" element="tns:TransferTicketstoDrivingLicenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransferTicketstoDrivingLicenseADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="TransferTicketstoDrivingLicenseErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="IssueTicketsClearanceCertificateSoapIn">
+    <wsdl:part name="parameters" element="tns:IssueTicketsClearanceCertificate" />
+  </wsdl:message>
+  <wsdl:message name="IssueTicketsClearanceCertificateSoapOut">
+    <wsdl:part name="parameters" element="tns:IssueTicketsClearanceCertificateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IssueTicketsClearanceCertificateADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="IssueTicketsClearanceCertificateErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="QueryOfRemainingPeriodOfTheLicensesWithdrawnSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryOfRemainingPeriodOfTheLicensesWithdrawn" />
+  </wsdl:message>
+  <wsdl:message name="QueryOfRemainingPeriodOfTheLicensesWithdrawnSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryOfRemainingPeriodOfTheLicensesWithdrawnResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryOfRemainingPeriodOfTheLicensesWithdrawnADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="QueryOfRemainingPeriodOfTheLicensesWithdrawnErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferableTicketsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransferableTickets" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferableTicketsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransferableTicketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferableTicketsADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetTransferableTicketsErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="getTicketPhotosPathsSoapIn">
+    <wsdl:part name="parameters" element="tns:getTicketPhotosPaths" />
+  </wsdl:message>
+  <wsdl:message name="getTicketPhotosPathsSoapOut">
+    <wsdl:part name="parameters" element="tns:getTicketPhotosPathsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTicketPhotosPathsADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getTicketPhotosPathsErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="UploadPictureSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadPicture" />
+  </wsdl:message>
+  <wsdl:message name="UploadPictureSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadPictureResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadPictureADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="UploadPictureErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:portType name="TicketsServicesSoap">
+    <wsdl:operation name="GetTickets">
+      <wsdl:input message="tns:GetTicketsSoapIn" />
+      <wsdl:output message="tns:GetTicketsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketInfo">
+      <wsdl:input message="tns:GetTicketInfoSoapIn" />
+      <wsdl:output message="tns:GetTicketInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketsHistory">
+      <wsdl:input message="tns:GetTicketsHistorySoapIn" />
+      <wsdl:output message="tns:GetTicketsHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketsSummary">
+      <wsdl:input message="tns:GetTicketsSummarySoapIn" />
+      <wsdl:output message="tns:GetTicketsSummarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateTicketsExtraFees">
+      <wsdl:input message="tns:CalculateTicketsExtraFeesSoapIn" />
+      <wsdl:output message="tns:CalculateTicketsExtraFeesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTicketsPayment">
+      <wsdl:input message="tns:CreateTicketsPaymentSoapIn" />
+      <wsdl:output message="tns:CreateTicketsPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ApproveTicketsPayment">
+      <wsdl:input message="tns:ApproveTicketsPaymentSoapIn" />
+      <wsdl:output message="tns:ApproveTicketsPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelTicketsPayment">
+      <wsdl:input message="tns:CancelTicketsPaymentSoapIn" />
+      <wsdl:output message="tns:CancelTicketsPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewTicket">
+      <wsdl:input message="tns:CreateNewTicketSoapIn" />
+      <wsdl:output message="tns:CreateNewTicketSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransferTicketstoDrivingLicense">
+      <wsdl:input message="tns:TransferTicketstoDrivingLicenseSoapIn" />
+      <wsdl:output message="tns:TransferTicketstoDrivingLicenseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IssueTicketsClearanceCertificate">
+      <wsdl:input message="tns:IssueTicketsClearanceCertificateSoapIn" />
+      <wsdl:output message="tns:IssueTicketsClearanceCertificateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryOfRemainingPeriodOfTheLicensesWithdrawn">
+      <wsdl:input message="tns:QueryOfRemainingPeriodOfTheLicensesWithdrawnSoapIn" />
+      <wsdl:output message="tns:QueryOfRemainingPeriodOfTheLicensesWithdrawnSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferableTickets">
+      <wsdl:input message="tns:GetTransferableTicketsSoapIn" />
+      <wsdl:output message="tns:GetTransferableTicketsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTicketPhotosPaths">
+      <wsdl:input message="tns:getTicketPhotosPathsSoapIn" />
+      <wsdl:output message="tns:getTicketPhotosPathsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadPicture">
+      <wsdl:input message="tns:UploadPictureSoapIn" />
+      <wsdl:output message="tns:UploadPictureSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TicketsServicesSoap" type="tns:TicketsServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTickets">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetTickets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTicketsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTicketsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketInfo">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetTicketInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTicketInfoADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTicketInfoErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketsHistory">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetTicketsHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTicketsHistoryADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTicketsHistoryErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketsSummary">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetTicketsSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTicketsSummaryADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTicketsSummaryErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateTicketsExtraFees">
+      <soap:operation soapAction="http://adpolice.gov.ae/CalculateTicketsExtraFees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CalculateTicketsExtraFeesADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:CalculateTicketsExtraFeesErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTicketsPayment">
+      <soap:operation soapAction="http://adpolice.gov.ae/CreateTicketsPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateTicketsPaymentADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateTicketsPaymentErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveTicketsPayment">
+      <soap:operation soapAction="http://adpolice.gov.ae/ApproveTicketsPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ApproveTicketsPaymentADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ApproveTicketsPaymentErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelTicketsPayment">
+      <soap:operation soapAction="http://adpolice.gov.ae/CancelTicketsPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CancelTicketsPaymentADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:CancelTicketsPaymentErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewTicket">
+      <soap:operation soapAction="http://adpolice.gov.ae/CreateNewTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateNewTicketADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateNewTicketErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransferTicketstoDrivingLicense">
+      <soap:operation soapAction="http://adpolice.gov.ae/TransferTicketstoDrivingLicense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:TransferTicketstoDrivingLicenseADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:TransferTicketstoDrivingLicenseErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueTicketsClearanceCertificate">
+      <soap:operation soapAction="http://adpolice.gov.ae/IssueTicketsClearanceCertificate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:IssueTicketsClearanceCertificateADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:IssueTicketsClearanceCertificateErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryOfRemainingPeriodOfTheLicensesWithdrawn">
+      <soap:operation soapAction="http://adpolice.gov.ae/QueryOfRemainingPeriodOfTheLicensesWithdrawn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:QueryOfRemainingPeriodOfTheLicensesWithdrawnADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:QueryOfRemainingPeriodOfTheLicensesWithdrawnErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferableTickets">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetTransferableTickets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTransferableTicketsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTransferableTicketsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTicketPhotosPaths">
+      <soap:operation soapAction="http://adpolice.gov.ae/getTicketPhotosPaths" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getTicketPhotosPathsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getTicketPhotosPathsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadPicture">
+      <soap:operation soapAction="http://adpolice.gov.ae/UploadPicture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UploadPictureADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:UploadPictureErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TicketsServicesSoap12" type="tns:TicketsServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTickets">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetTickets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTicketsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTicketsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketInfo">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetTicketInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTicketInfoADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTicketInfoErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketsHistory">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetTicketsHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTicketsHistoryADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTicketsHistoryErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketsSummary">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetTicketsSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTicketsSummaryADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTicketsSummaryErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateTicketsExtraFees">
+      <soap12:operation soapAction="http://adpolice.gov.ae/CalculateTicketsExtraFees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CalculateTicketsExtraFeesADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CalculateTicketsExtraFeesErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTicketsPayment">
+      <soap12:operation soapAction="http://adpolice.gov.ae/CreateTicketsPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateTicketsPaymentADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateTicketsPaymentErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveTicketsPayment">
+      <soap12:operation soapAction="http://adpolice.gov.ae/ApproveTicketsPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ApproveTicketsPaymentADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ApproveTicketsPaymentErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelTicketsPayment">
+      <soap12:operation soapAction="http://adpolice.gov.ae/CancelTicketsPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CancelTicketsPaymentADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CancelTicketsPaymentErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewTicket">
+      <soap12:operation soapAction="http://adpolice.gov.ae/CreateNewTicket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateNewTicketADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateNewTicketErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransferTicketstoDrivingLicense">
+      <soap12:operation soapAction="http://adpolice.gov.ae/TransferTicketstoDrivingLicense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TransferTicketstoDrivingLicenseADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TransferTicketstoDrivingLicenseErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IssueTicketsClearanceCertificate">
+      <soap12:operation soapAction="http://adpolice.gov.ae/IssueTicketsClearanceCertificate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:IssueTicketsClearanceCertificateADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:IssueTicketsClearanceCertificateErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryOfRemainingPeriodOfTheLicensesWithdrawn">
+      <soap12:operation soapAction="http://adpolice.gov.ae/QueryOfRemainingPeriodOfTheLicensesWithdrawn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QueryOfRemainingPeriodOfTheLicensesWithdrawnADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:QueryOfRemainingPeriodOfTheLicensesWithdrawnErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferableTickets">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetTransferableTickets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTransferableTicketsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTransferableTicketsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTicketPhotosPaths">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getTicketPhotosPaths" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getTicketPhotosPathsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getTicketPhotosPathsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadPicture">
+      <soap12:operation soapAction="http://adpolice.gov.ae/UploadPicture" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UploadPictureADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UploadPictureErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TicketsServices">
+    <wsdl:port name="TicketsServicesSoap" binding="tns:TicketsServicesSoap">
+      <soap:address location="http://194.170.200.102/trafficwebservices/ticketsServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TicketsServicesSoap12" binding="tns:TicketsServicesSoap12">
+      <soap12:address location="http://194.170.200.102/trafficwebservices/ticketsServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PCALIB" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PCALIB" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:6142/PCAService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:6142/PCAService?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfSESSION">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SESSION" type="tns:SESSION" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSESSION" nillable="true" type="tns:ArrayOfSESSION" />
+  <xs:complexType name="SESSION">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="time" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SESSION" nillable="true" type="tns:SESSION" />
+  <xs:complexType name="ArrayOfNODE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NODE" type="tns:NODE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNODE" nillable="true" type="tns:ArrayOfNODE" />
+  <xs:complexType name="NODE">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="D" nillable="true" type="q1:ArrayOfdouble" />
+      <xs:element minOccurs="0" name="P" type="xs:double" />
+      <xs:element minOccurs="0" name="X" type="xs:double" />
+      <xs:element minOccurs="0" name="Y" type="xs:double" />
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NODE" nillable="true" type="tns:NODE" />
+  <xs:complexType name="ArrayOfCAR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CAR" type="tns:CAR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCAR" nillable="true" type="tns:ArrayOfCAR" />
+  <xs:complexType name="CAR">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="N" type="xs:int" />
+      <xs:element minOccurs="0" name="S" type="xs:int" />
+      <xs:element minOccurs="0" name="TN" type="xs:long" />
+      <xs:element minOccurs="0" name="Ta" type="xs:double" />
+      <xs:element minOccurs="0" name="Tm" type="xs:double" />
+      <xs:element minOccurs="0" name="X" type="xs:double" />
+      <xs:element minOccurs="0" name="Y" type="xs:double" />
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CAR" nillable="true" type="tns:CAR" />
+</xs:schema>

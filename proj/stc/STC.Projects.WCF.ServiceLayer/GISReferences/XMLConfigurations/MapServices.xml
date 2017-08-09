@@ -1,0 +1,32 @@
+﻿<MapServicesConfiguration>
+  <MapService ID="0" Type="Tiled" URL="http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer">
+  </MapService>
+  <MapService ID="1" Type="Dynamic" URL="http://192.168.1.220:6080/arcgis/rest/services/Softec/SoftecMapService/MapServer">
+    <Layers>
+      <Layer ID="0" />
+      <Layer ID="1" />
+      <Layer ID="2" />
+    </Layers>
+  </MapService>
+  <RoutingService URL="http://192.168.1.220:6080/arcgis/rest/services/Softec/Network/NAServer/Route"/>
+  <ServiceAreaService URL="http://192.168.1.220:6080/arcgis/rest/services/Softec/Network/NAServer/Service%20Area"/>
+</MapServicesConfiguration>
+
+
+
+<!--<MapServicesConfiguration>
+  <MapService ID="0" Type="Tiled" URL="http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer">
+  </MapService>
+  <MapService ID="1" Type="Dynamic" URL="http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Demographics/ESRI_Census_USA/MapServer">
+    <Layers>
+      <Layer ID="0" />
+      <Layer ID="0" />
+    </Layers>
+  </MapService>
+  <MapService ID="2" Type="Feature" URL="http://sampleserver6.arcgisonline.com/arcgis/rest/services/NapervilleShelters/FeatureServer/">
+    <Layers>
+      <Layer ID="10"/>
+    </Layers>
+    
+  </MapService>
+</MapServicesConfiguration>-->

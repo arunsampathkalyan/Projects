@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="STC.Projects.WCF.SocialMediaService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="FBAppId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">143360359367928</Value>
+    </Setting>
+    <Setting Name="FBAppSecret" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FBAccessToken" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CAANhtmK2gRABABrxSSOZA5OqPfoBtgJ2FeoINhebPbcF4WQGxTMkuI2qv3qpDDcWw5Ku82qMsXS2UMb93YPkXzVDbDEBsggZCNRHcWSvKN6VYJlSv6Ww4IMMgajZBYbTV5bUa4ZBh6Q7HA2DR7PuZCkWfgUeKlGKOjggUrFqM5Bsj5HiC7d5JM3hpThq6lJQZD</Value>
+    </Setting>
+    <Setting Name="TwitterConsumerId" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">pQWNNNf2FTKkVITzmRb181ccN</Value>
+    </Setting>
+    <Setting Name="TwitterConsumerSecret" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">LSgsxhvAn4oqGD4XJU2Y6HVicJv9EJAyFzV610Maxfv0okcUyj</Value>
+    </Setting>
+    <Setting Name="TwitterToken" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">4641799162-CIE2qWwQoClU0RJl8bcRlU3GfmWlJyghIGl23aJ</Value>
+    </Setting>
+    <Setting Name="TwitterTokenSecret" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">JgqoEN0sz9OOAQvURvM1GKaghED3DxErChONvcZQG6HRD</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,1321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://stc-01.cloudapp.net/WCFService/KPILayer.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" />
+  <xs:import schemaLocation="http://stc-01.cloudapp.net/WCFService/KPILayer.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:element name="GetViolationTypeTrendDaysOfWeek">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationTypeTrendDaysOfWeekResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetViolationTypeTrendDaysOfWeekResult" nillable="true" type="q1:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationTypeTrendWeekOfYear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationTypeTrendWeekOfYearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetViolationTypeTrendWeekOfYearResult" nillable="true" type="q2:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationTypeTrendMonthOfYear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationTypeTrendMonthOfYearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetViolationTypeTrendMonthOfYearResult" nillable="true" type="q3:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationTypeTrendQuarterOfYear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationTypeTrendQuarterOfYearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetViolationTypeTrendQuarterOfYearResult" nillable="true" type="q4:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentTrendDaysOfWeek">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentTrendDaysOfWeekResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetIncidentTrendDaysOfWeekResult" nillable="true" type="q5:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentTrendWeekOfYear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentTrendWeekOfYearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetIncidentTrendWeekOfYearResult" nillable="true" type="q6:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentTrendMonthOfYear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentTrendMonthOfYearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetIncidentTrendMonthOfYearResult" nillable="true" type="q7:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentTrendQuarterOfYear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentTrendQuarterOfYearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetIncidentTrendQuarterOfYearResult" nillable="true" type="q8:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsTrendDaysOfWeek">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsTrendDaysOfWeekResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTruckViolationsTrendDaysOfWeekResult" nillable="true" type="q9:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsTrendWeekOfYear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsTrendWeekOfYearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTruckViolationsTrendWeekOfYearResult" nillable="true" type="q10:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsTrendMonthOfYear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsTrendMonthOfYearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTruckViolationsTrendMonthOfYearResult" nillable="true" type="q11:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsTrendQuarterOfYear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsTrendQuarterOfYearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTruckViolationsTrendQuarterOfYearResult" nillable="true" type="q12:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationTrendDaysOfWeek">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationTrendDaysOfWeekResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolationTrendDaysOfWeekResult" nillable="true" type="q13:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationTrendWeekOfYear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationTrendWeekOfYearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolationTrendWeekOfYearResult" nillable="true" type="q14:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationTrendMonthOfYear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationTrendMonthOfYearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolationTrendMonthOfYearResult" nillable="true" type="q15:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationTrendQuarterOfYear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationTrendQuarterOfYearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolationTrendQuarterOfYearResult" nillable="true" type="q16:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationRegionYearly">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationRegionYearlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTruckViolationRegionYearlyResult" nillable="true" type="q17:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationRegionMonthly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationRegionMonthlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTruckViolationRegionMonthlyResult" nillable="true" type="q18:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationRegionWeekly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationRegionWeeklyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTruckViolationRegionWeeklyResult" nillable="true" type="q19:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationRegionDaily">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WeekStartDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationRegionDailyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTruckViolationRegionDailyResult" nillable="true" type="q20:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationRegionWiseYearly">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationRegionWiseYearlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolationRegionWiseYearlyResult" nillable="true" type="q21:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationRegionWiseDaily">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WeekStartDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="WeekEndDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationRegionWiseDailyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolationRegionWiseDailyResult" nillable="true" type="q22:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationRegionWiseMonthly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationRegionWiseMonthlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolationRegionWiseMonthlyResult" nillable="true" type="q23:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationRegionWiseWeekly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationRegionWiseWeeklyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolationRegionWiseWeeklyResult" nillable="true" type="q24:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsRegionWiseYearly">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsRegionWiseYearlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetIncidentsRegionWiseYearlyResult" nillable="true" type="q25:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsRegionWiseDaily">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WeekStartDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="WeekEndDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsRegionWiseDailyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetIncidentsRegionWiseDailyResult" nillable="true" type="q26:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsRegionWiseMonthly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsRegionWiseMonthlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetIncidentsRegionWiseMonthlyResult" nillable="true" type="q27:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsRegionWiseWeekly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsRegionWiseWeeklyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetIncidentsRegionWiseWeeklyResult" nillable="true" type="q28:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsRegionWiseYearly">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsRegionWiseYearlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetViolationsRegionWiseYearlyResult" nillable="true" type="q29:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsRegionWiseDaily">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WeekStartDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="WeekEndDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsRegionWiseDailyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetViolationsRegionWiseDailyResult" nillable="true" type="q30:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsRegionWiseMonthly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsRegionWiseMonthlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetViolationsRegionWiseMonthlyResult" nillable="true" type="q31:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsRegionWiseWeekly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsRegionWiseWeeklyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetViolationsRegionWiseWeeklyResult" nillable="true" type="q32:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsRegionComparisonYearly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsRegionComparisonYearlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTruckViolationsRegionComparisonYearlyResult" nillable="true" type="q33:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsRegionComparisonMonthly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="startMonth" type="q34:MonthOfYear" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="endMonth" type="q35:MonthOfYear" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsRegionComparisonMonthlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTruckViolationsRegionComparisonMonthlyResult" nillable="true" type="q36:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsRegionComparisonWeekly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstWeek" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="secondWeek" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsRegionComparisonWeeklyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTruckViolationsRegionComparisonWeeklyResult" nillable="true" type="q37:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsRegionComparisonDaily">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstDay" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="secondDay" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsRegionComparisonDailyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTruckViolationsRegionComparisonDailyResult" nillable="true" type="q38:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsRegionComparisonYearly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsRegionComparisonYearlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetViolationsRegionComparisonYearlyResult" nillable="true" type="q39:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsRegionComparisonMonthly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="startMonth" type="q40:MonthOfYear" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="endMonth" type="q41:MonthOfYear" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsRegionComparisonMonthlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetViolationsRegionComparisonMonthlyResult" nillable="true" type="q42:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsRegionComparisonWeekly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstWeek" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="secondWeek" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsRegionComparisonWeeklyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetViolationsRegionComparisonWeeklyResult" nillable="true" type="q43:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsRegionComparisonDaily">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstDay" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="secondDay" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsRegionComparisonDailyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetViolationsRegionComparisonDailyResult" nillable="true" type="q44:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsRegionComparisonYearly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsRegionComparisonYearlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetIncidentsRegionComparisonYearlyResult" nillable="true" type="q45:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsRegionComparisonMonthly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="startMonth" type="q46:MonthOfYear" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="endMonth" type="q47:MonthOfYear" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsRegionComparisonMonthlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetIncidentsRegionComparisonMonthlyResult" nillable="true" type="q48:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsRegionComparisonWeekly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstWeek" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="secondWeek" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsRegionComparisonWeeklyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetIncidentsRegionComparisonWeeklyResult" nillable="true" type="q49:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsRegionComparisonDaily">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstDay" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="secondDay" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsRegionComparisonDailyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetIncidentsRegionComparisonDailyResult" nillable="true" type="q50:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsRegionComparisonYearly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsRegionComparisonYearlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolationsRegionComparisonYearlyResult" nillable="true" type="q51:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsRegionComparisonMonthly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="startMonth" type="q52:MonthOfYear" />
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="endMonth" type="q53:MonthOfYear" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsRegionComparisonMonthlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolationsRegionComparisonMonthlyResult" nillable="true" type="q54:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsRegionComparisonWeekly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstWeek" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="secondWeek" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsRegionComparisonWeeklyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolationsRegionComparisonWeeklyResult" nillable="true" type="q55:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsRegionComparisonDaily">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstDay" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="secondDay" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsRegionComparisonDailyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolationsRegionComparisonDailyResult" nillable="true" type="q56:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsStatisticalYearly">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsStatisticalYearlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTruckViolationsStatisticalYearlyResult" nillable="true" type="q57:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsStaticsticalMonthly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsStaticsticalMonthlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTruckViolationsStaticsticalMonthlyResult" nillable="true" type="q58:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsStaticsticalWeekly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="month" type="q59:MonthOfYear" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsStaticsticalWeeklyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTruckViolationsStaticsticalWeeklyResult" nillable="true" type="q60:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsStatisticalDaily">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="weekStartDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsStatisticalDailyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTruckViolationsStatisticalDailyResult" nillable="true" type="q61:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsStatisticalYearly">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsStatisticalYearlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetViolationsStatisticalYearlyResult" nillable="true" type="q62:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsStaticsticalMonthly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsStaticsticalMonthlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetViolationsStaticsticalMonthlyResult" nillable="true" type="q63:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsStaticsticalWeekly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="month" type="q64:MonthOfYear" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsStaticsticalWeeklyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetViolationsStaticsticalWeeklyResult" nillable="true" type="q65:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsStatisticalDaily">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="weekStartDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsStatisticalDailyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetViolationsStatisticalDailyResult" nillable="true" type="q66:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsStatisticalYearly">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsStatisticalYearlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetIncidentsStatisticalYearlyResult" nillable="true" type="q67:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsStaticsticalMonthly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsStaticsticalMonthlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetIncidentsStaticsticalMonthlyResult" nillable="true" type="q68:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsStaticsticalWeekly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="month" type="q69:MonthOfYear" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsStaticsticalWeeklyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetIncidentsStaticsticalWeeklyResult" nillable="true" type="q70:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsStatisticalDaily">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="weekStartDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsStatisticalDailyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetIncidentsStatisticalDailyResult" nillable="true" type="q71:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsStatisticalYearly">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsStatisticalYearlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolationsStatisticalYearlyResult" nillable="true" type="q72:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsStaticsticalMonthly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsStaticsticalMonthlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolationsStaticsticalMonthlyResult" nillable="true" type="q73:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsStaticsticalWeekly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="month" type="q74:MonthOfYear" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsStaticsticalWeeklyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolationsStaticsticalWeeklyResult" nillable="true" type="q75:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsStatisticalDaily">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="weekStartDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsStatisticalDailyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolationsStatisticalDailyResult" nillable="true" type="q76:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsComparisonYearly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsComparisonYearlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTruckViolationsComparisonYearlyResult" nillable="true" type="q77:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsComparisonMonthly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="startMonth" type="q78:MonthOfYear" />
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="endMonth" type="q79:MonthOfYear" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsComparisonMonthlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTruckViolationsComparisonMonthlyResult" nillable="true" type="q80:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsComparisonWeekly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstWeek" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="secondWeek" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsComparisonWeeklyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTruckViolationsComparisonWeeklyResult" nillable="true" type="q81:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsComparisonDaily">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstDay" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="secondDay" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationsComparisonDailyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTruckViolationsComparisonDailyResult" nillable="true" type="q82:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsComparisonYearly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsComparisonYearlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetViolationsComparisonYearlyResult" nillable="true" type="q83:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsComparisonMonthly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="startMonth" type="q84:MonthOfYear" />
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="endMonth" type="q85:MonthOfYear" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsComparisonMonthlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetViolationsComparisonMonthlyResult" nillable="true" type="q86:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsComparisonWeekly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstWeek" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="secondWeek" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsComparisonWeeklyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetViolationsComparisonWeeklyResult" nillable="true" type="q87:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsComparisonDaily">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstDay" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="secondDay" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsComparisonDailyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetViolationsComparisonDailyResult" nillable="true" type="q88:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsComparisonYearly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsComparisonYearlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetIncidentsComparisonYearlyResult" nillable="true" type="q89:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsComparisonMonthly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="startMonth" type="q90:MonthOfYear" />
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="endMonth" type="q91:MonthOfYear" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsComparisonMonthlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetIncidentsComparisonMonthlyResult" nillable="true" type="q92:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsComparisonWeekly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstWeek" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="secondWeek" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsComparisonWeeklyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetIncidentsComparisonWeeklyResult" nillable="true" type="q93:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsComparisonDaily">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstDay" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="secondDay" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsComparisonDailyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetIncidentsComparisonDailyResult" nillable="true" type="q94:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsComparisonYearly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsComparisonYearlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolationsComparisonYearlyResult" nillable="true" type="q95:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsComparisonMonthly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="startMonth" type="q96:MonthOfYear" />
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="endMonth" type="q97:MonthOfYear" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsComparisonMonthlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolationsComparisonMonthlyResult" nillable="true" type="q98:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsComparisonWeekly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstWeek" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="secondWeek" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsComparisonWeeklyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolationsComparisonWeeklyResult" nillable="true" type="q99:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsComparisonDaily">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstDay" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="secondDay" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationsComparisonDailyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolationsComparisonDailyResult" nillable="true" type="q100:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsTarget">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetViolationsTargetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetViolationsTargetResult" nillable="true" type="q101:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationTarget">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTruckViolationTargetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTruckViolationTargetResult" nillable="true" type="q102:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsTarget">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncidentsTargetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetIncidentsTargetResult" nillable="true" type="q103:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationTarget">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolationTargetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolationTargetResult" nillable="true" type="q104:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTotalInjuriesComparisonForDashboard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTotalInjuriesComparisonForDashboardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetTotalInjuriesComparisonForDashboardResult" nillable="true" type="q105:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSevereAccidentsComparisonForDashboard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSevereAccidentsComparisonForDashboardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetSevereAccidentsComparisonForDashboardResult" nillable="true" type="q106:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFatalitiesComparisonForDashboard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFatalitiesComparisonForDashboardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetFatalitiesComparisonForDashboardResult" nillable="true" type="q107:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolatorsComparisonForDashboard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDangerousViolatorsComparisonForDashboardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetDangerousViolatorsComparisonForDashboardResult" nillable="true" type="q108:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccidentsWithFatalitiesCountComparisonForDashboard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startYear" type="xs:int" />
+        <xs:element minOccurs="0" name="endYear" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccidentsWithFatalitiesCountComparisonForDashboardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetAccidentsWithFatalitiesCountComparisonForDashboardResult" nillable="true" type="q109:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMainDashboard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="language" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMainDashboardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetMainDashboardResult" nillable="true" type="q110:ArrayOfCubeDetailsDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFatalitiyTarget">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFatalitiyTargetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" minOccurs="0" name="GetFatalitiyTargetResult" nillable="true" type="q111:ArrayOfCubeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

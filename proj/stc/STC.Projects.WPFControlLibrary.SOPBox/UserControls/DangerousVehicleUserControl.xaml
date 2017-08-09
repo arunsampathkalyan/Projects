@@ -1,0 +1,804 @@
+﻿<UserControl x:Class="STC.Projects.WPFControlLibrary.SOPBox.UserControls.DangerousVehicleUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:p="clr-namespace:STC.Projects.WPFControlLibrary.SOPBox.Properties"
+             xmlns:esri="http://schemas.esri.com/arcgis/runtime/2013"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:Converter="clr-namespace:STC.Projects.ClassLibrary.Common.Converters;assembly=STC.Projects.ClassLibrary.Common" 
+             xmlns:ChartAnimation="clr-namespace:STC.Projects.ClassLibrary.Common.ChartAnimation;assembly=STC.Projects.ClassLibrary.Common"
+             xmlns:SOPUC="clr-namespace:STC.Projects.WPFControlLibrary.SOPBox.UserControls"
+             mc:Ignorable="d" x:Name="PatrolDetailsUIcontrol" Opacity="0.95">
+
+    <UserControl.RenderTransform>
+        <TranslateTransform X="300" />
+    </UserControl.RenderTransform>
+
+    <UserControl.Triggers>
+
+
+        <EventTrigger RoutedEvent="Page.Loaded">
+            <BeginStoryboard>
+                <Storyboard >
+                    <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" From="300" To="0" Duration="0:0:1" BeginTime="0:0:0.001" SpeedRatio="3" >
+
+                    </DoubleAnimation>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </UserControl.Triggers>
+
+    <UserControl.Resources>
+
+        <Converter:DateTimeToStringConverter x:Key="DateTimeToStringConverter"/>
+        <!-- Brushes used in Styling of ScrollViewer -->
+        <SolidColorBrush x:Key="StandardBorderBrush" Color="#888" />
+        <SolidColorBrush x:Key="StandardBackgroundBrush" Color="#FFF" />
+        <SolidColorBrush x:Key="HoverBorderBrush" Color="#DDD" />
+        <SolidColorBrush x:Key="SelectedBackgroundBrush" Color="Gray" />
+        <SolidColorBrush x:Key="SelectedForegroundBrush" Color="White" />
+        <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
+        <SolidColorBrush x:Key="NormalBrush" Color="#888" />
+        <SolidColorBrush x:Key="NormalBorderBrush" Color="#888" />
+        <SolidColorBrush x:Key="HorizontalNormalBrush" Color="#888" />
+        <SolidColorBrush x:Key="HorizontalNormalBorderBrush" Color="#888" />
+        <LinearGradientBrush x:Key="ListBoxBackgroundBrush" 
+			StartPoint="0,0" EndPoint="1,0.001">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="White" Offset="0.0" />
+                    <GradientStop Color="White" Offset="0.6" />
+                    <GradientStop Color="#DDDDDD" Offset="1.2"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="StandardBrush" 
+			StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#FFF" Offset="0.0"/>
+                    <GradientStop Color="#CCC" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="GlyphBrush" Color="#eeac23" />
+        <LinearGradientBrush x:Key="PressedBrush" 
+			StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#BBB" Offset="0.0"/>
+                    <GradientStop Color="#EEE" Offset="0.1"/>
+                    <GradientStop Color="#EEE" Offset="0.9"/>
+                    <GradientStop Color="#FFF" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <!-- SrollViewer ScrollBar Repeat Buttons (at each end) -->
+        <Style x:Key="ScrollBarLineButton" TargetType="{x:Type RepeatButton}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Border 
+          Name="Border"
+          Margin="1" 
+          CornerRadius="2" 
+          Background="#004d46"
+          BorderBrush="{StaticResource NormalBorderBrush}"
+          BorderThickness="1">
+                            <Path 
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Fill="{StaticResource GlyphBrush}"
+            Data="{Binding Path=Content,
+				RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="Border" Property="Background" 
+								Value="{StaticResource PressedBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" 
+								Value="{StaticResource DisabledForegroundBrush}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!-- SrollViewer ScrollBar Repeat Buttons (The part in the middle, 
+             not the thumb the long area between the buttons ) -->
+        <Style x:Key="ScrollBarPageButton" TargetType="{x:Type RepeatButton}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Border Background="Transparent" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!-- ScrollViewer ScrollBar Thumb, that part that can be dragged
+            up/down or left/right Buttons -->
+        <Style x:Key="ScrollBarThumb" TargetType="{x:Type Thumb}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Thumb}">
+                        <Border 
+          CornerRadius="2" 
+          Background="#00ffcc"
+                            
+          BorderBrush="{TemplateBinding BorderBrush}"
+          BorderThickness="1" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <ControlTemplate x:Key="VerticalScrollBar" 
+			TargetType="{x:Type ScrollBar}">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition MaxHeight="12"/>
+                    <RowDefinition Height="0.00001*"/>
+                    <RowDefinition MaxHeight="12"/>
+                </Grid.RowDefinitions>
+                <Border
+      Grid.RowSpan="3"
+      CornerRadius="2" 
+      Background="Transparent" />
+                <RepeatButton 
+      Grid.Row="0"                           
+      Style="{StaticResource ScrollBarLineButton}"
+      Height="12"
+      Command="ScrollBar.LineUpCommand"
+      Content="M 0 4 L 8 4 L 4 0 Z" />
+                <Track 
+      Name="PART_Track"
+                   
+      Grid.Row="1"
+      IsDirectionReversed="true">
+                    <Track.DecreaseRepeatButton>
+                        <RepeatButton 
+          Style="{StaticResource ScrollBarPageButton}"
+          Command="ScrollBar.PageUpCommand" />
+                    </Track.DecreaseRepeatButton>
+                    <Track.Thumb>
+                        <Thumb 
+          Style="{StaticResource ScrollBarThumb}" 
+          Margin="1,0,1,0"  
+          Background="{StaticResource HorizontalNormalBrush}"
+          BorderBrush="{StaticResource HorizontalNormalBorderBrush}" />
+                    </Track.Thumb>
+                    <Track.IncreaseRepeatButton>
+                        <RepeatButton 
+          Style="{StaticResource ScrollBarPageButton}"
+          Command="ScrollBar.PageDownCommand" />
+                    </Track.IncreaseRepeatButton>
+                </Track>
+                <RepeatButton 
+      Grid.Row="3" 
+      Style="{StaticResource ScrollBarLineButton}"
+      Height="12"
+      Command="ScrollBar.LineDownCommand"
+      Content="M 0 0 L 4 4 L 8 0 Z"/>
+            </Grid>
+        </ControlTemplate>
+        <!-- HorizontalScrollBar Template using the previously created Templates -->
+        <ControlTemplate x:Key="HorizontalScrollBar" 
+			TargetType="{x:Type ScrollBar}">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="12"/>
+                    <ColumnDefinition Width="0.00001*"/>
+                    <ColumnDefinition MaxWidth="12"/>
+                </Grid.ColumnDefinitions>
+                <Border
+      Grid.ColumnSpan="3"
+      CornerRadius="2" 
+      Background="Transparent" />
+                <RepeatButton 
+      Grid.Column="0"                           
+      Style="{StaticResource ScrollBarLineButton}"
+      Width="12"
+      Command="ScrollBar.LineLeftCommand"
+      Content="M 4 0 L 4 8 L 0 4 Z" />
+                <Track 
+      Name="PART_Track"
+      Grid.Column="1"
+      IsDirectionReversed="False">
+                    <Track.DecreaseRepeatButton>
+                        <RepeatButton 
+          Style="{StaticResource ScrollBarPageButton}"
+          Command="ScrollBar.PageLeftCommand" />
+                    </Track.DecreaseRepeatButton>
+                    <Track.Thumb>
+                        <Thumb 
+          Style="{StaticResource ScrollBarThumb}" 
+          Margin="0,1,0,1"  
+          Background="{StaticResource NormalBrush}"
+          BorderBrush="{StaticResource NormalBorderBrush}" />
+                    </Track.Thumb>
+                    <Track.IncreaseRepeatButton>
+                        <RepeatButton 
+          Style="{StaticResource ScrollBarPageButton}"
+          Command="ScrollBar.PageRightCommand" />
+                    </Track.IncreaseRepeatButton>
+                </Track>
+                <RepeatButton 
+      Grid.Column="3" 
+      Style="{StaticResource ScrollBarLineButton}"
+      Width="12"
+      Command="ScrollBar.LineRightCommand"
+      Content="M 0 0 L 4 4 L 0 8 Z"/>
+            </Grid>
+        </ControlTemplate>
+        <!-- Style for overall  ScrollBar -->
+        <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Style.Triggers>
+                <Trigger Property="Orientation" Value="Horizontal">
+                    <Setter Property="Width" Value="Auto"/>
+                    <Setter Property="Height" Value="12" />
+                    <Setter Property="Template" 
+						Value="{StaticResource HorizontalScrollBar}" />
+                </Trigger>
+                <Trigger Property="Orientation" Value="Vertical">
+                    <Setter Property="Width" Value="12"/>
+                    <Setter Property="Height" Value="Auto" />
+                    <Setter Property="Template" 
+						Value="{StaticResource VerticalScrollBar}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Style for overall  ScrollViewer -->
+        <Style TargetType="{x:Type ScrollViewer}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <ScrollContentPresenter Grid.Column="1"/>
+
+                            <ScrollBar Name="PART_VerticalScrollBar"  Background="Transparent"
+            Value="{TemplateBinding VerticalOffset}"
+            Maximum="{TemplateBinding ScrollableHeight}"
+            ViewportSize="{TemplateBinding ViewportHeight}"
+            Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
+                            <ScrollBar Name="PART_HorizontalScrollBar"
+            Orientation="Horizontal"
+            Grid.Row="1"
+            Grid.Column="1"
+            Value="{TemplateBinding HorizontalOffset}"
+            Maximum="{TemplateBinding ScrollableWidth}"
+            ViewportSize="{TemplateBinding ViewportWidth}"
+            Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
+
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="LeftScrollViewer" TargetType="{x:Type ScrollViewer}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <ScrollContentPresenter Grid.Column="1"/>
+
+                            <ScrollBar Name="PART_VerticalScrollBar"
+            Value="{TemplateBinding VerticalOffset}"
+            Maximum="{TemplateBinding ScrollableHeight}"
+            ViewportSize="{TemplateBinding ViewportHeight}"
+            Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
+                            <ScrollBar Name="PART_HorizontalScrollBar"
+            Orientation="Horizontal"
+            Grid.Row="1"
+            Grid.Column="1"
+            Value="{TemplateBinding HorizontalOffset}"
+            Maximum="{TemplateBinding ScrollableWidth}"
+            ViewportSize="{TemplateBinding ViewportWidth}"
+            Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
+
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Storyboard x:Key="MyStoryboard">
+            <DoubleAnimation Storyboard.TargetName="PatrolDetailsUIcontrol" Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" From="0" To="300" Duration="0:0:1" SpeedRatio="4" />
+        </Storyboard>
+
+        <Style x:Key="IsMoseOvernone" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="#ffffff" />
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Transparent">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Transparent" TargetName="bg" />
+                                <Setter Property="Foreground" Value="Transparent" />
+                                <Setter Property="BorderBrush" Value="Transparent" />
+                                <Setter Property="Opacity" Value="0.5"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="IsMoseOverGrid" TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="#008c99" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="#00ffcc" />
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="#008c99">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#00ffcc" TargetName="bg" />
+                                <Setter Property="Foreground" Value="Black" />
+                                <Setter Property="BorderBrush" Value="#008c99" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <DataTemplate x:Key="labol">
+            <TextBlock Foreground="#00ffcc" Text="{Binding}" Margin="4"/>
+        </DataTemplate>
+
+        <telerik:ChartPalette x:Key="customPalette">
+            <telerik:ChartPalette.SeriesEntries>
+
+                <telerik:PaletteEntryCollection SeriesFamily="Bar">
+                    <telerik:PaletteEntry Fill="#1E48E2" Stroke="#00616A"/>
+                    <telerik:PaletteEntry Fill="#008ED0" Stroke="#00616A"/>
+                    <telerik:PaletteEntry Fill="#00AFBA" Stroke="#00616A"/>
+                    <telerik:PaletteEntry Fill="#0EB04F" Stroke="#00616A"/>
+                    <telerik:PaletteEntry Fill="#87AF26" Stroke="#00616A"/>
+                    <telerik:PaletteEntry Fill="#F3DD4B" Stroke="#00616A"/>
+                    <telerik:PaletteEntry Fill="#FF9C31" Stroke="#00616A"/>
+                    <telerik:PaletteEntry Fill="#FF4A4A" Stroke="#00616A"/>
+                    <telerik:PaletteEntry Fill="#FF5C92" Stroke="#00616A"/>
+                    <telerik:PaletteEntry Fill="#A53FD0" Stroke="#00616A"/>
+                    <telerik:PaletteEntry Fill="#584BD2" Stroke="#00616A"/>
+                    <telerik:PaletteEntry Fill="#2E698E" Stroke="#00616A"/>
+                    <telerik:PaletteEntry Fill="#6C7C86" Stroke="#00616A"/>
+                    <telerik:PaletteEntry Fill="#A9B6B7" Stroke="#00616A"/>
+                    <telerik:PaletteEntry Fill="#A3EAFF" Stroke="#00616A"/>
+                    <telerik:PaletteEntry Fill="#14F7FF" Stroke="#00616A"/>
+                    <telerik:PaletteEntry Fill="#00BFC6" Stroke="#00616A"/>
+                    <telerik:PaletteEntry Fill="#38B2FF" Stroke="#00616A"/>
+                    <telerik:PaletteEntry Fill="#3B6FC7" Stroke="#00616A"/>
+                </telerik:PaletteEntryCollection>
+            </telerik:ChartPalette.SeriesEntries>
+
+            <telerik:ChartPalette.GlobalEntries>
+                <telerik:PaletteEntry Fill="#1E48E2" Stroke="#00616A"/>
+                <telerik:PaletteEntry Fill="#008ED0" Stroke="#00616A"/>
+                <telerik:PaletteEntry Fill="#00AFBA" Stroke="#00616A"/>
+                <telerik:PaletteEntry Fill="#0EB04F" Stroke="#00616A"/>
+                <telerik:PaletteEntry Fill="#87AF26" Stroke="#00616A"/>
+                <telerik:PaletteEntry Fill="#F3DD4B" Stroke="#00616A"/>
+                <telerik:PaletteEntry Fill="#FF9C31" Stroke="#00616A"/>
+                <telerik:PaletteEntry Fill="#FF4A4A" Stroke="#00616A"/>
+                <telerik:PaletteEntry Fill="#FF5C92" Stroke="#00616A"/>
+                <telerik:PaletteEntry Fill="#A53FD0" Stroke="#00616A"/>
+                <telerik:PaletteEntry Fill="#584BD2" Stroke="#00616A"/>
+                <telerik:PaletteEntry Fill="#2E698E" Stroke="#00616A"/>
+                <telerik:PaletteEntry Fill="#6C7C86" Stroke="#00616A"/>
+                <telerik:PaletteEntry Fill="#A9B6B7" Stroke="#00616A"/>
+                <telerik:PaletteEntry Fill="#A3EAFF" Stroke="#00616A"/>
+                <telerik:PaletteEntry Fill="#14F7FF" Stroke="#00616A"/>
+                <telerik:PaletteEntry Fill="#00BFC6" Stroke="#00616A"/>
+                <telerik:PaletteEntry Fill="#38B2FF" Stroke="#00616A"/>
+                <telerik:PaletteEntry Fill="#3B6FC7" Stroke="#00616A"/>
+            </telerik:ChartPalette.GlobalEntries>
+
+        </telerik:ChartPalette>
+
+    </UserControl.Resources>
+
+    <Grid Width="260" Height="600">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/STC.Projects.WPFControlLibrary.SOPBox;component/images/dotted_bg.png"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="{x:Static p:Resources.strDangerousVehicleDetails}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Foreground="#00ffcc" FontSize="20"  VerticalAlignment="Top" FontFamily="Helvetica"/>
+
+        <Button x:Name="Btnback" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Click="ClosePopup_OnClick" Width="20" Height="20" ScrollViewer.VerticalScrollBarVisibility="Disabled" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{DynamicResource IsMoseOvernone}">
+            <Image Width="18" Height="18" Source="/STC.Projects.WPFControlLibrary.SOPBox;component/images/close_blue.png" FlowDirection="LeftToRight"/>
+        </Button>
+
+        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" BorderBrush="#10302d" BorderThickness="1" CornerRadius="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="0" Grid.ColumnSpan="2">
+                    <Grid.RowDefinitions>
+                        <!--<RowDefinition Height="45*"/>-->
+                        <RowDefinition Height="50*"/>
+                        <RowDefinition Height="160*"/>
+                    </Grid.RowDefinitions>
+
+                    <!--Basic Info-->
+                    <!--<Grid Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20*"/>
+                            <RowDefinition Height="20*"/>
+                            <RowDefinition Height="20*"/>
+                            <RowDefinition Height="20*"/>
+                            <RowDefinition Height="20*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Margin="5,0,0,0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" FontSize="16" Foreground="#ffd452" TextAlignment="Left" Text="{x:Static p:Resources.strBasicInfo}" FontFamily="Helvetica"/>
+
+                        <TextBlock Margin="5,0,0,0" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" FontSize="14" TextWrapping="Wrap" Foreground="#00ffcc" TextAlignment="Left" Text="{x:Static p:Resources.strPlateNum}" FontFamily="Helvetica"/>
+                        <TextBlock Margin="5,0,0,0" Grid.Row="1" Grid.Column="2" FontSize="14" TextWrapping="Wrap" Foreground="#00ffcc" TextAlignment="Right" Text="{Binding DangerousVehicleDetails.PlateNumber}" FontFamily="Helvetica"/>
+
+                        <TextBlock Margin="5,0,0,0" Grid.Row="2" Grid.Column="0" FontSize="14" TextWrapping="Wrap" Foreground="#00ffcc" TextAlignment="Left" Text="{x:Static p:Resources.strVehicleType}" FontFamily="Helvetica"/>
+                        <TextBlock Margin="5,0,0,0" Grid.Row="2" Grid.Column="1" FontSize="14" TextWrapping="Wrap" Foreground="#00ffcc" TextAlignment="Right" Text="{Binding DangerousVehicleDetails.PlateKind}" FontFamily="Helvetica"/>
+
+                        <TextBlock Margin="5,0,0,0" Grid.Row="4" Grid.Column="0" FontSize="14" TextWrapping="Wrap" Foreground="#00ffcc" TextAlignment="Left" Text="{x:Static p:Resources.strCountry}" FontFamily="Helvetica"/>
+                        <TextBlock Margin="5,0,0,0" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" FontSize="14" TextWrapping="Wrap" Foreground="#00ffcc" TextAlignment="Right" Text="{Binding DangerousVehicleDetails.PlateSource}" FontFamily="Helvetica"/>
+
+                        -->
+                    <!--<TextBlock Margin="5,0,0,0" Grid.Row="4" Grid.Column="0" FontSize="14" TextWrapping="Wrap" Foreground="#00ffcc" TextAlignment="Left" Text="{x:Static p:Resources.strOwnerName}"  Grid.RowSpan="2" FontFamily="Helvetica"/>
+                <TextBlock Margin="5,0,0,0" Grid.Row="4" Grid.Column="1" FontSize="14" TextWrapping="Wrap" Foreground="#00ffcc" TextAlignment="Center" Text="عبدالسلام بن صاوي" Grid.RowSpan="2" FontFamily="Helvetica"/>-->
+
+                    <!--<TextBlock Margin="5,0,0,0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" FontSize="14" TextWrapping="Wrap" Foreground="#00ffcc" TextAlignment="Left" Text="{x:Static p:Resources.strVehicleQuestion}" FontFamily="Helvetica"/>
+                <TextBlock Margin="5,0,0,0" Grid.Row="4" Grid.Column="3" FontSize="14" TextWrapping="Wrap" Foreground="#00ffcc" TextAlignment="Center" Text="{Binding DangerousVehicleDetails.VehicleViolations}" FontFamily="Helvetica"/>-->
+                    <!--
+
+                        <TextBlock Margin="5,0,0,0" Grid.Row="3" Grid.Column="0" FontSize="14" TextWrapping="Wrap" Foreground="#00ffcc" TextAlignment="Left" Text="{x:Static p:Resources.strVehicleColor}" FontFamily="Helvetica"/>
+                        <TextBlock Margin="5,0,0,0" Grid.Row="3" Grid.Column="1" FontSize="14" TextWrapping="Wrap" Foreground="#00ffcc" TextAlignment="Right" Text="{Binding DangerousVehicleDetails.PlateColor}" FontFamily="Helvetica"/>
+
+                        -->
+                    <!--<TextBlock Margin="5,0,0,0" Grid.Row="3" Grid.Column="2" FontSize="14" TextWrapping="Wrap" Foreground="#00ffcc" TextAlignment="Left" Text="{x:Static p:Resources.strPassingCode}" FontFamily="Helvetica"/>
+                <TextBlock Margin="5,0,0,0" Grid.Row="3" Grid.Column="3" FontSize="14" TextWrapping="Wrap" Foreground="#00ffcc" TextAlignment="Center" Text="{Binding DangerousVehicleDetails.VehicleViolations}" FontFamily="Helvetica"/>-->
+
+                    <!--<TextBlock Margin="5,0,0,0" Grid.Row="4" Grid.Column="2" FontSize="14" TextWrapping="Wrap" Foreground="#00ffcc" TextAlignment="Left" Text="{x:Static p:Resources.strOwnerMobileNum}" Grid.RowSpan="2" FontFamily="Helvetica"/>
+                <TextBlock Margin="5,0,0,0" Grid.Row="4" Grid.Column="3" FontSize="14" TextWrapping="Wrap" Foreground="#00ffcc" TextAlignment="Center" Text="0565501630" Grid.RowSpan="2" FontFamily="Helvetica"/>-->
+                    <!--
+
+                    </Grid>-->
+
+                    <!--Vehicle Violations-->
+                    <Grid Grid.Row="0" Margin="0,10,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <!--<TextBlock Margin="5,0,0,0" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" FontSize="16" Foreground="#00ffcc" TextAlignment="Left" Text="{x:Static p:Resources.strVehicleViolationsDetails}" FontFamily="Helvetica"/>-->
+
+                        <ListView Grid.Row="1" MinHeight="30" MaxHeight="110" Margin="5" Foreground="#00ffcc" Background="#0A1114" BorderBrush="#002b22"  FontFamily="Helvetica" FontSize="12" ItemsSource="{Binding DangerousVehicleDetails.VehicleViolations}"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                            <ListView.Resources>
+                                <!--<SolidColorBrush x:Key="ItemBackgroundHover" Color="Transparent" />
+                                <SolidColorBrush x:Key="ItemBackgroundSelected " Color="Transparent" />-->
+
+                                <Style TargetType="{x:Type ListViewItem}">
+                                    <Setter Property="Background" Value="#0e171b" />
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                                <Border Background="#0e171b" BorderThickness="0.1" Margin="5,2" Opacity="0.7">
+                                                    <GridViewRowPresenter />
+                                                </Border>
+
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Cursor" Value="Arrow"/>
+                                            <Setter Property="Opacity" Value=".9"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+
+                                </Style>
+
+
+
+                            </ListView.Resources>
+
+                            <ListView.View>
+                                <GridView>
+                                    <GridView.ColumnHeaderContainerStyle>
+                                        <Style TargetType="GridViewColumnHeader">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
+                                                        <TextBlock Text="{TemplateBinding Content}" Padding="5" Width="{TemplateBinding Width}" TextAlignment="Left" TextWrapping="WrapWithOverflow" Cursor="Arrow"/>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+
+                                            <Setter Property="Foreground" Value="#00ffcc"/>
+                                            <Setter Property="FontSize" Value="13"/>
+                                            <Setter Property="Padding" Value="2"/>
+                                        </Style>
+                                    </GridView.ColumnHeaderContainerStyle>
+
+
+                                    <GridViewColumn Header="{x:Static p:Resources.strViolationID}" DisplayMemberBinding="{Binding MessageId}" Width="25"/>
+                                    <GridViewColumn Header="{x:Static p:Resources.strViolationType}" DisplayMemberBinding="{Binding ViolationTypeName}" Width="45"/>
+                                    <!--<GridViewColumn Header="{x:Static p:Resources.strViolationDateTime}" DisplayMemberBinding="{Binding DateTaken}" Width="85"/>-->
+                                    <GridViewColumn Header="{x:Static p:Resources.strViolationDateTime}" Width="80">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Border x:Name="brderTxt" BorderThickness="0">
+                                                    <TextBlock Text="{Binding DateTaken, Converter={StaticResource DateTimeToStringConverter}, ConverterParameter=DateTime}" TextWrapping="Wrap" Cursor="Arrow"/>
+                                                </Border>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+
+
+                                    <!--<GridViewColumn Header="{x:Static p:Resources.strCapturedSpeed}" DisplayMemberBinding="{Binding CapturedSpeed}" Width="35"/>-->
+                                    <!--<GridViewColumn Header="{x:Static p:Resources.strViolnType}" Width="55"/>-->
+                                    <GridViewColumn Header="{x:Static p:Resources.strImage}" Width="Auto">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Border x:Name="brderImage" BorderThickness="0" Height="20" Background="Transparent">
+                                                    <Button Style="{x:Null}" x:Name="btnImage"  Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl},Mode=FindAncestor},Path=DataContext.ShowImageCommand}"
+                                                    CommandParameter="{Binding }" Background="Transparent">
+                                                        <Button.Template>
+                                                            <ControlTemplate>
+                                                                <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                                                                    <Image Width="20" Source="/STC.Projects.WPFControlLibrary.SOPBox;component/images/icons/Image_iconNew.jpg"/>
+                                                                </StackPanel>
+                                                            </ControlTemplate>
+                                                        </Button.Template>
+                                                    </Button>
+                                                </Border>
+                                                <DataTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Cursor" Value="Hand"/>
+                                                        <Setter TargetName="brderImage" Property="Background" Value="Transparent"/>
+                                                    </Trigger>
+                                                </DataTemplate.Triggers>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="{x:Static p:Resources.strVideo}" Width="Auto">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Border x:Name="brderImage" BorderThickness="0" Height="20" Background="Transparent">
+                                                    <Button Style="{x:Null}" x:Name="btnVideo" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl},Mode=FindAncestor},Path=DataContext.ShowVideoCommand}"
+                                                    CommandParameter="{Binding }" Background="Transparent">
+                                                        <Button.Template>
+                                                            <ControlTemplate>
+                                                                <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                                                                    <Image Width="20" Source="/STC.Projects.WPFControlLibrary.SOPBox;component/images/icons/VideoI_iconNew.jpg"/>
+                                                                </StackPanel>
+                                                            </ControlTemplate>
+                                                        </Button.Template>
+                                                    </Button>
+                                                </Border>
+                                                <DataTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Cursor" Value="Hand"/>
+                                                        <Setter TargetName="brderImage" Property="Background" Value="Transparent"/>
+                                                    </Trigger>
+                                                </DataTemplate.Triggers>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </Grid>
+
+                    <SOPUC:ImagePopup x:Name="imgGalleryUc" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Top" Margin="-250,50,-100,0">
+                        
+                    </SOPUC:ImagePopup>
+                    
+                    <!--<Grid x:Name="gridImageGallery" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Top" Margin="-250,50,-100,0" Visibility="Visible">
+                        <Border BorderBrush="Yellow" Height="150" BorderThickness="1">
+                            <TextBlock Foreground="Yellow" Text="Test000000000000000000000000000000000000000000000000000"/>
+                        </Border>
+                    </Grid>-->
+
+                    <!--KPI-->
+                    <Grid Grid.Row="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" FontSize="16" Foreground="#ffd452" TextAlignment="Left" Text="{x:Static p:Resources.strKPI}" FontFamily="Helvetica"/>
+
+                        <!--Line Chart-->
+                        <Grid Grid.Row="1">
+
+                            <telerik:RadCartesianChart x:Name="LineChart1" Palette="{StaticResource customPalette}" ScrollViewer.HorizontalScrollBarVisibility="Auto" Foreground="#00ffcc">
+                                <telerik:RadCartesianChart.VerticalAxis>
+                                    <telerik:LinearAxis Title="عدد المخالفات" LabelTemplate="{StaticResource labol}" MajorStep="1"/>
+                                </telerik:RadCartesianChart.VerticalAxis>
+                                <telerik:RadCartesianChart.HorizontalAxis>
+                                    <telerik:CategoricalAxis LabelTemplate="{StaticResource labol}" LabelFitMode="Rotate" />
+                                </telerik:RadCartesianChart.HorizontalAxis>
+
+                                <telerik:RadCartesianChart.SeriesProvider>
+                                    <telerik:ChartSeriesProvider Source="{Binding LineChart}">
+                                        <telerik:ChartSeriesProvider.SeriesDescriptors>
+                                            <telerik:CategoricalSeriesDescriptor ItemsSourcePath="Details" ValuePath="Value" CategoryPath="Key">
+                                                <telerik:CategoricalSeriesDescriptor.Style>
+                                                    <Style TargetType="telerik:BarSeries">
+                                                        <Setter Property="LegendSettings">
+                                                            <Setter.Value>
+                                                                <telerik:SeriesLegendSettings Title="{Binding LegendName}" />
+                                                            </Setter.Value>
+                                                        </Setter>
+
+                                                        <!--<Setter Property="PointTemplate">
+                                                    <Setter.Value>
+                                                        <DataTemplate>
+                                                            <Ellipse Width="5" Height="5" Fill="Green" Stroke="Green"/>
+                                                        </DataTemplate>
+                                                    </Setter.Value>
+                                                </Setter>-->
+
+                                                        <!--<Setter Property="StrokeShapeStyle">
+                                                    <Setter.Value>
+                                                        <Style TargetType="Path">
+                                                            <Setter Property="Stroke" Value="Blue"/>
+                                                        </Style>
+                                                    </Setter.Value>
+                                                </Setter>-->
+                                                    </Style>
+                                                </telerik:CategoricalSeriesDescriptor.Style>
+
+                                            </telerik:CategoricalSeriesDescriptor>
+                                        </telerik:ChartSeriesProvider.SeriesDescriptors>
+                                    </telerik:ChartSeriesProvider>
+                                </telerik:RadCartesianChart.SeriesProvider>
+
+                            </telerik:RadCartesianChart>
+
+                        </Grid>
+
+                        <!--Pie Chart-->
+                        <Grid Grid.Row="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <telerik:RadPieChart x:Name="PieChart1" Palette="{StaticResource customPalette}" ClipToBounds="False">
+                                <telerik:PieSeries ItemsSource="{Binding DangerousVehicleDetails.VehiclePieKPIs.Details}"  ChartAnimation:ChartAnimationUtilities.PieAnimation="SweepAngle" ShowLabels="True">
+                                    <telerik:PieSeries.SliceStyles>
+                                        <Style TargetType="Path">
+                                            <Setter Property="Fill" Value="#1e48e2"/>
+                                        </Style>
+                                        <Style TargetType="Path">
+                                            <Setter Property="Fill" Value="#008ed0"/>
+                                        </Style>
+                                        <Style TargetType="Path">
+                                            <Setter Property="Fill" Value="#00afba"/>
+                                        </Style>
+                                        <Style TargetType="Path">
+                                            <Setter Property="Fill" Value="#0eb04f"/>
+                                        </Style>
+                                        <Style TargetType="Path">
+                                            <Setter Property="Fill" Value="#87af26"/>
+                                        </Style>
+                                        <Style TargetType="Path">
+                                            <Setter Property="Fill" Value="#f3dd4b"/>
+                                        </Style>
+                                        <Style TargetType="Path">
+                                            <Setter Property="Fill" Value="#ff9c31"/>
+                                        </Style>
+                                    </telerik:PieSeries.SliceStyles>
+                                    <telerik:PieSeries.ValueBinding>
+                                        <telerik:PropertyNameDataPointBinding PropertyName="Value"/>
+                                    </telerik:PieSeries.ValueBinding>
+
+                                    <telerik:PieSeries.LegendSettings>
+                                        <telerik:DataPointLegendSettings TitleBinding="Key"/>
+                                    </telerik:PieSeries.LegendSettings>
+
+                                </telerik:PieSeries>
+                            </telerik:RadPieChart>
+
+                            <telerik:RadLegend Grid.Row="1" FlowDirection="RightToLeft" Foreground="#00ffcc" ScrollViewer.HorizontalScrollBarVisibility="Auto" Items="{Binding ElementName=PieChart1, Path=LegendItems}" HorizontalAlignment="Center" VerticalAlignment="Top">
+                                <telerik:RadLegend.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel Orientation="Horizontal"/>
+                                    </ItemsPanelTemplate>
+                                </telerik:RadLegend.ItemsPanel>
+                            </telerik:RadLegend>
+
+                        </Grid>
+
+                    </Grid>
+
+                </Grid>
+
+                <Button x:Name="ConfirmButton" Margin="5" Grid.Column="0" Click="ConfirmButton_Click" Content="{x:Static p:Resources.strConfirm}" Grid.Row="1" Width="90" Height="30" FontSize="16" Style="{StaticResource IsMoseOverGrid}"/>
+
+                <Button x:Name="CancelButton" Margin="5" Grid.Column="1" Content="{x:Static p:Resources.strCancel}" Grid.Row="1" Click="CancelButton_OnClick"  Width="70" Height="30" FontSize="16" Style="{StaticResource IsMoseOverGrid}"/>
+            </Grid>
+        </Border>
+    </Grid>
+
+</UserControl>

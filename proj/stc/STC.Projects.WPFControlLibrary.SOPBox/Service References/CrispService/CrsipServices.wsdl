@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CrsipServices" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://stc-connect.cloudapp.net:8013/WCFService/CrsipServices.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://stc-connect.cloudapp.net:8013/WCFService/CrsipServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://stc-connect.cloudapp.net:8013/WCFService/CrsipServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICrsipServices_AddSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSession" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_AddSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_RemoveSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveSession" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_RemoveSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_ParseNode_InputMessage">
+    <wsdl:part name="parameters" element="tns:ParseNode" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_ParseNode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ParseNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_ParseCars_InputMessage">
+    <wsdl:part name="parameters" element="tns:ParseCars" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_ParseCars_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ParseCarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_RecommendCar_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecommendCar" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_RecommendCar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecommendCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_PositionsCars_InputMessage">
+    <wsdl:part name="parameters" element="tns:PositionsCars" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_PositionsCars_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PositionsCarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_HandleSessions_InputMessage">
+    <wsdl:part name="parameters" element="tns:HandleSessions" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_HandleSessions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HandleSessionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_HandleCars_InputMessage">
+    <wsdl:part name="parameters" element="tns:HandleCars" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_HandleCars_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HandleCarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_PrepareCars_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrepareCars" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_PrepareCars_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrepareCarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_SetMaxAllowedTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetMaxAllowedTime" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_SetMaxAllowedTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetMaxAllowedTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_AddPatrol_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPatrol" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_AddPatrol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPatrolResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_RemovePatrol_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemovePatrol" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_RemovePatrol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemovePatrolResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_TestCarParse_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestCarParse" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_TestCarParse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestCarParseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_GetPatrolsETA_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatrolsETA" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_GetPatrolsETA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatrolsETAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_getMaxAllowedTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMaxAllowedTime" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_getMaxAllowedTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMaxAllowedTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_GetPatrolsETAs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatrolsETAs" />
+  </wsdl:message>
+  <wsdl:message name="ICrsipServices_GetPatrolsETAs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatrolsETAsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICrsipServices">
+    <wsdl:operation name="AddSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrsipServices/AddSession" message="tns:ICrsipServices_AddSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrsipServices/AddSessionResponse" message="tns:ICrsipServices_AddSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrsipServices/RemoveSession" message="tns:ICrsipServices_RemoveSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrsipServices/RemoveSessionResponse" message="tns:ICrsipServices_RemoveSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ParseNode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrsipServices/ParseNode" message="tns:ICrsipServices_ParseNode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrsipServices/ParseNodeResponse" message="tns:ICrsipServices_ParseNode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ParseCars">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrsipServices/ParseCars" message="tns:ICrsipServices_ParseCars_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrsipServices/ParseCarsResponse" message="tns:ICrsipServices_ParseCars_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecommendCar">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrsipServices/RecommendCar" message="tns:ICrsipServices_RecommendCar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrsipServices/RecommendCarResponse" message="tns:ICrsipServices_RecommendCar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PositionsCars">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrsipServices/PositionsCars" message="tns:ICrsipServices_PositionsCars_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrsipServices/PositionsCarsResponse" message="tns:ICrsipServices_PositionsCars_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HandleSessions">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrsipServices/HandleSessions" message="tns:ICrsipServices_HandleSessions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrsipServices/HandleSessionsResponse" message="tns:ICrsipServices_HandleSessions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HandleCars">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrsipServices/HandleCars" message="tns:ICrsipServices_HandleCars_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrsipServices/HandleCarsResponse" message="tns:ICrsipServices_HandleCars_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrepareCars">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrsipServices/PrepareCars" message="tns:ICrsipServices_PrepareCars_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrsipServices/PrepareCarsResponse" message="tns:ICrsipServices_PrepareCars_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMaxAllowedTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrsipServices/SetMaxAllowedTime" message="tns:ICrsipServices_SetMaxAllowedTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrsipServices/SetMaxAllowedTimeResponse" message="tns:ICrsipServices_SetMaxAllowedTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPatrol">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrsipServices/AddPatrol" message="tns:ICrsipServices_AddPatrol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrsipServices/AddPatrolResponse" message="tns:ICrsipServices_AddPatrol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemovePatrol">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrsipServices/RemovePatrol" message="tns:ICrsipServices_RemovePatrol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrsipServices/RemovePatrolResponse" message="tns:ICrsipServices_RemovePatrol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestCarParse">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrsipServices/TestCarParse" message="tns:ICrsipServices_TestCarParse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrsipServices/TestCarParseResponse" message="tns:ICrsipServices_TestCarParse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatrolsETA">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrsipServices/GetPatrolsETA" message="tns:ICrsipServices_GetPatrolsETA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrsipServices/GetPatrolsETAResponse" message="tns:ICrsipServices_GetPatrolsETA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMaxAllowedTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrsipServices/getMaxAllowedTime" message="tns:ICrsipServices_getMaxAllowedTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrsipServices/getMaxAllowedTimeResponse" message="tns:ICrsipServices_getMaxAllowedTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatrolsETAs">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrsipServices/GetPatrolsETAs" message="tns:ICrsipServices_GetPatrolsETAs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrsipServices/GetPatrolsETAsResponse" message="tns:ICrsipServices_GetPatrolsETAs_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICrsipServices" type="tns:ICrsipServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddSession">
+      <soap:operation soapAction="http://tempuri.org/ICrsipServices/AddSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSession">
+      <soap:operation soapAction="http://tempuri.org/ICrsipServices/RemoveSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParseNode">
+      <soap:operation soapAction="http://tempuri.org/ICrsipServices/ParseNode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParseCars">
+      <soap:operation soapAction="http://tempuri.org/ICrsipServices/ParseCars" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecommendCar">
+      <soap:operation soapAction="http://tempuri.org/ICrsipServices/RecommendCar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PositionsCars">
+      <soap:operation soapAction="http://tempuri.org/ICrsipServices/PositionsCars" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HandleSessions">
+      <soap:operation soapAction="http://tempuri.org/ICrsipServices/HandleSessions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HandleCars">
+      <soap:operation soapAction="http://tempuri.org/ICrsipServices/HandleCars" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrepareCars">
+      <soap:operation soapAction="http://tempuri.org/ICrsipServices/PrepareCars" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMaxAllowedTime">
+      <soap:operation soapAction="http://tempuri.org/ICrsipServices/SetMaxAllowedTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPatrol">
+      <soap:operation soapAction="http://tempuri.org/ICrsipServices/AddPatrol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePatrol">
+      <soap:operation soapAction="http://tempuri.org/ICrsipServices/RemovePatrol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestCarParse">
+      <soap:operation soapAction="http://tempuri.org/ICrsipServices/TestCarParse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatrolsETA">
+      <soap:operation soapAction="http://tempuri.org/ICrsipServices/GetPatrolsETA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaxAllowedTime">
+      <soap:operation soapAction="http://tempuri.org/ICrsipServices/getMaxAllowedTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatrolsETAs">
+      <soap:operation soapAction="http://tempuri.org/ICrsipServices/GetPatrolsETAs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CrsipServices">
+    <wsdl:port name="BasicHttpBinding_ICrsipServices" binding="tns:BasicHttpBinding_ICrsipServices">
+      <soap:address location="http://stc-connect.cloudapp.net:8013/WCFService/CrsipServices.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

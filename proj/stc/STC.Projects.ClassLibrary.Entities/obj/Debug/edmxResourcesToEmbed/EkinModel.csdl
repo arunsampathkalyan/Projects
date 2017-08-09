@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ElrocModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ElrocEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="elrocs" EntityType="ElrocModel.elroc" />
+    <EntitySet Name="servers" EntityType="ElrocModel.server" />
+    <AssociationSet Name="serverelroc" Association="ElrocModel.serverelroc">
+      <End Role="server" EntitySet="servers" />
+      <End Role="elroc" EntitySet="elrocs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="elroc">
+    <Key>
+      <PropertyRef Name="no" />
+    </Key>
+    <Property Name="no" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date_time" Type="DateTime" Precision="3" />
+    <Property Name="server_no" Type="Int32" />
+    <Property Name="camera_no" Type="Int32" />
+    <Property Name="license_plate" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="color_code" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="plate_kind" Type="Int32" />
+    <Property Name="plate_type" Type="Int32" />
+    <Property Name="plate_source" Type="Int32" />
+    <Property Name="plate_color" Type="Int32" />
+    <Property Name="speed" Type="Int32" />
+    <Property Name="speed_limit" Type="Int32" />
+    <Property Name="captured_speed" Type="Int32" />
+    <Property Name="alarm_info" Type="Int32" />
+    <Property Name="alarm_status" Type="Int32" />
+    <Property Name="size_class" Type="Int32" />
+    <Property Name="latitude" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="longtitude" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="altitude" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="direction" Type="Int32" />
+    <Property Name="lane_no" Type="Int32" />
+    <Property Name="pic_filename" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="location_code" Type="Int32" />
+    <Property Name="old_elroc_no" Type="Int32" />
+    <Property Name="send_state" Type="Boolean" />
+    <Property Name="gps_data" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="webservice_state" Type="Boolean" />
+    <Property Name="plate_code" Type="Int32" />
+    <NavigationProperty Name="server" Relationship="ElrocModel.serverelroc" FromRole="elroc" ToRole="server" />
+  </EntityType>
+  <EntityType Name="server">
+    <Key>
+      <PropertyRef Name="no" />
+    </Key>
+    <Property Name="no" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="location_code" Type="Int32" />
+    <Property Name="alias" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="link_id" Type="Int64" />
+    <Property Name="ip_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isactive" Type="Boolean" />
+    <Property Name="radar_serial" Type="Int32" />
+    <NavigationProperty Name="elrocs" Relationship="ElrocModel.serverelroc" FromRole="server" ToRole="elroc" />
+  </EntityType>
+  <Association Name="serverelroc">
+    <End Type="ElrocModel.server" Role="server" Multiplicity="0..1" />
+    <End Type="ElrocModel.elroc" Role="elroc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="server">
+        <PropertyRef Name="no" />
+      </Principal>
+      <Dependent Role="elroc">
+        <PropertyRef Name="server_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

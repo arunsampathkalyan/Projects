@@ -1,0 +1,477 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="strAction" xml:space="preserve">
+    <value>الإجراءات</value>
+  </data>
+  <data name="strAssignedSpeed" xml:space="preserve">
+    <value>السرعة المخصصة:</value>
+  </data>
+  <data name="strAssignedVMS" xml:space="preserve">
+    <value>الرسالة المخصصة:</value>
+  </data>
+  <data name="strBack" xml:space="preserve">
+    <value>العودة</value>
+  </data>
+  <data name="strCameraDetails" xml:space="preserve">
+    <value>تفاصيل الكاميرا</value>
+  </data>
+  <data name="strCCTVName" xml:space="preserve">
+    <value>اسم كاميرا المراقبة</value>
+  </data>
+  <data name="strCCTVs" xml:space="preserve">
+    <value>كاميرات المراقبة</value>
+  </data>
+  <data name="strCCTVSerialNo" xml:space="preserve">
+    <value>الرقم المسلسل لكاميرا المراقبة</value>
+  </data>
+  <data name="strChange" xml:space="preserve">
+    <value>تغيير</value>
+  </data>
+  <data name="strCurrentMessage" xml:space="preserve">
+    <value>الرسالة الحالية</value>
+  </data>
+  <data name="strCurrentSpeed" xml:space="preserve">
+    <value>السرعة الحالية</value>
+  </data>
+  <data name="strDone" xml:space="preserve">
+    <value>أنهاء</value>
+  </data>
+  <data name="strInfo" xml:space="preserve">
+    <value>البيانات</value>
+  </data>
+  <data name="strKPI" xml:space="preserve">
+    <value>مؤشرات الأداء الرئيسية</value>
+  </data>
+  <data name="strLastSpeedLimitModificationDetails" xml:space="preserve">
+    <value>تفاصيل أخر تعديل للسرعة :</value>
+  </data>
+  <data name="strLastVisibilityRange" xml:space="preserve">
+    <value>أخر قراءة لمدى الرؤية :</value>
+  </data>
+  <data name="strLastVMSModificationDetails" xml:space="preserve">
+    <value>تفاصيل أخر تعديل للسرعة :</value>
+  </data>
+  <data name="strLocation" xml:space="preserve">
+    <value>الموقع :</value>
+  </data>
+  <data name="strModificationDateTime" xml:space="preserve">
+    <value>وقت و تاريخ التعديل :</value>
+  </data>
+  <data name="strModifiedBy" xml:space="preserve">
+    <value>تم التعديل بواسطة :</value>
+  </data>
+  <data name="strNewMessage" xml:space="preserve">
+    <value>الرسالة الجديدة</value>
+  </data>
+  <data name="strNewSpeedLimit" xml:space="preserve">
+    <value>الحد الأقصى للسرعة الجديدة</value>
+  </data>
+  <data name="strRadarDetails" xml:space="preserve">
+    <value>تفاصيل الرادار</value>
+  </data>
+  <data name="strRadarName" xml:space="preserve">
+    <value>اسم الرادار</value>
+  </data>
+  <data name="strRadarSerialNo" xml:space="preserve">
+    <value>الرقم المسلسل للرادار</value>
+  </data>
+  <data name="strSmartTowerDetails" xml:space="preserve">
+    <value>تفاصيل البرج الذكى</value>
+  </data>
+  <data name="strSOPList" xml:space="preserve">
+    <value>إجراءات التشغيل</value>
+  </data>
+  <data name="strStatus" xml:space="preserve">
+    <value>الحالة :</value>
+  </data>
+  <data name="strTowerName" xml:space="preserve">
+    <value>اسم البرج</value>
+  </data>
+  <data name="strTowerSerialNo" xml:space="preserve">
+    <value>الرقم المسلسل للبرج الذكى :</value>
+  </data>
+  <data name="strType" xml:space="preserve">
+    <value>النوع :</value>
+  </data>
+  <data name="strSpeedLimitSaved" xml:space="preserve">
+    <value>تم تحديث الحد الاقصى للسرعة</value>
+  </data>
+  <data name="strConfirm" xml:space="preserve">
+    <value>تأكيد</value>
+  </data>
+  <data name="strFalseDetection" xml:space="preserve">
+    <value>انذار خاطئ</value>
+  </data>
+  <data name="strSkip" xml:space="preserve">
+    <value>تخطى</value>
+  </data>
+  <data name="strFacebook" xml:space="preserve">
+    <value>الفيسبوك</value>
+  </data>
+  <data name="strPublish" xml:space="preserve">
+    <value>قم بالنشر</value>
+  </data>
+  <data name="strPublishStory" xml:space="preserve">
+    <value>نشر الخبر</value>
+  </data>
+  <data name="strTwitter" xml:space="preserve">
+    <value>تويتر</value>
+  </data>
+  <data name="strBrowseImage" xml:space="preserve">
+    <value>تحميل الصورة</value>
+  </data>
+  <data name="strOff" xml:space="preserve">
+    <value>ايقاف</value>
+  </data>
+  <data name="strOn" xml:space="preserve">
+    <value>تفعيل</value>
+  </data>
+  <data name="strPostSent" xml:space="preserve">
+    <value>تم نشر الخبر بنجاح</value>
+  </data>
+  <data name="strNext" xml:space="preserve">
+    <value>التالى</value>
+  </data>
+  <data name="strDispatchPatrol" xml:space="preserve">
+    <value>إرسال دورية</value>
+  </data>
+  <data name="strPatrolCode" xml:space="preserve">
+    <value>كود الدورية</value>
+  </data>
+  <data name="strPatrolPlateNo" xml:space="preserve">
+    <value>رقم لوحه الدورية</value>
+  </data>
+  <data name="strComment" xml:space="preserve">
+    <value>تعليق</value>
+  </data>
+  <data name="strCancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="strSelectSocialService" xml:space="preserve">
+    <value>أختر وسيلة النشر المناسبة لك</value>
+  </data>
+  <data name="strNearbyCamera" xml:space="preserve">
+    <value>كاميرات المراقبة المجاورة</value>
+  </data>
+  <data name="strDangerousVehicleDetails" xml:space="preserve">
+    <value>تفاصيل المركبة الخطرة</value>
+  </data>
+  <data name="strBasicInfo" xml:space="preserve">
+    <value>بيانات أساسية</value>
+  </data>
+  <data name="strCountry" xml:space="preserve">
+    <value>البلد</value>
+  </data>
+  <data name="strOwnerMobileNum" xml:space="preserve">
+    <value>رقم موبايل المالك</value>
+  </data>
+  <data name="strOwnerName" xml:space="preserve">
+    <value>اسم المالك</value>
+  </data>
+  <data name="strPassingCode" xml:space="preserve">
+    <value>الرمز المروري</value>
+  </data>
+  <data name="strPlateNum" xml:space="preserve">
+    <value>رقم اللوحة:</value>
+  </data>
+  <data name="strVehicleColor" xml:space="preserve">
+    <value>لون المركبة</value>
+  </data>
+  <data name="strVehicleQuestion" xml:space="preserve">
+    <value>هل المركبة مطلوبة من قبل؟</value>
+  </data>
+  <data name="strVehicleType" xml:space="preserve">
+    <value>النوع</value>
+  </data>
+  <data name="strVehicleViolationsDetails" xml:space="preserve">
+    <value>بيانات المخالفات على المركبة</value>
+  </data>
+  <data name="strViolationDateTime" xml:space="preserve">
+    <value>التاريخ والوقت</value>
+  </data>
+  <data name="strViolationID" xml:space="preserve">
+    <value>رقم</value>
+  </data>
+  <data name="strViolationType" xml:space="preserve">
+    <value>النوع</value>
+  </data>
+  <data name="strCapturedSpeed" xml:space="preserve">
+    <value>السرعة</value>
+  </data>
+  <data name="strImage" xml:space="preserve">
+    <value>صوره</value>
+  </data>
+  <data name="strSpeedLimit" xml:space="preserve">
+    <value>السرعه المحدده</value>
+  </data>
+  <data name="strVideo" xml:space="preserve">
+    <value>فديو</value>
+  </data>
+  <data name="strViolnType" xml:space="preserve">
+    <value>نوع المخالفة</value>
+  </data>
+  <data name="strDispatchedPatrolConfirm" xml:space="preserve">
+    <value>تم الارسال للدورية بنجاح</value>
+  </data>
+  <data name="strDispatchPatrolConfirmation" xml:space="preserve">
+    <value>سوف يتم إرسال الدورية . هل أنت متأكد؟</value>
+  </data>
+  <data name="strMessage" xml:space="preserve">
+    <value>رسالة</value>
+  </data>
+  <data name="strSendRequestToSOP" xml:space="preserve">
+    <value>ارسال طلب لغرفة العمليات المركزية</value>
+  </data>
+  <data name="strSubmit" xml:space="preserve">
+    <value>ارسال</value>
+  </data>
+  <data name="strTrackId" xml:space="preserve">
+    <value>رقم التتبع</value>
+  </data>
+  <data name="Recommended" xml:space="preserve">
+    <value>موصي به</value>
+  </data>
+  <data name="strCode" xml:space="preserve">
+    <value>الكود</value>
+  </data>
+  <data name="strColor" xml:space="preserve">
+    <value>اللون</value>
+  </data>
+  <data name="strComments" xml:space="preserve">
+    <value>تعليقات</value>
+  </data>
+  <data name="strDangerousViolator" xml:space="preserve">
+    <value>مخالف خطر</value>
+  </data>
+  <data name="strDriverAge" xml:space="preserve">
+    <value>عمر السائق</value>
+  </data>
+  <data name="strIssueOrFine" xml:space="preserve">
+    <value>مخالفة</value>
+  </data>
+  <data name="strLastKnownLocation" xml:space="preserve">
+    <value>اخر  موقع</value>
+  </data>
+  <data name="strLicenceExpiryDate" xml:space="preserve">
+    <value>تاريخ انتهاء الرخصة</value>
+  </data>
+  <data name="strManufacturer" xml:space="preserve">
+    <value>المصنع</value>
+  </data>
+  <data name="strManufactureYear" xml:space="preserve">
+    <value>سنة الصنع</value>
+  </data>
+  <data name="strModel" xml:space="preserve">
+    <value>الماركة</value>
+  </data>
+  <data name="strNationality" xml:space="preserve">
+    <value>الجنسية</value>
+  </data>
+  <data name="strReportToUTS" xml:space="preserve">
+    <value>ابلاغ ال UTS</value>
+  </data>
+  <data name="strSavedinUTS" xml:space="preserve">
+    <value>حفظ في ال UTS</value>
+  </data>
+  <data name="strSource" xml:space="preserve">
+    <value>المصدر</value>
+  </data>
+  <data name="strType1" xml:space="preserve">
+    <value>النوع</value>
+  </data>
+  <data name="strVehicleDetails" xml:space="preserve">
+    <value>بيانات المركبة</value>
+  </data>
+  <data name="strVehicleViolationsDetails1" xml:space="preserve">
+    <value>بيانات مخالفات المركبة</value>
+  </data>
+  <data name="strViewDetails" xml:space="preserve">
+    <value>عرض البيانات</value>
+  </data>
+  <data name="strViolationDetails" xml:space="preserve">
+    <value>بيانات المخالفات</value>
+  </data>
+  <data name="strViolationDetectionDate" xml:space="preserve">
+    <value>وقت وتاريخ المخالفة</value>
+  </data>
+  <data name="strViolationsHistory" xml:space="preserve">
+    <value>سجل المخالفات</value>
+  </data>
+  <data name="strViolationType1" xml:space="preserve">
+    <value>النوع</value>
+  </data>
+  <data name="strViolnType1" xml:space="preserve">
+    <value>نوع المخالفة</value>
+  </data>
+  <data name="strAlertOperationRoom" xml:space="preserve">
+    <value>ابلاغ غرفة العمليات</value>
+  </data>
+  <data name="strAssigned" xml:space="preserve">
+    <value>مسندة</value>
+  </data>
+  <data name="EtaUnit" xml:space="preserve">
+    <value>دقيقة</value>
+  </data>
+  <data name="strIssue" xml:space="preserve">
+    <value>تحرير مخالفة</value>
+  </data>
+  <data name="strAlertOpRoomConfMsg" xml:space="preserve">
+    <value>هل انت متأكد من ارسال الطلب لغرفة العمليات؟</value>
+  </data>
+  <data name="strPlateKind" xml:space="preserve">
+    <value>فئة اللوحة</value>
+  </data>
+  <data name="strPlateType" xml:space="preserve">
+    <value>نوع اللوحة</value>
+  </data>
+  <data name="strApprovalConfirmation" xml:space="preserve">
+    <value>ها تريد ان توافق على هذا التنبيه؟</value>
+  </data>
+  <data name="strApprove" xml:space="preserve">
+    <value>موافق</value>
+  </data>
+  <data name="strReject" xml:space="preserve">
+    <value>أرفض</value>
+  </data>
+  <data name="strRejectionConfirmation" xml:space="preserve">
+    <value>هل تريد رفض هذا التنبيه؟</value>
+  </data>
+  <data name="strEndSOP" xml:space="preserve">
+    <value>لم يتم الانتهاء من جميع الخطوات, هل تود انهاء قائمة الاجراءات؟</value>
+  </data>
+  <data name="strPatrolAssignment" xml:space="preserve">
+    <value>هذه الدورية تم ارسالها لنفس المهمة من قبل</value>
+  </data>
+  <data name="strEnd" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="strPlateCode" xml:space="preserve">
+    <value>Plate Code</value>
+  </data>
+  <data name="strPlateSource" xml:space="preserve">
+    <value>Plate Source</value>
+  </data>
+  <data name="strSelect" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="strValidate" xml:space="preserve">
+    <value>Validate</value>
+  </data>
+</root>

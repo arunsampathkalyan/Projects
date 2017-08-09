@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="STC.Projects.WCF.SocialMediaService.SocialMediaService" CodeBehind="SocialMediaService.svc.cs" %>

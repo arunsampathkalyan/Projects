@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="83ed2f90-81ef-40a9-8803-25c2a414740c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://aghqsrv453/WCFServices/TFMIntegrationService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TFMIntegrationService1.wsdl" MetadataType="Wsdl" ID="bff654b0-ecf7-45f0-ba7e-219a3e811623" SourceId="1" SourceUrl="http://aghqsrv453/WCFServices/TFMIntegrationService.svc?wsdl" />
+    <MetadataFile FileName="TFMIntegrationService3.xsd" MetadataType="Schema" ID="5a3a07d5-290e-472b-a601-85f025bcb6a3" SourceId="1" SourceUrl="http://aghqsrv453/WCFServices/TFMIntegrationService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TFMIntegrationService31.xsd" MetadataType="Schema" ID="9a87dbb2-3782-4597-87d5-cb5db9e4f97f" SourceId="1" SourceUrl="http://aghqsrv453/WCFServices/TFMIntegrationService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TFMIntegrationService32.xsd" MetadataType="Schema" ID="c4ce0df5-2c17-4044-944b-4408df3b2eac" SourceId="1" SourceUrl="http://aghqsrv453/WCFServices/TFMIntegrationService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TFMIntegrationService33.xsd" MetadataType="Schema" ID="ab68317b-03d0-4ce3-85b9-ce058e3cebff" SourceId="1" SourceUrl="http://aghqsrv453/WCFServices/TFMIntegrationService.svc?xsd=xsd3" />
+    <MetadataFile FileName="TFMIntegrationService1.disco" MetadataType="Disco" ID="576d62b0-79ef-4242-8c7c-42175f6fc074" SourceId="1" SourceUrl="http://aghqsrv453/WCFServices/TFMIntegrationService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

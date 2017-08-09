@@ -1,0 +1,198 @@
+﻿<IdentifyConfiguration Tolerance="100" PointBuffer="1000" PolygonBuffer="500">
+  <MapServices>
+    <MapService ID="1">
+      <Layers>
+        <Layer ID="0">
+          <Tabs>
+            <Tab Type="BasicInfo" Name="Basic Info">
+              <Fields>
+                <Field ID="0" />
+              </Fields>
+            </Tab>
+            <Tab Type="DetaildInfo" Name="Detailed Info">
+              <Fields>
+                <Field ID="2" />
+              </Fields>
+            </Tab>
+            <Tab Type="LiveStream" Name="LiveStream" />
+            <Tab Type="HistoricalStream" Name="HistoricalStream" />
+          </Tabs>
+          <Actions>
+            <Action Type="Zoom" />
+            <Action Type="Highlight" />
+            <Action Type="Coverage" />
+          </Actions>
+        </Layer>
+        <Layer ID="1">
+          <Tabs>
+            <Tab Type="BasicInfo" Name="Basic Info">
+              <Fields>
+                <Field ID="3" />
+              </Fields>
+            </Tab>
+            <Tab Type="LiveStream" Name="LiveStream" />
+            <Tab Type="HistoricalStream" Name="HistoricalStream" />
+          </Tabs>
+          <Actions>
+            <Action Type="Zoom" />
+            <Action Type="Highlight" />
+            <Action Type="Route" />
+            <Action Type="ServiceArea" >
+              <TimeRanges>
+                <Range Time="5"  Color="50, 255, 0,0"/>
+                <Range Time="10"  Color="50, 0, 255,0"/>
+                <Range Time="15"  Color="50, 0, 0,255"/>
+              </TimeRanges>
+            </Action>
+          </Actions>
+        </Layer>
+        <Layer ID="2">
+          <Tabs>
+            <Tab Type="BasicInfo" Name="Basic Info">
+              <Fields>
+                <Field ID="4" />
+              </Fields>
+            </Tab>
+            <Tab Type="NearestNetworkAssets" Name="NearestNetworkAssets" Radius="2000" LayerId="0" />
+            <Tab Type="NearestMobileAssets" Name="NearestMobileAssets" Radius="2000" LayerId="1" >
+              <ColorRanges>
+                <Range From="0" To="1" Color="255, 255, 0,255"/>
+                <Range From="1" To="4" Color="255, 255, 0,255"/>
+                <Range From="2" To="5"  Color="255, 0, 255,255"/>
+                <Range From="3" To="6"  Color="255, 0, 255,255"/>
+                <Range From="4"   Color="255, 255, 0,0"/>
+              </ColorRanges>
+            </Tab>
+          </Tabs>
+          <Actions>
+            <Action Type="Zoom" />
+            <Action Type="Highlight" />
+          </Actions>
+        </Layer>
+
+      </Layers>
+    </MapService>
+  </MapServices>
+</IdentifyConfiguration>
+
+
+<!--https://docs.google.com/spreadsheets/d/1JOy72sh4KRadiI3FIHNZSC0d9HWrM6dgzC4d2pCGnR8/edit#gid=191795690-->
+<!--<IdentifyConfiguration Tolerance="1" PointBuffer="10000000154654487989" PolygonBuffer="10000000154654487989">
+  <MapServices>
+    <MapService ID="1">
+      <Layers>
+        <Layer ID="0">
+          <Tabs>
+            <Tab Type="BasicInfo">
+              <Fields>
+                <Field ID="0" />
+                <Field ID="1" />
+              </Fields>
+            </Tab>
+            <Tab Type="DetaildInfo">
+              <Fields>
+                <Field ID="2" />
+              </Fields>
+            </Tab>
+            <Tab Type="LiveStream" Name="LiveStream" />
+            <Tab Type="HistoricalStream" Name="HistoricalStream" />
+            <Tab Type="NearestNetworkAssets" Name="NearestNetworkAssets" Radius="10000" LayerId="0" />
+             <Tab Type="NearestMobileAssets" Name="NearestMobileAssets" Radius="1000" LayerId="0" >
+            <ColorRanges>
+              <Range From="0d" To="g4" Color="50, 150, 0,255"/>
+              <Range From="4" To="5"  Color="50, 25, 0,255"/>
+              <Range From="5" To="6"  Color="50, 55, 0,255"/>
+              <Range From="7"   Color="50, 255, 0,255"/>
+            </ColorRanges>
+          </Tab>
+          </Tabs>
+          <Actions>
+            <Action Type="Zoom" />
+            <Action Type="Highlight" />
+            <Action Type="Coverage" />
+          <Action Type="ServiceArea" >
+            <TimeRanges>
+              <Range Time="1000"  Color="255, 255, 0,255"/>
+              <Range Time="2"  Color="255, 0, 255,255"/>
+              <Range Time="3"  Color="255, 255, 0,0"/>
+            </TimeRanges>
+          </Action>
+          </Actions>
+        </Layer>
+        <Layer ID="0">
+          <Tabs>
+            <Tab Type="BasicInfo">
+              <Fields>
+                <Field ID="0" />
+                <Field ID="1" />
+              </Fields>
+            </Tab>
+            <Tab Type="DetaildInfo">
+              <Fields>
+                <Field ID="2" />
+              </Fields>
+            </Tab>
+            <Tab Type="LiveStream" Name="LiveStream" />
+            <Tab Type="HistoricalStream" Name="HistoricalStream" />
+            <Tab Type="NearestNetworkAssets" Name="NearestNetworkAssets" Radius="10000" LayerId="0" />
+          </Tabs>
+          <Actions>
+            <Action Type="Zoom" />
+            <Action Type="Highlight" />
+            <Action Type="Coverage" />
+          </Actions>
+        </Layer>
+      </Layers>
+    </MapService>
+    <MapService ID="1">
+      <Layers>
+        <Layer ID="0">
+          <Tabs>
+            <Tab Type="BasicInfo">
+              <Fields>
+                <Field ID="0" />
+                <Field ID="1" />
+              </Fields>
+            </Tab>
+            <Tab Type="DetaildInfo">
+              <Fields>
+                <Field ID="2" />
+              </Fields>
+            </Tab>
+            <Tab Type="LiveStream" Name="LiveStream" />
+            <Tab Type="HistoricalStream" Name="HistoricalStream" />
+            <Tab Type="NearestNetworkAssets" Name="NearestNetworkAssets" Radius="10000" LayerId="0" />
+          </Tabs>
+          <Actions>
+            <Action Type="Zoom" />
+            <Action Type="Highlight" />
+            <Action Type="Coverage" />
+          </Actions>
+        </Layer>
+        <Layer ID="0">
+          <Tabs>
+            <Tab Type="BasicInfo">
+              <Fields>
+                <Field ID="0" />
+                <Field ID="1" />
+              </Fields>
+            </Tab>
+            <Tab Type="DetaildInfo">
+              <Fields>
+                <Field ID="2" />
+              </Fields>
+            </Tab>
+            <Tab Type="LiveStream" Name="LiveStream" />
+            <Tab Type="HistoricalStream" Name="HistoricalStream" />
+            <Tab Type="NearestNetworkAssets" Name="NearestNetworkAssets" Radius="10000" LayerId="0" />
+          </Tabs>
+          <Actions>
+            <Action Type="Zoom" />
+            <Action Type="Highlight" />
+            <Action Type="Coverage" />
+          </Actions>
+        </Layer>
+      </Layers>
+    </MapService>
+  </MapServices>
+</IdentifyConfiguration>-->

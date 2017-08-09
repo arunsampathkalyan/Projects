@@ -1,0 +1,1980 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MicrosoftJPSCDSADPModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="ViolationViews">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ViolationView">
+        <MappingFragment StoreEntitySet="ViolationView">
+          <ScalarProperty Name="ItemCategoryId" ColumnName="ItemCategoryId" />
+          <ScalarProperty Name="GeoStateId" ColumnName="GeoStateId" />
+          <ScalarProperty Name="ViolationInsideOutsideCityId" ColumnName="ViolationInsideOutsideCityId" />
+          <ScalarProperty Name="SimpleDate2" ColumnName="SimpleDate2" />
+          <ScalarProperty Name="ViolationHour" ColumnName="ViolationHour" />
+          <ScalarProperty Name="LicensePlateCameraId" ColumnName="LicensePlateCameraId" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="originalident" ColumnName="originalident" />
+          <ScalarProperty Name="Activityid" ColumnName="Activityid" />
+          <ScalarProperty Name="PlateIdentification" ColumnName="PlateIdentification" />
+          <ScalarProperty Name="ActivityDate" ColumnName="ActivityDate" />
+          <ScalarProperty Name="ViolationTypeId" ColumnName="ViolationTypeId" />
+          <ScalarProperty Name="ViolationType" ColumnName="ViolationType" />
+          <ScalarProperty Name="RecordedSpeedRate" ColumnName="RecordedSpeedRate" />
+          <ScalarProperty Name="LegalSpeedLimitForCapture" ColumnName="LegalSpeedLimitForCapture" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="GeoPoint" ColumnName="GeoPoint" />
+          <ScalarProperty Name="Locationid" ColumnName="Locationid" />
+          <ScalarProperty Name="ItemRegistrationAuthorityId" ColumnName="ItemRegistrationAuthorityId" />
+          <ScalarProperty Name="PlateAuthority" ColumnName="PlateAuthority" />
+          <ScalarProperty Name="PlateCategory" ColumnName="PlateCategory" />
+          <ScalarProperty Name="ItemRegistrationPlateCategoryId" ColumnName="ItemRegistrationPlateCategoryId" />
+          <ScalarProperty Name="PlateKind" ColumnName="PlateKind" />
+          <ScalarProperty Name="ItemRegistrationPlateKindid" ColumnName="ItemRegistrationPlateKindid" />
+          <ScalarProperty Name="TimePeriodId" ColumnName="TimePeriodId" />
+          <ScalarProperty Name="SpeedId" ColumnName="SpeedId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CallOfServiceHistoricalViews">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.CallOfServiceHistoricalView">
+        <MappingFragment StoreEntitySet="CallOfServiceHistoricalView">
+          <ScalarProperty Name="geopoint" ColumnName="geopoint" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CallerNumber" ColumnName="CallerNumber" />
+          <ScalarProperty Name="CallerAddress" ColumnName="CallerAddress" />
+          <ScalarProperty Name="CallerName" ColumnName="CallerName" />
+          <ScalarProperty Name="IncidentAddress" ColumnName="IncidentAddress" />
+          <ScalarProperty Name="IncidentLong" ColumnName="IncidentLong" />
+          <ScalarProperty Name="IncidentLat" ColumnName="IncidentLat" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="StatusDescription" ColumnName="StatusDescription" />
+          <ScalarProperty Name="ServiceCallPriorityDescription" ColumnName="ServiceCallPriorityDescription" />
+          <ScalarProperty Name="ServiceCallPriorityCode" ColumnName="ServiceCallPriorityCode" />
+          <ScalarProperty Name="ServiceCallCategoryDescription" ColumnName="ServiceCallCategoryDescription" />
+          <ScalarProperty Name="ServiceCallCategoryCode" ColumnName="ServiceCallCategoryCode" />
+          <ScalarProperty Name="OriginalIdent" ColumnName="OriginalIdent" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="fn_GroupHistoricalViolationsByLocations" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.fn_GroupHistoricalViolationsByLocations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.fn_GroupHistoricalViolationsByLocations_Result">
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="ViolationsCount" ColumnName="ViolationsCount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ViolationImageViews">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ViolationImageView">
+        <MappingFragment StoreEntitySet="ViolationImageView">
+          <ScalarProperty Name="ImageCategoryId" ColumnName="ImageCategoryId" />
+          <ScalarProperty Name="BinaryLocationURI" ColumnName="BinaryLocationURI" />
+          <ScalarProperty Name="ImageInvolvementId" ColumnName="ImageInvolvementId" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DangerousVehicleViolations">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.DangerousVehicleViolation">
+        <MappingFragment StoreEntitySet="DangerousVehicleViolations">
+          <ScalarProperty Name="OldViolationActivityId" ColumnName="OldViolationActivityId" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          <ScalarProperty Name="DangerousVehicleViolationId" ColumnName="DangerousVehicleViolationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DangerousVehicleViews">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.DangerousVehicleView">
+        <MappingFragment StoreEntitySet="DangerousVehicleView">
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          <ScalarProperty Name="CorrelationPeriod" ColumnName="CorrelationPeriod" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+          <ScalarProperty Name="PlateColor" ColumnName="PlateColor" />
+          <ScalarProperty Name="PlateKind" ColumnName="PlateKind" />
+          <ScalarProperty Name="PlateCode" ColumnName="PlateCode" />
+          <ScalarProperty Name="RowStatusDescription" ColumnName="RowStatusDescription" />
+          <ScalarProperty Name="RowStatusCode" ColumnName="RowStatusCode" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="ActivityDate" ColumnName="ActivityDate" />
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+          <ScalarProperty Name="ActivityExpirationDate" ColumnName="ActivityExpirationDate" />
+          <ScalarProperty Name="ActivityDueDate" ColumnName="ActivityDueDate" />
+          <ScalarProperty Name="ActivityEndDate" ColumnName="ActivityEndDate" />
+          <ScalarProperty Name="ActivityStartDate" ColumnName="ActivityStartDate" />
+          <ScalarProperty Name="ActivityDescription" ColumnName="ActivityDescription" />
+          <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
+          <ScalarProperty Name="HighLowDescription" ColumnName="HighLowDescription" />
+          <ScalarProperty Name="HighLowCode" ColumnName="HighLowCode" />
+          <ScalarProperty Name="ImportanceHighLowDescription" ColumnName="ImportanceHighLowDescription" />
+          <ScalarProperty Name="ImportanceHighLowCode" ColumnName="ImportanceHighLowCode" />
+          <ScalarProperty Name="StatusDescription" ColumnName="StatusDescription" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="ActivityReasonDescription" ColumnName="ActivityReasonDescription" />
+          <ScalarProperty Name="ActivityReasonCode" ColumnName="ActivityReasonCode" />
+          <ScalarProperty Name="ActivityCategoryDescription" ColumnName="ActivityCategoryDescription" />
+          <ScalarProperty Name="ActivityCategoryCode" ColumnName="ActivityCategoryCode" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="OriginalIdent" ColumnName="OriginalIdent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.DangerousVehicleView">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertDangerousVehicleEntity">
+            <ScalarProperty Name="CorrelationPeriod" ParameterName="CorrelationPeriod" />
+            <ScalarProperty Name="DateTime" ParameterName="DateTime" />
+            <ScalarProperty Name="PlateNumber" ParameterName="PlateNumber" />
+            <ScalarProperty Name="PlateColor" ParameterName="PlateColor" />
+            <ScalarProperty Name="PlateKind" ParameterName="PlateKind" />
+            <ScalarProperty Name="PlateCode" ParameterName="PlateCode" />
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" />
+            <ScalarProperty Name="ActivityDate" ParameterName="ActivityDate" />
+            <ScalarProperty Name="IsCompleted" ParameterName="IsCompleted" />
+            <ScalarProperty Name="ActivityExpirationDate" ParameterName="ActivityExpirationDate" />
+            <ScalarProperty Name="ActivityDueDate" ParameterName="ActivityDueDate" />
+            <ScalarProperty Name="ActivityEndDate" ParameterName="ActivityEndDate" />
+            <ScalarProperty Name="ActivityStartDate" ParameterName="ActivityStartDate" />
+            <ScalarProperty Name="ActivityDescription" ParameterName="ActivityDescription" />
+            <ScalarProperty Name="ActivityName" ParameterName="ActivityName" />
+            <ScalarProperty Name="HighLowDescription" ParameterName="HighLowDescription" />
+            <ScalarProperty Name="HighLowCode" ParameterName="HighLowCode" />
+            <ScalarProperty Name="ImportanceHighLowDescription" ParameterName="ImportanceHighLowDescription" />
+            <ScalarProperty Name="ImportanceHighLowCode" ParameterName="ImportanceHighLowCode" />
+            <ScalarProperty Name="StatusDescription" ParameterName="StatusDescription" />
+            <ScalarProperty Name="StatusCode" ParameterName="StatusCode" />
+            <ScalarProperty Name="ActivityReasonDescription" ParameterName="ActivityReasonDescription" />
+            <ScalarProperty Name="ActivityReasonCode" ParameterName="ActivityReasonCode" />
+            <ScalarProperty Name="ActivityCategoryDescription" ParameterName="ActivityCategoryDescription" />
+            <ScalarProperty Name="ActivityCategoryCode" ParameterName="ActivityCategoryCode" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" />
+            <ScalarProperty Name="OriginalIdent" ParameterName="OriginalIdent" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateDangerousVehicleEntity">
+            <ScalarProperty Name="CorrelationPeriod" ParameterName="CorrelationPeriod" Version="Current" />
+            <ScalarProperty Name="DateTime" ParameterName="DateTime" Version="Current" />
+            <ScalarProperty Name="PlateNumber" ParameterName="PlateNumber" Version="Current" />
+            <ScalarProperty Name="PlateColor" ParameterName="PlateColor" Version="Current" />
+            <ScalarProperty Name="PlateKind" ParameterName="PlateKind" Version="Current" />
+            <ScalarProperty Name="PlateCode" ParameterName="PlateCode" Version="Current" />
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" Version="Current" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" Version="Current" />
+            <ScalarProperty Name="ActivityDate" ParameterName="ActivityDate" Version="Current" />
+            <ScalarProperty Name="IsCompleted" ParameterName="IsCompleted" Version="Current" />
+            <ScalarProperty Name="ActivityExpirationDate" ParameterName="ActivityExpirationDate" Version="Current" />
+            <ScalarProperty Name="ActivityDueDate" ParameterName="ActivityDueDate" Version="Current" />
+            <ScalarProperty Name="ActivityEndDate" ParameterName="ActivityEndDate" Version="Current" />
+            <ScalarProperty Name="ActivityStartDate" ParameterName="ActivityStartDate" Version="Current" />
+            <ScalarProperty Name="ActivityDescription" ParameterName="ActivityDescription" Version="Current" />
+            <ScalarProperty Name="ActivityName" ParameterName="ActivityName" Version="Current" />
+            <ScalarProperty Name="HighLowDescription" ParameterName="HighLowDescription" Version="Current" />
+            <ScalarProperty Name="HighLowCode" ParameterName="HighLowCode" Version="Current" />
+            <ScalarProperty Name="ImportanceHighLowDescription" ParameterName="ImportanceHighLowDescription" Version="Current" />
+            <ScalarProperty Name="ImportanceHighLowCode" ParameterName="ImportanceHighLowCode" Version="Current" />
+            <ScalarProperty Name="StatusDescription" ParameterName="StatusDescription" Version="Current" />
+            <ScalarProperty Name="StatusCode" ParameterName="StatusCode" Version="Current" />
+            <ScalarProperty Name="ActivityReasonDescription" ParameterName="ActivityReasonDescription" Version="Current" />
+            <ScalarProperty Name="ActivityReasonCode" ParameterName="ActivityReasonCode" Version="Current" />
+            <ScalarProperty Name="ActivityCategoryDescription" ParameterName="ActivityCategoryDescription" Version="Current" />
+            <ScalarProperty Name="ActivityCategoryCode" ParameterName="ActivityCategoryCode" Version="Current" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" Version="Current" />
+            <ScalarProperty Name="OriginalIdent" ParameterName="OriginalIdent" Version="Current" />
+            <ScalarProperty Name="ActivityId" ParameterName="ActivityId" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_GetDangerousVehicleEntity">
+            <ScalarProperty Name="ActivityId" ParameterName="ActivityId" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="usp_InsertCustodyTransferEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertCustodyTransferEntity" />
+    <FunctionImportMapping FunctionImportName="usp_InsertDangerousVehicleEntity1" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertDangerousVehicleEntity" />
+    <FunctionImportMapping FunctionImportName="usp_GetDangerousVehicleEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_GetDangerousVehicleEntity">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.usp_GetDangerousVehicleEntity_Result">
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          <ScalarProperty Name="OriginalIdent" ColumnName="OriginalIdent" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="ActivityCategoryCode" ColumnName="ActivityCategoryCode" />
+          <ScalarProperty Name="ActivityCategoryDescription" ColumnName="ActivityCategoryDescription" />
+          <ScalarProperty Name="ActivityReasonCode" ColumnName="ActivityReasonCode" />
+          <ScalarProperty Name="ActivityReasonDescription" ColumnName="ActivityReasonDescription" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="StatusDescription" ColumnName="StatusDescription" />
+          <ScalarProperty Name="ImportanceHighLowCode" ColumnName="ImportanceHighLowCode" />
+          <ScalarProperty Name="ImportanceHighLowDescription" ColumnName="ImportanceHighLowDescription" />
+          <ScalarProperty Name="HighLowCode" ColumnName="HighLowCode" />
+          <ScalarProperty Name="HighLowDescription" ColumnName="HighLowDescription" />
+          <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
+          <ScalarProperty Name="ActivityDescription" ColumnName="ActivityDescription" />
+          <ScalarProperty Name="ActivityStartDate" ColumnName="ActivityStartDate" />
+          <ScalarProperty Name="ActivityEndDate" ColumnName="ActivityEndDate" />
+          <ScalarProperty Name="ActivityDueDate" ColumnName="ActivityDueDate" />
+          <ScalarProperty Name="ActivityExpirationDate" ColumnName="ActivityExpirationDate" />
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+          <ScalarProperty Name="ActivityDate" ColumnName="ActivityDate" />
+          <ScalarProperty Name="RowStatusCode" ColumnName="RowStatusCode" />
+          <ScalarProperty Name="RowStatusDescription" ColumnName="RowStatusDescription" />
+          <ScalarProperty Name="PlateCode" ColumnName="PlateCode" />
+          <ScalarProperty Name="PlateKind" ColumnName="PlateKind" />
+          <ScalarProperty Name="PlateColor" ColumnName="PlateColor" />
+          <ScalarProperty Name="PlateNumber" ColumnName="PlateNumber" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="CorrelationPeriod" ColumnName="CorrelationPeriod" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_UpdateDangerousVehicleEntity1" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateDangerousVehicleEntity" />
+    <EntitySetMapping Name="Activities">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.Activity">
+        <MappingFragment StoreEntitySet="Activity">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="ActivityDate" ColumnName="ActivityDate" />
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+          <ScalarProperty Name="ActivityExpirationDate" ColumnName="ActivityExpirationDate" />
+          <ScalarProperty Name="ActivityDueDate" ColumnName="ActivityDueDate" />
+          <ScalarProperty Name="ActivityEndDate" ColumnName="ActivityEndDate" />
+          <ScalarProperty Name="ActivityStartDate" ColumnName="ActivityStartDate" />
+          <ScalarProperty Name="ActivityDescription" ColumnName="ActivityDescription" />
+          <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
+          <ScalarProperty Name="HighLowId" ColumnName="HighLowId" />
+          <ScalarProperty Name="ImportanceHighLowId" ColumnName="ImportanceHighLowId" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="ActivityReasonId" ColumnName="ActivityReasonId" />
+          <ScalarProperty Name="ActivityCategoryId" ColumnName="ActivityCategoryId" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+          <ScalarProperty Name="OriginalIdent" ColumnName="OriginalIdent" />
+          <ScalarProperty Name="ActivityGuid" ColumnName="ActivityGuid" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActivityItemViews">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ActivityItemView">
+        <MappingFragment StoreEntitySet="ActivityItemContainerView">
+          <ScalarProperty Name="RowStatusDescription" ColumnName="RowStatusDescription" />
+          <ScalarProperty Name="RowStatusCode" ColumnName="RowStatusCode" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="ItemInvolvementDescription" ColumnName="ItemInvolvementDescription" />
+          <ScalarProperty Name="ItemInvolvementCode" ColumnName="ItemInvolvementCode" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          <ScalarProperty Name="ActivityItemDescription" ColumnName="ActivityItemDescription" />
+          <ScalarProperty Name="ActivityItemId" ColumnName="ActivityItemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ActivityItemView">
+        <ModificationFunctionMapping>
+          <DeleteFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteActivityItemData">
+            <ScalarProperty Name="ActivityItemId" ParameterName="ActivityItemId" />
+          </DeleteFunction>
+          <InsertFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertActivityItemContainerData">
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" />
+            <ScalarProperty Name="ItemInvolvementDescription" ParameterName="ItemInvolvementDescription" />
+            <ScalarProperty Name="ItemInvolvementCode" ParameterName="ItemInvolvementCode" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" />
+            <ScalarProperty Name="ItemId" ParameterName="ItemId" />
+            <ScalarProperty Name="ActivityId" ParameterName="ActivityId" />
+            <ScalarProperty Name="ActivityItemDescription" ParameterName="ActivityItemDescription" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateActivityItemContainerData">
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" Version="Current" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" Version="Current" />
+            <ScalarProperty Name="ItemInvolvementDescription" ParameterName="ItemInvolvementDescription" Version="Current" />
+            <ScalarProperty Name="ItemInvolvementCode" ParameterName="ItemInvolvementCode" Version="Current" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" Version="Current" />
+            <ScalarProperty Name="ItemId" ParameterName="ItemId" Version="Current" />
+            <ScalarProperty Name="ActivityId" ParameterName="ActivityId" Version="Current" />
+            <ScalarProperty Name="ActivityItemDescription" ParameterName="ActivityItemDescription" Version="Current" />
+            <ScalarProperty Name="ActivityItemId" ParameterName="ActivityItemId" Version="Current" />
+          </UpdateFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActivityLocationViews">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ActivityLocationView">
+        <MappingFragment StoreEntitySet="ActivityLocationContainerView">
+          <ScalarProperty Name="RowStatusDescription" ColumnName="RowStatusDescription" />
+          <ScalarProperty Name="RowStatusCode" ColumnName="RowStatusCode" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="LocationInvolvementDescription" ColumnName="LocationInvolvementDescription" />
+          <ScalarProperty Name="LocationInvolvementCode" ColumnName="LocationInvolvementCode" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          <ScalarProperty Name="ActivityLocationDescription" ColumnName="ActivityLocationDescription" />
+          <ScalarProperty Name="ActivityLocationId" ColumnName="ActivityLocationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ActivityLocationView">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertActivityLocationContainerData">
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" />
+            <ScalarProperty Name="LocationInvolvementDescription" ParameterName="LocationInvolvementDescription" />
+            <ScalarProperty Name="LocationInvolvementCode" ParameterName="LocationInvolvementCode" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" />
+            <ScalarProperty Name="LocationId" ParameterName="LocationId" />
+            <ScalarProperty Name="ActivityId" ParameterName="ActivityId" />
+            <ScalarProperty Name="ActivityLocationDescription" ParameterName="ActivityLocationDescription" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertActivityLocationContainerData">
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" Version="Current" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" Version="Current" />
+            <ScalarProperty Name="LocationInvolvementDescription" ParameterName="LocationInvolvementDescription" Version="Current" />
+            <ScalarProperty Name="LocationInvolvementCode" ParameterName="LocationInvolvementCode" Version="Current" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" Version="Current" />
+            <ScalarProperty Name="LocationId" ParameterName="LocationId" Version="Current" />
+            <ScalarProperty Name="ActivityId" ParameterName="ActivityId" Version="Current" />
+            <ScalarProperty Name="ActivityLocationDescription" ParameterName="ActivityLocationDescription" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteActivityLocationData">
+            <ScalarProperty Name="ActivityLocationId" ParameterName="ActivityLocationId" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActivityOrganizations">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ActivityOrganization">
+        <MappingFragment StoreEntitySet="ActivityOrganizationContainerView">
+          <ScalarProperty Name="RowStatusDescription" ColumnName="RowStatusDescription" />
+          <ScalarProperty Name="RowStatusCode" ColumnName="RowStatusCode" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="OrganizationInvolvementDescription" ColumnName="OrganizationInvolvementDescription" />
+          <ScalarProperty Name="OrganizationInvolvementCode" ColumnName="OrganizationInvolvementCode" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="Organizationid" ColumnName="Organizationid" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          <ScalarProperty Name="ActivityOrganizationDescription" ColumnName="ActivityOrganizationDescription" />
+          <ScalarProperty Name="ActivityOrganizationId" ColumnName="ActivityOrganizationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ActivityOrganization">
+        <ModificationFunctionMapping>
+          <DeleteFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteActivityOrganizationData">
+            <ScalarProperty Name="ActivityOrganizationId" ParameterName="ActivityOrganizationId" />
+          </DeleteFunction>
+          <UpdateFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateActivityOrganizationContainerData">
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" Version="Current" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" Version="Current" />
+            <ScalarProperty Name="OrganizationInvolvementDescription" ParameterName="OrganizationInvolvementDescription" Version="Current" />
+            <ScalarProperty Name="OrganizationInvolvementCode" ParameterName="OrganizationInvolvementCode" Version="Current" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" Version="Current" />
+            <ScalarProperty Name="Organizationid" ParameterName="Organizationid" Version="Current" />
+            <ScalarProperty Name="ActivityId" ParameterName="ActivityId" Version="Current" />
+            <ScalarProperty Name="ActivityOrganizationDescription" ParameterName="ActivityOrganizationDescription" Version="Current" />
+            <ScalarProperty Name="ActivityOrganizationId" ParameterName="ActivityOrganizationId" Version="Current" />
+          </UpdateFunction>
+          <InsertFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertActivityOrganizationContainerData">
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" />
+            <ScalarProperty Name="OrganizationInvolvementDescription" ParameterName="OrganizationInvolvementDescription" />
+            <ScalarProperty Name="OrganizationInvolvementCode" ParameterName="OrganizationInvolvementCode" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" />
+            <ScalarProperty Name="Organizationid" ParameterName="Organizationid" />
+            <ScalarProperty Name="ActivityId" ParameterName="ActivityId" />
+            <ScalarProperty Name="ActivityOrganizationDescription" ParameterName="ActivityOrganizationDescription" />
+          </InsertFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActivityPersonViews">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ActivityPersonView">
+        <MappingFragment StoreEntitySet="ActivityPersonContainerView">
+          <ScalarProperty Name="RowStatusDescription" ColumnName="RowStatusDescription" />
+          <ScalarProperty Name="RowStatusCode" ColumnName="RowStatusCode" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="PersonInvolvementDescription" ColumnName="PersonInvolvementDescription" />
+          <ScalarProperty Name="PersonInvolvementCode" ColumnName="PersonInvolvementCode" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="ActivityPersonDescription" ColumnName="ActivityPersonDescription" />
+          <ScalarProperty Name="ActivityPersonId" ColumnName="ActivityPersonId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ActivityPersonView">
+        <ModificationFunctionMapping>
+          <UpdateFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateActivityPersonContainerData">
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" Version="Current" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" Version="Current" />
+            <ScalarProperty Name="PersonInvolvementDescription" ParameterName="PersonInvolvementDescription" Version="Current" />
+            <ScalarProperty Name="PersonInvolvementCode" ParameterName="PersonInvolvementCode" Version="Current" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" Version="Current" />
+            <ScalarProperty Name="ActivityId" ParameterName="ActivityId" Version="Current" />
+            <ScalarProperty Name="PersonId" ParameterName="PersonId" Version="Current" />
+            <ScalarProperty Name="ActivityPersonDescription" ParameterName="ActivityPersonDescription" Version="Current" />
+            <ScalarProperty Name="ActivityPersonId" ParameterName="ActivityPersonId" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteActivityPersonData">
+            <ScalarProperty Name="ActivityPersonId" ParameterName="ActivityPersonId" />
+          </DeleteFunction>
+          <InsertFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertActivityPersonContainerData">
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" />
+            <ScalarProperty Name="PersonInvolvementDescription" ParameterName="PersonInvolvementDescription" />
+            <ScalarProperty Name="PersonInvolvementCode" ParameterName="PersonInvolvementCode" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" />
+            <ScalarProperty Name="ActivityId" ParameterName="ActivityId" />
+            <ScalarProperty Name="PersonId" ParameterName="PersonId" />
+            <ScalarProperty Name="ActivityPersonDescription" ParameterName="ActivityPersonDescription" />
+          </InsertFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemViews">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ItemView">
+        <MappingFragment StoreEntitySet="ItemView">
+          <ScalarProperty Name="RowStatusDescription" ColumnName="RowStatusDescription" />
+          <ScalarProperty Name="RowStatusCode" ColumnName="RowStatusCode" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="WeightMeasure" ColumnName="WeightMeasure" />
+          <ScalarProperty Name="WidthMeasure" ColumnName="WidthMeasure" />
+          <ScalarProperty Name="LengthMeasure" ColumnName="LengthMeasure" />
+          <ScalarProperty Name="HeightMeasure" ColumnName="HeightMeasure" />
+          <ScalarProperty Name="SizeDescription" ColumnName="SizeDescription" />
+          <ScalarProperty Name="ItemValue" ColumnName="ItemValue" />
+          <ScalarProperty Name="SerialIdentification" ColumnName="SerialIdentification" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemUsageDescription" ColumnName="ItemUsageDescription" />
+          <ScalarProperty Name="ItemUsageCode" ColumnName="ItemUsageCode" />
+          <ScalarProperty Name="ItemConditionDescription" ColumnName="ItemConditionDescription" />
+          <ScalarProperty Name="ItemConditionCode" ColumnName="ItemConditionCode" />
+          <ScalarProperty Name="ItemSecondaryColorDescription" ColumnName="ItemSecondaryColorDescription" />
+          <ScalarProperty Name="ItemSecondaryColorCode" ColumnName="ItemSecondaryColorCode" />
+          <ScalarProperty Name="ItemPrimaryColorDescription" ColumnName="ItemPrimaryColorDescription" />
+          <ScalarProperty Name="ItemPrimaryColorCode" ColumnName="ItemPrimaryColorCode" />
+          <ScalarProperty Name="ModelYear" ColumnName="ModelYear" />
+          <ScalarProperty Name="ItemMakeModelModel" ColumnName="ItemMakeModelModel" />
+          <ScalarProperty Name="ItemMakeModelMake" ColumnName="ItemMakeModelMake" />
+          <ScalarProperty Name="ItemMakeModelCode" ColumnName="ItemMakeModelCode" />
+          <ScalarProperty Name="ItemStatusDescription" ColumnName="ItemStatusDescription" />
+          <ScalarProperty Name="ItemStatusCode" ColumnName="ItemStatusCode" />
+          <ScalarProperty Name="ItemCategoryDescription" ColumnName="ItemCategoryDescription" />
+          <ScalarProperty Name="ItemCategoryCode" ColumnName="ItemCategoryCode" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="OriginalIdent" ColumnName="OriginalIdent" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ItemView">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertItemEntity">
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" />
+            <ScalarProperty Name="WeightMeasure" ParameterName="WeightMeasure" />
+            <ScalarProperty Name="WidthMeasure" ParameterName="WidthMeasure" />
+            <ScalarProperty Name="LengthMeasure" ParameterName="LengthMeasure" />
+            <ScalarProperty Name="HeightMeasure" ParameterName="HeightMeasure" />
+            <ScalarProperty Name="SizeDescription" ParameterName="SizeDescription" />
+            <ScalarProperty Name="ItemValue" ParameterName="ItemValue" />
+            <ScalarProperty Name="SerialIdentification" ParameterName="SerialIdentification" />
+            <ScalarProperty Name="Description" ParameterName="Description" />
+            <ScalarProperty Name="ItemName" ParameterName="ItemName" />
+            <ScalarProperty Name="ItemUsageDescription" ParameterName="ItemUsageDescription" />
+            <ScalarProperty Name="ItemUsageCode" ParameterName="ItemUsageCode" />
+            <ScalarProperty Name="ItemConditionDescription" ParameterName="ItemConditionDescription" />
+            <ScalarProperty Name="ItemConditionCode" ParameterName="ItemConditionCode" />
+            <ScalarProperty Name="ItemSecondaryColorDescription" ParameterName="ItemSecondaryColorDescription" />
+            <ScalarProperty Name="ItemSecondaryColorCode" ParameterName="ItemSecondaryColorCode" />
+            <ScalarProperty Name="ItemPrimaryColorDescription" ParameterName="ItemPrimaryColorDescription" />
+            <ScalarProperty Name="ItemPrimaryColorCode" ParameterName="ItemPrimaryColorCode" />
+            <ScalarProperty Name="ModelYear" ParameterName="ModelYear" />
+            <ScalarProperty Name="ItemMakeModelModel" ParameterName="ItemMakeModelModel" />
+            <ScalarProperty Name="ItemMakeModelMake" ParameterName="ItemMakeModelMake" />
+            <ScalarProperty Name="ItemMakeModelCode" ParameterName="ItemMakeModelCode" />
+            <ScalarProperty Name="ItemStatusDescription" ParameterName="ItemStatusDescription" />
+            <ScalarProperty Name="ItemStatusCode" ParameterName="ItemStatusCode" />
+            <ScalarProperty Name="ItemCategoryDescription" ParameterName="ItemCategoryDescription" />
+            <ScalarProperty Name="ItemCategoryCode" ParameterName="ItemCategoryCode" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" />
+            <ScalarProperty Name="OriginalIdent" ParameterName="OriginalIdent" />
+            <ResultBinding Name="ItemId" ColumnName="ItemId" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateItemEntity">
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" Version="Current" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" Version="Current" />
+            <ScalarProperty Name="WeightMeasure" ParameterName="WeightMeasure" Version="Current" />
+            <ScalarProperty Name="WidthMeasure" ParameterName="WidthMeasure" Version="Current" />
+            <ScalarProperty Name="LengthMeasure" ParameterName="LengthMeasure" Version="Current" />
+            <ScalarProperty Name="HeightMeasure" ParameterName="HeightMeasure" Version="Current" />
+            <ScalarProperty Name="SizeDescription" ParameterName="SizeDescription" Version="Current" />
+            <ScalarProperty Name="ItemValue" ParameterName="ItemValue" Version="Current" />
+            <ScalarProperty Name="SerialIdentification" ParameterName="SerialIdentification" Version="Current" />
+            <ScalarProperty Name="Description" ParameterName="Description" Version="Current" />
+            <ScalarProperty Name="ItemName" ParameterName="ItemName" Version="Current" />
+            <ScalarProperty Name="ItemUsageDescription" ParameterName="ItemUsageDescription" Version="Current" />
+            <ScalarProperty Name="ItemUsageCode" ParameterName="ItemUsageCode" Version="Current" />
+            <ScalarProperty Name="ItemConditionDescription" ParameterName="ItemConditionDescription" Version="Current" />
+            <ScalarProperty Name="ItemConditionCode" ParameterName="ItemConditionCode" Version="Current" />
+            <ScalarProperty Name="ItemSecondaryColorDescription" ParameterName="ItemSecondaryColorDescription" Version="Current" />
+            <ScalarProperty Name="ItemSecondaryColorCode" ParameterName="ItemSecondaryColorCode" Version="Current" />
+            <ScalarProperty Name="ItemPrimaryColorDescription" ParameterName="ItemPrimaryColorDescription" Version="Current" />
+            <ScalarProperty Name="ItemPrimaryColorCode" ParameterName="ItemPrimaryColorCode" Version="Current" />
+            <ScalarProperty Name="ModelYear" ParameterName="ModelYear" Version="Current" />
+            <ScalarProperty Name="ItemMakeModelModel" ParameterName="ItemMakeModelModel" Version="Current" />
+            <ScalarProperty Name="ItemMakeModelMake" ParameterName="ItemMakeModelMake" Version="Current" />
+            <ScalarProperty Name="ItemMakeModelCode" ParameterName="ItemMakeModelCode" Version="Current" />
+            <ScalarProperty Name="ItemStatusDescription" ParameterName="ItemStatusDescription" Version="Current" />
+            <ScalarProperty Name="ItemStatusCode" ParameterName="ItemStatusCode" Version="Current" />
+            <ScalarProperty Name="ItemCategoryDescription" ParameterName="ItemCategoryDescription" Version="Current" />
+            <ScalarProperty Name="ItemCategoryCode" ParameterName="ItemCategoryCode" Version="Current" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" Version="Current" />
+            <ScalarProperty Name="OriginalIdent" ParameterName="OriginalIdent" Version="Current" />
+            <ScalarProperty Name="ItemId" ParameterName="ItemId" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteItemData">
+            <ScalarProperty Name="ItemId" ParameterName="ItemId" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrganizationViews">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.OrganizationView">
+        <MappingFragment StoreEntitySet="OrganizationView">
+          <ScalarProperty Name="RowStatusDescription" ColumnName="RowStatusDescription" />
+          <ScalarProperty Name="RowStatusCode" ColumnName="RowStatusCode" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="IncorporatedIndicator" ColumnName="IncorporatedIndicator" />
+          <ScalarProperty Name="TerminationDateTime" ColumnName="TerminationDateTime" />
+          <ScalarProperty Name="EstablishedDateTime" ColumnName="EstablishedDateTime" />
+          <ScalarProperty Name="IMONumber" ColumnName="IMONumber" />
+          <ScalarProperty Name="AbbreviationText" ColumnName="AbbreviationText" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DoingBusinessAs" ColumnName="DoingBusinessAs" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="OrganizationStatusDescription" ColumnName="OrganizationStatusDescription" />
+          <ScalarProperty Name="OrganizationStatusCode" ColumnName="OrganizationStatusCode" />
+          <ScalarProperty Name="OrganizationCategoryDescription" ColumnName="OrganizationCategoryDescription" />
+          <ScalarProperty Name="OrganizationCategoryCode" ColumnName="OrganizationCategoryCode" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="OriginalIdent" ColumnName="OriginalIdent" />
+          <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.OrganizationView">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertOrganizationEntity">
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" />
+            <ScalarProperty Name="IncorporatedIndicator" ParameterName="IncorporatedIndicator" />
+            <ScalarProperty Name="TerminationDateTime" ParameterName="TerminationDateTime" />
+            <ScalarProperty Name="EstablishedDateTime" ParameterName="EstablishedDateTime" />
+            <ScalarProperty Name="IMONumber" ParameterName="IMONumber" />
+            <ScalarProperty Name="AbbreviationText" ParameterName="AbbreviationText" />
+            <ScalarProperty Name="Description" ParameterName="Description" />
+            <ScalarProperty Name="DoingBusinessAs" ParameterName="DoingBusinessAs" />
+            <ScalarProperty Name="Name" ParameterName="Name" />
+            <ScalarProperty Name="OrganizationStatusDescription" ParameterName="OrganizationStatusDescription" />
+            <ScalarProperty Name="OrganizationStatusCode" ParameterName="OrganizationStatusCode" />
+            <ScalarProperty Name="OrganizationCategoryDescription" ParameterName="OrganizationCategoryDescription" />
+            <ScalarProperty Name="OrganizationCategoryCode" ParameterName="OrganizationCategoryCode" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" />
+            <ScalarProperty Name="OriginalIdent" ParameterName="OriginalIdent" />
+            <ResultBinding Name="OrganizationId" ColumnName="OrganizationId" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateOrganizationEntity">
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" Version="Current" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" Version="Current" />
+            <ScalarProperty Name="IncorporatedIndicator" ParameterName="IncorporatedIndicator" Version="Current" />
+            <ScalarProperty Name="TerminationDateTime" ParameterName="TerminationDateTime" Version="Current" />
+            <ScalarProperty Name="EstablishedDateTime" ParameterName="EstablishedDateTime" Version="Current" />
+            <ScalarProperty Name="IMONumber" ParameterName="IMONumber" Version="Current" />
+            <ScalarProperty Name="AbbreviationText" ParameterName="AbbreviationText" Version="Current" />
+            <ScalarProperty Name="Description" ParameterName="Description" Version="Current" />
+            <ScalarProperty Name="DoingBusinessAs" ParameterName="DoingBusinessAs" Version="Current" />
+            <ScalarProperty Name="Name" ParameterName="Name" Version="Current" />
+            <ScalarProperty Name="OrganizationStatusDescription" ParameterName="OrganizationStatusDescription" Version="Current" />
+            <ScalarProperty Name="OrganizationStatusCode" ParameterName="OrganizationStatusCode" Version="Current" />
+            <ScalarProperty Name="OrganizationCategoryDescription" ParameterName="OrganizationCategoryDescription" Version="Current" />
+            <ScalarProperty Name="OrganizationCategoryCode" ParameterName="OrganizationCategoryCode" Version="Current" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" Version="Current" />
+            <ScalarProperty Name="OriginalIdent" ParameterName="OriginalIdent" Version="Current" />
+            <ScalarProperty Name="OrganizationId" ParameterName="OrganizationId" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteOrganizationData">
+            <ScalarProperty Name="OrganizationId" ParameterName="OrganizationId" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonViews">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.PersonView">
+        <MappingFragment StoreEntitySet="PersonView">
+          <ScalarProperty Name="RowStatusDescription" ColumnName="RowStatusDescription" />
+          <ScalarProperty Name="RowStatusCode" ColumnName="RowStatusCode" />
+          <ScalarProperty Name="PersonGenderDescription" ColumnName="PersonGenderDescription" />
+          <ScalarProperty Name="PersonGenderCode" ColumnName="PersonGenderCode" />
+          <ScalarProperty Name="PersonCategoryId" ColumnName="PersonCategoryId" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+          <ScalarProperty Name="Moniker" ColumnName="Moniker" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="PersonStatusDescription" ColumnName="PersonStatusDescription" />
+          <ScalarProperty Name="PersonStatusCode" ColumnName="PersonStatusCode" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="OriginalIdent" ColumnName="OriginalIdent" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.PersonView">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertPersonEntity">
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" />
+            <ScalarProperty Name="PersonGenderDescription" ParameterName="PersonGenderDescription" />
+            <ScalarProperty Name="PersonGenderCode" ParameterName="PersonGenderCode" />
+            <ScalarProperty Name="PersonCategoryId" ParameterName="PersonCategoryId" />
+            <ScalarProperty Name="Prefix" ParameterName="Prefix" />
+            <ScalarProperty Name="Suffix" ParameterName="Suffix" />
+            <ScalarProperty Name="Moniker" ParameterName="Moniker" />
+            <ScalarProperty Name="LastName" ParameterName="LastName" />
+            <ScalarProperty Name="MiddleName" ParameterName="MiddleName" />
+            <ScalarProperty Name="FirstName" ParameterName="FirstName" />
+            <ScalarProperty Name="PersonStatusDescription" ParameterName="PersonStatusDescription" />
+            <ScalarProperty Name="PersonStatusCode" ParameterName="PersonStatusCode" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" />
+            <ScalarProperty Name="OriginalIdent" ParameterName="OriginalIdent" />
+            <ScalarProperty Name="Description" ParameterName="Description" />
+            <ResultBinding Name="PersonId" ColumnName="PersonId" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdatePersonEntity">
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" Version="Current" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" Version="Current" />
+            <ScalarProperty Name="PersonGenderDescription" ParameterName="PersonGenderDescription" Version="Current" />
+            <ScalarProperty Name="PersonGenderCode" ParameterName="PersonGenderCode" Version="Current" />
+            <ScalarProperty Name="PersonCategoryId" ParameterName="PersonCategoryId" Version="Current" />
+            <ScalarProperty Name="Prefix" ParameterName="Prefix" Version="Current" />
+            <ScalarProperty Name="Suffix" ParameterName="Suffix" Version="Current" />
+            <ScalarProperty Name="Moniker" ParameterName="Moniker" Version="Current" />
+            <ScalarProperty Name="LastName" ParameterName="LastName" Version="Current" />
+            <ScalarProperty Name="MiddleName" ParameterName="MiddleName" Version="Current" />
+            <ScalarProperty Name="FirstName" ParameterName="FirstName" Version="Current" />
+            <ScalarProperty Name="PersonStatusDescription" ParameterName="PersonStatusDescription" Version="Current" />
+            <ScalarProperty Name="PersonStatusCode" ParameterName="PersonStatusCode" Version="Current" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" Version="Current" />
+            <ScalarProperty Name="OriginalIdent" ParameterName="OriginalIdent" Version="Current" />
+            <ScalarProperty Name="Description" ParameterName="Description" Version="Current" />
+            <ScalarProperty Name="PersonId" ParameterName="PersonId" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeletePersonData">
+            <ScalarProperty Name="PersonId" ParameterName="PersonId" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceCallDrivers">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ServiceCallDriver">
+        <MappingFragment StoreEntitySet="ServiceCallDriverView">
+          <ScalarProperty Name="DriverLicenceTypeDescription" ColumnName="DriverLicenceTypeDescription" />
+          <ScalarProperty Name="DriverLicenceTypeCode" ColumnName="DriverLicenceTypeCode" />
+          <ScalarProperty Name="DriverLicenceSourceDescription" ColumnName="DriverLicenceSourceDescription" />
+          <ScalarProperty Name="DriverLicenceSourceCode" ColumnName="DriverLicenceSourceCode" />
+          <ScalarProperty Name="DriverNationalityDescription" ColumnName="DriverNationalityDescription" />
+          <ScalarProperty Name="DriverNationalityCode" ColumnName="DriverNationalityCode" />
+          <ScalarProperty Name="RowStatusDescription" ColumnName="RowStatusDescription" />
+          <ScalarProperty Name="RowStatusCode" ColumnName="RowStatusCode" />
+          <ScalarProperty Name="PersonGenderDescription" ColumnName="PersonGenderDescription" />
+          <ScalarProperty Name="PersonGenderCode" ColumnName="PersonGenderCode" />
+          <ScalarProperty Name="PersonCategoryId" ColumnName="PersonCategoryId" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+          <ScalarProperty Name="Moniker" ColumnName="Moniker" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="PersonStatusDescription" ColumnName="PersonStatusDescription" />
+          <ScalarProperty Name="PersonStatusCode" ColumnName="PersonStatusCode" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="OriginalIdent" ColumnName="OriginalIdent" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ServiceCallDriver">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertServiceCallDriverEntity">
+            <ScalarProperty Name="DriverLicenceTypeDescription" ParameterName="DriverLicenceTypeDescription" />
+            <ScalarProperty Name="DriverLicenceTypeCode" ParameterName="DriverLicenceTypeCode" />
+            <ScalarProperty Name="DriverLicenceSourceDescription" ParameterName="DriverLicenceSourceDescription" />
+            <ScalarProperty Name="DriverLicenceSourceCode" ParameterName="DriverLicenceSourceCode" />
+            <ScalarProperty Name="DriverNationalityDescription" ParameterName="DriverNationalityDescription" />
+            <ScalarProperty Name="DriverNationalityCode" ParameterName="DriverNationalityCode" />
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" />
+            <ScalarProperty Name="PersonGenderDescription" ParameterName="PersonGenderDescription" />
+            <ScalarProperty Name="PersonGenderCode" ParameterName="PersonGenderCode" />
+            <ScalarProperty Name="PersonCategoryId" ParameterName="PersonCategoryId" />
+            <ScalarProperty Name="Prefix" ParameterName="Prefix" />
+            <ScalarProperty Name="Suffix" ParameterName="Suffix" />
+            <ScalarProperty Name="Moniker" ParameterName="Moniker" />
+            <ScalarProperty Name="LastName" ParameterName="LastName" />
+            <ScalarProperty Name="MiddleName" ParameterName="MiddleName" />
+            <ScalarProperty Name="FirstName" ParameterName="FirstName" />
+            <ScalarProperty Name="PersonStatusDescription" ParameterName="PersonStatusDescription" />
+            <ScalarProperty Name="PersonStatusCode" ParameterName="PersonStatusCode" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" />
+            <ScalarProperty Name="OriginalIdent" ParameterName="OriginalIdent" />
+            <ScalarProperty Name="Description" ParameterName="Description" />
+            <ResultBinding Name="PersonId" ColumnName="PersonId" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateServiceCallDriverEntity">
+            <ScalarProperty Name="DriverLicenceTypeDescription" ParameterName="DriverLicenceTypeDescription" Version="Current" />
+            <ScalarProperty Name="DriverLicenceTypeCode" ParameterName="DriverLicenceTypeCode" Version="Current" />
+            <ScalarProperty Name="DriverLicenceSourceDescription" ParameterName="DriverLicenceSourceDescription" Version="Current" />
+            <ScalarProperty Name="DriverLicenceSourceCode" ParameterName="DriverLicenceSourceCode" Version="Current" />
+            <ScalarProperty Name="DriverNationalityDescription" ParameterName="DriverNationalityDescription" Version="Current" />
+            <ScalarProperty Name="DriverNationalityCode" ParameterName="DriverNationalityCode" Version="Current" />
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" Version="Current" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" Version="Current" />
+            <ScalarProperty Name="PersonGenderDescription" ParameterName="PersonGenderDescription" Version="Current" />
+            <ScalarProperty Name="PersonGenderCode" ParameterName="PersonGenderCode" Version="Current" />
+            <ScalarProperty Name="PersonCategoryId" ParameterName="PersonCategoryId" Version="Current" />
+            <ScalarProperty Name="Prefix" ParameterName="Prefix" Version="Current" />
+            <ScalarProperty Name="Suffix" ParameterName="Suffix" Version="Current" />
+            <ScalarProperty Name="Moniker" ParameterName="Moniker" Version="Current" />
+            <ScalarProperty Name="LastName" ParameterName="LastName" Version="Current" />
+            <ScalarProperty Name="MiddleName" ParameterName="MiddleName" Version="Current" />
+            <ScalarProperty Name="FirstName" ParameterName="FirstName" Version="Current" />
+            <ScalarProperty Name="PersonStatusDescription" ParameterName="PersonStatusDescription" Version="Current" />
+            <ScalarProperty Name="PersonStatusCode" ParameterName="PersonStatusCode" Version="Current" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" Version="Current" />
+            <ScalarProperty Name="OriginalIdent" ParameterName="OriginalIdent" Version="Current" />
+            <ScalarProperty Name="Description" ParameterName="Description" Version="Current" />
+            <ScalarProperty Name="PersonId" ParameterName="PersonId" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteServiceCallDriverData">
+            <ScalarProperty Name="PersonId" ParameterName="PersonId" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceCallInsurances">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ServiceCallInsurance">
+        <MappingFragment StoreEntitySet="ServiceCallInsuranceView">
+          <ScalarProperty Name="InsuranceTypeDescription" ColumnName="InsuranceTypeDescription" />
+          <ScalarProperty Name="InsuranceTypeCode" ColumnName="InsuranceTypeCode" />
+          <ScalarProperty Name="RowStatusDescription" ColumnName="RowStatusDescription" />
+          <ScalarProperty Name="RowStatusCode" ColumnName="RowStatusCode" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="IncorporatedIndicator" ColumnName="IncorporatedIndicator" />
+          <ScalarProperty Name="TerminationDateTime" ColumnName="TerminationDateTime" />
+          <ScalarProperty Name="EstablishedDateTime" ColumnName="EstablishedDateTime" />
+          <ScalarProperty Name="IMONumber" ColumnName="IMONumber" />
+          <ScalarProperty Name="AbbreviationText" ColumnName="AbbreviationText" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DoingBusinessAs" ColumnName="DoingBusinessAs" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="OrganizationStatusDescription" ColumnName="OrganizationStatusDescription" />
+          <ScalarProperty Name="OrganizationStatusCode" ColumnName="OrganizationStatusCode" />
+          <ScalarProperty Name="OrganizationCategoryDescription" ColumnName="OrganizationCategoryDescription" />
+          <ScalarProperty Name="OrganizationCategoryCode" ColumnName="OrganizationCategoryCode" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="OriginalIdent" ColumnName="OriginalIdent" />
+          <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ServiceCallInsurance">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertServiceCallInsuranceEntity">
+            <ScalarProperty Name="InsuranceTypeDescription" ParameterName="InsuranceTypeDescription" />
+            <ScalarProperty Name="InsuranceTypeCode" ParameterName="InsuranceTypeCode" />
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" />
+            <ScalarProperty Name="IncorporatedIndicator" ParameterName="IncorporatedIndicator" />
+            <ScalarProperty Name="TerminationDateTime" ParameterName="TerminationDateTime" />
+            <ScalarProperty Name="EstablishedDateTime" ParameterName="EstablishedDateTime" />
+            <ScalarProperty Name="IMONumber" ParameterName="IMONumber" />
+            <ScalarProperty Name="AbbreviationText" ParameterName="AbbreviationText" />
+            <ScalarProperty Name="Description" ParameterName="Description" />
+            <ScalarProperty Name="DoingBusinessAs" ParameterName="DoingBusinessAs" />
+            <ScalarProperty Name="Name" ParameterName="Name" />
+            <ScalarProperty Name="OrganizationStatusDescription" ParameterName="OrganizationStatusDescription" />
+            <ScalarProperty Name="OrganizationStatusCode" ParameterName="OrganizationStatusCode" />
+            <ScalarProperty Name="OrganizationCategoryDescription" ParameterName="OrganizationCategoryDescription" />
+            <ScalarProperty Name="OrganizationCategoryCode" ParameterName="OrganizationCategoryCode" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" />
+            <ScalarProperty Name="OriginalIdent" ParameterName="OriginalIdent" />
+            <ResultBinding Name="OrganizationId" ColumnName="OrganizationId" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateServiceCallInsuranceEntity">
+            <ScalarProperty Name="InsuranceTypeDescription" ParameterName="InsuranceTypeDescription" Version="Current" />
+            <ScalarProperty Name="InsuranceTypeCode" ParameterName="InsuranceTypeCode" Version="Current" />
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" Version="Current" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" Version="Current" />
+            <ScalarProperty Name="IncorporatedIndicator" ParameterName="IncorporatedIndicator" Version="Current" />
+            <ScalarProperty Name="TerminationDateTime" ParameterName="TerminationDateTime" Version="Current" />
+            <ScalarProperty Name="EstablishedDateTime" ParameterName="EstablishedDateTime" Version="Current" />
+            <ScalarProperty Name="IMONumber" ParameterName="IMONumber" Version="Current" />
+            <ScalarProperty Name="AbbreviationText" ParameterName="AbbreviationText" Version="Current" />
+            <ScalarProperty Name="Description" ParameterName="Description" Version="Current" />
+            <ScalarProperty Name="DoingBusinessAs" ParameterName="DoingBusinessAs" Version="Current" />
+            <ScalarProperty Name="Name" ParameterName="Name" Version="Current" />
+            <ScalarProperty Name="OrganizationStatusDescription" ParameterName="OrganizationStatusDescription" Version="Current" />
+            <ScalarProperty Name="OrganizationStatusCode" ParameterName="OrganizationStatusCode" Version="Current" />
+            <ScalarProperty Name="OrganizationCategoryDescription" ParameterName="OrganizationCategoryDescription" Version="Current" />
+            <ScalarProperty Name="OrganizationCategoryCode" ParameterName="OrganizationCategoryCode" Version="Current" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" Version="Current" />
+            <ScalarProperty Name="OriginalIdent" ParameterName="OriginalIdent" Version="Current" />
+            <ScalarProperty Name="OrganizationId" ParameterName="OrganizationId" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteServiceCallInsuranceData">
+            <ScalarProperty Name="OrganizationId" ParameterName="OrganizationId" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceCallVehicles">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ServiceCallVehicle">
+        <MappingFragment StoreEntitySet="ServiceCallVehicleView">
+          <ScalarProperty Name="VehicleCountryDescription" ColumnName="VehicleCountryDescription" />
+          <ScalarProperty Name="VehicleCountryCode" ColumnName="VehicleCountryCode" />
+          <ScalarProperty Name="VehicleStatusDescription" ColumnName="VehicleStatusDescription" />
+          <ScalarProperty Name="VehicleStatusCode" ColumnName="VehicleStatusCode" />
+          <ScalarProperty Name="VehicleCollisionPointDescription" ColumnName="VehicleCollisionPointDescription" />
+          <ScalarProperty Name="VehicleCollisionPointCode" ColumnName="VehicleCollisionPointCode" />
+          <ScalarProperty Name="VehicleLiabilityDescription" ColumnName="VehicleLiabilityDescription" />
+          <ScalarProperty Name="VehicleLiabilityCode" ColumnName="VehicleLiabilityCode" />
+          <ScalarProperty Name="RowStatusDescription" ColumnName="RowStatusDescription" />
+          <ScalarProperty Name="RowStatusCode" ColumnName="RowStatusCode" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="WeightMeasure" ColumnName="WeightMeasure" />
+          <ScalarProperty Name="WidthMeasure" ColumnName="WidthMeasure" />
+          <ScalarProperty Name="LengthMeasure" ColumnName="LengthMeasure" />
+          <ScalarProperty Name="HeightMeasure" ColumnName="HeightMeasure" />
+          <ScalarProperty Name="SizeDescription" ColumnName="SizeDescription" />
+          <ScalarProperty Name="ItemValue" ColumnName="ItemValue" />
+          <ScalarProperty Name="SerialIdentification" ColumnName="SerialIdentification" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemUsageDescription" ColumnName="ItemUsageDescription" />
+          <ScalarProperty Name="ItemUsageCode" ColumnName="ItemUsageCode" />
+          <ScalarProperty Name="ItemConditionDescription" ColumnName="ItemConditionDescription" />
+          <ScalarProperty Name="ItemConditionCode" ColumnName="ItemConditionCode" />
+          <ScalarProperty Name="ItemSecondaryColorDescription" ColumnName="ItemSecondaryColorDescription" />
+          <ScalarProperty Name="ItemSecondaryColorCode" ColumnName="ItemSecondaryColorCode" />
+          <ScalarProperty Name="ItemPrimaryColorDescription" ColumnName="ItemPrimaryColorDescription" />
+          <ScalarProperty Name="ItemPrimaryColorCode" ColumnName="ItemPrimaryColorCode" />
+          <ScalarProperty Name="ModelYear" ColumnName="ModelYear" />
+          <ScalarProperty Name="ItemMakeModelModel" ColumnName="ItemMakeModelModel" />
+          <ScalarProperty Name="ItemMakeModelMake" ColumnName="ItemMakeModelMake" />
+          <ScalarProperty Name="ItemMakeModelCode" ColumnName="ItemMakeModelCode" />
+          <ScalarProperty Name="ItemStatusDescription" ColumnName="ItemStatusDescription" />
+          <ScalarProperty Name="ItemStatusCode" ColumnName="ItemStatusCode" />
+          <ScalarProperty Name="ItemCategoryDescription" ColumnName="ItemCategoryDescription" />
+          <ScalarProperty Name="ItemCategoryCode" ColumnName="ItemCategoryCode" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="OriginalIdent" ColumnName="OriginalIdent" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ServiceCallVehicle">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertServiceCallVehicleEntity">
+            <ScalarProperty Name="VehicleCountryDescription" ParameterName="VehicleCountryDescription" />
+            <ScalarProperty Name="VehicleCountryCode" ParameterName="VehicleCountryCode" />
+            <ScalarProperty Name="VehicleStatusDescription" ParameterName="VehicleStatusDescription" />
+            <ScalarProperty Name="VehicleStatusCode" ParameterName="VehicleStatusCode" />
+            <ScalarProperty Name="VehicleCollisionPointDescription" ParameterName="VehicleCollisionPointDescription" />
+            <ScalarProperty Name="VehicleCollisionPointCode" ParameterName="VehicleCollisionPointCode" />
+            <ScalarProperty Name="VehicleLiabilityDescription" ParameterName="VehicleLiabilityDescription" />
+            <ScalarProperty Name="VehicleLiabilityCode" ParameterName="VehicleLiabilityCode" />
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" />
+            <ScalarProperty Name="WeightMeasure" ParameterName="WeightMeasure" />
+            <ScalarProperty Name="WidthMeasure" ParameterName="WidthMeasure" />
+            <ScalarProperty Name="LengthMeasure" ParameterName="LengthMeasure" />
+            <ScalarProperty Name="HeightMeasure" ParameterName="HeightMeasure" />
+            <ScalarProperty Name="SizeDescription" ParameterName="SizeDescription" />
+            <ScalarProperty Name="ItemValue" ParameterName="ItemValue" />
+            <ScalarProperty Name="SerialIdentification" ParameterName="SerialIdentification" />
+            <ScalarProperty Name="Description" ParameterName="Description" />
+            <ScalarProperty Name="ItemName" ParameterName="ItemName" />
+            <ScalarProperty Name="ItemUsageDescription" ParameterName="ItemUsageDescription" />
+            <ScalarProperty Name="ItemUsageCode" ParameterName="ItemUsageCode" />
+            <ScalarProperty Name="ItemConditionDescription" ParameterName="ItemConditionDescription" />
+            <ScalarProperty Name="ItemConditionCode" ParameterName="ItemConditionCode" />
+            <ScalarProperty Name="ItemSecondaryColorDescription" ParameterName="ItemSecondaryColorDescription" />
+            <ScalarProperty Name="ItemSecondaryColorCode" ParameterName="ItemSecondaryColorCode" />
+            <ScalarProperty Name="ItemPrimaryColorDescription" ParameterName="ItemPrimaryColorDescription" />
+            <ScalarProperty Name="ItemPrimaryColorCode" ParameterName="ItemPrimaryColorCode" />
+            <ScalarProperty Name="ModelYear" ParameterName="ModelYear" />
+            <ScalarProperty Name="ItemMakeModelModel" ParameterName="ItemMakeModelModel" />
+            <ScalarProperty Name="ItemMakeModelMake" ParameterName="ItemMakeModelMake" />
+            <ScalarProperty Name="ItemMakeModelCode" ParameterName="ItemMakeModelCode" />
+            <ScalarProperty Name="ItemStatusDescription" ParameterName="ItemStatusDescription" />
+            <ScalarProperty Name="ItemStatusCode" ParameterName="ItemStatusCode" />
+            <ScalarProperty Name="ItemCategoryDescription" ParameterName="ItemCategoryDescription" />
+            <ScalarProperty Name="ItemCategoryCode" ParameterName="ItemCategoryCode" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" />
+            <ScalarProperty Name="OriginalIdent" ParameterName="OriginalIdent" />
+            <ResultBinding Name="ItemId" ColumnName="ItemId" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateServiceCallVehicleEntity">
+            <ScalarProperty Name="VehicleCountryDescription" ParameterName="VehicleCountryDescription" Version="Current" />
+            <ScalarProperty Name="VehicleCountryCode" ParameterName="VehicleCountryCode" Version="Current" />
+            <ScalarProperty Name="VehicleStatusDescription" ParameterName="VehicleStatusDescription" Version="Current" />
+            <ScalarProperty Name="VehicleStatusCode" ParameterName="VehicleStatusCode" Version="Current" />
+            <ScalarProperty Name="VehicleCollisionPointDescription" ParameterName="VehicleCollisionPointDescription" Version="Current" />
+            <ScalarProperty Name="VehicleCollisionPointCode" ParameterName="VehicleCollisionPointCode" Version="Current" />
+            <ScalarProperty Name="VehicleLiabilityDescription" ParameterName="VehicleLiabilityDescription" Version="Current" />
+            <ScalarProperty Name="VehicleLiabilityCode" ParameterName="VehicleLiabilityCode" Version="Current" />
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" Version="Current" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" Version="Current" />
+            <ScalarProperty Name="WeightMeasure" ParameterName="WeightMeasure" Version="Current" />
+            <ScalarProperty Name="WidthMeasure" ParameterName="WidthMeasure" Version="Current" />
+            <ScalarProperty Name="LengthMeasure" ParameterName="LengthMeasure" Version="Current" />
+            <ScalarProperty Name="HeightMeasure" ParameterName="HeightMeasure" Version="Current" />
+            <ScalarProperty Name="SizeDescription" ParameterName="SizeDescription" Version="Current" />
+            <ScalarProperty Name="ItemValue" ParameterName="ItemValue" Version="Current" />
+            <ScalarProperty Name="SerialIdentification" ParameterName="SerialIdentification" Version="Current" />
+            <ScalarProperty Name="Description" ParameterName="Description" Version="Current" />
+            <ScalarProperty Name="ItemName" ParameterName="ItemName" Version="Current" />
+            <ScalarProperty Name="ItemUsageDescription" ParameterName="ItemUsageDescription" Version="Current" />
+            <ScalarProperty Name="ItemUsageCode" ParameterName="ItemUsageCode" Version="Current" />
+            <ScalarProperty Name="ItemConditionDescription" ParameterName="ItemConditionDescription" Version="Current" />
+            <ScalarProperty Name="ItemConditionCode" ParameterName="ItemConditionCode" Version="Current" />
+            <ScalarProperty Name="ItemSecondaryColorDescription" ParameterName="ItemSecondaryColorDescription" Version="Current" />
+            <ScalarProperty Name="ItemSecondaryColorCode" ParameterName="ItemSecondaryColorCode" Version="Current" />
+            <ScalarProperty Name="ItemPrimaryColorDescription" ParameterName="ItemPrimaryColorDescription" Version="Current" />
+            <ScalarProperty Name="ItemPrimaryColorCode" ParameterName="ItemPrimaryColorCode" Version="Current" />
+            <ScalarProperty Name="ModelYear" ParameterName="ModelYear" Version="Current" />
+            <ScalarProperty Name="ItemMakeModelModel" ParameterName="ItemMakeModelModel" Version="Current" />
+            <ScalarProperty Name="ItemMakeModelMake" ParameterName="ItemMakeModelMake" Version="Current" />
+            <ScalarProperty Name="ItemMakeModelCode" ParameterName="ItemMakeModelCode" Version="Current" />
+            <ScalarProperty Name="ItemStatusDescription" ParameterName="ItemStatusDescription" Version="Current" />
+            <ScalarProperty Name="ItemStatusCode" ParameterName="ItemStatusCode" Version="Current" />
+            <ScalarProperty Name="ItemCategoryDescription" ParameterName="ItemCategoryDescription" Version="Current" />
+            <ScalarProperty Name="ItemCategoryCode" ParameterName="ItemCategoryCode" Version="Current" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" Version="Current" />
+            <ScalarProperty Name="OriginalIdent" ParameterName="OriginalIdent" Version="Current" />
+            <ScalarProperty Name="ItemId" ParameterName="ItemId" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteServiceCallVehicleData">
+            <ScalarProperty Name="ItemId" ParameterName="ItemId" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceCalls">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ServiceCall">
+        <MappingFragment StoreEntitySet="ServiceCallView">
+          <ScalarProperty Name="LightingConditionDescription" ColumnName="LightingConditionDescription" />
+          <ScalarProperty Name="LightingConditionCode" ColumnName="LightingConditionCode" />
+          <ScalarProperty Name="CrashSeverityDescription" ColumnName="CrashSeverityDescription" />
+          <ScalarProperty Name="CrashSeverityCode" ColumnName="CrashSeverityCode" />
+          <ScalarProperty Name="TotalInjuriesFatalities" ColumnName="TotalInjuriesFatalities" />
+          <ScalarProperty Name="FatalitiesCount" ColumnName="FatalitiesCount" />
+          <ScalarProperty Name="SevereInjuriesCount" ColumnName="SevereInjuriesCount" />
+          <ScalarProperty Name="MediumInjuriesCount" ColumnName="MediumInjuriesCount" />
+          <ScalarProperty Name="SlightInjuriesCount" ColumnName="SlightInjuriesCount" />
+          <ScalarProperty Name="LanesCount" ColumnName="LanesCount" />
+          <ScalarProperty Name="OutofServiceIndicator" ColumnName="OutofServiceIndicator" />
+          <ScalarProperty Name="HasPriorsIndicator" ColumnName="HasPriorsIndicator" />
+          <ScalarProperty Name="IsSelfInitiated" ColumnName="IsSelfInitiated" />
+          <ScalarProperty Name="HazardCallIndicator" ColumnName="HazardCallIndicator" />
+          <ScalarProperty Name="ServiceCallEnrouteDate" ColumnName="ServiceCallEnrouteDate" />
+          <ScalarProperty Name="ServiceCallInControlDate" ColumnName="ServiceCallInControlDate" />
+          <ScalarProperty Name="ServiceCallStagedDate" ColumnName="ServiceCallStagedDate" />
+          <ScalarProperty Name="ServiceCallReceivedDate" ColumnName="ServiceCallReceivedDate" />
+          <ScalarProperty Name="ServiceCallClearedDate" ColumnName="ServiceCallClearedDate" />
+          <ScalarProperty Name="ServiceCallDispatchedDate" ColumnName="ServiceCallDispatchedDate" />
+          <ScalarProperty Name="ServiceCallArrivedDate" ColumnName="ServiceCallArrivedDate" />
+          <ScalarProperty Name="ServiceCallEndMechanismDescription" ColumnName="ServiceCallEndMechanismDescription" />
+          <ScalarProperty Name="ServiceCallEndMechanismCode" ColumnName="ServiceCallEndMechanismCode" />
+          <ScalarProperty Name="ServiceCallStartMechanismDescription" ColumnName="ServiceCallStartMechanismDescription" />
+          <ScalarProperty Name="ServiceCallStartMechanismCode" ColumnName="ServiceCallStartMechanismCode" />
+          <ScalarProperty Name="ServiceClassDescription" ColumnName="ServiceClassDescription" />
+          <ScalarProperty Name="ServiceClassCode" ColumnName="ServiceClassCode" />
+          <ScalarProperty Name="ServiceCallPriorityDescription" ColumnName="ServiceCallPriorityDescription" />
+          <ScalarProperty Name="ServiceCallPriorityCode" ColumnName="ServiceCallPriorityCode" />
+          <ScalarProperty Name="ServiceCallClearanceDescription" ColumnName="ServiceCallClearanceDescription" />
+          <ScalarProperty Name="ServiceCallClearanceCode" ColumnName="ServiceCallClearanceCode" />
+          <ScalarProperty Name="ServiceCallDispositionDescription" ColumnName="ServiceCallDispositionDescription" />
+          <ScalarProperty Name="ServiceCallDispositionCode" ColumnName="ServiceCallDispositionCode" />
+          <ScalarProperty Name="ServiceCallSourceDescription" ColumnName="ServiceCallSourceDescription" />
+          <ScalarProperty Name="ServiceCallSourceCode" ColumnName="ServiceCallSourceCode" />
+          <ScalarProperty Name="ServiceCallCategoryDescription" ColumnName="ServiceCallCategoryDescription" />
+          <ScalarProperty Name="ServiceCallCategoryCode" ColumnName="ServiceCallCategoryCode" />
+          <ScalarProperty Name="RowStatusDescription" ColumnName="RowStatusDescription" />
+          <ScalarProperty Name="RowStatusCode" ColumnName="RowStatusCode" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="ActivityDate" ColumnName="ActivityDate" />
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+          <ScalarProperty Name="ActivityExpirationDate" ColumnName="ActivityExpirationDate" />
+          <ScalarProperty Name="ActivityDueDate" ColumnName="ActivityDueDate" />
+          <ScalarProperty Name="ActivityEndDate" ColumnName="ActivityEndDate" />
+          <ScalarProperty Name="ActivityStartDate" ColumnName="ActivityStartDate" />
+          <ScalarProperty Name="ActivityDescription" ColumnName="ActivityDescription" />
+          <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
+          <ScalarProperty Name="HighLowDescription" ColumnName="HighLowDescription" />
+          <ScalarProperty Name="HighLowCode" ColumnName="HighLowCode" />
+          <ScalarProperty Name="ImportanceHighLowDescription" ColumnName="ImportanceHighLowDescription" />
+          <ScalarProperty Name="ImportanceHighLowCode" ColumnName="ImportanceHighLowCode" />
+          <ScalarProperty Name="StatusDescription" ColumnName="StatusDescription" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="ActivityReasonDescription" ColumnName="ActivityReasonDescription" />
+          <ScalarProperty Name="ActivityReasonCode" ColumnName="ActivityReasonCode" />
+          <ScalarProperty Name="ActivityCategoryDescription" ColumnName="ActivityCategoryDescription" />
+          <ScalarProperty Name="ActivityCategoryCode" ColumnName="ActivityCategoryCode" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="OriginalIdent" ColumnName="OriginalIdent" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ServiceCall">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertServiceCallEntity">
+            <ScalarProperty Name="LightingConditionDescription" ParameterName="LightingConditionDescription" />
+            <ScalarProperty Name="LightingConditionCode" ParameterName="LightingConditionCode" />
+            <ScalarProperty Name="CrashSeverityDescription" ParameterName="CrashSeverityDescription" />
+            <ScalarProperty Name="CrashSeverityCode" ParameterName="CrashSeverityCode" />
+            <ScalarProperty Name="TotalInjuriesFatalities" ParameterName="TotalInjuriesFatalities" />
+            <ScalarProperty Name="FatalitiesCount" ParameterName="FatalitiesCount" />
+            <ScalarProperty Name="SevereInjuriesCount" ParameterName="SevereInjuriesCount" />
+            <ScalarProperty Name="MediumInjuriesCount" ParameterName="MediumInjuriesCount" />
+            <ScalarProperty Name="SlightInjuriesCount" ParameterName="SlightInjuriesCount" />
+            <ScalarProperty Name="LanesCount" ParameterName="LanesCount" />
+            <ScalarProperty Name="OutofServiceIndicator" ParameterName="OutofServiceIndicator" />
+            <ScalarProperty Name="HasPriorsIndicator" ParameterName="HasPriorsIndicator" />
+            <ScalarProperty Name="IsSelfInitiated" ParameterName="IsSelfInitiated" />
+            <ScalarProperty Name="HazardCallIndicator" ParameterName="HazardCallIndicator" />
+            <ScalarProperty Name="ServiceCallEnrouteDate" ParameterName="ServiceCallEnrouteDate" />
+            <ScalarProperty Name="ServiceCallInControlDate" ParameterName="ServiceCallInControlDate" />
+            <ScalarProperty Name="ServiceCallStagedDate" ParameterName="ServiceCallStagedDate" />
+            <ScalarProperty Name="ServiceCallReceivedDate" ParameterName="ServiceCallReceivedDate" />
+            <ScalarProperty Name="ServiceCallClearedDate" ParameterName="ServiceCallClearedDate" />
+            <ScalarProperty Name="ServiceCallDispatchedDate" ParameterName="ServiceCallDispatchedDate" />
+            <ScalarProperty Name="ServiceCallArrivedDate" ParameterName="ServiceCallArrivedDate" />
+            <ScalarProperty Name="ServiceCallEndMechanismDescription" ParameterName="ServiceCallEndMechanismDescription" />
+            <ScalarProperty Name="ServiceCallEndMechanismCode" ParameterName="ServiceCallEndMechanismCode" />
+            <ScalarProperty Name="ServiceCallStartMechanismDescription" ParameterName="ServiceCallStartMechanismDescription" />
+            <ScalarProperty Name="ServiceCallStartMechanismCode" ParameterName="ServiceCallStartMechanismCode" />
+            <ScalarProperty Name="ServiceClassDescription" ParameterName="ServiceClassDescription" />
+            <ScalarProperty Name="ServiceClassCode" ParameterName="ServiceClassCode" />
+            <ScalarProperty Name="ServiceCallPriorityDescription" ParameterName="ServiceCallPriorityDescription" />
+            <ScalarProperty Name="ServiceCallPriorityCode" ParameterName="ServiceCallPriorityCode" />
+            <ScalarProperty Name="ServiceCallClearanceDescription" ParameterName="ServiceCallClearanceDescription" />
+            <ScalarProperty Name="ServiceCallClearanceCode" ParameterName="ServiceCallClearanceCode" />
+            <ScalarProperty Name="ServiceCallDispositionDescription" ParameterName="ServiceCallDispositionDescription" />
+            <ScalarProperty Name="ServiceCallDispositionCode" ParameterName="ServiceCallDispositionCode" />
+            <ScalarProperty Name="ServiceCallSourceDescription" ParameterName="ServiceCallSourceDescription" />
+            <ScalarProperty Name="ServiceCallSourceCode" ParameterName="ServiceCallSourceCode" />
+            <ScalarProperty Name="ServiceCallCategoryDescription" ParameterName="ServiceCallCategoryDescription" />
+            <ScalarProperty Name="ServiceCallCategoryCode" ParameterName="ServiceCallCategoryCode" />
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" />
+            <ScalarProperty Name="ActivityDate" ParameterName="ActivityDate" />
+            <ScalarProperty Name="IsCompleted" ParameterName="IsCompleted" />
+            <ScalarProperty Name="ActivityExpirationDate" ParameterName="ActivityExpirationDate" />
+            <ScalarProperty Name="ActivityDueDate" ParameterName="ActivityDueDate" />
+            <ScalarProperty Name="ActivityEndDate" ParameterName="ActivityEndDate" />
+            <ScalarProperty Name="ActivityStartDate" ParameterName="ActivityStartDate" />
+            <ScalarProperty Name="ActivityDescription" ParameterName="ActivityDescription" />
+            <ScalarProperty Name="ActivityName" ParameterName="ActivityName" />
+            <ScalarProperty Name="HighLowDescription" ParameterName="HighLowDescription" />
+            <ScalarProperty Name="HighLowCode" ParameterName="HighLowCode" />
+            <ScalarProperty Name="ImportanceHighLowDescription" ParameterName="ImportanceHighLowDescription" />
+            <ScalarProperty Name="ImportanceHighLowCode" ParameterName="ImportanceHighLowCode" />
+            <ScalarProperty Name="StatusDescription" ParameterName="StatusDescription" />
+            <ScalarProperty Name="StatusCode" ParameterName="StatusCode" />
+            <ScalarProperty Name="ActivityReasonDescription" ParameterName="ActivityReasonDescription" />
+            <ScalarProperty Name="ActivityReasonCode" ParameterName="ActivityReasonCode" />
+            <ScalarProperty Name="ActivityCategoryDescription" ParameterName="ActivityCategoryDescription" />
+            <ScalarProperty Name="ActivityCategoryCode" ParameterName="ActivityCategoryCode" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" />
+            <ScalarProperty Name="OriginalIdent" ParameterName="OriginalIdent" />
+            <ResultBinding Name="ActivityId" ColumnName="ActivityId" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateServiceCallEntity">
+            <ScalarProperty Name="LightingConditionDescription" ParameterName="LightingConditionDescription" Version="Current" />
+            <ScalarProperty Name="LightingConditionCode" ParameterName="LightingConditionCode" Version="Current" />
+            <ScalarProperty Name="CrashSeverityDescription" ParameterName="CrashSeverityDescription" Version="Current" />
+            <ScalarProperty Name="CrashSeverityCode" ParameterName="CrashSeverityCode" Version="Current" />
+            <ScalarProperty Name="TotalInjuriesFatalities" ParameterName="TotalInjuriesFatalities" Version="Current" />
+            <ScalarProperty Name="FatalitiesCount" ParameterName="FatalitiesCount" Version="Current" />
+            <ScalarProperty Name="SevereInjuriesCount" ParameterName="SevereInjuriesCount" Version="Current" />
+            <ScalarProperty Name="MediumInjuriesCount" ParameterName="MediumInjuriesCount" Version="Current" />
+            <ScalarProperty Name="SlightInjuriesCount" ParameterName="SlightInjuriesCount" Version="Current" />
+            <ScalarProperty Name="LanesCount" ParameterName="LanesCount" Version="Current" />
+            <ScalarProperty Name="OutofServiceIndicator" ParameterName="OutofServiceIndicator" Version="Current" />
+            <ScalarProperty Name="HasPriorsIndicator" ParameterName="HasPriorsIndicator" Version="Current" />
+            <ScalarProperty Name="IsSelfInitiated" ParameterName="IsSelfInitiated" Version="Current" />
+            <ScalarProperty Name="HazardCallIndicator" ParameterName="HazardCallIndicator" Version="Current" />
+            <ScalarProperty Name="ServiceCallEnrouteDate" ParameterName="ServiceCallEnrouteDate" Version="Current" />
+            <ScalarProperty Name="ServiceCallInControlDate" ParameterName="ServiceCallInControlDate" Version="Current" />
+            <ScalarProperty Name="ServiceCallStagedDate" ParameterName="ServiceCallStagedDate" Version="Current" />
+            <ScalarProperty Name="ServiceCallReceivedDate" ParameterName="ServiceCallReceivedDate" Version="Current" />
+            <ScalarProperty Name="ServiceCallClearedDate" ParameterName="ServiceCallClearedDate" Version="Current" />
+            <ScalarProperty Name="ServiceCallDispatchedDate" ParameterName="ServiceCallDispatchedDate" Version="Current" />
+            <ScalarProperty Name="ServiceCallArrivedDate" ParameterName="ServiceCallArrivedDate" Version="Current" />
+            <ScalarProperty Name="ServiceCallEndMechanismDescription" ParameterName="ServiceCallEndMechanismDescription" Version="Current" />
+            <ScalarProperty Name="ServiceCallEndMechanismCode" ParameterName="ServiceCallEndMechanismCode" Version="Current" />
+            <ScalarProperty Name="ServiceCallStartMechanismDescription" ParameterName="ServiceCallStartMechanismDescription" Version="Current" />
+            <ScalarProperty Name="ServiceCallStartMechanismCode" ParameterName="ServiceCallStartMechanismCode" Version="Current" />
+            <ScalarProperty Name="ServiceClassDescription" ParameterName="ServiceClassDescription" Version="Current" />
+            <ScalarProperty Name="ServiceClassCode" ParameterName="ServiceClassCode" Version="Current" />
+            <ScalarProperty Name="ServiceCallPriorityDescription" ParameterName="ServiceCallPriorityDescription" Version="Current" />
+            <ScalarProperty Name="ServiceCallPriorityCode" ParameterName="ServiceCallPriorityCode" Version="Current" />
+            <ScalarProperty Name="ServiceCallClearanceDescription" ParameterName="ServiceCallClearanceDescription" Version="Current" />
+            <ScalarProperty Name="ServiceCallClearanceCode" ParameterName="ServiceCallClearanceCode" Version="Current" />
+            <ScalarProperty Name="ServiceCallDispositionDescription" ParameterName="ServiceCallDispositionDescription" Version="Current" />
+            <ScalarProperty Name="ServiceCallDispositionCode" ParameterName="ServiceCallDispositionCode" Version="Current" />
+            <ScalarProperty Name="ServiceCallSourceDescription" ParameterName="ServiceCallSourceDescription" Version="Current" />
+            <ScalarProperty Name="ServiceCallSourceCode" ParameterName="ServiceCallSourceCode" Version="Current" />
+            <ScalarProperty Name="ServiceCallCategoryDescription" ParameterName="ServiceCallCategoryDescription" Version="Current" />
+            <ScalarProperty Name="ServiceCallCategoryCode" ParameterName="ServiceCallCategoryCode" Version="Current" />
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" Version="Current" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" Version="Current" />
+            <ScalarProperty Name="ActivityDate" ParameterName="ActivityDate" Version="Current" />
+            <ScalarProperty Name="IsCompleted" ParameterName="IsCompleted" Version="Current" />
+            <ScalarProperty Name="ActivityExpirationDate" ParameterName="ActivityExpirationDate" Version="Current" />
+            <ScalarProperty Name="ActivityDueDate" ParameterName="ActivityDueDate" Version="Current" />
+            <ScalarProperty Name="ActivityEndDate" ParameterName="ActivityEndDate" Version="Current" />
+            <ScalarProperty Name="ActivityStartDate" ParameterName="ActivityStartDate" Version="Current" />
+            <ScalarProperty Name="ActivityDescription" ParameterName="ActivityDescription" Version="Current" />
+            <ScalarProperty Name="ActivityName" ParameterName="ActivityName" Version="Current" />
+            <ScalarProperty Name="HighLowDescription" ParameterName="HighLowDescription" Version="Current" />
+            <ScalarProperty Name="HighLowCode" ParameterName="HighLowCode" Version="Current" />
+            <ScalarProperty Name="ImportanceHighLowDescription" ParameterName="ImportanceHighLowDescription" Version="Current" />
+            <ScalarProperty Name="ImportanceHighLowCode" ParameterName="ImportanceHighLowCode" Version="Current" />
+            <ScalarProperty Name="StatusDescription" ParameterName="StatusDescription" Version="Current" />
+            <ScalarProperty Name="StatusCode" ParameterName="StatusCode" Version="Current" />
+            <ScalarProperty Name="ActivityReasonDescription" ParameterName="ActivityReasonDescription" Version="Current" />
+            <ScalarProperty Name="ActivityReasonCode" ParameterName="ActivityReasonCode" Version="Current" />
+            <ScalarProperty Name="ActivityCategoryDescription" ParameterName="ActivityCategoryDescription" Version="Current" />
+            <ScalarProperty Name="ActivityCategoryCode" ParameterName="ActivityCategoryCode" Version="Current" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" Version="Current" />
+            <ScalarProperty Name="OriginalIdent" ParameterName="OriginalIdent" Version="Current" />
+            <ScalarProperty Name="ActivityId" ParameterName="ActivityId" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteServiceCallData">
+            <ScalarProperty Name="ActivityId" ParameterName="ActivityId" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocationViews">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.LocationView">
+        <MappingFragment StoreEntitySet="LocationView">
+          <ScalarProperty Name="RowStatusDescription" ColumnName="RowStatusDescription" />
+          <ScalarProperty Name="RowStatusCode" ColumnName="RowStatusCode" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="OrgLocProcessed" ColumnName="OrgLocProcessed" />
+          <ScalarProperty Name="OrgSubProcessed" ColumnName="OrgSubProcessed" />
+          <ScalarProperty Name="OrgLeoProcessed" ColumnName="OrgLeoProcessed" />
+          <ScalarProperty Name="OrgLong" ColumnName="OrgLong" />
+          <ScalarProperty Name="OrgLat" ColumnName="OrgLat" />
+          <ScalarProperty Name="OrgZip" ColumnName="OrgZip" />
+          <ScalarProperty Name="OrgCity" ColumnName="OrgCity" />
+          <ScalarProperty Name="OrgConty" ColumnName="OrgConty" />
+          <ScalarProperty Name="OrgCountry" ColumnName="OrgCountry" />
+          <ScalarProperty Name="OrgStateCode" ColumnName="OrgStateCode" />
+          <ScalarProperty Name="OrgAddress3" ColumnName="OrgAddress3" />
+          <ScalarProperty Name="OrgAddress2" ColumnName="OrgAddress2" />
+          <ScalarProperty Name="OrgAddress1" ColumnName="OrgAddress1" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="AltitudeMSL" ColumnName="AltitudeMSL" />
+          <ScalarProperty Name="AltitudeAGL" ColumnName="AltitudeAGL" />
+          <ScalarProperty Name="PostOfficeBox" ColumnName="PostOfficeBox" />
+          <ScalarProperty Name="Floor" ColumnName="Floor" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Boundry" ColumnName="Boundry" />
+          <ScalarProperty Name="GeoPoint" ColumnName="GeoPoint" />
+          <ScalarProperty Name="HighwayPosition" ColumnName="HighwayPosition" />
+          <ScalarProperty Name="CrossStreet" ColumnName="CrossStreet" />
+          <ScalarProperty Name="PostalCodeExtension" ColumnName="PostalCodeExtension" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="StreetExtension" ColumnName="StreetExtension" />
+          <ScalarProperty Name="StreetName" ColumnName="StreetName" />
+          <ScalarProperty Name="StreetNumber" ColumnName="StreetNumber" />
+          <ScalarProperty Name="LocationStreetDirectionSuffixDescription" ColumnName="LocationStreetDirectionSuffixDescription" />
+          <ScalarProperty Name="LocationStreetDirectionSuffixCode" ColumnName="LocationStreetDirectionSuffixCode" />
+          <ScalarProperty Name="LocationStreetDirectionPrefixDescription" ColumnName="LocationStreetDirectionPrefixDescription" />
+          <ScalarProperty Name="LocationStreetDirectionPrefixCode" ColumnName="LocationStreetDirectionPrefixCode" />
+          <ScalarProperty Name="LocationStreetCategoryDescription" ColumnName="LocationStreetCategoryDescription" />
+          <ScalarProperty Name="LocationStreetCategoryCode" ColumnName="LocationStreetCategoryCode" />
+          <ScalarProperty Name="GeoCensusTractDescription" ColumnName="GeoCensusTractDescription" />
+          <ScalarProperty Name="GeoCensusTractCode" ColumnName="GeoCensusTractCode" />
+          <ScalarProperty Name="GeoStateStateName" ColumnName="GeoStateStateName" />
+          <ScalarProperty Name="GeoStateCode" ColumnName="GeoStateCode" />
+          <ScalarProperty Name="GeoZipZipCode" ColumnName="GeoZipZipCode" />
+          <ScalarProperty Name="GeoZipCode" ColumnName="GeoZipCode" />
+          <ScalarProperty Name="GeoCountyStateName" ColumnName="GeoCountyStateName" />
+          <ScalarProperty Name="GeoCountyCountyName" ColumnName="GeoCountyCountyName" />
+          <ScalarProperty Name="GeoCountyCode" ColumnName="GeoCountyCode" />
+          <ScalarProperty Name="GeoCityCountyName" ColumnName="GeoCityCountyName" />
+          <ScalarProperty Name="GeoCityStateName" ColumnName="GeoCityStateName" />
+          <ScalarProperty Name="GeoCityCityName" ColumnName="GeoCityCityName" />
+          <ScalarProperty Name="GeoCityCode" ColumnName="GeoCityCode" />
+          <ScalarProperty Name="GeoCountryCountryName" ColumnName="GeoCountryCountryName" />
+          <ScalarProperty Name="GeoCountryCode" ColumnName="GeoCountryCode" />
+          <ScalarProperty Name="GeoLocationSubDivisionSubDivision" ColumnName="GeoLocationSubDivisionSubDivision" />
+          <ScalarProperty Name="GeoLocationSubDivisionCity" ColumnName="GeoLocationSubDivisionCity" />
+          <ScalarProperty Name="GeoLocationSubDivisionCounty" ColumnName="GeoLocationSubDivisionCounty" />
+          <ScalarProperty Name="GeoLocationSubDivisionState" ColumnName="GeoLocationSubDivisionState" />
+          <ScalarProperty Name="GeoLEODescription" ColumnName="GeoLEODescription" />
+          <ScalarProperty Name="GeoLEOBeat" ColumnName="GeoLEOBeat" />
+          <ScalarProperty Name="GeoLEOSector" ColumnName="GeoLEOSector" />
+          <ScalarProperty Name="GeoLEODistrict" ColumnName="GeoLEODistrict" />
+          <ScalarProperty Name="GeoLEODivision" ColumnName="GeoLEODivision" />
+          <ScalarProperty Name="GeoLEOCode" ColumnName="GeoLEOCode" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="locationIntersectionTypeDescription" ColumnName="locationIntersectionTypeDescription" />
+          <ScalarProperty Name="locationIntersectionTypeCode" ColumnName="locationIntersectionTypeCode" />
+          <ScalarProperty Name="locationDatumDescription" ColumnName="locationDatumDescription" />
+          <ScalarProperty Name="locationDatumCode" ColumnName="locationDatumCode" />
+          <ScalarProperty Name="LocationCategoryDescription" ColumnName="LocationCategoryDescription" />
+          <ScalarProperty Name="LocationCategoryCode" ColumnName="LocationCategoryCode" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="OriginalIdent" ColumnName="OriginalIdent" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.LocationView">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertLocationEntity">
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" />
+            <ScalarProperty Name="OrgLocProcessed" ParameterName="OrgLocProcessed" />
+            <ScalarProperty Name="OrgSubProcessed" ParameterName="OrgSubProcessed" />
+            <ScalarProperty Name="OrgLeoProcessed" ParameterName="OrgLeoProcessed" />
+            <ScalarProperty Name="OrgLong" ParameterName="OrgLong" />
+            <ScalarProperty Name="OrgLat" ParameterName="OrgLat" />
+            <ScalarProperty Name="OrgZip" ParameterName="OrgZip" />
+            <ScalarProperty Name="OrgCity" ParameterName="OrgCity" />
+            <ScalarProperty Name="OrgConty" ParameterName="OrgConty" />
+            <ScalarProperty Name="OrgCountry" ParameterName="OrgCountry" />
+            <ScalarProperty Name="OrgStateCode" ParameterName="OrgStateCode" />
+            <ScalarProperty Name="OrgAddress3" ParameterName="OrgAddress3" />
+            <ScalarProperty Name="OrgAddress2" ParameterName="OrgAddress2" />
+            <ScalarProperty Name="OrgAddress1" ParameterName="OrgAddress1" />
+            <ScalarProperty Name="AltitudeMSL" ParameterName="AltitudeMSL" />
+            <ScalarProperty Name="AltitudeAGL" ParameterName="AltitudeAGL" />
+            <ScalarProperty Name="PostOfficeBox" ParameterName="PostOfficeBox" />
+            <ScalarProperty Name="Floor" ParameterName="Floor" />
+            <ScalarProperty Name="Unit" ParameterName="Unit" />
+            <ScalarProperty Name="Boundry" ParameterName="Boundry" />
+            <ScalarProperty Name="GeoPoint" ParameterName="GeoPoint" />
+            <ScalarProperty Name="HighwayPosition" ParameterName="HighwayPosition" />
+            <ScalarProperty Name="CrossStreet" ParameterName="CrossStreet" />
+            <ScalarProperty Name="PostalCodeExtension" ParameterName="PostalCodeExtension" />
+            <ScalarProperty Name="PostalCode" ParameterName="PostalCode" />
+            <ScalarProperty Name="Address3" ParameterName="Address3" />
+            <ScalarProperty Name="Address2" ParameterName="Address2" />
+            <ScalarProperty Name="Address1" ParameterName="Address1" />
+            <ScalarProperty Name="StreetExtension" ParameterName="StreetExtension" />
+            <ScalarProperty Name="StreetName" ParameterName="StreetName" />
+            <ScalarProperty Name="StreetNumber" ParameterName="StreetNumber" />
+            <ScalarProperty Name="LocationStreetDirectionSuffixDescription" ParameterName="LocationStreetDirectionSuffixDescription" />
+            <ScalarProperty Name="LocationStreetDirectionSuffixCode" ParameterName="LocationStreetDirectionSuffixCode" />
+            <ScalarProperty Name="LocationStreetDirectionPrefixDescription" ParameterName="LocationStreetDirectionPrefixDescription" />
+            <ScalarProperty Name="LocationStreetDirectionPrefixCode" ParameterName="LocationStreetDirectionPrefixCode" />
+            <ScalarProperty Name="LocationStreetCategoryDescription" ParameterName="LocationStreetCategoryDescription" />
+            <ScalarProperty Name="LocationStreetCategoryCode" ParameterName="LocationStreetCategoryCode" />
+            <ScalarProperty Name="GeoCensusTractDescription" ParameterName="GeoCensusTractDescription" />
+            <ScalarProperty Name="GeoCensusTractCode" ParameterName="GeoCensusTractCode" />
+            <ScalarProperty Name="GeoStateStateName" ParameterName="GeoStateStateName" />
+            <ScalarProperty Name="GeoStateCode" ParameterName="GeoStateCode" />
+            <ScalarProperty Name="GeoZipZipCode" ParameterName="GeoZipZipCode" />
+            <ScalarProperty Name="GeoZipCode" ParameterName="GeoZipCode" />
+            <ScalarProperty Name="GeoCountyStateName" ParameterName="GeoCountyStateName" />
+            <ScalarProperty Name="GeoCountyCountyName" ParameterName="GeoCountyCountyName" />
+            <ScalarProperty Name="GeoCountyCode" ParameterName="GeoCountyCode" />
+            <ScalarProperty Name="GeoCityCountyName" ParameterName="GeoCityCountyName" />
+            <ScalarProperty Name="GeoCityStateName" ParameterName="GeoCityStateName" />
+            <ScalarProperty Name="GeoCityCityName" ParameterName="GeoCityCityName" />
+            <ScalarProperty Name="GeoCityCode" ParameterName="GeoCityCode" />
+            <ScalarProperty Name="GeoCountryCountryName" ParameterName="GeoCountryCountryName" />
+            <ScalarProperty Name="GeoCountryCode" ParameterName="GeoCountryCode" />
+            <ScalarProperty Name="GeoLocationSubDivisionSubDivision" ParameterName="GeoLocationSubDivisionSubDivision" />
+            <ScalarProperty Name="GeoLocationSubDivisionCity" ParameterName="GeoLocationSubDivisionCity" />
+            <ScalarProperty Name="GeoLocationSubDivisionCounty" ParameterName="GeoLocationSubDivisionCounty" />
+            <ScalarProperty Name="GeoLocationSubDivisionState" ParameterName="GeoLocationSubDivisionState" />
+            <ScalarProperty Name="GeoLEODescription" ParameterName="GeoLEODescription" />
+            <ScalarProperty Name="GeoLEOBeat" ParameterName="GeoLEOBeat" />
+            <ScalarProperty Name="GeoLEOSector" ParameterName="GeoLEOSector" />
+            <ScalarProperty Name="GeoLEODistrict" ParameterName="GeoLEODistrict" />
+            <ScalarProperty Name="GeoLEODivision" ParameterName="GeoLEODivision" />
+            <ScalarProperty Name="GeoLEOCode" ParameterName="GeoLEOCode" />
+            <ScalarProperty Name="Description" ParameterName="Description" />
+            <ScalarProperty Name="LocationName" ParameterName="LocationName" />
+            <ScalarProperty Name="locationIntersectionTypeDescription" ParameterName="locationIntersectionTypeDescription" />
+            <ScalarProperty Name="locationIntersectionTypeCode" ParameterName="locationIntersectionTypeCode" />
+            <ScalarProperty Name="locationDatumDescription" ParameterName="locationDatumDescription" />
+            <ScalarProperty Name="locationDatumCode" ParameterName="locationDatumCode" />
+            <ScalarProperty Name="LocationCategoryDescription" ParameterName="LocationCategoryDescription" />
+            <ScalarProperty Name="LocationCategoryCode" ParameterName="LocationCategoryCode" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" />
+            <ScalarProperty Name="OriginalIdent" ParameterName="OriginalIdent" />
+            <ResultBinding Name="LocationId" ColumnName="LocationId" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateLocationEntity">
+            <ScalarProperty Name="RowStatusDescription" ParameterName="RowStatusDescription" Version="Current" />
+            <ScalarProperty Name="RowStatusCode" ParameterName="RowStatusCode" Version="Current" />
+            <ScalarProperty Name="OrgLocProcessed" ParameterName="OrgLocProcessed" Version="Current" />
+            <ScalarProperty Name="OrgSubProcessed" ParameterName="OrgSubProcessed" Version="Current" />
+            <ScalarProperty Name="OrgLeoProcessed" ParameterName="OrgLeoProcessed" Version="Current" />
+            <ScalarProperty Name="OrgLong" ParameterName="OrgLong" Version="Current" />
+            <ScalarProperty Name="OrgLat" ParameterName="OrgLat" Version="Current" />
+            <ScalarProperty Name="OrgZip" ParameterName="OrgZip" Version="Current" />
+            <ScalarProperty Name="OrgCity" ParameterName="OrgCity" Version="Current" />
+            <ScalarProperty Name="OrgConty" ParameterName="OrgConty" Version="Current" />
+            <ScalarProperty Name="OrgCountry" ParameterName="OrgCountry" Version="Current" />
+            <ScalarProperty Name="OrgStateCode" ParameterName="OrgStateCode" Version="Current" />
+            <ScalarProperty Name="OrgAddress3" ParameterName="OrgAddress3" Version="Current" />
+            <ScalarProperty Name="OrgAddress2" ParameterName="OrgAddress2" Version="Current" />
+            <ScalarProperty Name="OrgAddress1" ParameterName="OrgAddress1" Version="Current" />
+            <ScalarProperty Name="AltitudeMSL" ParameterName="AltitudeMSL" Version="Current" />
+            <ScalarProperty Name="AltitudeAGL" ParameterName="AltitudeAGL" Version="Current" />
+            <ScalarProperty Name="PostOfficeBox" ParameterName="PostOfficeBox" Version="Current" />
+            <ScalarProperty Name="Floor" ParameterName="Floor" Version="Current" />
+            <ScalarProperty Name="Unit" ParameterName="Unit" Version="Current" />
+            <ScalarProperty Name="Boundry" ParameterName="Boundry" Version="Current" />
+            <ScalarProperty Name="GeoPoint" ParameterName="GeoPoint" Version="Current" />
+            <ScalarProperty Name="HighwayPosition" ParameterName="HighwayPosition" Version="Current" />
+            <ScalarProperty Name="CrossStreet" ParameterName="CrossStreet" Version="Current" />
+            <ScalarProperty Name="PostalCodeExtension" ParameterName="PostalCodeExtension" Version="Current" />
+            <ScalarProperty Name="PostalCode" ParameterName="PostalCode" Version="Current" />
+            <ScalarProperty Name="Address3" ParameterName="Address3" Version="Current" />
+            <ScalarProperty Name="Address2" ParameterName="Address2" Version="Current" />
+            <ScalarProperty Name="Address1" ParameterName="Address1" Version="Current" />
+            <ScalarProperty Name="StreetExtension" ParameterName="StreetExtension" Version="Current" />
+            <ScalarProperty Name="StreetName" ParameterName="StreetName" Version="Current" />
+            <ScalarProperty Name="StreetNumber" ParameterName="StreetNumber" Version="Current" />
+            <ScalarProperty Name="LocationStreetDirectionSuffixDescription" ParameterName="LocationStreetDirectionSuffixDescription" Version="Current" />
+            <ScalarProperty Name="LocationStreetDirectionSuffixCode" ParameterName="LocationStreetDirectionSuffixCode" Version="Current" />
+            <ScalarProperty Name="LocationStreetDirectionPrefixDescription" ParameterName="LocationStreetDirectionPrefixDescription" Version="Current" />
+            <ScalarProperty Name="LocationStreetDirectionPrefixCode" ParameterName="LocationStreetDirectionPrefixCode" Version="Current" />
+            <ScalarProperty Name="LocationStreetCategoryDescription" ParameterName="LocationStreetCategoryDescription" Version="Current" />
+            <ScalarProperty Name="LocationStreetCategoryCode" ParameterName="LocationStreetCategoryCode" Version="Current" />
+            <ScalarProperty Name="GeoCensusTractDescription" ParameterName="GeoCensusTractDescription" Version="Current" />
+            <ScalarProperty Name="GeoCensusTractCode" ParameterName="GeoCensusTractCode" Version="Current" />
+            <ScalarProperty Name="GeoStateStateName" ParameterName="GeoStateStateName" Version="Current" />
+            <ScalarProperty Name="GeoStateCode" ParameterName="GeoStateCode" Version="Current" />
+            <ScalarProperty Name="GeoZipZipCode" ParameterName="GeoZipZipCode" Version="Current" />
+            <ScalarProperty Name="GeoZipCode" ParameterName="GeoZipCode" Version="Current" />
+            <ScalarProperty Name="GeoCountyStateName" ParameterName="GeoCountyStateName" Version="Current" />
+            <ScalarProperty Name="GeoCountyCountyName" ParameterName="GeoCountyCountyName" Version="Current" />
+            <ScalarProperty Name="GeoCountyCode" ParameterName="GeoCountyCode" Version="Current" />
+            <ScalarProperty Name="GeoCityCountyName" ParameterName="GeoCityCountyName" Version="Current" />
+            <ScalarProperty Name="GeoCityStateName" ParameterName="GeoCityStateName" Version="Current" />
+            <ScalarProperty Name="GeoCityCityName" ParameterName="GeoCityCityName" Version="Current" />
+            <ScalarProperty Name="GeoCityCode" ParameterName="GeoCityCode" Version="Current" />
+            <ScalarProperty Name="GeoCountryCountryName" ParameterName="GeoCountryCountryName" Version="Current" />
+            <ScalarProperty Name="GeoCountryCode" ParameterName="GeoCountryCode" Version="Current" />
+            <ScalarProperty Name="GeoLocationSubDivisionSubDivision" ParameterName="GeoLocationSubDivisionSubDivision" Version="Current" />
+            <ScalarProperty Name="GeoLocationSubDivisionCity" ParameterName="GeoLocationSubDivisionCity" Version="Current" />
+            <ScalarProperty Name="GeoLocationSubDivisionCounty" ParameterName="GeoLocationSubDivisionCounty" Version="Current" />
+            <ScalarProperty Name="GeoLocationSubDivisionState" ParameterName="GeoLocationSubDivisionState" Version="Current" />
+            <ScalarProperty Name="GeoLEODescription" ParameterName="GeoLEODescription" Version="Current" />
+            <ScalarProperty Name="GeoLEOBeat" ParameterName="GeoLEOBeat" Version="Current" />
+            <ScalarProperty Name="GeoLEOSector" ParameterName="GeoLEOSector" Version="Current" />
+            <ScalarProperty Name="GeoLEODistrict" ParameterName="GeoLEODistrict" Version="Current" />
+            <ScalarProperty Name="GeoLEODivision" ParameterName="GeoLEODivision" Version="Current" />
+            <ScalarProperty Name="GeoLEOCode" ParameterName="GeoLEOCode" Version="Current" />
+            <ScalarProperty Name="Description" ParameterName="Description" Version="Current" />
+            <ScalarProperty Name="LocationName" ParameterName="LocationName" Version="Current" />
+            <ScalarProperty Name="locationIntersectionTypeDescription" ParameterName="locationIntersectionTypeDescription" Version="Current" />
+            <ScalarProperty Name="locationIntersectionTypeCode" ParameterName="locationIntersectionTypeCode" Version="Current" />
+            <ScalarProperty Name="locationDatumDescription" ParameterName="locationDatumDescription" Version="Current" />
+            <ScalarProperty Name="locationDatumCode" ParameterName="locationDatumCode" Version="Current" />
+            <ScalarProperty Name="LocationCategoryDescription" ParameterName="LocationCategoryDescription" Version="Current" />
+            <ScalarProperty Name="LocationCategoryCode" ParameterName="LocationCategoryCode" Version="Current" />
+            <ScalarProperty Name="SourceName" ParameterName="SourceName" Version="Current" />
+            <ScalarProperty Name="OriginalIdent" ParameterName="OriginalIdent" Version="Current" />
+            <ScalarProperty Name="LocationId" ParameterName="LocationId" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteLocationData">
+            <ScalarProperty Name="LocationId" ParameterName="LocationId" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="usp_DeleteActivityItemData" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteActivityItemData" />
+    <FunctionImportMapping FunctionImportName="usp_DeleteActivityLocationData" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteActivityLocationData" />
+    <FunctionImportMapping FunctionImportName="usp_DeleteActivityOrganizationData" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteActivityOrganizationData" />
+    <FunctionImportMapping FunctionImportName="usp_DeleteItemData" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteItemData" />
+    <FunctionImportMapping FunctionImportName="usp_DeleteLocationData" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteLocationData" />
+    <FunctionImportMapping FunctionImportName="usp_DeleteOrganizationData" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteOrganizationData" />
+    <FunctionImportMapping FunctionImportName="usp_DeletePersonData" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeletePersonData" />
+    <FunctionImportMapping FunctionImportName="usp_DeleteServiceCallData" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteServiceCallData" />
+    <FunctionImportMapping FunctionImportName="usp_DeleteServiceCallDriverData" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteServiceCallDriverData" />
+    <FunctionImportMapping FunctionImportName="usp_DeleteServiceCallInsuranceData" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteServiceCallInsuranceData" />
+    <FunctionImportMapping FunctionImportName="usp_DeleteServiceCallVehicleData" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteServiceCallVehicleData" />
+    <FunctionImportMapping FunctionImportName="usp_InsertActivityItemContainerData" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertActivityItemContainerData" />
+    <FunctionImportMapping FunctionImportName="usp_InsertActivityLocationContainerData" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertActivityLocationContainerData" />
+    <FunctionImportMapping FunctionImportName="usp_InsertActivityOrganizationContainerData" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertActivityOrganizationContainerData" />
+    <FunctionImportMapping FunctionImportName="usp_InsertActivityPersonContainerData" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertActivityPersonContainerData" />
+    <FunctionImportMapping FunctionImportName="usp_InsertItemEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertItemEntity" />
+    <FunctionImportMapping FunctionImportName="usp_InsertLocationEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertLocationEntity" />
+    <FunctionImportMapping FunctionImportName="usp_InsertOrganizationEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertOrganizationEntity" />
+    <FunctionImportMapping FunctionImportName="usp_InsertPersonEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertPersonEntity" />
+    <FunctionImportMapping FunctionImportName="usp_InsertServiceCallDriverEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertServiceCallDriverEntity" />
+    <FunctionImportMapping FunctionImportName="usp_InsertServiceCallEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertServiceCallEntity" />
+    <FunctionImportMapping FunctionImportName="usp_InsertServiceCallInsuranceEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertServiceCallInsuranceEntity" />
+    <FunctionImportMapping FunctionImportName="usp_InsertServiceCallVehicleEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_InsertServiceCallVehicleEntity" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateActivityItemEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateActivityItemEntity" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateActivityLocationEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateActivityLocationEntity" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateActivityOrganizationEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateActivityOrganizationEntity" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateActivityPersonEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateActivityPersonEntity" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateItemEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateItemEntity" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateLocationEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateLocationEntity" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateOrganizationEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateOrganizationEntity" />
+    <FunctionImportMapping FunctionImportName="usp_UpdatePersonEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdatePersonEntity" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateServiceCallDriverEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateServiceCallDriverEntity" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateServiceCallEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateServiceCallEntity" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateServiceCallInsuranceEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateServiceCallInsuranceEntity" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateServiceCallVehicleEntity" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateServiceCallVehicleEntity" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateActivityItemContainerData" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateActivityItemContainerData" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateActivityLocationContainerData" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateActivityLocationContainerData" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateActivityOrganizationContainerData" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateActivityOrganizationContainerData" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateActivityPersonContainerData" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_UpdateActivityPersonContainerData" />
+    <FunctionImportMapping FunctionImportName="usp_DeleteActivityPersonData" FunctionName="Microsoft.JPS.CDS.ADPModel.Store.usp_DeleteActivityPersonData" />
+    <EntitySetMapping Name="ItemRegistrations">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ItemRegistration">
+        <MappingFragment StoreEntitySet="ItemRegistration">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="RegistrationEffectiveDate" ColumnName="RegistrationEffectiveDate" />
+          <ScalarProperty Name="RegistrationExpirationDate" ColumnName="RegistrationExpirationDate" />
+          <ScalarProperty Name="PlateIdentification" ColumnName="PlateIdentification" />
+          <ScalarProperty Name="ItemRegistrationPlateKindId" ColumnName="ItemRegistrationPlateKindId" />
+          <ScalarProperty Name="ItemRegistrationPlateCodeId" ColumnName="ItemRegistrationPlateCodeId" />
+          <ScalarProperty Name="ItemRegistrationAuthorityId" ColumnName="ItemRegistrationAuthorityId" />
+          <ScalarProperty Name="ItemRegistrationJurisdictionId" ColumnName="ItemRegistrationJurisdictionId" />
+          <ScalarProperty Name="ItemRegistrationPlateCategoryId" ColumnName="ItemRegistrationPlateCategoryId" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+          <ScalarProperty Name="ItemGuid" ColumnName="ItemGuid" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="ItemRegistrationDescription" ColumnName="ItemRegistrationDescription" />
+          <ScalarProperty Name="ItemRegistrationGuid" ColumnName="ItemRegistrationGuid" />
+          <ScalarProperty Name="ItemRegistrationId" ColumnName="ItemRegistrationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemRegistrationAuthorityDIMs">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ItemRegistrationAuthorityDIM">
+        <MappingFragment StoreEntitySet="ItemRegistrationAuthorityDIM">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="VersionDateTime" ColumnName="VersionDateTime" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ItemRegistrationAuthorityId" ColumnName="ItemRegistrationAuthorityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemRegistrationPlateCategoryDIMs">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ItemRegistrationPlateCategoryDIM">
+        <MappingFragment StoreEntitySet="ItemRegistrationPlateCategoryDIM">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="VersionDateTime" ColumnName="VersionDateTime" />
+          <ScalarProperty Name="NCIC" ColumnName="NCIC" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ItemRegistrationPlateCategoryId" ColumnName="ItemRegistrationPlateCategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemRegistrationPlateCodeDIMs">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ItemRegistrationPlateCodeDIM">
+        <MappingFragment StoreEntitySet="ItemRegistrationPlateCodeDIM">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="VersionDateTime" ColumnName="VersionDateTime" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ItemRegistrationPlateCodeId" ColumnName="ItemRegistrationPlateCodeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemRegistrationPlateKindDIMs">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ItemRegistrationPlateKindDIM">
+        <MappingFragment StoreEntitySet="ItemRegistrationPlateKindDIM">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="VersionDateTime" ColumnName="VersionDateTime" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ItemRegistrationPlateKindId" ColumnName="ItemRegistrationPlateKindId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sources">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.Source">
+        <MappingFragment StoreEntitySet="Source">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="RetentionPeriodEnforcedIndicator" ColumnName="RetentionPeriodEnforcedIndicator" />
+          <ScalarProperty Name="RetentionPeriodDays" ColumnName="RetentionPeriodDays" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="SourcePolicyId" ColumnName="SourcePolicyId" />
+          <ScalarProperty Name="SourceCategoryId" ColumnName="SourceCategoryId" />
+          <ScalarProperty Name="SourceGuid" ColumnName="SourceGuid" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActivityCategoryDIMs">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ActivityCategoryDIM">
+        <MappingFragment StoreEntitySet="ActivityCategoryDIM">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="VersionDateTime" ColumnName="VersionDateTime" />
+          <ScalarProperty Name="NCIC" ColumnName="NCIC" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ActivityCategoryId" ColumnName="ActivityCategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemCategoryDIMs">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ItemCategoryDIM">
+        <MappingFragment StoreEntitySet="ItemCategoryDIM">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="VersionDateTime" ColumnName="VersionDateTime" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ItemCategoryId" ColumnName="ItemCategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.Item">
+        <MappingFragment StoreEntitySet="Item">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="WeightMeasure" ColumnName="WeightMeasure" />
+          <ScalarProperty Name="WidthMeasure" ColumnName="WidthMeasure" />
+          <ScalarProperty Name="LengthMeasure" ColumnName="LengthMeasure" />
+          <ScalarProperty Name="HeightMeasure" ColumnName="HeightMeasure" />
+          <ScalarProperty Name="SizeDescription" ColumnName="SizeDescription" />
+          <ScalarProperty Name="ItemValue" ColumnName="ItemValue" />
+          <ScalarProperty Name="SerialIdentification" ColumnName="SerialIdentification" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemUsageId" ColumnName="ItemUsageId" />
+          <ScalarProperty Name="ItemConditionId" ColumnName="ItemConditionId" />
+          <ScalarProperty Name="ItemSecondaryColorId" ColumnName="ItemSecondaryColorId" />
+          <ScalarProperty Name="ItemPrimaryColorId" ColumnName="ItemPrimaryColorId" />
+          <ScalarProperty Name="ModelYear" ColumnName="ModelYear" />
+          <ScalarProperty Name="ItemMakeModelId" ColumnName="ItemMakeModelId" />
+          <ScalarProperty Name="ItemStatusId" ColumnName="ItemStatusId" />
+          <ScalarProperty Name="ItemCategoryId" ColumnName="ItemCategoryId" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+          <ScalarProperty Name="OriginalIdent" ColumnName="OriginalIdent" />
+          <ScalarProperty Name="ItemGuid" ColumnName="ItemGuid" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemInvolvementDIMs">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ItemInvolvementDIM">
+        <MappingFragment StoreEntitySet="ItemInvolvementDIM">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="VersionDateTime" ColumnName="VersionDateTime" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ItemInvolvementId" ColumnName="ItemInvolvementId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActivityItems">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ActivityItem">
+        <MappingFragment StoreEntitySet="ActivityItem">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="ItemInvolvementId" ColumnName="ItemInvolvementId" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+          <ScalarProperty Name="ItemGuid" ColumnName="ItemGuid" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="ActivityGuid" ColumnName="ActivityGuid" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          <ScalarProperty Name="ActivityItemDescription" ColumnName="ActivityItemDescription" />
+          <ScalarProperty Name="ActivityItemGuid" ColumnName="ActivityItemGuid" />
+          <ScalarProperty Name="ActivityItemId" ColumnName="ActivityItemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActivityLocations">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ActivityLocation">
+        <MappingFragment StoreEntitySet="ActivityLocation">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="LocationInvolvementId" ColumnName="LocationInvolvementId" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+          <ScalarProperty Name="LocationGuid" ColumnName="LocationGuid" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="ActivityGuid" ColumnName="ActivityGuid" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          <ScalarProperty Name="ActivityLocationDescription" ColumnName="ActivityLocationDescription" />
+          <ScalarProperty Name="ActivityLocationGuid" ColumnName="ActivityLocationGuid" />
+          <ScalarProperty Name="ActivityLocationId" ColumnName="ActivityLocationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActivityPersons">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ActivityPerson">
+        <MappingFragment StoreEntitySet="ActivityPerson">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="PersonInvolvementId" ColumnName="PersonInvolvementId" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+          <ScalarProperty Name="ActivityGuid" ColumnName="ActivityGuid" />
+          <ScalarProperty Name="ActivityId" ColumnName="ActivityId" />
+          <ScalarProperty Name="PersonGuid" ColumnName="PersonGuid" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="ActivityPersonDescription" ColumnName="ActivityPersonDescription" />
+          <ScalarProperty Name="ActivityPersonGuid" ColumnName="ActivityPersonGuid" />
+          <ScalarProperty Name="ActivityPersonId" ColumnName="ActivityPersonId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="OrgLocProcessed" ColumnName="OrgLocProcessed" />
+          <ScalarProperty Name="OrgSubProcessed" ColumnName="OrgSubProcessed" />
+          <ScalarProperty Name="OrgLeoProcessed" ColumnName="OrgLeoProcessed" />
+          <ScalarProperty Name="OrgLong" ColumnName="OrgLong" />
+          <ScalarProperty Name="OrgLat" ColumnName="OrgLat" />
+          <ScalarProperty Name="OrgZip" ColumnName="OrgZip" />
+          <ScalarProperty Name="OrgCity" ColumnName="OrgCity" />
+          <ScalarProperty Name="OrgConty" ColumnName="OrgConty" />
+          <ScalarProperty Name="OrgCountry" ColumnName="OrgCountry" />
+          <ScalarProperty Name="OrgStateCode" ColumnName="OrgStateCode" />
+          <ScalarProperty Name="OrgAddress3" ColumnName="OrgAddress3" />
+          <ScalarProperty Name="OrgAddress2" ColumnName="OrgAddress2" />
+          <ScalarProperty Name="OrgAddress1" ColumnName="OrgAddress1" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="AltitudeMSL" ColumnName="AltitudeMSL" />
+          <ScalarProperty Name="AltitudeAGL" ColumnName="AltitudeAGL" />
+          <ScalarProperty Name="PostOfficeBox" ColumnName="PostOfficeBox" />
+          <ScalarProperty Name="Floor" ColumnName="Floor" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Boundry" ColumnName="Boundry" />
+          <ScalarProperty Name="GeoPoint" ColumnName="GeoPoint" />
+          <ScalarProperty Name="HighwayPosition" ColumnName="HighwayPosition" />
+          <ScalarProperty Name="CrossStreet" ColumnName="CrossStreet" />
+          <ScalarProperty Name="PostalCodeExtension" ColumnName="PostalCodeExtension" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="StreetExtension" ColumnName="StreetExtension" />
+          <ScalarProperty Name="StreetName" ColumnName="StreetName" />
+          <ScalarProperty Name="StreetNumber" ColumnName="StreetNumber" />
+          <ScalarProperty Name="LocationStreetDirectionSuffixId" ColumnName="LocationStreetDirectionSuffixId" />
+          <ScalarProperty Name="LocationStreetDirectionPrefixId" ColumnName="LocationStreetDirectionPrefixId" />
+          <ScalarProperty Name="LocationStreetCategoryId" ColumnName="LocationStreetCategoryId" />
+          <ScalarProperty Name="GeoCensusTractId" ColumnName="GeoCensusTractId" />
+          <ScalarProperty Name="GeoStateId" ColumnName="GeoStateId" />
+          <ScalarProperty Name="GeoZipId" ColumnName="GeoZipId" />
+          <ScalarProperty Name="GeoCountyId" ColumnName="GeoCountyId" />
+          <ScalarProperty Name="GeoCityId" ColumnName="GeoCityId" />
+          <ScalarProperty Name="GeoCountryId" ColumnName="GeoCountryId" />
+          <ScalarProperty Name="GeoLocationSubDivisionId" ColumnName="GeoLocationSubDivisionId" />
+          <ScalarProperty Name="GeoLEOId" ColumnName="GeoLEOId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="locationIntersectionTypeId" ColumnName="locationIntersectionTypeId" />
+          <ScalarProperty Name="locationDatumId" ColumnName="locationDatumId" />
+          <ScalarProperty Name="LocationCategoryId" ColumnName="LocationCategoryId" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+          <ScalarProperty Name="OriginalIdent" ColumnName="OriginalIdent" />
+          <ScalarProperty Name="LocationGuid" ColumnName="LocationGuid" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.Person">
+        <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="PersonGenderId" ColumnName="PersonGenderId" />
+          <ScalarProperty Name="PersonCategoryId" ColumnName="PersonCategoryId" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+          <ScalarProperty Name="Moniker" ColumnName="Moniker" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="PersonStatusId" ColumnName="PersonStatusId" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+          <ScalarProperty Name="OriginalIdent" ColumnName="OriginalIdent" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PersonGuid" ColumnName="PersonGuid" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActivityReasonDIMs">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.ActivityReasonDIM">
+        <MappingFragment StoreEntitySet="ActivityReasonDIM">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="VersionDateTime" ColumnName="VersionDateTime" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ActivityReasonId" ColumnName="ActivityReasonId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonEducations">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.PersonEducation">
+        <MappingFragment StoreEntitySet="PersonEducation">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="EducationDegreeId" ColumnName="EducationDegreeId" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EducationStatusId" ColumnName="EducationStatusId" />
+          <ScalarProperty Name="EducationOrganizationGuid" ColumnName="EducationOrganizationGuid" />
+          <ScalarProperty Name="EducationOrganizationId" ColumnName="EducationOrganizationId" />
+          <ScalarProperty Name="EducationCategoryId" ColumnName="EducationCategoryId" />
+          <ScalarProperty Name="StudentIdentification" ColumnName="StudentIdentification" />
+          <ScalarProperty Name="PersonEducationDescription" ColumnName="PersonEducationDescription" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+          <ScalarProperty Name="PersonGuid" ColumnName="PersonGuid" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="PersonEducationGuid" ColumnName="PersonEducationGuid" />
+          <ScalarProperty Name="PersonEducationId" ColumnName="PersonEducationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonGenderDIMs">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.PersonGenderDIM">
+        <MappingFragment StoreEntitySet="PersonGenderDIM">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="VersionDateTime" ColumnName="VersionDateTime" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PersonGenderId" ColumnName="PersonGenderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonMaritalStatusDIMs">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.PersonMaritalStatusDIM">
+        <MappingFragment StoreEntitySet="PersonMaritalStatusDIM">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="VersionDateTime" ColumnName="VersionDateTime" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PersonMaritalStatusId" ColumnName="PersonMaritalStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonCategoryDIMs">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.PersonCategoryDIM">
+        <MappingFragment StoreEntitySet="PersonCategoryDIM">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="VersionDateTime" ColumnName="VersionDateTime" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PersonCategoryId" ColumnName="PersonCategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonDriverLicenses">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.PersonDriverLicense">
+        <MappingFragment StoreEntitySet="PersonDriverLicense">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="PersonDrivingInsuranceStatusId" ColumnName="PersonDrivingInsuranceStatusId" />
+          <ScalarProperty Name="PersonDrivingInsCoverageCategoryId" ColumnName="PersonDrivingInsCoverageCategoryId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="EffectiveYear" ColumnName="EffectiveYear" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="Identification" ColumnName="Identification" />
+          <ScalarProperty Name="ExpirationYear" ColumnName="ExpirationYear" />
+          <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+          <ScalarProperty Name="IdentificationAuthorityId" ColumnName="IdentificationAuthorityId" />
+          <ScalarProperty Name="DriverLicenseCivilianClassId" ColumnName="DriverLicenseCivilianClassId" />
+          <ScalarProperty Name="DriverLicenseCommericalClassId" ColumnName="DriverLicenseCommericalClassId" />
+          <ScalarProperty Name="DriverLicensePermitStatusId" ColumnName="DriverLicensePermitStatusId" />
+          <ScalarProperty Name="DriverLicenseImageGuid" ColumnName="DriverLicenseImageGuid" />
+          <ScalarProperty Name="DriverLicenseImageId" ColumnName="DriverLicenseImageId" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+          <ScalarProperty Name="PersonGuid" ColumnName="PersonGuid" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="PersonDriverLicenseDescription" ColumnName="PersonDriverLicenseDescription" />
+          <ScalarProperty Name="PersonDriverLicenseGuid" ColumnName="PersonDriverLicenseGuid" />
+          <ScalarProperty Name="PersonDriverLicenseId" ColumnName="PersonDriverLicenseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EducationCategoryDIMs">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.EducationCategoryDIM">
+        <MappingFragment StoreEntitySet="EducationCategoryDIM">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="VersionDateTime" ColumnName="VersionDateTime" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="EducationCategoryId" ColumnName="EducationCategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EducationDegreeDIMs">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.EducationDegreeDIM">
+        <MappingFragment StoreEntitySet="EducationDegreeDIM">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="VersionDateTime" ColumnName="VersionDateTime" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="EducationDegreeId" ColumnName="EducationDegreeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EducationStatusDIMs">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.EducationStatusDIM">
+        <MappingFragment StoreEntitySet="EducationStatusDIM">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="VersionDateTime" ColumnName="VersionDateTime" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="EducationStatusId" ColumnName="EducationStatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organizations">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.Organization">
+        <MappingFragment StoreEntitySet="Organization">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDateTimeStamp" ColumnName="ModifiedDateTimeStamp" />
+          <ScalarProperty Name="CreateDateTimeStamp" ColumnName="CreateDateTimeStamp" />
+          <ScalarProperty Name="IncorporatedIndicator" ColumnName="IncorporatedIndicator" />
+          <ScalarProperty Name="TerminationDateTime" ColumnName="TerminationDateTime" />
+          <ScalarProperty Name="EstablishedDateTime" ColumnName="EstablishedDateTime" />
+          <ScalarProperty Name="IMONumber" ColumnName="IMONumber" />
+          <ScalarProperty Name="AbbreviationText" ColumnName="AbbreviationText" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DoingBusinessAs" ColumnName="DoingBusinessAs" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="OrganizationStatusId" ColumnName="OrganizationStatusId" />
+          <ScalarProperty Name="OrganizationCategoryId" ColumnName="OrganizationCategoryId" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+          <ScalarProperty Name="OriginalIdent" ColumnName="OriginalIdent" />
+          <ScalarProperty Name="OrganizationGuid" ColumnName="OrganizationGuid" />
+          <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocationDatumDIMs">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.LocationDatumDIM">
+        <MappingFragment StoreEntitySet="LocationDatumDIM">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="VersionDateTime" ColumnName="VersionDateTime" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LocationDatumId" ColumnName="LocationDatumId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocationCategoryDIMs">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.LocationCategoryDIM">
+        <MappingFragment StoreEntitySet="LocationCategoryDIM">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="VersionDateTime" ColumnName="VersionDateTime" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LocationCategoryId" ColumnName="LocationCategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusDIMs">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.StatusDIM">
+        <MappingFragment StoreEntitySet="StatusDIM">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="VersionDateTime" ColumnName="VersionDateTime" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocationInvolvementDIMs">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.LocationInvolvementDIM">
+        <MappingFragment StoreEntitySet="LocationInvolvementDIM">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="VersionDateTime" ColumnName="VersionDateTime" />
+          <ScalarProperty Name="NCIC" ColumnName="NCIC" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LocationInvolvementId" ColumnName="LocationInvolvementId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonInvolvementDIMs">
+      <EntityTypeMapping TypeName="Microsoft.JPS.CDS.ADPModel.PersonInvolvementDIM">
+        <MappingFragment StoreEntitySet="PersonInvolvementDIM">
+          <ScalarProperty Name="RowStatusId" ColumnName="RowStatusId" />
+          <ScalarProperty Name="VersionDateTime" ColumnName="VersionDateTime" />
+          <ScalarProperty Name="NCIC" ColumnName="NCIC" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PersonInvolvementId" ColumnName="PersonInvolvementId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

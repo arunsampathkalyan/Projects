@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="STC.Projects.ClassLibrary.Entities.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ADP-CDS.dbo.AssetsOperationalView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="AssetsOperationalView">
+          <Key>
+            <PropertyRef Name="ItemId" />
+            <PropertyRef Name="SourceId" />
+          </Key>
+          <Property Name="ItemId" Type="bigint" Nullable="false" />
+          <Property Name="OriginalIdent" Type="nvarchar" MaxLength="50" />
+          <Property Name="ItemName" Type="nvarchar" MaxLength="50" />
+          <Property Name="SourceId" Type="bigint" Nullable="false" />
+          <Property Name="SourceName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ItemCategoryId" Type="int" />
+          <Property Name="ItemCategoryName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ModelYear" Type="int" />
+          <Property Name="ItemStatusId" Type="int" />
+          <Property Name="ItemStatusName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ItemMakeModelId" Type="int" />
+          <Property Name="ItemMakeName" Type="nvarchar" MaxLength="200" />
+          <Property Name="ItemModelName" Type="nvarchar" MaxLength="200" />
+          <Property Name="LocationInvolvementName" Type="nvarchar" MaxLength="100" />
+          <Property Name="LocationCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Altitude" Type="float" />
+          <Property Name="Latitude" Type="float" />
+          <Property Name="Longitude" Type="float" />
+          <Property Name="ModelCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="MakeCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ItemUsageName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ItemUsageId" Type="int" />
+        </EntityType>
+        <EntityContainer Name="STCProjectsClassLibraryEntitiesStoreContainer">
+          <EntitySet Name="AssetsOperationalView" EntityType="Self.AssetsOperationalView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AssetsOperationalView].[ItemId] AS [ItemId], 
+    [AssetsOperationalView].[OriginalIdent] AS [OriginalIdent], 
+    [AssetsOperationalView].[ItemName] AS [ItemName], 
+    [AssetsOperationalView].[SourceId] AS [SourceId], 
+    [AssetsOperationalView].[SourceName] AS [SourceName], 
+    [AssetsOperationalView].[ItemCategoryId] AS [ItemCategoryId], 
+    [AssetsOperationalView].[ItemCategoryName] AS [ItemCategoryName], 
+    [AssetsOperationalView].[ModelYear] AS [ModelYear], 
+    [AssetsOperationalView].[ItemStatusId] AS [ItemStatusId], 
+    [AssetsOperationalView].[ItemStatusName] AS [ItemStatusName], 
+    [AssetsOperationalView].[ItemMakeModelId] AS [ItemMakeModelId], 
+    [AssetsOperationalView].[ItemMakeName] AS [ItemMakeName], 
+    [AssetsOperationalView].[ItemModelName] AS [ItemModelName], 
+    [AssetsOperationalView].[LocationInvolvementName] AS [LocationInvolvementName], 
+    [AssetsOperationalView].[LocationCode] AS [LocationCode], 
+    [AssetsOperationalView].[Altitude] AS [Altitude], 
+    [AssetsOperationalView].[Latitude] AS [Latitude], 
+    [AssetsOperationalView].[Longitude] AS [Longitude], 
+    [AssetsOperationalView].[ModelCode] AS [ModelCode], 
+    [AssetsOperationalView].[MakeCode] AS [MakeCode], 
+    [AssetsOperationalView].[ItemUsageName] AS [ItemUsageName], 
+    [AssetsOperationalView].[ItemUsageId] AS [ItemUsageId]
+    FROM [dbo].[AssetsOperationalView] AS [AssetsOperationalView]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CDSAssetsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AssetsOperationalView">
+          <Key>
+            <PropertyRef Name="ItemId" />
+            <PropertyRef Name="SourceId" />
+          </Key>
+          <Property Name="ItemId" Type="Int64" Nullable="false" />
+          <Property Name="OriginalIdent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SourceId" Type="Int64" Nullable="false" />
+          <Property Name="SourceName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ItemCategoryId" Type="Int32" />
+          <Property Name="ItemCategoryName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ModelYear" Type="Int32" />
+          <Property Name="ItemStatusId" Type="Int32" />
+          <Property Name="ItemStatusName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ItemMakeModelId" Type="Int32" />
+          <Property Name="ItemMakeName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ItemModelName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LocationInvolvementName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LocationCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Altitude" Type="Double" />
+          <Property Name="Latitude" Type="Double" />
+          <Property Name="Longitude" Type="Double" />
+          <Property Name="ModelCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MakeCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ItemUsageName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ItemUsageId" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="CDSAssetsDataContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AssetsOperationalViews" EntityType="Self.AssetsOperationalView" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="STCProjectsClassLibraryEntitiesStoreContainer" CdmEntityContainer="CDSAssetsDataContext">
+          <EntitySetMapping Name="AssetsOperationalViews">
+            <EntityTypeMapping TypeName="CDSAssetsModel.AssetsOperationalView">
+              <MappingFragment StoreEntitySet="AssetsOperationalView">
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="OriginalIdent" ColumnName="OriginalIdent" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+                <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+                <ScalarProperty Name="ItemCategoryId" ColumnName="ItemCategoryId" />
+                <ScalarProperty Name="ItemCategoryName" ColumnName="ItemCategoryName" />
+                <ScalarProperty Name="ModelYear" ColumnName="ModelYear" />
+                <ScalarProperty Name="ItemStatusId" ColumnName="ItemStatusId" />
+                <ScalarProperty Name="ItemStatusName" ColumnName="ItemStatusName" />
+                <ScalarProperty Name="ItemMakeModelId" ColumnName="ItemMakeModelId" />
+                <ScalarProperty Name="ItemMakeName" ColumnName="ItemMakeName" />
+                <ScalarProperty Name="ItemModelName" ColumnName="ItemModelName" />
+                <ScalarProperty Name="LocationInvolvementName" ColumnName="LocationInvolvementName" />
+                <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+                <ScalarProperty Name="Altitude" ColumnName="Altitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="ModelCode" ColumnName="ModelCode" />
+                <ScalarProperty Name="MakeCode" ColumnName="MakeCode" />
+                <ScalarProperty Name="ItemUsageName" ColumnName="ItemUsageName" />
+                <ScalarProperty Name="ItemUsageId" ColumnName="ItemUsageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

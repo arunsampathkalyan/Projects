@@ -1,0 +1,2143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://adpolice.gov.ae/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://adpolice.gov.ae/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://adpolice.gov.ae/">
+      <s:element name="getTrfVehicles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetTrfVehiclesRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTrfVehiclesRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TcfNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getTrfVehiclesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTrfVehiclesResult" type="tns:GetTrfVehiclesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTrfVehiclesResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Vehicles" type="tns:ArrayOfVehicleKey" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVehicleKey">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VehicleKey" nillable="true" type="tns:VehicleKey" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VehicleKey">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChassisNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MakeArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MakeEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModelArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModelEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KindArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KindEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColorArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColorEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Year" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationRenewDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationExpiryDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuranceCompany" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuranceCompanyEn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuranceKindArDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuranceKindEnDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsurancePolicyNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="InsuranceExpiryDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="InsuranceCompanyTCFNo" nillable="true" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PlateKey">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PlateNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateOrgNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateColorCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateKindCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateTypeCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateSourceCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateColorArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateColorEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateSourceArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateSourceEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateKindArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateKindEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateTypeArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateTypeEnglishDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ADPSoapHeaderIn" type="tns:ADPSoapHeaderIn" />
+      <s:complexType name="ADPSoapHeaderIn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="ErrorHeader" type="tns:ErrorHeader" />
+      <s:complexType name="ErrorHeader">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorEnglishDesc" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="getVehicleDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetVehicleDetailsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetVehicleDetailsRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChassisNo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getVehicleDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getVehicleDetailsResult" type="tns:VehicleDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VehicleDetails">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="HasHandicapPermit" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasColorGlassPermit" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="OwnerTcfNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OwnerTcfArabicName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OwnerTcfEnglishName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDrivingBanned" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuranceCompanyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuranceKindArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuranceKindEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuranceExpiryDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsurancePolicyNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MortgageDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MortgageRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColorArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColorEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NationalityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NationalityArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NationalityEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Year" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Chairs" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MakeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MakeArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MakeEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModelCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModelArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModelEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KindCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KindArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KindEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WeightEmpty" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WeightFull" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationExpiryDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EngineNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChassisNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GearCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GearArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GearEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FuelCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FuelArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FuelEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WeightCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WeightArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WeightEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SteeringCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SteeringArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SteeringEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cylinder" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AxisCount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoorCount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HorsePower" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WheelsCount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationRemarks" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getPublicVehicleDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetVehicleDetailsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPublicVehicleDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPublicVehicleDetailsResult" type="tns:VehicleDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getVehicleRestrictions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetVehicleRestrictionsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetVehicleRestrictionsRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OwnerTCFNumber" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="BuyerTCFNumber" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="VehicleKey" type="tns:VehicleKey" />
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceType" type="tns:VehicleServices" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="newPlateKey" type="tns:PlateKey" />
+          <s:element minOccurs="1" maxOccurs="1" name="CertificateNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="CertificateDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CertificateCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CertificateSourceCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaidByTrafficProfile" type="tns:TrafficNo" />
+          <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompanyTCF" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateMakeKindCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateFactoryCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EServicesUserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="VehicleServices">
+        <s:restriction base="s:string">
+          <s:enumeration value="Register" />
+          <s:enumeration value="Re_Register" />
+          <s:enumeration value="Renew" />
+          <s:enumeration value="Sale" />
+          <s:enumeration value="Damaged_Card" />
+          <s:enumeration value="Lost_Card" />
+          <s:enumeration value="Change_Data" />
+          <s:enumeration value="Change_Color" />
+          <s:enumeration value="Transfer" />
+          <s:enumeration value="Export" />
+          <s:enumeration value="Tour" />
+          <s:enumeration value="Cancel" />
+          <s:enumeration value="Lost_Plate" />
+          <s:enumeration value="Damaged_Plate" />
+          <s:enumeration value="Change_Plate" />
+          <s:enumeration value="Certificate" />
+          <s:enumeration value="Clearence" />
+          <s:enumeration value="Reserve_Plate" />
+          <s:enumeration value="Insurance_Return" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="TrafficNo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TcfNo" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getVehicleRestrictionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getVehicleRestrictionsResult" type="tns:GetVehicleRestrictionsResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetVehicleRestrictionsResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="OwnerRestrictions" type="tns:ArrayOfRestrictionRecord" />
+          <s:element minOccurs="0" maxOccurs="1" name="BuyerRestrictions" type="tns:ArrayOfRestrictionRecord" />
+          <s:element minOccurs="1" maxOccurs="1" name="OwnerHasTickets" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="BuyerHasTickets" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRestrictionRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RestrictionRecord" nillable="true" type="tns:RestrictionRecord" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RestrictionRecord">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TCFNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="RestrictionCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RestrictionArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RestrictionEnglishDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RestrictionCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsExempted" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getVehicleServiceFees">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetVehicleServiceFeesRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetVehicleServiceFeesRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceCenterCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OwnerTCFNumber" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="BuyerTCFNumber" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsStickerOrdered" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceType" type="tns:VehicleServices" />
+          <s:element minOccurs="1" maxOccurs="1" name="CourierCompanyCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CertificateNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="CertificateDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CertificateCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CertificateSourceCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateMakeKindCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="newPlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="1" maxOccurs="1" name="VehModelCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VehKindCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FuelCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="WeightKindCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="WeightFull" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="WeightEmpty" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VehicleMakeYear" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getVehicleServiceFeesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getVehicleServiceFeesResult" type="tns:GetVehicleServiceFeesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetVehicleServiceFeesResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceAmount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaySerial" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Materials" type="tns:ArrayOfReceiptMaterial" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReceiptMaterial">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReceiptMaterial" nillable="true" type="tns:ReceiptMaterial" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReceiptMaterial">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ticketNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ticketDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ticketSourceCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="materialCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="materialArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="materialEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TicketLocation" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="materialAmount" nillable="true" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="createVehicleServiceApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CreateVehcileServiceApplicationRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateVehcileServiceApplicationRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceCenterCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OwnerTCFNumber" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="BuyerTCFNumber" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsStickerOrdered" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceType" type="tns:VehicleServices" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FeesSerial" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketsSerial" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TourCountryCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CarbonCopyTo" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransferEmirateCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransferDriverTCF" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransferCompanyTCF" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReturnInsurance" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="newPlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="1" maxOccurs="1" name="CertificateNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="CertificateDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CertificateCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CertificateSourceCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompanyTCF" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateFactoryCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateLostType" type="tns:PlateLostType" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateMakeKindCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaidByTrafficProfile" type="tns:TrafficNo" />
+          <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EServicesUserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OTP" nillable="true" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="PlateLostType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Front" />
+          <s:enumeration value="Back" />
+          <s:enumeration value="FrontAndBack" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="createVehicleServiceApplicationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="createVehicleServiceApplicationResult" type="tns:CreateVehcileServiceApplicationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateVehcileServiceApplicationResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationTime" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="cancelVehicleServiceApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CancelVehicleServiceApplicationRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CancelVehicleServiceApplicationRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationNo" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="cancelVehicleServiceApplicationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="postVehicleServiceApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:PostVehicleServiceApplicationRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PostVehicleServiceApplicationRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationNo" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="postVehicleServiceApplicationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="postVehicleServiceApplicationResult" type="tns:PostVehicleServiceApplicationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PostVehicleServiceApplicationResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ReceiptNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="UndertakeNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="CertificateNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceiptDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceiptTime" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="approveVehicleServiceApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:ApproveVehicleServiceApplicationRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ApproveVehicleServiceApplicationRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketsSerial" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="approveVehicleServiceApplicationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="approveVehicleServiceApplicationResult" type="tns:ApproveVehicleServiceApplicationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ApproveVehicleServiceApplicationResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TicketsReceiptNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketsReceiptDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketsReceiptTime" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="approveKioskVehicleServiceApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:ApproveVehicleServiceApplicationRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="approveKioskVehicleServiceApplicationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="approveKioskVehicleServiceApplicationResult" type="tns:ApproveVehicleServiceApplicationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getVehicleTickets">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetVehicleTickets" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetVehicleTickets">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TcfNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceType" type="tns:VehicleServices" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getVehicleTicketsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getVehicleTicketsResult" type="tns:GetTicketsResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTicketsResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Tickets" type="tns:ArrayOfTicket" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTicket">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Ticket" nillable="true" type="tns:Ticket" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Ticket">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TicketID" type="tns:TicketID" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TicketType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocationDescAr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocationDescEn" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DriverTcfNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseInfo" type="tns:LicenseKey" />
+          <s:element minOccurs="1" maxOccurs="1" name="VehicleOwnerTcfNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsWebPayable" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="LateCharges" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalAmount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="DiscountRate" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalAmountAfterDiscount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="BlackPoints" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaterialsList" type="tns:ArrayOfTicketMaterial" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TicketID">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TicketNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketYear" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketSourceCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsExternalTicket" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LicenseKey">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseSourceCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseSourceArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseSourceEnglishDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTicketMaterial">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TicketMaterial" nillable="true" type="tns:TicketMaterial" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TicketMaterial">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MaterialCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaterialArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaterialEnglishDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaterialAmount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DiscountRate" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmountAfterDiscount" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getVehicleCertificates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetVehicleCertificatesRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetVehicleCertificatesRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurrentOwnerTcfNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="NewOwnerTcfNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="DriverTcfNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getVehicleCertificatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getVehicleCertificatesResult" type="tns:GetVehicleCeritifatesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetVehicleCeritifatesResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Certificates" type="tns:ArrayOfCertificateID" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCertificateID">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CertificateID" nillable="true" type="tns:CertificateID" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CertificateID">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CertificateNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CertificateKindCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CertificateKindArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CertificateKindEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CertificateDate" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getCertificateInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetCertificateDetailsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetCertificateDetailsRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CertificateNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsRTACertificate" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getCertificateInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCertificateInfoResult" type="tns:GetCertificateDetailsResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetCertificateDetailsResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CompanyTCFNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="CertificateDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurrentOwnerTcfNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentOwnerArabicName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentOwnerEnglishName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurrentOwnerNationalityCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentOwnerNationalityArDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentOwnerNationalityEnDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentOwnerPassportNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NewOwnerTcfNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="NewOwnerArabicName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NewOwnerEnglishName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NewOwnerNationalityArDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NewOwnerNationalityEnDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NewOwnerPassportNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NoObjectionTo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CopyToCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CopyToArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CopyToEnglishDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CertificateKindCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CertificateKindArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CertificateKindEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateExpNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateColorCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateColorArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateColorEnglishDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateTypeCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateTypeArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateTypeEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChassisNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Chairs" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ColorCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColorArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColorEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cylinder" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EngineNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuranceCompanyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsurancePolicyNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="KindCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="KindArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KindEnglishDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MakeCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MakeArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MakeEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MortgageDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MortgageRef" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NationalityCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NationalityArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NationalityEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TypeCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WeightFull" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WeightEmpty" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VehicleMakeYear" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UTSCertificateNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RTACertificateNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateSourceCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateSourceArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateSourceEnglishDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateExpoSourceCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateSourceExpoArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateSourceExpoEnglishDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CountryToExportCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryToExportArDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryToExportEnDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmirateToTransferCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmirateToTransferArDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmirateToTransferEnDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="InsuranceKindCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuranceKindDescAr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuranceKindDescEn" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="InsuranceDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DriverTrafficNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="DriverNameAr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DriverNameEn" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DriverNationalityCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DriverNationalityDescAr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DriverNationalityDescEn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DriverPassportNo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getVehicleInspection">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetVehicleInspectionRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetVehicleInspectionRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ChassisNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getVehicleInspectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getVehicleInspectionResult" type="tns:GetVehicleInspectionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetVehicleInspectionResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ReferenceNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPassed" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="InspectionDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CenterCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CenterArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CenterEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColorArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColorEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NationalityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NationalityArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NationalityEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Year" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Chairs" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MakeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MakeArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MakeEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModelCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModelArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModelEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KindCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KindArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KindEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WeightEmpty" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WeightFull" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationExpiryDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EngineNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChassisNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GearCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GearArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GearEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FuelCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FuelArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FuelEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WeightCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WeightArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WeightEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SteeringCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SteeringArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SteeringEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cylinder" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AxisCount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoorCount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HorsePower" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WheelsCount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationRemarks" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="checkVehicleWanted">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CheckVehicleWantedRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CheckVehicleWantedRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TCFNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChassisNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="checkVehicleWantedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkVehicleWantedResult" type="tns:CheckVehicleWantedResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CheckVehicleWantedResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsWanted" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ResetTestData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:ResetTestDataRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResetTestDataRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TCFNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="1" maxOccurs="1" name="NeedTcfRestriction" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NeedTcfOldTickets" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NeedTcfNewTickets" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NeedTcfLockedTickets" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NeedVehicleInspection" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NeedVehicleInsurance" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NeedVehicleTcikets" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NeedVehicleLockedTickets" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ResetTestDataResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCustomsCertificate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetCustomsCertificateRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetCustomsCertificateRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CertificateID" type="tns:CustomsCertificateID" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChassisNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustomsCertificateID">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CertificateNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="CertificateDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CertificateCenterCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CertificateCenterArDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CertificateCenterEnDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getCustomsCertificateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCustomsCertificateResult" type="tns:GetCustomsCertificateResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetCustomsCertificateResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CertificateID" type="tns:CustomsCertificateID" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurrentOwnerTcfNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentOwnerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseInfo" type="tns:LicenseKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColorArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColorEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NationalityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NationalityArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NationalityEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Year" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Chairs" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MakeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MakeArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MakeEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModelCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModelArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ModelEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KindCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KindArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KindEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WeightEmpty" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WeightFull" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationExpiryDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EngineNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChassisNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GearCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GearArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GearEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FuelCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FuelArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FuelEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WeightCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WeightArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WeightEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SteeringCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SteeringArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SteeringEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cylinder" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AxisCount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoorCount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HorsePower" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WheelsCount" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsTransferable" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="activateInsurancePolicy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:ActivateInsurancePolicyRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ActivateInsurancePolicyRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SerialNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="PolicyNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="InsuranceCompCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChassisNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="activateInsurancePolicyResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getReservedPlates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetReservedPlatesRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetReservedPlatesRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OwnerTCFNumber" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="BuyerTCFNumber" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmirateCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getReservedPlatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getReservedPlatesResult" type="tns:GetReservedPlatesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetReservedPlatesResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Plates" type="tns:ArrayOfPlateKey" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPlateKey">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PlateKey" nillable="true" type="tns:PlateKey" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="lockReservedPlate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:LockReservedPlateRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LockReservedPlateRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ReservedPlate" type="tns:PlateKey" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="lockReservedPlateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lockReservedPlateResult" type="tns:LockReservedPlateResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LockReservedPlateResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LockSerialNo" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="unlockReservedPlate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:UnlockReservedPlateRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UnlockReservedPlateRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LockSerialNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="unlockReservedPlateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getManufacturedPlates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetManufacturedPlatesRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetManufacturedPlatesRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getManufacturedPlatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getManufacturedPlatesResult" type="tns:GetManufacturedPlatesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetManufacturedPlatesResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ManufacturedPlates" type="tns:ArrayOfManufacturedPlate" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfManufacturedPlate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ManufacturedPlate" nillable="true" type="tns:ManufacturedPlate" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ManufacturedPlate">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PlateColorCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateSourceCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateKindCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateTypeCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateFactoryCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateMakeKindCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMortgageDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetMortgageDetailsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetMortgageDetailsRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ChassisNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TrafficNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMortgageDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMortgageDetailsResult" type="tns:GetMortgageDetailsResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetMortgageDetailsResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MortgageRefNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MortgageCompCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MortgageCompNameAr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MortgageCompNameEn" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetInsuranceDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetInsuranceDetailsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetInsuranceDetailsRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ChassisNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TrafficNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetInsuranceDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInsuranceDetailsResult" type="tns:GetInsuranceDetailsResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetInsuranceDetailsResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="InsuranceCompCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuranceCompNameAr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuranceCompNameEn" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="InsuranceKindCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuranceKindArDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InsuranceKindEnDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PolicyNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpiryDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getVehicleRegCertificates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetVehicleRegCertificatesRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetVehicleRegCertificatesRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="1" maxOccurs="1" name="TrafficNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChassisNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getVehicleRegCertificatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getVehicleRegCertificatesResult" type="tns:GetVehicleCeritifatesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getTrfVehiclesSoapIn">
+    <wsdl:part name="parameters" element="tns:getTrfVehicles" />
+  </wsdl:message>
+  <wsdl:message name="getTrfVehiclesSoapOut">
+    <wsdl:part name="parameters" element="tns:getTrfVehiclesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTrfVehiclesADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getTrfVehiclesErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:getVehicleDetails" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:getVehicleDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleDetailsADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleDetailsErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="getPublicVehicleDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:getPublicVehicleDetails" />
+  </wsdl:message>
+  <wsdl:message name="getPublicVehicleDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:getPublicVehicleDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPublicVehicleDetailsADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getPublicVehicleDetailsErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleRestrictionsSoapIn">
+    <wsdl:part name="parameters" element="tns:getVehicleRestrictions" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleRestrictionsSoapOut">
+    <wsdl:part name="parameters" element="tns:getVehicleRestrictionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleRestrictionsADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleRestrictionsErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleServiceFeesSoapIn">
+    <wsdl:part name="parameters" element="tns:getVehicleServiceFees" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleServiceFeesSoapOut">
+    <wsdl:part name="parameters" element="tns:getVehicleServiceFeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleServiceFeesADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleServiceFeesErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="createVehicleServiceApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:createVehicleServiceApplication" />
+  </wsdl:message>
+  <wsdl:message name="createVehicleServiceApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:createVehicleServiceApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="createVehicleServiceApplicationADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="createVehicleServiceApplicationErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="cancelVehicleServiceApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:cancelVehicleServiceApplication" />
+  </wsdl:message>
+  <wsdl:message name="cancelVehicleServiceApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:cancelVehicleServiceApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="cancelVehicleServiceApplicationADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="cancelVehicleServiceApplicationErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="postVehicleServiceApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:postVehicleServiceApplication" />
+  </wsdl:message>
+  <wsdl:message name="postVehicleServiceApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:postVehicleServiceApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="postVehicleServiceApplicationADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="postVehicleServiceApplicationErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="approveVehicleServiceApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:approveVehicleServiceApplication" />
+  </wsdl:message>
+  <wsdl:message name="approveVehicleServiceApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:approveVehicleServiceApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="approveVehicleServiceApplicationADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="approveVehicleServiceApplicationErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="approveKioskVehicleServiceApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:approveKioskVehicleServiceApplication" />
+  </wsdl:message>
+  <wsdl:message name="approveKioskVehicleServiceApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:approveKioskVehicleServiceApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="approveKioskVehicleServiceApplicationADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="approveKioskVehicleServiceApplicationErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleTicketsSoapIn">
+    <wsdl:part name="parameters" element="tns:getVehicleTickets" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleTicketsSoapOut">
+    <wsdl:part name="parameters" element="tns:getVehicleTicketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleTicketsADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleTicketsErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleCertificatesSoapIn">
+    <wsdl:part name="parameters" element="tns:getVehicleCertificates" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleCertificatesSoapOut">
+    <wsdl:part name="parameters" element="tns:getVehicleCertificatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleCertificatesADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleCertificatesErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="getCertificateInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:getCertificateInfo" />
+  </wsdl:message>
+  <wsdl:message name="getCertificateInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:getCertificateInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCertificateInfoADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getCertificateInfoErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleInspectionSoapIn">
+    <wsdl:part name="parameters" element="tns:getVehicleInspection" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleInspectionSoapOut">
+    <wsdl:part name="parameters" element="tns:getVehicleInspectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleInspectionADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleInspectionErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="checkVehicleWantedSoapIn">
+    <wsdl:part name="parameters" element="tns:checkVehicleWanted" />
+  </wsdl:message>
+  <wsdl:message name="checkVehicleWantedSoapOut">
+    <wsdl:part name="parameters" element="tns:checkVehicleWantedResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkVehicleWantedADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="checkVehicleWantedErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="ResetTestDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetTestData" />
+  </wsdl:message>
+  <wsdl:message name="ResetTestDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetTestDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetTestDataADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="ResetTestDataErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="getCustomsCertificateSoapIn">
+    <wsdl:part name="parameters" element="tns:getCustomsCertificate" />
+  </wsdl:message>
+  <wsdl:message name="getCustomsCertificateSoapOut">
+    <wsdl:part name="parameters" element="tns:getCustomsCertificateResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCustomsCertificateADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getCustomsCertificateErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="activateInsurancePolicySoapIn">
+    <wsdl:part name="parameters" element="tns:activateInsurancePolicy" />
+  </wsdl:message>
+  <wsdl:message name="activateInsurancePolicySoapOut">
+    <wsdl:part name="parameters" element="tns:activateInsurancePolicyResponse" />
+  </wsdl:message>
+  <wsdl:message name="activateInsurancePolicyADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="activateInsurancePolicyErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="getReservedPlatesSoapIn">
+    <wsdl:part name="parameters" element="tns:getReservedPlates" />
+  </wsdl:message>
+  <wsdl:message name="getReservedPlatesSoapOut">
+    <wsdl:part name="parameters" element="tns:getReservedPlatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getReservedPlatesADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getReservedPlatesErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="lockReservedPlateSoapIn">
+    <wsdl:part name="parameters" element="tns:lockReservedPlate" />
+  </wsdl:message>
+  <wsdl:message name="lockReservedPlateSoapOut">
+    <wsdl:part name="parameters" element="tns:lockReservedPlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="lockReservedPlateADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="lockReservedPlateErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="unlockReservedPlateSoapIn">
+    <wsdl:part name="parameters" element="tns:unlockReservedPlate" />
+  </wsdl:message>
+  <wsdl:message name="unlockReservedPlateSoapOut">
+    <wsdl:part name="parameters" element="tns:unlockReservedPlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="unlockReservedPlateADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="unlockReservedPlateErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="getManufacturedPlatesSoapIn">
+    <wsdl:part name="parameters" element="tns:getManufacturedPlates" />
+  </wsdl:message>
+  <wsdl:message name="getManufacturedPlatesSoapOut">
+    <wsdl:part name="parameters" element="tns:getManufacturedPlatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getManufacturedPlatesADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getManufacturedPlatesErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMortgageDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMortgageDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetMortgageDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMortgageDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMortgageDetailsADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetMortgageDetailsErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetInsuranceDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInsuranceDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetInsuranceDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInsuranceDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInsuranceDetailsADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetInsuranceDetailsErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleRegCertificatesSoapIn">
+    <wsdl:part name="parameters" element="tns:getVehicleRegCertificates" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleRegCertificatesSoapOut">
+    <wsdl:part name="parameters" element="tns:getVehicleRegCertificatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleRegCertificatesADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleRegCertificatesErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:portType name="VehiclesServicesSoap">
+    <wsdl:operation name="getTrfVehicles">
+      <wsdl:input message="tns:getTrfVehiclesSoapIn" />
+      <wsdl:output message="tns:getTrfVehiclesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleDetails">
+      <wsdl:input message="tns:getVehicleDetailsSoapIn" />
+      <wsdl:output message="tns:getVehicleDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPublicVehicleDetails">
+      <wsdl:input message="tns:getPublicVehicleDetailsSoapIn" />
+      <wsdl:output message="tns:getPublicVehicleDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleRestrictions">
+      <wsdl:input message="tns:getVehicleRestrictionsSoapIn" />
+      <wsdl:output message="tns:getVehicleRestrictionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleServiceFees">
+      <wsdl:input message="tns:getVehicleServiceFeesSoapIn" />
+      <wsdl:output message="tns:getVehicleServiceFeesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createVehicleServiceApplication">
+      <wsdl:input message="tns:createVehicleServiceApplicationSoapIn" />
+      <wsdl:output message="tns:createVehicleServiceApplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelVehicleServiceApplication">
+      <wsdl:input message="tns:cancelVehicleServiceApplicationSoapIn" />
+      <wsdl:output message="tns:cancelVehicleServiceApplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="postVehicleServiceApplication">
+      <wsdl:input message="tns:postVehicleServiceApplicationSoapIn" />
+      <wsdl:output message="tns:postVehicleServiceApplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="approveVehicleServiceApplication">
+      <wsdl:input message="tns:approveVehicleServiceApplicationSoapIn" />
+      <wsdl:output message="tns:approveVehicleServiceApplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="approveKioskVehicleServiceApplication">
+      <wsdl:input message="tns:approveKioskVehicleServiceApplicationSoapIn" />
+      <wsdl:output message="tns:approveKioskVehicleServiceApplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleTickets">
+      <wsdl:input message="tns:getVehicleTicketsSoapIn" />
+      <wsdl:output message="tns:getVehicleTicketsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleCertificates">
+      <wsdl:input message="tns:getVehicleCertificatesSoapIn" />
+      <wsdl:output message="tns:getVehicleCertificatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCertificateInfo">
+      <wsdl:input message="tns:getCertificateInfoSoapIn" />
+      <wsdl:output message="tns:getCertificateInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleInspection">
+      <wsdl:input message="tns:getVehicleInspectionSoapIn" />
+      <wsdl:output message="tns:getVehicleInspectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkVehicleWanted">
+      <wsdl:input message="tns:checkVehicleWantedSoapIn" />
+      <wsdl:output message="tns:checkVehicleWantedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetTestData">
+      <wsdl:input message="tns:ResetTestDataSoapIn" />
+      <wsdl:output message="tns:ResetTestDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCustomsCertificate">
+      <wsdl:input message="tns:getCustomsCertificateSoapIn" />
+      <wsdl:output message="tns:getCustomsCertificateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="activateInsurancePolicy">
+      <wsdl:input message="tns:activateInsurancePolicySoapIn" />
+      <wsdl:output message="tns:activateInsurancePolicySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getReservedPlates">
+      <wsdl:input message="tns:getReservedPlatesSoapIn" />
+      <wsdl:output message="tns:getReservedPlatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="lockReservedPlate">
+      <wsdl:input message="tns:lockReservedPlateSoapIn" />
+      <wsdl:output message="tns:lockReservedPlateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="unlockReservedPlate">
+      <wsdl:input message="tns:unlockReservedPlateSoapIn" />
+      <wsdl:output message="tns:unlockReservedPlateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getManufacturedPlates">
+      <wsdl:input message="tns:getManufacturedPlatesSoapIn" />
+      <wsdl:output message="tns:getManufacturedPlatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMortgageDetails">
+      <wsdl:input message="tns:GetMortgageDetailsSoapIn" />
+      <wsdl:output message="tns:GetMortgageDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInsuranceDetails">
+      <wsdl:input message="tns:GetInsuranceDetailsSoapIn" />
+      <wsdl:output message="tns:GetInsuranceDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleRegCertificates">
+      <wsdl:input message="tns:getVehicleRegCertificatesSoapIn" />
+      <wsdl:output message="tns:getVehicleRegCertificatesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VehiclesServicesSoap" type="tns:VehiclesServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getTrfVehicles">
+      <soap:operation soapAction="http://adpolice.gov.ae/getTrfVehicles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getTrfVehiclesADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getTrfVehiclesErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleDetails">
+      <soap:operation soapAction="http://adpolice.gov.ae/getVehicleDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getVehicleDetailsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getVehicleDetailsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPublicVehicleDetails">
+      <soap:operation soapAction="http://adpolice.gov.ae/getPublicVehicleDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getPublicVehicleDetailsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getPublicVehicleDetailsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleRestrictions">
+      <soap:operation soapAction="http://adpolice.gov.ae/getVehicleRestrictions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getVehicleRestrictionsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getVehicleRestrictionsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleServiceFees">
+      <soap:operation soapAction="http://adpolice.gov.ae/getVehicleServiceFees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getVehicleServiceFeesADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getVehicleServiceFeesErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createVehicleServiceApplication">
+      <soap:operation soapAction="http://adpolice.gov.ae/createVehicleServiceApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:createVehicleServiceApplicationADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:createVehicleServiceApplicationErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelVehicleServiceApplication">
+      <soap:operation soapAction="http://adpolice.gov.ae/cancelVehicleServiceApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:cancelVehicleServiceApplicationADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:cancelVehicleServiceApplicationErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postVehicleServiceApplication">
+      <soap:operation soapAction="http://adpolice.gov.ae/postVehicleServiceApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:postVehicleServiceApplicationADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:postVehicleServiceApplicationErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="approveVehicleServiceApplication">
+      <soap:operation soapAction="http://adpolice.gov.ae/approveVehicleServiceApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:approveVehicleServiceApplicationADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:approveVehicleServiceApplicationErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="approveKioskVehicleServiceApplication">
+      <soap:operation soapAction="http://adpolice.gov.ae/approveKioskVehicleServiceApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:approveKioskVehicleServiceApplicationADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:approveKioskVehicleServiceApplicationErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleTickets">
+      <soap:operation soapAction="http://adpolice.gov.ae/getVehicleTickets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getVehicleTicketsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getVehicleTicketsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleCertificates">
+      <soap:operation soapAction="http://adpolice.gov.ae/getVehicleCertificates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getVehicleCertificatesADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getVehicleCertificatesErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCertificateInfo">
+      <soap:operation soapAction="http://adpolice.gov.ae/getCertificateInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getCertificateInfoADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getCertificateInfoErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleInspection">
+      <soap:operation soapAction="http://adpolice.gov.ae/getVehicleInspection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getVehicleInspectionADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getVehicleInspectionErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkVehicleWanted">
+      <soap:operation soapAction="http://adpolice.gov.ae/checkVehicleWanted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:checkVehicleWantedADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:checkVehicleWantedErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetTestData">
+      <soap:operation soapAction="http://adpolice.gov.ae/ResetTestData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResetTestDataADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:ResetTestDataErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomsCertificate">
+      <soap:operation soapAction="http://adpolice.gov.ae/getCustomsCertificate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getCustomsCertificateADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getCustomsCertificateErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="activateInsurancePolicy">
+      <soap:operation soapAction="http://adpolice.gov.ae/activateInsurancePolicy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:activateInsurancePolicyADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:activateInsurancePolicyErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReservedPlates">
+      <soap:operation soapAction="http://adpolice.gov.ae/getReservedPlates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getReservedPlatesADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getReservedPlatesErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lockReservedPlate">
+      <soap:operation soapAction="http://adpolice.gov.ae/lockReservedPlate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:lockReservedPlateADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:lockReservedPlateErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="unlockReservedPlate">
+      <soap:operation soapAction="http://adpolice.gov.ae/unlockReservedPlate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:unlockReservedPlateADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:unlockReservedPlateErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getManufacturedPlates">
+      <soap:operation soapAction="http://adpolice.gov.ae/getManufacturedPlates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getManufacturedPlatesADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getManufacturedPlatesErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMortgageDetails">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetMortgageDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMortgageDetailsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMortgageDetailsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInsuranceDetails">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetInsuranceDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetInsuranceDetailsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetInsuranceDetailsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleRegCertificates">
+      <soap:operation soapAction="http://adpolice.gov.ae/getVehicleRegCertificates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getVehicleRegCertificatesADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getVehicleRegCertificatesErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VehiclesServicesSoap12" type="tns:VehiclesServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getTrfVehicles">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getTrfVehicles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getTrfVehiclesADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getTrfVehiclesErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleDetails">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getVehicleDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getVehicleDetailsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getVehicleDetailsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPublicVehicleDetails">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getPublicVehicleDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getPublicVehicleDetailsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getPublicVehicleDetailsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleRestrictions">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getVehicleRestrictions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getVehicleRestrictionsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getVehicleRestrictionsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleServiceFees">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getVehicleServiceFees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getVehicleServiceFeesADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getVehicleServiceFeesErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createVehicleServiceApplication">
+      <soap12:operation soapAction="http://adpolice.gov.ae/createVehicleServiceApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:createVehicleServiceApplicationADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:createVehicleServiceApplicationErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelVehicleServiceApplication">
+      <soap12:operation soapAction="http://adpolice.gov.ae/cancelVehicleServiceApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:cancelVehicleServiceApplicationADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:cancelVehicleServiceApplicationErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postVehicleServiceApplication">
+      <soap12:operation soapAction="http://adpolice.gov.ae/postVehicleServiceApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:postVehicleServiceApplicationADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:postVehicleServiceApplicationErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="approveVehicleServiceApplication">
+      <soap12:operation soapAction="http://adpolice.gov.ae/approveVehicleServiceApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:approveVehicleServiceApplicationADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:approveVehicleServiceApplicationErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="approveKioskVehicleServiceApplication">
+      <soap12:operation soapAction="http://adpolice.gov.ae/approveKioskVehicleServiceApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:approveKioskVehicleServiceApplicationADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:approveKioskVehicleServiceApplicationErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleTickets">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getVehicleTickets" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getVehicleTicketsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getVehicleTicketsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleCertificates">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getVehicleCertificates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getVehicleCertificatesADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getVehicleCertificatesErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCertificateInfo">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getCertificateInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getCertificateInfoADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getCertificateInfoErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleInspection">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getVehicleInspection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getVehicleInspectionADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getVehicleInspectionErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkVehicleWanted">
+      <soap12:operation soapAction="http://adpolice.gov.ae/checkVehicleWanted" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:checkVehicleWantedADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:checkVehicleWantedErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetTestData">
+      <soap12:operation soapAction="http://adpolice.gov.ae/ResetTestData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ResetTestDataADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ResetTestDataErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomsCertificate">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getCustomsCertificate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getCustomsCertificateADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getCustomsCertificateErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="activateInsurancePolicy">
+      <soap12:operation soapAction="http://adpolice.gov.ae/activateInsurancePolicy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:activateInsurancePolicyADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:activateInsurancePolicyErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReservedPlates">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getReservedPlates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getReservedPlatesADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getReservedPlatesErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="lockReservedPlate">
+      <soap12:operation soapAction="http://adpolice.gov.ae/lockReservedPlate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:lockReservedPlateADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:lockReservedPlateErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="unlockReservedPlate">
+      <soap12:operation soapAction="http://adpolice.gov.ae/unlockReservedPlate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:unlockReservedPlateADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:unlockReservedPlateErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getManufacturedPlates">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getManufacturedPlates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getManufacturedPlatesADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getManufacturedPlatesErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMortgageDetails">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetMortgageDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMortgageDetailsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMortgageDetailsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInsuranceDetails">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetInsuranceDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetInsuranceDetailsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetInsuranceDetailsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleRegCertificates">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getVehicleRegCertificates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getVehicleRegCertificatesADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getVehicleRegCertificatesErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VehiclesServices">
+    <wsdl:port name="VehiclesServicesSoap" binding="tns:VehiclesServicesSoap">
+      <soap:address location="http://194.170.200.102/trafficwebservices/VehiclesServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="VehiclesServicesSoap12" binding="tns:VehiclesServicesSoap12">
+      <soap12:address location="http://194.170.200.102/trafficwebservices/VehiclesServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,1239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://adpolice.gov.ae/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://adpolice.gov.ae/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://adpolice.gov.ae/">
+      <s:element name="getLookup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetLookupRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetLookupRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LookupName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Filter1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Filter2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Filter3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getLookupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getLookupResult" type="tns:GetLookupResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetLookupResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LookUpRecords" type="tns:ArrayOfLookupRecord" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfLookupRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LookupRecord" nillable="true" type="tns:LookupRecord" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LookupRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArabicDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnglishDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ADPSoapHeaderIn" type="tns:ADPSoapHeaderIn" />
+      <s:complexType name="ADPSoapHeaderIn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="ErrorHeader" type="tns:ErrorHeader" />
+      <s:complexType name="ErrorHeader">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorEnglishDesc" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="getPlateCombinations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetPlateCombinationsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetPlateCombinationsRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PlateColorCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateKindCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateSourceCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getPlateCombinationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPlateCombinationsResult" type="tns:GetPlateCombinationsResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetPlateCombinationsResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Plates" type="tns:ArrayOfPlateRecord" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPlateRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PlateRecord" nillable="true" type="tns:PlateRecord" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PlateRecord">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ColorCode" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArabicColorDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnglishColorDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="KindCode" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArabicKindDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnglishKindDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SourceCode" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArabicSourceCodeDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnglishSourceCodeDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetVerificationData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetVerificationDataRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetVerificationDataRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="EmiratesID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetVerificationDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVerificationDataResult" type="tns:GetVerificationDataResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetVerificationDataResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UnifiedID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TrafficProfileNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrafficMobileNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullNameArabic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullNameEnglish" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:SendSMSRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SendSMSRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MobileNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SMSLang" type="tns:Language" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArabicMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnglishMsg" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SenderID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="Language">
+        <s:restriction base="s:string">
+          <s:enumeration value="Arabic" />
+          <s:enumeration value="English" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="SendSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendSMSResult" type="tns:SendSMSResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SendSMSResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SMSSerialNo" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetWebReceipt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetReceiptRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetReceiptRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="receiptNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetWebReceiptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWebReceiptResult" type="tns:GetReceiptResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetReceiptResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="receiptNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="receiptDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="receiptTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="plateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="licenseInfo" type="tns:LicenseKey" />
+          <s:element minOccurs="1" maxOccurs="1" name="tcfNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="flsCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="authorizationNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="serviceCenterCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="receiptMaterials" type="tns:ArrayOfReceiptMaterial" />
+          <s:element minOccurs="1" maxOccurs="1" name="serviceKindCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="serviceKindArDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="serviceKindEnDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="payTypeCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="payTypeArDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="payTypeEnDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PlateKey">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PlateNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateOrgNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateColorCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateKindCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateTypeCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateSourceCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateColorArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateColorEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateSourceArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateSourceEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateKindArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateKindEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateTypeArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateTypeEnglishDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LicenseKey">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseSourceCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseSourceArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseSourceEnglishDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReceiptMaterial">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReceiptMaterial" nillable="true" type="tns:ReceiptMaterial" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReceiptMaterial">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ticketNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ticketDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ticketSourceCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="materialCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="materialArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="materialEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TicketLocation" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="materialAmount" nillable="true" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getVehicleColors">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetVehicleColorsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetVehicleColorsRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getVehicleColorsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getVehicleColorsResult" type="tns:GetVehicleColorsResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetVehicleColorsResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LookupRecords" type="tns:ArrayOfLookupRecord" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendMobileCurrentLocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:SendMobileCurrentLocationRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SendMobileCurrentLocationRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UnifiedID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmiratesID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeviceID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceCenterCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="X" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Y" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Time" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendMobileCurrentLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMobileCurrentLocationResult" type="tns:SendMobileCurrentLocationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SendMobileCurrentLocationResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TrackingSerialNo" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetApplicationsStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetApplicationsStatusRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetApplicationsStatusRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnifiedID" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmiratesID" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceKindCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetApplicationsStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetApplicationsStatusResult" type="tns:GetApplicationsStatusResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetApplicationsStatusResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Applications" type="tns:ArrayOfServiceApplication" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfServiceApplication">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ServiceApplication" nillable="true" type="tns:ServiceApplication" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServiceApplication">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceKindCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceDescAr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceDescEn" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusArDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusEnDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="sendEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attachment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isHtml" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="systemEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailDomain" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="displayName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendEmailResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getBinaryPhoto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetBinaryPhotoRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetBinaryPhotoRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Path" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getBinaryPhotoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBinaryPhotoResult" type="tns:Photo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Photo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Photo" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getEnlightenment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetEnlightenmentRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetEnlightenmentRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceKindCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getEnlightenmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getEnlightenmentResult" type="tns:GetEnlightenmentResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetEnlightenmentResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EnlightenmentRecord" type="tns:ArrayOfEnlightenmentRecord" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEnlightenmentRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EnlightenmentRecord" nillable="true" type="tns:EnlightenmentRecord" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EnlightenmentRecord">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="EnlightenmentCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArabicMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnglishMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UTSLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:UTSLoginRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UTSLoginRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UTSLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UTSLoginResult" type="tns:UTSLoginResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UTSLoginResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsLoggedIn" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmirateCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmirateArDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SCTCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SCTDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="checkPermission">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CheckPermissionRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CheckPermissionRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="checkPermissionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkPermissionResult" type="tns:CheckPermissionResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CheckPermissionResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsAuthorized" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTransactionDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetTransactionDetailsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTransactionDetailsRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TCFNo" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketYear" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketSourceCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTransactionDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransactionDetailsResult" type="tns:ArrayOfTransactionMaterial" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTransactionMaterial">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TransactionMaterial" nillable="true" type="tns:TransactionMaterial" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TransactionMaterial">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="serialNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="applicationNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="serviceKindCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="tcfNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="flsCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="flsDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="createDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="transactionId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="approvalCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendOTP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:SendOTPRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SendOTPRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="FeesSerial" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendOTPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendOTPResult" type="tns:SendOTPResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SendOTPResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OTPSerial" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="VerifyOTP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:VerifyOTPRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VerifyOTPRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="FeesSerial" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="OTPSerial" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="OTPValue" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="VerifyOTPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifyOTPResult" type="tns:VerifyOTPResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VerifyOTPResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsMatched" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getLookupSoapIn">
+    <wsdl:part name="parameters" element="tns:getLookup" />
+  </wsdl:message>
+  <wsdl:message name="getLookupSoapOut">
+    <wsdl:part name="parameters" element="tns:getLookupResponse" />
+  </wsdl:message>
+  <wsdl:message name="getLookupADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getLookupErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="getPlateCombinationsSoapIn">
+    <wsdl:part name="parameters" element="tns:getPlateCombinations" />
+  </wsdl:message>
+  <wsdl:message name="getPlateCombinationsSoapOut">
+    <wsdl:part name="parameters" element="tns:getPlateCombinationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPlateCombinationsADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getPlateCombinationsErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetVerificationDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVerificationData" />
+  </wsdl:message>
+  <wsdl:message name="GetVerificationDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVerificationDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVerificationDataADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetVerificationDataErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSMS" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetWebReceiptSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWebReceipt" />
+  </wsdl:message>
+  <wsdl:message name="GetWebReceiptSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWebReceiptResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWebReceiptADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetWebReceiptErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleColorsSoapIn">
+    <wsdl:part name="parameters" element="tns:getVehicleColors" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleColorsSoapOut">
+    <wsdl:part name="parameters" element="tns:getVehicleColorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleColorsADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getVehicleColorsErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="SendMobileCurrentLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMobileCurrentLocation" />
+  </wsdl:message>
+  <wsdl:message name="SendMobileCurrentLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMobileCurrentLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMobileCurrentLocationADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="SendMobileCurrentLocationErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationsStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApplicationsStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationsStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetApplicationsStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationsStatusADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetApplicationsStatusErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="sendEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:sendEmail" />
+  </wsdl:message>
+  <wsdl:message name="sendEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:sendEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendEmailADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="sendEmailErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="getBinaryPhotoSoapIn">
+    <wsdl:part name="parameters" element="tns:getBinaryPhoto" />
+  </wsdl:message>
+  <wsdl:message name="getBinaryPhotoSoapOut">
+    <wsdl:part name="parameters" element="tns:getBinaryPhotoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBinaryPhotoADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getBinaryPhotoErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="getEnlightenmentSoapIn">
+    <wsdl:part name="parameters" element="tns:getEnlightenment" />
+  </wsdl:message>
+  <wsdl:message name="getEnlightenmentSoapOut">
+    <wsdl:part name="parameters" element="tns:getEnlightenmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="getEnlightenmentADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getEnlightenmentErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="UTSLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:UTSLogin" />
+  </wsdl:message>
+  <wsdl:message name="UTSLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:UTSLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="UTSLoginADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="UTSLoginErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="checkPermissionSoapIn">
+    <wsdl:part name="parameters" element="tns:checkPermission" />
+  </wsdl:message>
+  <wsdl:message name="checkPermissionSoapOut">
+    <wsdl:part name="parameters" element="tns:checkPermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkPermissionADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="checkPermissionErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionDetailsADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionDetailsErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="SendOTPSoapIn">
+    <wsdl:part name="parameters" element="tns:SendOTP" />
+  </wsdl:message>
+  <wsdl:message name="SendOTPSoapOut">
+    <wsdl:part name="parameters" element="tns:SendOTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendOTPADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="SendOTPErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="VerifyOTPSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyOTP" />
+  </wsdl:message>
+  <wsdl:message name="VerifyOTPSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyOTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyOTPADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="VerifyOTPErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:portType name="UtilitiesSoap">
+    <wsdl:operation name="getLookup">
+      <wsdl:input message="tns:getLookupSoapIn" />
+      <wsdl:output message="tns:getLookupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPlateCombinations">
+      <wsdl:input message="tns:getPlateCombinationsSoapIn" />
+      <wsdl:output message="tns:getPlateCombinationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVerificationData">
+      <wsdl:input message="tns:GetVerificationDataSoapIn" />
+      <wsdl:output message="tns:GetVerificationDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <wsdl:input message="tns:SendSMSSoapIn" />
+      <wsdl:output message="tns:SendSMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWebReceipt">
+      <wsdl:input message="tns:GetWebReceiptSoapIn" />
+      <wsdl:output message="tns:GetWebReceiptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleColors">
+      <wsdl:input message="tns:getVehicleColorsSoapIn" />
+      <wsdl:output message="tns:getVehicleColorsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMobileCurrentLocation">
+      <wsdl:input message="tns:SendMobileCurrentLocationSoapIn" />
+      <wsdl:output message="tns:SendMobileCurrentLocationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationsStatus">
+      <wsdl:input message="tns:GetApplicationsStatusSoapIn" />
+      <wsdl:output message="tns:GetApplicationsStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendEmail">
+      <wsdl:input message="tns:sendEmailSoapIn" />
+      <wsdl:output message="tns:sendEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBinaryPhoto">
+      <wsdl:input message="tns:getBinaryPhotoSoapIn" />
+      <wsdl:output message="tns:getBinaryPhotoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getEnlightenment">
+      <wsdl:input message="tns:getEnlightenmentSoapIn" />
+      <wsdl:output message="tns:getEnlightenmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UTSLogin">
+      <wsdl:input message="tns:UTSLoginSoapIn" />
+      <wsdl:output message="tns:UTSLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkPermission">
+      <wsdl:input message="tns:checkPermissionSoapIn" />
+      <wsdl:output message="tns:checkPermissionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <wsdl:input message="tns:GetTransactionDetailsSoapIn" />
+      <wsdl:output message="tns:GetTransactionDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendOTP">
+      <wsdl:input message="tns:SendOTPSoapIn" />
+      <wsdl:output message="tns:SendOTPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyOTP">
+      <wsdl:input message="tns:VerifyOTPSoapIn" />
+      <wsdl:output message="tns:VerifyOTPSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UtilitiesSoap" type="tns:UtilitiesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getLookup">
+      <soap:operation soapAction="http://adpolice.gov.ae/getLookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getLookupADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getLookupErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPlateCombinations">
+      <soap:operation soapAction="http://adpolice.gov.ae/getPlateCombinations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getPlateCombinationsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getPlateCombinationsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerificationData">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetVerificationData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetVerificationDataADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetVerificationDataErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <soap:operation soapAction="http://adpolice.gov.ae/SendSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SendSMSADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:SendSMSErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebReceipt">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetWebReceipt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetWebReceiptADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetWebReceiptErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleColors">
+      <soap:operation soapAction="http://adpolice.gov.ae/getVehicleColors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getVehicleColorsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getVehicleColorsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMobileCurrentLocation">
+      <soap:operation soapAction="http://adpolice.gov.ae/SendMobileCurrentLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SendMobileCurrentLocationADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:SendMobileCurrentLocationErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationsStatus">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetApplicationsStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetApplicationsStatusADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetApplicationsStatusErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendEmail">
+      <soap:operation soapAction="http://adpolice.gov.ae/sendEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:sendEmailADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:sendEmailErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBinaryPhoto">
+      <soap:operation soapAction="http://adpolice.gov.ae/getBinaryPhoto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getBinaryPhotoADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getBinaryPhotoErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEnlightenment">
+      <soap:operation soapAction="http://adpolice.gov.ae/getEnlightenment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getEnlightenmentADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getEnlightenmentErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UTSLogin">
+      <soap:operation soapAction="http://adpolice.gov.ae/UTSLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UTSLoginADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:UTSLoginErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkPermission">
+      <soap:operation soapAction="http://adpolice.gov.ae/checkPermission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:checkPermissionADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:checkPermissionErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTransactionDetailsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTransactionDetailsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendOTP">
+      <soap:operation soapAction="http://adpolice.gov.ae/SendOTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SendOTPADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:SendOTPErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyOTP">
+      <soap:operation soapAction="http://adpolice.gov.ae/VerifyOTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:VerifyOTPADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:VerifyOTPErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UtilitiesSoap12" type="tns:UtilitiesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getLookup">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getLookup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getLookupADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getLookupErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPlateCombinations">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getPlateCombinations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getPlateCombinationsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getPlateCombinationsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerificationData">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetVerificationData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetVerificationDataADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetVerificationDataErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <soap12:operation soapAction="http://adpolice.gov.ae/SendSMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SendSMSADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SendSMSErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWebReceipt">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetWebReceipt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetWebReceiptADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetWebReceiptErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVehicleColors">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getVehicleColors" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getVehicleColorsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getVehicleColorsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMobileCurrentLocation">
+      <soap12:operation soapAction="http://adpolice.gov.ae/SendMobileCurrentLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SendMobileCurrentLocationADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SendMobileCurrentLocationErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationsStatus">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetApplicationsStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetApplicationsStatusADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetApplicationsStatusErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendEmail">
+      <soap12:operation soapAction="http://adpolice.gov.ae/sendEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:sendEmailADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:sendEmailErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBinaryPhoto">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getBinaryPhoto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getBinaryPhotoADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getBinaryPhotoErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEnlightenment">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getEnlightenment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getEnlightenmentADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getEnlightenmentErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UTSLogin">
+      <soap12:operation soapAction="http://adpolice.gov.ae/UTSLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UTSLoginADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UTSLoginErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkPermission">
+      <soap12:operation soapAction="http://adpolice.gov.ae/checkPermission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:checkPermissionADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:checkPermissionErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionDetails">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTransactionDetailsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTransactionDetailsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendOTP">
+      <soap12:operation soapAction="http://adpolice.gov.ae/SendOTP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SendOTPADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SendOTPErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyOTP">
+      <soap12:operation soapAction="http://adpolice.gov.ae/VerifyOTP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:VerifyOTPADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:VerifyOTPErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Utilities">
+    <wsdl:port name="UtilitiesSoap" binding="tns:UtilitiesSoap">
+      <soap:address location="http://194.170.200.102/trafficwebservices/utilities.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UtilitiesSoap12" binding="tns:UtilitiesSoap12">
+      <soap12:address location="http://194.170.200.102/trafficwebservices/utilities.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

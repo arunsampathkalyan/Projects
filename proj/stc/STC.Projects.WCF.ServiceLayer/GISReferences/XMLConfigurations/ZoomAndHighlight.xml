@@ -1,0 +1,34 @@
+﻿<ZoomAndHighlightConfiguration>
+  <Zoom Level="1000" />
+  <Highlight>
+    <Symbols>
+      <Point>
+        <Pictrure>Marker.png</Pictrure>
+        <Color>50, 255, 0,255</Color>
+        <Style>Triangle</Style>
+        <Size>40</Size>
+        <YOffSet>24</YOffSet>
+      </Point>
+      <Line>
+        <Color>red</Color>
+        <Thickness>1</Thickness>
+      </Line>
+      <Polygon>
+        <FillColor>50, 255, 0,255</FillColor>
+        <OutlineColor>255, 0, 0,0</OutlineColor>
+        <Thickness>1</Thickness>
+      </Polygon>
+    </Symbols>
+  </Highlight>
+  <CoverageSymbol>
+    <FillColor>50, 255, 0,255</FillColor>
+    <OutlineColor>255, 0, 0,0</OutlineColor>
+    <Thickness>1</Thickness>
+  </CoverageSymbol>
+  <RoutePinSymbol>
+    <Pictrure>Flag.png</Pictrure>
+    <Color>50, 255, 0,255</Color>
+    <Style>Triangle</Style>
+    <Size>1</Size>
+  </RoutePinSymbol>
+</ZoomAndHighlightConfiguration>

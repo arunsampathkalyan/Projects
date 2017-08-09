@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f8310622-7715-4012-a301-d0d89f3c9dec" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:6142/PCAService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PCAService.disco" MetadataType="Disco" ID="1300fe75-c542-4941-b095-fcb1f880c09f" SourceId="1" SourceUrl="http://localhost:6142/PCAService?disco" />
+    <MetadataFile FileName="PCAService.xsd" MetadataType="Schema" ID="c9ac71d2-dff1-4d3d-a2f2-6a36ea9de2bb" SourceId="1" SourceUrl="http://localhost:6142/PCAService?xsd=xsd2" />
+    <MetadataFile FileName="PCAService1.xsd" MetadataType="Schema" ID="5bd26ea0-3b99-4a48-8659-b6f8c6d256e4" SourceId="1" SourceUrl="http://localhost:6142/PCAService?xsd=xsd1" />
+    <MetadataFile FileName="PCAService.wsdl" MetadataType="Wsdl" ID="7efaa3df-9acf-4f5d-a894-4d30e9700fde" SourceId="1" SourceUrl="http://localhost:6142/PCAService?wsdl" />
+    <MetadataFile FileName="PCAService2.xsd" MetadataType="Schema" ID="acb7a172-15a4-48d2-bad0-9fb6d5300360" SourceId="1" SourceUrl="http://localhost:6142/PCAService?xsd=xsd3" />
+    <MetadataFile FileName="PCAService3.xsd" MetadataType="Schema" ID="315610bc-40cb-4419-85ae-1faea4eac6fe" SourceId="1" SourceUrl="http://localhost:6142/PCAService?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

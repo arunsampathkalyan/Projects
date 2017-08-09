@@ -1,0 +1,449 @@
+﻿<UserControl x:Class="STC.Projects.WPFControlLibrary.SOPBox.UserControls.PatrolsListUserControl"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:p="clr-namespace:STC.Projects.WPFControlLibrary.SOPBox.Properties"
+            xmlns:esri="http://schemas.esri.com/arcgis/runtime/2013"
+            xmlns:templateSelectors="clr-namespace:STC.Projects.WPFControlLibrary.SOPBox.TemplateSelectors"
+            xmlns:converters="clr-namespace:STC.Projects.WPFControlLibrary.SOPBox.Converters"
+            mc:Ignorable="d" Opacity="0.95" BorderThickness="0" x:Name="PatrolsListUC" >
+    
+    <UserControl.Resources>
+        <converters:DoubleFormatConverter x:Key="DoubleFormatConverter"/>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+
+        <Storyboard x:Key="MyStoryboard">
+            <DoubleAnimation Storyboard.TargetName="PatrolsListUC" Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" From="0" To="600" Duration="0:0:1" SpeedRatio="4" />
+        </Storyboard>
+
+
+        <Style x:Key="IsMoseOverGrid" TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="#008c99" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="#00FECE" />
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="#008c99">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#00FECE" TargetName="bg" />
+                                <Setter Property="Foreground" Value="Black" />
+                                <Setter Property="BorderBrush" Value="#008c99" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        
+        <DataTemplate x:Key="PatrolsListTemplate">
+            <Border x:Name="brdr" BorderBrush="#00FECE"  BorderThickness="1" Margin="5,5" MinWidth="110" Cursor="Hand">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Name="img" Width="30" Source="../images/icons/patrol_car.png"  Height="20" Margin="3,2,3,2" />
+
+                    <StackPanel Orientation="Vertical" Grid.Row="0"  Grid.Column="1" >
+                        <TextBlock x:Name="txtBlkPatrolCode" Foreground="#00FECE" FontSize="11" FontFamily="Open Sans - Regular" Text="{Binding PatrolCode}" Margin="0" TextWrapping="Wrap" Padding="1"/>
+                        <TextBlock x:Name="txtBlkEta" Foreground="#8B8F96" FontSize="11" FontFamily="Open Sans - Regular"  Margin="0" TextWrapping="Wrap" Padding="1">
+                            <Run Text="ETA"></Run>
+                            <Run Text=":"></Run>
+                            <Run Text="{Binding ETATime,Converter={StaticResource DoubleFormatConverter}}"></Run>
+                            <Span></Span>
+                            <Run Text="{x:Static p:Resources.EtaUnit}"></Run>
+                        </TextBlock>
+
+
+                    </StackPanel>
+
+
+                </Grid>
+            </Border>
+            <DataTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter TargetName="brdr" Property="Background" Value="#00FECE"/>
+                    <Setter TargetName="brdr" Property="BorderBrush" Value="Aqua"/>
+                    <Setter TargetName="img" Property="Source" Value="../images/icons/patrol_car_hover.png"/>
+                    <Setter TargetName="txtBlkPatrolCode" Property="Foreground" Value="Black"/>
+                    <Setter TargetName="txtBlkEta" Property="Foreground" Value="Black"/>                             
+                </Trigger>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListViewItem}}, Path=IsSelected}" Value="True">
+                    <Setter TargetName="brdr" Property="Background" Value="#00FECE"/>
+                    <Setter TargetName="brdr" Property="BorderBrush" Value="Aqua"/>
+                    <Setter TargetName="img" Property="Source" Value="../images/icons/patrol_car_hover.png"/>
+                    <Setter TargetName="txtBlkPatrolCode" Property="Foreground" Value="Black"/>
+                    <Setter TargetName="txtBlkEta" Property="Foreground" Value="Black"/>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+        <DataTemplate x:Key="PatrolsOfficerListTemplate">
+            <Border x:Name="brdr" BorderBrush="#00FECE"  BorderThickness="1" Margin="5,5" MinWidth="110" Cursor="Hand">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Name="img" Source="../images/icons/patrol_officer.png" Width="30" Height="20" Margin="3,2,3,2" />
+
+                    <StackPanel Orientation="Vertical" Grid.Row="0"  Grid.Column="1" >
+                        <TextBlock x:Name="txtBlkPatrolCode" Foreground="#00FECE" FontSize="11" FontFamily="Open Sans - Regular" Text="{Binding PatrolCode}" Margin="0" TextWrapping="Wrap" Padding="1"/>
+                        <TextBlock x:Name="txtBlkEta" Foreground="#8B8F96" FontSize="11" FontFamily="Open Sans - Regular"  Margin="0" TextWrapping="Wrap" Padding="1">
+                            <Run Text="ETA"></Run>
+                            <Run Text=":"></Run>
+                            <Run Text="{Binding ETATime,Converter={StaticResource DoubleFormatConverter}}"></Run>
+                            <Span></Span>
+                            <Run Text="{x:Static p:Resources.EtaUnit}"></Run>
+                        </TextBlock>
+
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <DataTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter TargetName="brdr" Property="Background" Value="#00FECE"/>
+                    <Setter TargetName="brdr" Property="BorderBrush" Value="Aqua"/>
+                    <Setter TargetName="img" Property="Source" Value="../images/icons/patrol_officer_hover.png"/>
+                    <Setter TargetName="txtBlkPatrolCode" Property="Foreground" Value="Black"/>
+                    <Setter TargetName="txtBlkEta" Property="Foreground" Value="Black"/>
+                </Trigger>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListViewItem}}, Path=IsSelected}" Value="True">
+                    <Setter TargetName="brdr" Property="Background" Value="#00FECE"/>
+                    <Setter TargetName="brdr" Property="BorderBrush" Value="Aqua"/>
+                    <Setter TargetName="img" Property="Source" Value="../images/icons/patrol_officer_hover.png"/>
+                    <Setter TargetName="txtBlkPatrolCode" Property="Foreground" Value="Black"/>
+                    <Setter TargetName="txtBlkEta" Property="Foreground" Value="Black"/>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+        <DataTemplate x:Key="CrispListTemplate">
+
+            <Border x:Name="brdr" BorderBrush="#00FECE"  BorderThickness="1" Margin="5,5" MinWidth="120" Cursor="Hand">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0" Margin="3,-1,3,0" VerticalAlignment="Top">
+                        <Grid x:Name="gridPathTick" FlowDirection="LeftToRight" Visibility="Visible" Margin="0,0,0,0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Panel.ZIndex="2">
+                            <Border Width="20" Height="20" Background="#64605F" CornerRadius="20" Visibility="Collapsed" />
+                            <Path x:Name="pathTick" Data="M28.166016,0L32,3.8740238 11.496002,19.745 0,7.9879777 4.4200134,4.6370251 12.070007,12.476016z" 
+                              Stretch="Uniform" Fill="Black" Width="10" Height="10" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <TransformGroup.Children>
+                                            <RotateTransform Angle="-5" />
+                                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                                        </TransformGroup.Children>
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                        </Grid>
+                        <Polygon Points="0,0 0,15 8,20 16,15 16,0" Fill="Orange"/>
+                    </Grid>
+
+                    <Image Grid.Column="1" Name="img" Source="../images/icons/patrol_car.png" Width="30" Height="20" Margin="3,2,3,2" />
+
+                    <StackPanel Orientation="Vertical" Grid.Row="0"  Grid.Column="2" >
+                        <TextBlock x:Name="txtBlkPatrolCode" Foreground="#00FECE" FontSize="11" FontFamily="Open Sans - Regular" Text="{Binding PatrolCode}" Margin="0" TextWrapping="Wrap" Padding="1"/>
+                        <TextBlock x:Name="txtBlkEta" Foreground="#8B8F96" FontSize="11" FontFamily="Open Sans - Regular"  Margin="0" TextWrapping="Wrap" Padding="1">
+                            <Run Text="ETA"></Run>
+                            <Run Text=":"></Run>
+                            <Run Text="{Binding ETATime,Converter={StaticResource DoubleFormatConverter}}"></Run>
+                            <Span></Span>
+                            <Run Text="{x:Static p:Resources.EtaUnit}"></Run>
+                        </TextBlock>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <DataTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter TargetName="brdr" Property="Background" Value="#00FECE"/>
+                    <Setter TargetName="brdr" Property="BorderBrush" Value="Aqua"/>
+                    <Setter TargetName="img" Property="Source" Value="../images/icons/patrol_officer_hover.png"/>
+                    <Setter TargetName="txtBlkPatrolCode" Property="Foreground" Value="Black"/>
+                    <Setter TargetName="txtBlkEta" Property="Foreground" Value="Black"/>
+                </Trigger>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListViewItem}}, Path=IsSelected}" Value="True">
+                    <Setter TargetName="brdr" Property="Background" Value="#00FECE"/>
+                    <Setter TargetName="brdr" Property="BorderBrush" Value="Aqua"/>
+                    <Setter TargetName="img" Property="Source" Value="../images/icons/patrol_officer_hover.png"/>
+                    <Setter TargetName="txtBlkPatrolCode" Property="Foreground" Value="Black"/>
+                    <Setter TargetName="txtBlkEta" Property="Foreground" Value="Black"/>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+        <DataTemplate x:Key="PatrolCommonListTemplate">
+
+            <Border x:Name="brdr" BorderBrush="#00FECE"  BorderThickness="1" Margin="5,5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid x:Name="gridRecommended" Grid.Column="0" Margin="3,-1,3,0" VerticalAlignment="Top" Visibility="Collapsed">
+                        <Grid x:Name="gridPathTick" FlowDirection="LeftToRight" Visibility="Visible" Margin="0,0,0,0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Panel.ZIndex="2">
+                            <Border Width="20" Height="20" Background="#64605F" CornerRadius="20" Visibility="Collapsed" />
+                            <Path x:Name="pathTick" Data="M28.166016,0L32,3.8740238 11.496002,19.745 0,7.9879777 4.4200134,4.6370251 12.070007,12.476016z" 
+                              Stretch="Uniform" Fill="Black" Width="10" Height="10" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <TransformGroup.Children>
+                                            <RotateTransform Angle="-5" />
+                                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                                        </TransformGroup.Children>
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                        </Grid>
+                        <Polygon Points="0,0 0,15 8,20 16,15 16,0" Fill="Orange"/>
+                    </Grid>
+
+                    <Image Grid.Column="1" Name="img" Source="../images/icons/patrol_car.png" Width="40" Height="20" Margin="3,2,3,2" />
+
+                    <StackPanel Orientation="Vertical" Grid.Row="0"  Grid.Column="2" >
+                        <TextBlock Foreground="#00FECE" FontSize="11" FontFamily="Open Sans - Regular" Text="{Binding PatrolCode}" Margin="0" TextWrapping="Wrap" Padding="1"/>
+                        <TextBlock Foreground="#8B8F96" FontSize="11" FontFamily="Open Sans - Regular"  Margin="0" TextWrapping="Wrap" Padding="1">
+                            <Run Text="ETA"></Run>
+                            <Run Text=":"></Run>
+                            <Run Text="{Binding ETATime,Converter={StaticResource DoubleFormatConverter}}"></Run>
+                            <Span></Span>
+                            <Run Text="{x:Static p:Resources.EtaUnit}"></Run>
+                        </TextBlock>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <DataTemplate.Triggers>
+
+                <DataTrigger Binding="{Binding IsRecommended}" Value="True">
+                    <Setter TargetName="gridRecommended" Property="Visibility" Value="Visible"/>                                        
+                    <Setter TargetName="img" Property="Source" Value="../images/icons/patrol_car.png"/>                    
+                </DataTrigger>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding IsRecommended}" Value="True"/>
+                        <Condition Property="IsMouseOver" Value="True"/>
+                    </MultiDataTrigger.Conditions>
+                    <MultiDataTrigger.Setters>
+                        <Setter TargetName="gridRecommended" Property="Visibility" Value="Visible"/>
+                        <Setter TargetName="brdr" Property="Background" Value="#00FECE"/>
+                        <Setter TargetName="brdr" Property="BorderBrush" Value="Aqua"/>
+                        <Setter TargetName="img" Property="Source" Value="../images/icons/patrol_car_hover.png"/>
+                        <Setter Property="TextElement.Foreground" Value="Black"/>
+                    </MultiDataTrigger.Setters>
+                </MultiDataTrigger>
+                
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="brdr" Property="Background" Value="#00FECE"/>
+                    <Setter TargetName="brdr" Property="BorderBrush" Value="Aqua"/>
+                    <Setter TargetName="img" Property="Source" Value="../images/icons/patrol_officer_hover.png"/>
+                    <Setter Property="TextElement.Foreground" Value="Black"/>
+                </Trigger>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ListViewItem}}, Path=IsSelected}" Value="True">
+                    <Setter TargetName="brdr" Property="Background" Value="#00FECE"/>
+                    <Setter TargetName="brdr" Property="BorderBrush" Value="Aqua"/>
+                    <Setter TargetName="img" Property="Source" Value="../images/icons/patrol_officer_hover.png"/>
+                    <Setter Property="TextElement.Foreground" Value="Black"/>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+        <templateSelectors:PatrolsListTemplateSelector x:Key="PatrolsListTemplateSelector"  PatrolTempalte="{StaticResource PatrolsListTemplate}" CrispTemplate="{StaticResource CrispListTemplate}" PatrolOfficerTempalte="{StaticResource PatrolsOfficerListTemplate}"/>
+
+        <Style x:Key="IsMoseOvernone" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="#ffffff" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Transparent">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Transparent" TargetName="bg" />
+                                <Setter Property="Foreground" Value="Transparent" />
+                                <Setter Property="BorderBrush" Value="Transparent" />
+                                <Setter Property="Opacity" Value="0.5"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <UserControl.RenderTransform>
+        <TranslateTransform X="385" />
+    </UserControl.RenderTransform>
+
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="Page.Loaded">
+            <BeginStoryboard>
+                <Storyboard >
+                    <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" From="300" To="0" Duration="0:0:1" BeginTime="0:0:0.001" SpeedRatio="3" >
+
+                    </DoubleAnimation>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </UserControl.Triggers>
+
+    
+    
+        <Grid Width="Auto">
+        
+        <Grid Grid.Row="1" Background="Black" Opacity="0.95" MinHeight="500">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="250"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="{x:Static p:Resources.strDispatchPatrol}" Grid.Row="0" FontFamily="Open Sans - Regular" Foreground="#00FECE" Grid.Column="0" FontSize="16" Margin="10,5,5,0"  HorizontalAlignment="Left" />
+
+
+            <Button x:Name="btnClosePopups" Grid.Column="1" Cursor="Hand"
+                                HorizontalAlignment="Right" VerticalAlignment="Top" Click="btnClosePopups_Click"  Width="20" Height="20" Margin="10,5,5,0" Style="{StaticResource IsMoseOvernone}">
+                <Grid>
+                    <Grid Name="backgroundGrid" Width="48" Height="48" Visibility="Collapsed" />
+                    <Path Data="M12.300049,9.3000031L16,13 19.700012,9.3000031 22.700012,12.300003 19,16 22.700012,19.699997 19.700012,22.699997 16,19 12.300049,22.699997 9.3000488,19.699997 13,16 9.3000488,12.300003z M16,3.5999985C9.2000122,3.5999985 3.6000366,9.1999969 3.6000366,16 3.6000366,22.800003 9.2000122,28.400002 16,28.400002 22.800049,28.400002 28.400024,22.900002 28.400024,16 28.400024,9.0999985 22.800049,3.5999985 16,3.5999985z M16,0C24.800049,0 32,7.1999969 32,16 32,24.800003 24.800049,32 16,32 7.2000122,32 0,24.800003 0,16 0,7.1999969 7.2000122,0 16,0z" 
+                                      Stretch="Uniform" Fill="#00FECE" Width="17" Height="17" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <TransformGroup.Children>
+                                    <RotateTransform Angle="0" />
+                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                </TransformGroup.Children>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                </Grid>
+
+                <!--<Image Width="18" Height="18" Source="pack://application:,,,/STC.Projects.ClassLibrary.Common;component/Images/Close-icon.png" FlowDirection="LeftToRight"/>-->
+            </Button>
+
+            <Border BorderBrush="#00FECE" BorderThickness="0 1 0 1" Grid.Row="1">
+                
+                <ListView Name="listViewPatrolsList" ItemsSource="{Binding PatrolsList}" ItemTemplateSelector="{StaticResource PatrolsListTemplateSelector}"  
+                SelectionMode="Single" SelectionChanged="PatrolsList_OnSelectionChanged" SelectedItem="{Binding SelectedPatrol}" HorizontalContentAlignment="Stretch" 
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                VerticalAlignment="Top" Background="Transparent" BorderThickness="0" Foreground="#00FECE" MinWidth="255" MinHeight="100">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel MaxWidth="260" MaxHeight="250" HorizontalAlignment="Left" Margin="2,2" Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                        <ContentPresenter x:Name="SopListContentPresenter" />
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <!--<Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="BorderThickness" Value="0"/>
+                                    <Setter Property="Cursor" Value="Hand"/>
+                                </Trigger>
+                            </Style.Triggers>-->
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+            </Border>
+
+            <Grid x:Name="gridSelectedPatrolInfo" Grid.Row="2" Margin="5,5" IsEnabled="{Binding IsPatrolDetailsEnabled}">
+                <Grid>
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>                        
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Foreground="#00FECE" Grid.Column="0" FontSize="13" FontFamily="Open Sans - Regular"  Margin="0" TextWrapping="Wrap" HorizontalAlignment="Left" Padding="1">
+                        <Run Text="{x:Static p:Resources.strPatrolCode}"></Run>                        
+                    </TextBlock>
+                    <TextBlock Foreground="#00FECE" Grid.Column="1" FontSize="13" FontFamily="Open Sans - Regular"  Text="{Binding Path=SelectedPatrol.PatrolCode}" Margin="5,5" HorizontalAlignment="Left" TextWrapping="Wrap" Padding="1"/>
+
+
+                    <TextBlock Foreground="#00FECE" Grid.Row="1" Grid.Column="0" FontSize="13" FontFamily="Open Sans - Regular"  Margin="0" TextWrapping="Wrap" HorizontalAlignment="Left" Padding="1">
+                        <Run Text="{x:Static p:Resources.strPatrolPlateNo}"></Run>
+                        <Run Text=":"></Run>
+                    </TextBlock>
+                    <TextBlock Foreground="#00FECE" Grid.Row="1" Grid.Column="1" FontSize="13" FontFamily="Open Sans - Regular"  Text="{Binding Path=SelectedPatrol.PatrolPlateNo}" Margin="5,5" HorizontalAlignment="Left" TextWrapping="Wrap" Padding="1"/>
+
+
+                    <TextBlock Foreground="#00FECE" Grid.Row="2" Grid.Column="0" FontSize="13" FontFamily="Open Sans - Regular" Text="{x:Static p:Resources.strComments}"  Margin="0" TextWrapping="Wrap" HorizontalAlignment="Left" Padding="1"/>
+
+
+                    <TextBox x:Name="txtBlkComments" MinHeight="70" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Background="#0e2b2b" Foreground="#00FECE" FontSize="13" FontFamily="Open Sans - Regular" Text="{Binding CommentText}"></TextBox>
+
+                    <Grid Visibility="Collapsed">
+                        <esri:MapView Visibility="Hidden" Grid.Row="3" Name="EsriMapView" Margin="15,5,15,5">
+                            <esri:Map >
+                                <esri:ArcGISTiledMapServiceLayer  ID="BaseMap" ServiceUri="http://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer"/>
+
+                                <!--<esri:ArcGISLocalTiledLayer ID="BaseMap" Path="ESRI TPK File\EsriBaseMap.tpk" />-->
+                            </esri:Map>
+
+                        </esri:MapView>
+
+                        <StackPanel Visibility="Collapsed" Panel.ZIndex="5" Background="Transparent" Orientation="Horizontal" Grid.Row="3" Height="40" Width="75" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10,7,10,0">
+                            <RepeatButton x:Name="btnZoomIn" Margin="3,0,0,0" ToolTip="تكبير" Grid.Column="7" HorizontalAlignment="Left" Width="35" Height="35" Background="{x:Null}" BorderBrush="{x:Null}"  Click="btnZoomIn_Click">
+                                <Image Width="30" Height="30" Source="pack://application:,,,/STC.Projects.ClassLibrary.Common;component/Images/icons/Zoom_IN.png"/>
+                            </RepeatButton>
+
+                            <RepeatButton x:Name="btnZoomOut" ToolTip="تصغير" Grid.Column="7" HorizontalAlignment="Left" Width="35" Height="35" Background="{x:Null}" BorderBrush="{x:Null}"  Click="btnZoomOut_Click">
+                                <Image Width="30" Height="30" Source="pack://application:,,,/STC.Projects.ClassLibrary.Common;component/Images/icons/Zoom_Out.png"/>
+                            </RepeatButton>
+                        </StackPanel>
+
+                    </Grid>
+                    <Button x:Name="btnDispatchPatrol" Grid.Row="4" Grid.Column="0" Margin="0,10,5,5"  Cursor="Hand"
+                            Content="{x:Static p:Resources.strDispatchPatrol}" FontSize="13"  Width="100" Height="25" Style="{DynamicResource IsMoseOverGrid}" Click="DispatchButton_OnClick"/>
+
+                    <Button x:Name="btnDispatchCancel" Grid.Row="4" Grid.Column="1" Margin="5,10,5,5" Cursor="Hand" 
+                            Content="{x:Static p:Resources.strCancel}" FontSize="13" Width="70" Height="25" Style="{DynamicResource IsMoseOverGrid}" Click="CancelButton_OnClick"/>
+                </Grid>
+            </Grid>
+            
+            
+        </Grid>
+    </Grid>
+    
+</UserControl>

@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://adpolice.gov.ae/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://adpolice.gov.ae/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://adpolice.gov.ae/">
+      <s:element name="getLicenseDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetLicenseDetailsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetLicenseDetailsRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TcfNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseInfo" type="tns:LicenseKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LicenseKey">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseSourceCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseSourceArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseSourceEnglishDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getLicenseDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getLicenseDetailsResult" type="tns:LicenseDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LicenseDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseKey" type="tns:LicenseKey" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseKindCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseKindArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseKindEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DriverArabicName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DriverEnglishName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseIssueDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicesenExpiryDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseRenewingDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubLicenses" type="tns:ArrayOfSubLicense" />
+          <s:element minOccurs="1" maxOccurs="1" name="PhysicalStatusCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhysicalStatusArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhysicalStatusEnglishDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TcfNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="FLSCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FLSDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BlackPoints" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsBanned" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasBlackPointsFile" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSubLicense">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SubLicense" nillable="true" type="tns:SubLicense" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SubLicense">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseTypeCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseTypeArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseTypeEnglishDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GearCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GearArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GearEnglishDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseTypeIssueDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseTypeSourceCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseTypeSourceArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseTypeSourceEnglishDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ADPSoapHeaderIn" type="tns:ADPSoapHeaderIn" />
+      <s:complexType name="ADPSoapHeaderIn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="ErrorHeader" type="tns:ErrorHeader" />
+      <s:complexType name="ErrorHeader">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorEnglishDesc" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="getDriverRestrictions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetDriverRestrictionsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetDriverRestrictionsRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DriverTCFNumber" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceKind" type="tns:DriverServices" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseSourceCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CancelReason" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CancelLicTypeCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OldLicSourceCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OldLicNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="PermitExpiryDate" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="DriverServices">
+        <s:restriction base="s:string">
+          <s:enumeration value="Renew" />
+          <s:enumeration value="Damaged_Card" />
+          <s:enumeration value="Lost_Card" />
+          <s:enumeration value="Issue_Card" />
+          <s:enumeration value="Cancel_Card" />
+          <s:enumeration value="Add_Type_To_Card" />
+          <s:enumeration value="Remove_Type_From_Card" />
+          <s:enumeration value="Replace_NonUAE_License" />
+          <s:enumeration value="Issue_Temp_License" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="getDriverRestrictionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDriverRestrictionsResult" type="tns:GetDriverRestrictionsResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetDriverRestrictionsResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Restrictions" type="tns:ArrayOfRestrictionRecord" />
+          <s:element minOccurs="1" maxOccurs="1" name="DriverHasTickets" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRestrictionRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RestrictionRecord" nillable="true" type="tns:RestrictionRecord" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RestrictionRecord">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TCFNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="RestrictionCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RestrictionArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RestrictionEnglishDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RestrictionCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsExempted" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="approveDriverServiceApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:ApproveDriverServiceApplicationRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ApproveDriverServiceApplicationRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketsSerial" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="approveDriverServiceApplicationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="approveDriverServiceApplicationResult" type="tns:ApproveDriverServiceApplicationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ApproveDriverServiceApplicationResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TicketsReceiptNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketsReceiptDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketsReceiptTime" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="postDriverServiceApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:PostDriverServiceApplicationRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PostDriverServiceApplicationRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationNo" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketsSerial" nillable="true" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="postDriverServiceApplicationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="postDriverServiceApplicationResult" type="tns:PostDriverServiceApplicationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PostDriverServiceApplicationResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ReceiptNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceiptDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceiptTime" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="cancelDriverServiceApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CancelDriverServiceApplicationRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CancelDriverServiceApplicationRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationNo" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="cancelDriverServiceApplicationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="createDriverServiceApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CreateDriverServiceApplicationRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateDriverServiceApplicationRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceCenterCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceKind" type="tns:DriverServices" />
+          <s:element minOccurs="1" maxOccurs="1" name="DriverTCFNumber" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FeesSerial" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseSourceCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TicketsSerial" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="OldLicSourceCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OldLicNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="CancelReason" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CancelLicenseTypeCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PermitExpiryDate" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="createDriverServiceApplicationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="createDriverServiceApplicationResult" type="tns:CreateDriverServiceApplicationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateDriverServiceApplicationResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationNo" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getDriverServiceFees">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetDriverServiceFeesRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetDriverServiceFeesRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceCenterCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceKind" type="tns:DriverServices" />
+          <s:element minOccurs="1" maxOccurs="1" name="TCFNumber" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="OldLicSourceCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OldLicNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getDriverServiceFeesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDriverServiceFeesResult" type="tns:GetDriverServiceFeesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetDriverServiceFeesResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceAmount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaySerial" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Materials" type="tns:ArrayOfReceiptMaterial" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReceiptMaterial">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReceiptMaterial" nillable="true" type="tns:ReceiptMaterial" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReceiptMaterial">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ticketNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ticketDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ticketSourceCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="materialCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="materialArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="materialEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TicketLocation" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="materialAmount" nillable="true" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PlateKey">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PlateNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateOrgNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateColorCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateKindCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateTypeCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateSourceCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateColorArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateColorEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateSourceArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateSourceEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateKindArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateKindEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateTypeArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateTypeEnglishDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="updateLicenseInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:UpdateLicenseInfoRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdateLicenseInfoRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="licenseKey" type="tns:LicenseKey" />
+          <s:element minOccurs="1" maxOccurs="1" name="TcfNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnifiedID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeAddress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HomeStreetCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeBuildingNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeFlatNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeTelephoneNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="POBox" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mobile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="updateLicenseInfoResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getLicenseDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:getLicenseDetails" />
+  </wsdl:message>
+  <wsdl:message name="getLicenseDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:getLicenseDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getLicenseDetailsADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getLicenseDetailsErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="getDriverRestrictionsSoapIn">
+    <wsdl:part name="parameters" element="tns:getDriverRestrictions" />
+  </wsdl:message>
+  <wsdl:message name="getDriverRestrictionsSoapOut">
+    <wsdl:part name="parameters" element="tns:getDriverRestrictionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDriverRestrictionsADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getDriverRestrictionsErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="approveDriverServiceApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:approveDriverServiceApplication" />
+  </wsdl:message>
+  <wsdl:message name="approveDriverServiceApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:approveDriverServiceApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="approveDriverServiceApplicationADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="approveDriverServiceApplicationErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="postDriverServiceApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:postDriverServiceApplication" />
+  </wsdl:message>
+  <wsdl:message name="postDriverServiceApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:postDriverServiceApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="postDriverServiceApplicationADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="postDriverServiceApplicationErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="cancelDriverServiceApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:cancelDriverServiceApplication" />
+  </wsdl:message>
+  <wsdl:message name="cancelDriverServiceApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:cancelDriverServiceApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="cancelDriverServiceApplicationADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="cancelDriverServiceApplicationErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="createDriverServiceApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:createDriverServiceApplication" />
+  </wsdl:message>
+  <wsdl:message name="createDriverServiceApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:createDriverServiceApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="createDriverServiceApplicationADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="createDriverServiceApplicationErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="getDriverServiceFeesSoapIn">
+    <wsdl:part name="parameters" element="tns:getDriverServiceFees" />
+  </wsdl:message>
+  <wsdl:message name="getDriverServiceFeesSoapOut">
+    <wsdl:part name="parameters" element="tns:getDriverServiceFeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDriverServiceFeesADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getDriverServiceFeesErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="updateLicenseInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:updateLicenseInfo" />
+  </wsdl:message>
+  <wsdl:message name="updateLicenseInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:updateLicenseInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateLicenseInfoADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="updateLicenseInfoErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:portType name="LicenseServicesSoap">
+    <wsdl:operation name="getLicenseDetails">
+      <wsdl:input message="tns:getLicenseDetailsSoapIn" />
+      <wsdl:output message="tns:getLicenseDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDriverRestrictions">
+      <wsdl:input message="tns:getDriverRestrictionsSoapIn" />
+      <wsdl:output message="tns:getDriverRestrictionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="approveDriverServiceApplication">
+      <wsdl:input message="tns:approveDriverServiceApplicationSoapIn" />
+      <wsdl:output message="tns:approveDriverServiceApplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="postDriverServiceApplication">
+      <wsdl:input message="tns:postDriverServiceApplicationSoapIn" />
+      <wsdl:output message="tns:postDriverServiceApplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelDriverServiceApplication">
+      <wsdl:input message="tns:cancelDriverServiceApplicationSoapIn" />
+      <wsdl:output message="tns:cancelDriverServiceApplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createDriverServiceApplication">
+      <wsdl:input message="tns:createDriverServiceApplicationSoapIn" />
+      <wsdl:output message="tns:createDriverServiceApplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDriverServiceFees">
+      <wsdl:input message="tns:getDriverServiceFeesSoapIn" />
+      <wsdl:output message="tns:getDriverServiceFeesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateLicenseInfo">
+      <wsdl:input message="tns:updateLicenseInfoSoapIn" />
+      <wsdl:output message="tns:updateLicenseInfoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LicenseServicesSoap" type="tns:LicenseServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getLicenseDetails">
+      <soap:operation soapAction="http://adpolice.gov.ae/getLicenseDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getLicenseDetailsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getLicenseDetailsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDriverRestrictions">
+      <soap:operation soapAction="http://adpolice.gov.ae/getDriverRestrictions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getDriverRestrictionsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getDriverRestrictionsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="approveDriverServiceApplication">
+      <soap:operation soapAction="http://adpolice.gov.ae/approveDriverServiceApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:approveDriverServiceApplicationADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:approveDriverServiceApplicationErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postDriverServiceApplication">
+      <soap:operation soapAction="http://adpolice.gov.ae/postDriverServiceApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:postDriverServiceApplicationADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:postDriverServiceApplicationErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelDriverServiceApplication">
+      <soap:operation soapAction="http://adpolice.gov.ae/cancelDriverServiceApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:cancelDriverServiceApplicationADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:cancelDriverServiceApplicationErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createDriverServiceApplication">
+      <soap:operation soapAction="http://adpolice.gov.ae/createDriverServiceApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:createDriverServiceApplicationADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:createDriverServiceApplicationErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDriverServiceFees">
+      <soap:operation soapAction="http://adpolice.gov.ae/getDriverServiceFees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getDriverServiceFeesADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getDriverServiceFeesErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateLicenseInfo">
+      <soap:operation soapAction="http://adpolice.gov.ae/updateLicenseInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateLicenseInfoADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateLicenseInfoErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LicenseServicesSoap12" type="tns:LicenseServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getLicenseDetails">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getLicenseDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getLicenseDetailsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getLicenseDetailsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDriverRestrictions">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getDriverRestrictions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getDriverRestrictionsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getDriverRestrictionsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="approveDriverServiceApplication">
+      <soap12:operation soapAction="http://adpolice.gov.ae/approveDriverServiceApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:approveDriverServiceApplicationADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:approveDriverServiceApplicationErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postDriverServiceApplication">
+      <soap12:operation soapAction="http://adpolice.gov.ae/postDriverServiceApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:postDriverServiceApplicationADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:postDriverServiceApplicationErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelDriverServiceApplication">
+      <soap12:operation soapAction="http://adpolice.gov.ae/cancelDriverServiceApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:cancelDriverServiceApplicationADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:cancelDriverServiceApplicationErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createDriverServiceApplication">
+      <soap12:operation soapAction="http://adpolice.gov.ae/createDriverServiceApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:createDriverServiceApplicationADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:createDriverServiceApplicationErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDriverServiceFees">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getDriverServiceFees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getDriverServiceFeesADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getDriverServiceFeesErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateLicenseInfo">
+      <soap12:operation soapAction="http://adpolice.gov.ae/updateLicenseInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateLicenseInfoADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateLicenseInfoErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LicenseServices">
+    <wsdl:port name="LicenseServicesSoap" binding="tns:LicenseServicesSoap">
+      <soap:address location="http://194.170.200.102/trafficwebservices/licenseservices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="LicenseServicesSoap12" binding="tns:LicenseServicesSoap12">
+      <soap12:address location="http://194.170.200.102/trafficwebservices/licenseservices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

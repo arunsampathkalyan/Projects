@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="STC.Projects.WCF.ServiceLayer.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="WantedCarRadius" Type="System.Decimal" Scope="Application">
+      <Value Profile="(Default)">0.09</Value>
+    </Setting>
+    <Setting Name="STC_Projects_WCF_ServiceLayer_BarcoWebReference_PerspectiveMgtAPI" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://192.168.1.2:8080/cms/PerspectiveMgtAPIImpl</Value>
+    </Setting>
+    <Setting Name="STC_Projects_WCF_ServiceLayer_HeavyLoadRef_HeavyLoadPermits" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://fugrows.manufaktura.rs:82/permission/HeavyLoadPermits.asmx</Value>
+    </Setting>
+    <Setting Name="STC_Projects_WCF_ServiceLayer_ConstructionPermit_ConstructionPermits" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://fugrows.manufaktura.rs:82/permission/ConstructionPermits.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,169 @@
+﻿<UserControl x:Class="STC.Projects.WPFControlLibrary.SOPBox.UserControls.AssignedPatrolsUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:p="clr-namespace:STC.Projects.WPFControlLibrary.SOPBox.Properties"
+             xmlns:SOPUC="clr-namespace:STC.Projects.WPFControlLibrary.SOPBox.UserControls"
+             xmlns:converters="clr-namespace:STC.Projects.WPFControlLibrary.SOPBox.Converters"
+             xmlns:templateSelectors="clr-namespace:STC.Projects.WPFControlLibrary.SOPBox.TemplateSelectors"
+             xmlns:userControlsViewModel="clr-namespace:STC.Projects.WPFControlLibrary.SOPBox.UserControlsViewModel"
+             mc:Ignorable="d" Opacity="0.95" x:Name="AssignedPatrolsUC">
+    <UserControl.RenderTransform>
+        <TranslateTransform X="400" />
+    </UserControl.RenderTransform>
+
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="Page.Loaded">
+            <BeginStoryboard>
+                <Storyboard >
+                    <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" From="300" To="0" Duration="0:0:1" BeginTime="0:0:0.001" SpeedRatio="3" >
+
+                    </DoubleAnimation>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </UserControl.Triggers>
+    <UserControl.Resources>
+        <converters:DoubleFormatConverter x:Key="DoubleFormatConverter"/>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <userControlsViewModel:ViewModelLocator x:Key="Locator"/>
+
+        <Storyboard x:Key="MyStoryboard">
+            <DoubleAnimation Storyboard.TargetName="AssignedPatrolsUC" Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" From="0" To="500" Duration="0:0:1" SpeedRatio="4" />
+        </Storyboard>
+
+
+        <Style x:Key="IsMoseOvernone" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="#ffffff" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Transparent">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Transparent" TargetName="bg" />
+                                <Setter Property="Foreground" Value="Transparent" />
+                                <Setter Property="BorderBrush" Value="Transparent" />
+                                <Setter Property="Opacity" Value="0.5"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRootGrid" Width="Auto">
+        <Grid Background="Black" Opacity="0.95" MinWidth="255" MaxWidth="280">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="5*"/>                
+                <RowDefinition/>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="200"/>
+            </Grid.RowDefinitions>
+            
+            <Button x:Name="Btnback" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Click="ClosePopup_OnClick" Width="20" Height="20" Panel.ZIndex="6" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{DynamicResource IsMoseOvernone}">
+                <Image Width="18" Height="18" Source="/STC.Projects.WPFControlLibrary.SOPBox;component/images/close_blue.png" FlowDirection="LeftToRight"/>
+            </Button>
+
+            <TextBlock Text="{x:Static p:Resources.strAssignedPatrol}" Grid.Row="0" FontFamily="Open Sans - Regular" Foreground="#00FECE" Grid.Column="0" FontSize="16" Margin="10,5,5,0"  HorizontalAlignment="Left" />
+
+            <ListView Name="PatrolsList" ItemsSource="{Binding AssignedPatrolsUI}"    Grid.Row="1" BorderBrush="#00FECE" BorderThickness="0 1 0 1"
+                SelectionMode="Single" SelectionChanged="PatrolsList_OnSelectionChanged" HorizontalContentAlignment="Stretch" 
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" 
+                VerticalAlignment="Top" Background="Transparent" Foreground="#00ffcc" Margin="0,15,0,0" MinHeight="200" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical" Margin="5" Background="{x:Null}">
+                            
+                            <Grid Background="Transparent">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Orientation="Vertical" Grid.Row="0"  Grid.Column="0" >
+                                    
+                                    <TextBlock Foreground="#00ffcc" FontSize="14" FontFamily="Helvetica" Text="{Binding PatrolDtoObj.PatrolCode}" Margin="0" TextWrapping="Wrap" Padding="3"/>
+
+                                </StackPanel>
+                                <Image Grid.Row="0" Name="Img" Source="../images/icons/patrol_available.png" Width="20" Height="25" Margin="5,0,5,0" Grid.Column="2" HorizontalAlignment="Right"/>
+
+
+
+                                <Border x:Name="brderImage" Grid.Row="1" Grid.Column="1" BorderThickness="0" Height="15" Background="Transparent" Margin="5,5" Visibility="{Binding IsImageAvailable, Converter={StaticResource BoolToVisibilityConverter}}">
+                                    <Button Style="{x:Null}" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl},Mode=FindAncestor},Path=DataContext.ShowImageCommand}"
+                                                    CommandParameter="{Binding }" Background="Transparent">
+                                        <Button.Template>
+                                            <ControlTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Image Width="20" Source="/STC.Projects.WPFControlLibrary.SOPBox;component/images/icons/Image_iconNew.jpg"/>
+                                                </StackPanel>
+                                            </ControlTemplate>
+                                        </Button.Template>
+
+                                    </Button>
+                                </Border>
+
+
+                                <Border x:Name="brderVideo" Grid.Row="1" Grid.Column="2" BorderThickness="0" Height="15" Background="Transparent" Cursor="Hand" Margin="5,5" Visibility="{Binding IsVideoAvailable, Converter={StaticResource BoolToVisibilityConverter}}">
+                                    <Button Style="{x:Null}" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl},Mode=FindAncestor},Path=DataContext.ShowVideoCommand}"
+                                                    CommandParameter="{Binding }" Background="Transparent">
+                                        <Button.Template>
+                                            <ControlTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Image Width="20" Source="/STC.Projects.WPFControlLibrary.SOPBox;component/images/icons/VideoI_iconNew.jpg"/>
+                                                </StackPanel>
+                                            </ControlTemplate>
+                                        </Button.Template>
+
+                                    </Button>
+                                </Border>
+
+                            </Grid>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="BorderThickness" Value="0"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+
+        </Grid>
+        <!--<SOPUC:ImagePopup x:Name="imgGalleryUc" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Top" Margin="-250,50,-100,0" Visibility="Collapsed">
+
+        </SOPUC:ImagePopup>-->
+
+        <!--<SOPUC:ImagePopup x:Name="imgGalleryUc"  ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalAlignment="Top" Grid.Row="1" Grid.RowSpan="2" Margin="-450,50,100,0" >
+
+        </SOPUC:ImagePopup>-->
+
+        <SOPUC:ImageMediaGalleryUserControl x:Name="imgMediaGalleryUc" Opacity="1" ScrollViewer.VerticalScrollBarVisibility="Auto" Panel.ZIndex="10" Grid.Row="1" Grid.RowSpan="2" VerticalAlignment="Top" Margin="-520,-300,-480,-200">
+
+        </SOPUC:ImageMediaGalleryUserControl>
+    </Grid>
+
+</UserControl>

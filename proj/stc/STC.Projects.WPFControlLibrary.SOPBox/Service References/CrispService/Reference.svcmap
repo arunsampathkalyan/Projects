@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5581c513-cde0-49b7-9838-8d3dee07d1d3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://stc-connect.cloudapp.net:8013/WCFService/CrsipServices.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CrsipServices.xsd" MetadataType="Schema" ID="e1059b26-8432-4d3a-816b-b87f28866e05" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net:8013/WCFService/CrsipServices.svc?xsd=xsd1" />
+    <MetadataFile FileName="CrsipServices1.xsd" MetadataType="Schema" ID="37a50bb3-c3d6-4608-9abd-46a0fb07a722" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net:8013/WCFService/CrsipServices.svc?xsd=xsd2" />
+    <MetadataFile FileName="CrsipServices2.xsd" MetadataType="Schema" ID="7ec2111f-8d42-453b-a9e6-4ec4a0e20801" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net:8013/WCFService/CrsipServices.svc?xsd=xsd0" />
+    <MetadataFile FileName="CrsipServices.disco" MetadataType="Disco" ID="f4e64063-a420-4c65-9cd0-43c3006c4db4" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net:8013/WCFService/CrsipServices.svc?disco" />
+    <MetadataFile FileName="CrsipServices.wsdl" MetadataType="Wsdl" ID="e8ead0a0-8696-48bf-b972-8f45fdcfa303" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net:8013/WCFService/CrsipServices.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

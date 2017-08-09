@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Class" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Class" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PlateKey">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PlateColorArabicDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateColorCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PlateColorEnglishDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateKindArabicDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateKindCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PlateKindEnglishDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateOrgNo" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="PlateSourceArabicDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateSourceCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PlateSourceEnglishDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateTypeArabicDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateTypeCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PlateTypeEnglishDesc" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlateKey" nillable="true" type="tns:PlateKey" />
+  <xs:complexType name="LicenseKey">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LicenseNo" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="LicenseSourceArabicDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicenseSourceCode" type="xs:int" />
+      <xs:element minOccurs="0" name="LicenseSourceEnglishDesc" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LicenseKey" nillable="true" type="tns:LicenseKey" />
+  <xs:complexType name="GPSLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="X" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Y" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GPSLocation" nillable="true" type="tns:GPSLocation" />
+  <xs:complexType name="ArrayOfSubLicense">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SubLicense" nillable="true" type="tns:SubLicense" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSubLicense" nillable="true" type="tns:ArrayOfSubLicense" />
+  <xs:complexType name="SubLicense">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GearArabicDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GearCode" type="xs:int" />
+      <xs:element minOccurs="0" name="GearEnglishDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicenseTypeArabicDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicenseTypeCode" type="xs:int" />
+      <xs:element minOccurs="0" name="LicenseTypeEnglishDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicenseTypeIssueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LicenseTypeSourceArabicDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicenseTypeSourceCode" type="xs:int" />
+      <xs:element minOccurs="0" name="LicenseTypeSourceEnglishDesc" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SubLicense" nillable="true" type="tns:SubLicense" />
+</xs:schema>

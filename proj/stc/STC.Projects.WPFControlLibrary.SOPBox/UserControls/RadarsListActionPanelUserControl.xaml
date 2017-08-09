@@ -1,0 +1,136 @@
+﻿<UserControl x:Class="STC.Projects.WPFControlLibrary.SOPBox.UserControls.RadarsListActionPanelUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:p="clr-namespace:STC.Projects.WPFControlLibrary.SOPBox.Properties"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" Opacity="0.95"
+             x:Name="RadarsListActionPanelUIcontrol" RenderTransformOrigin="0.5,.5">
+
+    <UserControl.RenderTransform>
+        <TranslateTransform X="385" />
+    </UserControl.RenderTransform>
+
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="Page.Loaded">
+            <BeginStoryboard>
+                <Storyboard >
+                    <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" From="300" To="0" Duration="0:0:1" BeginTime="0:0:0.001" SpeedRatio="3" >
+
+                    </DoubleAnimation>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </UserControl.Triggers>
+
+    <UserControl.Resources>
+        <Storyboard x:Key="MyStoryboard">
+            <DoubleAnimation Storyboard.TargetName="RadarsListActionPanelUIcontrol" Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)" From="0" To="300" Duration="0:0:1" SpeedRatio="4" />
+        </Storyboard>
+
+        <Style x:Key="IsMoseOvernone" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="#ffffff" />
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="Transparent">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Transparent" TargetName="bg" />
+                                <Setter Property="Foreground" Value="Transparent" />
+                                <Setter Property="BorderBrush" Value="Transparent" />
+                                <Setter Property="Opacity" Value="0.5"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="IsMoseOverGrid" TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="#008c99" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="#00ffcc" />
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="#008c99">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#00ffcc" TargetName="bg" />
+                                <Setter Property="Foreground" Value="Black" />
+                                <Setter Property="BorderBrush" Value="#008c99" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+
+    <Grid Width="260" Height="Auto">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/STC.Projects.WPFControlLibrary.SOPBox;component/images/dotted_bg.png"/>
+        </Grid.Background>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="{x:Static p:Resources.strAction}" Grid.Row="0" Foreground="#00ffcc" Grid.Column="0" FontSize="20" FontFamily="Helvetica" HorizontalAlignment="Left" Grid.ColumnSpan="2"/>
+
+        <Button x:Name="Btnback" Grid.Row="0" Grid.Column="1" Click="ClosePopup_OnClick" Width="20" Height="20" HorizontalAlignment="Right" ScrollViewer.VerticalScrollBarVisibility="Disabled" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{DynamicResource IsMoseOvernone}">
+            <Image Width="18" Height="18" Source="/STC.Projects.WPFControlLibrary.SOPBox;component/images/close_blue.png" FlowDirection="LeftToRight"/>
+        </Button>
+
+        <Border Grid.Column="0" Grid.ColumnSpan="2"  Grid.Row="2" BorderBrush="#10302d"  BorderThickness="1" CornerRadius="2">
+            <Grid Margin="10,10,10,10">
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="{x:Static p:Resources.strNewSpeedLimit}" FontSize="14" FontFamily="Helvetica" Grid.Row="0" Foreground="#00ffcc" Grid.Column="0" Grid.ColumnSpan="2" Margin="15,11,15,9" VerticalAlignment="Center" Height="22" />
+                <telerik:RadNumericUpDown x:Name="SpeedLimit" Width="50" FontSize="16" Grid.Row="0" Value="{Binding NewSpeedValue}" Grid.Column="1" Margin="0,11,10,8"  NumberDecimalDigits="0" Minimum="20" Maximum="120" IsInteger="True" UpdateValueEvent="PropertyChanged" HorizontalAlignment="Right" SmallChange="10" />
+
+                <Button Content="{x:Static p:Resources.strChange}" Style="{DynamicResource IsMoseOverGrid}" FontSize="14" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Click="SaveSpeedLimit_OnClick" Margin="3" Width="130" Height="30" />
+
+                <TextBlock Name="lblCurrentSpeed" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="5" Text="{Binding OldSpeedValue}" FontSize="16" FontFamily="Helvetica" Foreground="#00ffcc"  VerticalAlignment="Center" TextAlignment="Center" Height="30"/>
+
+                <Button Content="{x:Static p:Resources.strConfirm}" FontSize="14"  Grid.Row="3" Grid.Column="0" Click="ConfirmEvent_OnClick" Margin="20,10,10,10" Width="80" Height="30" Style="{DynamicResource IsMoseOverGrid}" />
+                <Button Content="{x:Static p:Resources.strSkip}" FontSize="14"  Grid.Row="3" Grid.Column="1" Click="SkipEvent_OnClick" Margin="0,10,0,10" Width="80" Height="30" Style="{DynamicResource IsMoseOverGrid}" />
+
+            </Grid>
+        </Border>
+    </Grid>
+
+</UserControl>
+

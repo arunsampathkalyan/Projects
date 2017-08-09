@@ -1,0 +1,1108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://13.82.52.255/WCFService/ServiceLayer.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Windows.Media" />
+  <xs:import schemaLocation="http://13.82.52.255/WCFService/ServiceLayer.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:import schemaLocation="http://13.82.52.255/WCFService/ServiceLayer.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfCubeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CubeDTO" nillable="true" type="tns:CubeDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCubeDTO" nillable="true" type="tns:ArrayOfCubeDTO" />
+  <xs:complexType name="CubeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Details" nillable="true" type="tns:ArrayOfCubeDetailsDTO" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Windows.Media" minOccurs="0" name="LegendColor" nillable="true" type="q1:Brush" />
+      <xs:element minOccurs="0" name="LegendName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineDetails" nillable="true" type="tns:ArrayOfCubeDetailsDTO" />
+      <xs:element minOccurs="0" name="StatisticalAnalysis" nillable="true" type="tns:ArrayOfCubeFacts" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CubeDTO" nillable="true" type="tns:CubeDTO" />
+  <xs:complexType name="ArrayOfCubeDetailsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CubeDetailsDTO" nillable="true" type="tns:CubeDetailsDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCubeDetailsDTO" nillable="true" type="tns:ArrayOfCubeDetailsDTO" />
+  <xs:complexType name="CubeDetailsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Orientation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Percentage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetValue" type="xs:double" />
+      <xs:element minOccurs="0" name="Value" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CubeDetailsDTO" nillable="true" type="tns:CubeDetailsDTO" />
+  <xs:complexType name="ArrayOfCubeFacts">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CubeFacts" nillable="true" type="tns:CubeFacts" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCubeFacts" nillable="true" type="tns:ArrayOfCubeFacts" />
+  <xs:complexType name="CubeFacts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FactColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FactKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FactValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CubeFacts" nillable="true" type="tns:CubeFacts" />
+  <xs:complexType name="ArrayOfViolationsCountForMapDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViolationsCountForMapDTO" nillable="true" type="tns:ViolationsCountForMapDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViolationsCountForMapDTO" nillable="true" type="tns:ArrayOfViolationsCountForMapDTO" />
+  <xs:complexType name="ViolationsCountForMapDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssetDetails" nillable="true" type="tns:ArrayOfViolationsGroupedByLocationsDTO" />
+      <xs:element minOccurs="0" name="DateElement" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViolationsCountForMapDTO" nillable="true" type="tns:ViolationsCountForMapDTO" />
+  <xs:complexType name="ArrayOfViolationsGroupedByLocationsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViolationsGroupedByLocationsDTO" nillable="true" type="tns:ViolationsGroupedByLocationsDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViolationsGroupedByLocationsDTO" nillable="true" type="tns:ArrayOfViolationsGroupedByLocationsDTO" />
+  <xs:complexType name="ViolationsGroupedByLocationsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Altitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="0" name="LocationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:double" />
+      <xs:element minOccurs="0" name="ViolationsCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViolationsGroupedByLocationsDTO" nillable="true" type="tns:ViolationsGroupedByLocationsDTO" />
+  <xs:complexType name="ArrayOfUsersDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UsersDTO" nillable="true" type="tns:UsersDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUsersDTO" nillable="true" type="tns:ArrayOfUsersDTO" />
+  <xs:complexType name="UsersDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullNameAr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullNameEn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsOwner" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RankId" type="xs:int" />
+      <xs:element minOccurs="0" name="RankNameAR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RankNameEN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Role" nillable="true" type="tns:UserRolesDTO" />
+      <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UsersDTO" nillable="true" type="tns:UsersDTO" />
+  <xs:complexType name="UserRolesDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RoleDescriptionAr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleDescriptionEn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleFeatures" nillable="true" type="tns:ArrayOfFeaturesDTO" />
+      <xs:element minOccurs="0" name="RoleId" type="xs:int" />
+      <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserRolesDTO" nillable="true" type="tns:UserRolesDTO" />
+  <xs:complexType name="ArrayOfFeaturesDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FeaturesDTO" nillable="true" type="tns:FeaturesDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFeaturesDTO" nillable="true" type="tns:ArrayOfFeaturesDTO" />
+  <xs:complexType name="FeaturesDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FeatureId" type="xs:int" />
+      <xs:element minOccurs="0" name="FeatureNameAr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FeatureNameEn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PageId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FeaturesDTO" nillable="true" type="tns:FeaturesDTO" />
+  <xs:complexType name="RanksDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RankId" type="xs:int" />
+      <xs:element minOccurs="0" name="RankNameAr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RankNameEn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RanksDTO" nillable="true" type="tns:RanksDTO" />
+  <xs:complexType name="ArrayOfRanksDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RanksDTO" nillable="true" type="tns:RanksDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRanksDTO" nillable="true" type="tns:ArrayOfRanksDTO" />
+  <xs:complexType name="ArrayOfUserRolesDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserRolesDTO" nillable="true" type="tns:UserRolesDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserRolesDTO" nillable="true" type="tns:ArrayOfUserRolesDTO" />
+  <xs:complexType name="ArrayOfPublicUserDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PublicUserDTO" nillable="true" type="tns:PublicUserDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPublicUserDTO" nillable="true" type="tns:ArrayOfPublicUserDTO" />
+  <xs:complexType name="PublicUserDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Birthdate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EncPassword" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdentityNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Issuedate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Mail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalityId" type="xs:int" />
+      <xs:element minOccurs="0" name="NotificationToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Salt" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PublicUserDTO" nillable="true" type="tns:PublicUserDTO" />
+  <xs:complexType name="SupervisorNotificationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DangerousViolatorDetails" nillable="true" type="tns:SupervisorNotificationReportDangerousDTO" />
+      <xs:element minOccurs="0" name="IsNoticed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NotificationTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReceiverId" type="xs:int" />
+      <xs:element minOccurs="0" name="ResponseToId" type="xs:long" />
+      <xs:element minOccurs="0" name="SenderId" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="Status" type="q2:SupervisorNotificationStatus" />
+      <xs:element minOccurs="0" name="SupervisorNoticationId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SupervisorNotificationDTO" nillable="true" type="tns:SupervisorNotificationDTO" />
+  <xs:complexType name="SupervisorNotificationReportDangerousDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessRuleId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="BusinessRuleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Lat" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Lon" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="MediaFileFormat" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="MediaType" type="q3:MediaTypes" />
+      <xs:element minOccurs="0" name="MediaURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotificationText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateAuthority" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateKind" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportDangerousId" type="xs:long" />
+      <xs:element minOccurs="0" name="SupervisorNotificationId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SupervisorNotificationReportDangerousDTO" nillable="true" type="tns:SupervisorNotificationReportDangerousDTO" />
+  <xs:complexType name="ArrayOfSupervisorNotificationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SupervisorNotificationDTO" nillable="true" type="tns:SupervisorNotificationDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSupervisorNotificationDTO" nillable="true" type="tns:ArrayOfSupervisorNotificationDTO" />
+  <xs:complexType name="ArrayOfCorrelationMessagesLogDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CorrelationMessagesLogDTO" nillable="true" type="tns:CorrelationMessagesLogDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCorrelationMessagesLogDTO" nillable="true" type="tns:ArrayOfCorrelationMessagesLogDTO" />
+  <xs:complexType name="CorrelationMessagesLogDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessRuleId" type="xs:int" />
+      <xs:element minOccurs="0" name="BusinessRuleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CorrelationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateCreated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="MessageId" type="xs:long" />
+      <xs:element minOccurs="0" name="PlateColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateKind" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateSource" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CorrelationMessagesLogDTO" nillable="true" type="tns:CorrelationMessagesLogDTO" />
+  <xs:complexType name="ArrayOfPlateDetailsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlateDetailsDTO" nillable="true" type="tns:PlateDetailsDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlateDetailsDTO" nillable="true" type="tns:ArrayOfPlateDetailsDTO" />
+  <xs:complexType name="PlateDetailsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="plateColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="plateKind" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="plateNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="plateSource" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlateDetailsDTO" nillable="true" type="tns:PlateDetailsDTO" />
+  <xs:complexType name="ArrayOfKpiDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KpiDTO" nillable="true" type="tns:KpiDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKpiDTO" nillable="true" type="tns:ArrayOfKpiDTO" />
+  <xs:complexType name="KpiDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActualPercentage" type="xs:double" />
+      <xs:element minOccurs="0" name="CurrentValue" type="xs:double" />
+      <xs:element minOccurs="0" name="LabelValueArabic" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LabelValueEnglish" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Percentage" type="xs:double" />
+      <xs:element minOccurs="0" name="PreviousValue" type="xs:double" />
+      <xs:element minOccurs="0" name="TargetName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetValue" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KpiDTO" nillable="true" type="tns:KpiDTO" />
+  <xs:complexType name="ArrayOfKPITargetDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KPITargetDTO" nillable="true" type="tns:KPITargetDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKPITargetDTO" nillable="true" type="tns:ArrayOfKPITargetDTO" />
+  <xs:complexType name="KPITargetDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreatedBy" type="xs:int" />
+      <xs:element minOccurs="0" name="DateCreated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateModified" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TaregtDescriptionEn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetDescriptionAr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetID" type="xs:int" />
+      <xs:element minOccurs="0" name="TargetName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetValue" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KPITargetDTO" nillable="true" type="tns:KPITargetDTO" />
+  <xs:complexType name="AssetViolationDetailsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssetCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssetLinerKPIs" nillable="true" type="tns:ArrayOfCubeDTO" />
+      <xs:element minOccurs="0" name="AssetLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssetPieKPIs" nillable="true" type="tns:CubeDTO" />
+      <xs:element minOccurs="0" name="AssetVendor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssetViolationCount" type="xs:int" />
+      <xs:element minOccurs="0" name="AssetViolationCountMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="AssetViolationCountYearly" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssetViolationDetailsDTO" nillable="true" type="tns:AssetViolationDetailsDTO" />
+  <xs:complexType name="ArrayOfAssetsViewDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AssetsViewDTO" nillable="true" type="tns:AssetsViewDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAssetsViewDTO" nillable="true" type="tns:ArrayOfAssetsViewDTO" />
+  <xs:complexType name="AssetsViewDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaId" type="xs:int" />
+      <xs:element minOccurs="0" name="AreaName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssetsDetails" nillable="true" type="tns:ArrayOfAssetsDetailsViewDTO" />
+      <xs:element minOccurs="0" name="CurrentValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FromNodeId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemCategoryId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ItemCategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemId" type="xs:long" />
+      <xs:element minOccurs="0" name="ItemImage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemStatusId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ItemStatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="LinkId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="OriginalIdent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SerialNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssetsViewDTO" nillable="true" type="tns:AssetsViewDTO" />
+  <xs:complexType name="ArrayOfAssetsDetailsViewDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AssetsDetailsViewDTO" nillable="true" type="tns:AssetsDetailsViewDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAssetsDetailsViewDTO" nillable="true" type="tns:ArrayOfAssetsDetailsViewDTO" />
+  <xs:complexType name="AssetsDetailsViewDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CameraURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SerialNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssetsDetailsViewDTO" nillable="true" type="tns:AssetsDetailsViewDTO" />
+  <xs:complexType name="ArrayOfViolationNotificationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViolationNotificationDTO" nillable="true" type="tns:ViolationNotificationDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViolationNotificationDTO" nillable="true" type="tns:ArrayOfViolationNotificationDTO" />
+  <xs:complexType name="ViolationNotificationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Altitude" type="xs:double" />
+      <xs:element minOccurs="0" name="AssetCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssetId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BackgroundColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CapturedSpeed" type="xs:int" />
+      <xs:element minOccurs="0" name="Count" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DateTaken" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Direction" type="xs:int" />
+      <xs:element minOccurs="0" name="DirectionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsCritical" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsNoticed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LPRId" type="xs:long" />
+      <xs:element minOccurs="0" name="LaneNo" type="xs:int" />
+      <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="LocationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MesuredSpeed" type="xs:int" />
+      <xs:element minOccurs="0" name="Notification" nillable="true" type="tns:NotificationDTO" />
+      <xs:element minOccurs="0" name="NotificationId" type="xs:long" />
+      <xs:element minOccurs="0" name="PlateColorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateKindName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateSourceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SourceId" type="xs:int" />
+      <xs:element minOccurs="0" name="SourceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpeedLimit" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViolationNotificationId" type="xs:long" />
+      <xs:element minOccurs="0" name="ViolationStatusId" type="xs:int" />
+      <xs:element minOccurs="0" name="ViolationStatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViolationTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="ViolationTypeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViolationNotificationDTO" nillable="true" type="tns:ViolationNotificationDTO" />
+  <xs:complexType name="NotificationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateCreated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsNoticed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastModified" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="NotificationId" type="xs:long" />
+      <xs:element minOccurs="0" name="OwnerId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotificationDTO" nillable="true" type="tns:NotificationDTO" />
+  <xs:complexType name="DangerousVehicleDetailsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessRuleId" type="xs:int" />
+      <xs:element minOccurs="0" name="BusinessRuleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateKind" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateSource" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleLinerKPIs" nillable="true" type="tns:ArrayOfCubeDTO" />
+      <xs:element minOccurs="0" name="VehiclePieKPIs" nillable="true" type="tns:CubeDTO" />
+      <xs:element minOccurs="0" name="VehicleViolations" nillable="true" type="tns:ArrayOfViolationNotificationDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DangerousVehicleDetailsDTO" nillable="true" type="tns:DangerousVehicleDetailsDTO" />
+  <xs:complexType name="BusinessRulesDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BusinessRuleId" type="xs:int" />
+      <xs:element minOccurs="0" name="BusinessRuleTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" type="xs:int" />
+      <xs:element minOccurs="0" name="InsideCityOverSpeedId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="InsideCityOverSpeedQty" type="xs:int" />
+      <xs:element minOccurs="0" name="InsideCityOverSpeedValue" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDeleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsOverSpeedInsideCity" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsOverSpeedOutsideCity" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsTrafficCross" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastModifiedAt" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NumOfOccur" type="xs:int" />
+      <xs:element minOccurs="0" name="OutsideCityOverSpeedId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OutsideCityOverSpeedQty" type="xs:int" />
+      <xs:element minOccurs="0" name="OutsideCityOverSpeedValue" type="xs:int" />
+      <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PriorityId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RedLightCrossing" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RuleInterval" type="xs:int" />
+      <xs:element minOccurs="0" name="SpeedInsideCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpeedOutsideCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrafficCrossQty" type="xs:int" />
+      <xs:element minOccurs="0" name="TrafficCrossTimesId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TrafficCrossTimesValue" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleTypeId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BusinessRulesDTO" nillable="true" type="tns:BusinessRulesDTO" />
+  <xs:complexType name="ArrayOfIncidentsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IncidentsDTO" nillable="true" type="tns:IncidentsDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIncidentsDTO" nillable="true" type="tns:ArrayOfIncidentsDTO" />
+  <xs:complexType name="IncidentsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaId" type="xs:int" />
+      <xs:element minOccurs="0" name="AreaName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArrivedTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BackgroundColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CallTakerId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CallTakerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CallerAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CallerLanguage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CallerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CallerNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CauseId" type="xs:int" />
+      <xs:element minOccurs="0" name="CauseName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CityId" type="xs:int" />
+      <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CrashSeverityId" type="xs:int" />
+      <xs:element minOccurs="0" name="CrashSeverityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CrashTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="CrashTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DispatcheTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DispatcherId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DispatcherName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmirateId" type="xs:int" />
+      <xs:element minOccurs="0" name="EmirateName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EndTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Fatalities" type="xs:int" />
+      <xs:element minOccurs="0" name="IncidentAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncidentDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncidentId" type="xs:long" />
+      <xs:element minOccurs="0" name="IncidentNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncidentTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="IncidentTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IntersectionId" type="xs:int" />
+      <xs:element minOccurs="0" name="IntersectionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsCritical" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsNoticed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LanesCount" type="xs:int" />
+      <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="LightingId" type="xs:int" />
+      <xs:element minOccurs="0" name="LightingName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationId" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="MediumInjuries" type="xs:int" />
+      <xs:element minOccurs="0" name="MessageId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Notification" nillable="true" type="tns:NotificationDTO" />
+      <xs:element minOccurs="0" name="NotificationId" type="xs:long" />
+      <xs:element minOccurs="0" name="PConditionId" type="xs:int" />
+      <xs:element minOccurs="0" name="PConditionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PoliceStation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoadTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="RoadTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SevereInjuries" type="xs:int" />
+      <xs:element minOccurs="0" name="SlightInjuries" type="xs:int" />
+      <xs:element minOccurs="0" name="Speed" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusId" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalInjuriesFatalities" type="xs:int" />
+      <xs:element minOccurs="0" name="WeatherId" type="xs:int" />
+      <xs:element minOccurs="0" name="WeatherName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZoneDescription" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IncidentsDTO" nillable="true" type="tns:IncidentsDTO" />
+  <xs:complexType name="ArrayOfViolationsDetailsByLocationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViolationsDetailsByLocationDTO" nillable="true" type="tns:ViolationsDetailsByLocationDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViolationsDetailsByLocationDTO" nillable="true" type="tns:ArrayOfViolationsDetailsByLocationDTO" />
+  <xs:complexType name="ViolationsDetailsByLocationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Altitude" type="xs:double" />
+      <xs:element minOccurs="0" name="AssetCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssetId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="0" name="LocationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:double" />
+      <xs:element minOccurs="0" name="ViolationTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="ViolationTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViolationsCount" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViolationsDetailsByLocationDTO" nillable="true" type="tns:ViolationsDetailsByLocationDTO" />
+  <xs:complexType name="ArrayOfAssetLastStatusDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AssetLastStatusDTO" nillable="true" type="tns:AssetLastStatusDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAssetLastStatusDTO" nillable="true" type="tns:ArrayOfAssetLastStatusDTO" />
+  <xs:complexType name="AssetLastStatusDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssetCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssetId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssetLastStatusId" type="xs:int" />
+      <xs:element minOccurs="0" name="AssetStatusId" type="xs:int" />
+      <xs:element minOccurs="0" name="AssetStatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssetTypeId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="AssetTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateChanged" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsNoticed" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssetLastStatusDTO" nillable="true" type="tns:AssetLastStatusDTO" />
+  <xs:complexType name="ArrayOfPatrolLastLocationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PatrolLastLocationDTO" nillable="true" type="tns:PatrolLastLocationDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPatrolLastLocationDTO" nillable="true" type="tns:ArrayOfPatrolLastLocationDTO" />
+  <xs:complexType name="PatrolLastLocationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Altitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="CreationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CurrentTaskId" type="xs:long" />
+      <xs:element minOccurs="0" name="ETATime" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="IsBusy" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsNoticed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRecommended" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="LocationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="NumberOfAssignedIncident" type="xs:int" />
+      <xs:element minOccurs="0" name="OfficerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatrolCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatrolId" type="xs:long" />
+      <xs:element minOccurs="0" name="PatrolImage" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="PatrolLatLocationId" type="xs:long" />
+      <xs:element minOccurs="0" name="PatrolOriginalId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PatrolPlateNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Speed" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="isDeleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isPatrol" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatrolLastLocationDTO" nillable="true" type="tns:PatrolLastLocationDTO" />
+  <xs:complexType name="ArrayOfPatrolStatusDimDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PatrolStatusDimDTO" nillable="true" type="tns:PatrolStatusDimDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPatrolStatusDimDTO" nillable="true" type="tns:ArrayOfPatrolStatusDimDTO" />
+  <xs:complexType name="PatrolStatusDimDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PatrolStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatrolStatusId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatrolStatusDimDTO" nillable="true" type="tns:PatrolStatusDimDTO" />
+  <xs:complexType name="ArrayOfAssetTypeDimDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AssetTypeDimDTO" nillable="true" type="tns:AssetTypeDimDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAssetTypeDimDTO" nillable="true" type="tns:ArrayOfAssetTypeDimDTO" />
+  <xs:complexType name="AssetTypeDimDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssetType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssetTypeId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssetTypeDimDTO" nillable="true" type="tns:AssetTypeDimDTO" />
+  <xs:complexType name="ArrayOfAssetStatusDimDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AssetStatusDimDTO" nillable="true" type="tns:AssetStatusDimDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAssetStatusDimDTO" nillable="true" type="tns:ArrayOfAssetStatusDimDTO" />
+  <xs:complexType name="AssetStatusDimDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssetStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssetStatusId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssetStatusDimDTO" nillable="true" type="tns:AssetStatusDimDTO" />
+  <xs:complexType name="ArrayOfViolationTypeDimDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViolationTypeDimDTO" nillable="true" type="tns:ViolationTypeDimDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViolationTypeDimDTO" nillable="true" type="tns:ArrayOfViolationTypeDimDTO" />
+  <xs:complexType name="ViolationTypeDimDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ViolationType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViolationTypeId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViolationTypeDimDTO" nillable="true" type="tns:ViolationTypeDimDTO" />
+  <xs:complexType name="ArrayOfViolationsCountPerDayOfWeekDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViolationsCountPerDayOfWeekDTO" nillable="true" type="tns:ViolationsCountPerDayOfWeekDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViolationsCountPerDayOfWeekDTO" nillable="true" type="tns:ArrayOfViolationsCountPerDayOfWeekDTO" />
+  <xs:complexType name="ViolationsCountPerDayOfWeekDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DayOfWeek" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViolationsCountPerDayOfWeekDTO" nillable="true" type="tns:ViolationsCountPerDayOfWeekDTO" />
+  <xs:complexType name="ArrayOfViolationsCountPerDayOfWeekAndHourDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViolationsCountPerDayOfWeekAndHourDTO" nillable="true" type="tns:ViolationsCountPerDayOfWeekAndHourDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViolationsCountPerDayOfWeekAndHourDTO" nillable="true" type="tns:ArrayOfViolationsCountPerDayOfWeekAndHourDTO" />
+  <xs:complexType name="ViolationsCountPerDayOfWeekAndHourDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DayOfWeek" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViolationHour" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViolationsCountPerDayOfWeekAndHourDTO" nillable="true" type="tns:ViolationsCountPerDayOfWeekAndHourDTO" />
+  <xs:complexType name="ArrayOfViolationsCountGroupedByTypeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViolationsCountGroupedByTypeDTO" nillable="true" type="tns:ViolationsCountGroupedByTypeDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViolationsCountGroupedByTypeDTO" nillable="true" type="tns:ArrayOfViolationsCountGroupedByTypeDTO" />
+  <xs:complexType name="ViolationsCountGroupedByTypeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ViolationTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="ViolationTypeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViolationsCountGroupedByTypeDTO" nillable="true" type="tns:ViolationsCountGroupedByTypeDTO" />
+  <xs:complexType name="ArrayOfViolationsCountGroupedByLocationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViolationsCountGroupedByLocationDTO" nillable="true" type="tns:ViolationsCountGroupedByLocationDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViolationsCountGroupedByLocationDTO" nillable="true" type="tns:ArrayOfViolationsCountGroupedByLocationDTO" />
+  <xs:complexType name="ViolationsCountGroupedByLocationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="0" name="LocationCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViolationsCountGroupedByLocationDTO" nillable="true" type="tns:ViolationsCountGroupedByLocationDTO" />
+  <xs:complexType name="IncidentDetailsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssignedPatrol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DispatchingTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncidentAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncidentFinishTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncidentStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncidentTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncidentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Lat" type="xs:double" />
+      <xs:element minOccurs="0" name="Lon" type="xs:double" />
+      <xs:element minOccurs="0" name="PatrolArrived" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="XML" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IncidentDetailsDTO" nillable="true" type="tns:IncidentDetailsDTO" />
+  <xs:complexType name="ViolationDetailsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssetsDetails" nillable="true" type="tns:AssetDetailsForViolation" />
+      <xs:element minOccurs="0" name="Lat" type="xs:double" />
+      <xs:element minOccurs="0" name="Lon" type="xs:double" />
+      <xs:element minOccurs="0" name="TotalsByStatus" nillable="true" type="tns:ArrayOfTotalViolationValuesByStatus" />
+      <xs:element minOccurs="0" name="TotalsByTypes" nillable="true" type="tns:ArrayOfTotalViolationValuesByTypes" />
+      <xs:element minOccurs="0" name="XML" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViolationDetailsDTO" nillable="true" type="tns:ViolationDetailsDTO" />
+  <xs:complexType name="AssetDetailsForViolation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssetName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssetStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastMainteanceDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VendorName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssetDetailsForViolation" nillable="true" type="tns:AssetDetailsForViolation" />
+  <xs:complexType name="ArrayOfTotalViolationValuesByStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TotalViolationValuesByStatus" nillable="true" type="tns:TotalViolationValuesByStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTotalViolationValuesByStatus" nillable="true" type="tns:ArrayOfTotalViolationValuesByStatus" />
+  <xs:complexType name="TotalViolationValuesByStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TotalCountOfViolations" type="xs:int" />
+      <xs:element minOccurs="0" name="VioltionStatusId" type="xs:int" />
+      <xs:element minOccurs="0" name="VioltionStatusName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TotalViolationValuesByStatus" nillable="true" type="tns:TotalViolationValuesByStatus" />
+  <xs:complexType name="ArrayOfTotalViolationValuesByTypes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TotalViolationValuesByTypes" nillable="true" type="tns:TotalViolationValuesByTypes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTotalViolationValuesByTypes" nillable="true" type="tns:ArrayOfTotalViolationValuesByTypes" />
+  <xs:complexType name="TotalViolationValuesByTypes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TotalCountOfViolations" type="xs:int" />
+      <xs:element minOccurs="0" name="VioltionTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="VioltionTypeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TotalViolationValuesByTypes" nillable="true" type="tns:TotalViolationValuesByTypes" />
+  <xs:complexType name="PatrolOfficersDetailsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsAvailable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Officers" nillable="true" type="tns:ArrayOfStaffPatrolModel" />
+      <xs:element minOccurs="0" name="PatrolAllocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatrolCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatrolPlateNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusArabic" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusEnglish" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatrolOfficersDetailsDTO" nillable="true" type="tns:PatrolOfficersDetailsDTO" />
+  <xs:complexType name="ArrayOfStaffPatrolModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StaffPatrolModel" nillable="true" type="tns:StaffPatrolModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStaffPatrolModel" nillable="true" type="tns:ArrayOfStaffPatrolModel" />
+  <xs:complexType name="StaffPatrolModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImagePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MilitaryNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StaffPatrolModel" nillable="true" type="tns:StaffPatrolModel" />
+  <xs:complexType name="ArrayOfMessageTypeSOPDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MessageTypeSOPDTO" nillable="true" type="tns:MessageTypeSOPDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMessageTypeSOPDTO" nillable="true" type="tns:ArrayOfMessageTypeSOPDTO" />
+  <xs:complexType name="MessageTypeSOPDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsDone" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MessageTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="MessageTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PriorityId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Rank" type="xs:int" />
+      <xs:element minOccurs="0" name="SOPContent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SOPControlName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SOPDetailsControlName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SOPDetailsDataMessageType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SOPDetailsXSLT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SOPId" type="xs:int" />
+      <xs:element minOccurs="0" name="SOPListDataMessageType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SOPListXSLT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SOPViewDetailsMessageId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SOPViewListMessageId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MessageTypeSOPDTO" nillable="true" type="tns:MessageTypeSOPDTO" />
+  <xs:complexType name="ArrayOfTowerActionsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TowerActionsDTO" nillable="true" type="tns:TowerActionsDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTowerActionsDTO" nillable="true" type="tns:ArrayOfTowerActionsDTO" />
+  <xs:complexType name="TowerActionsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TowerActionId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TowerActionsDTO" nillable="true" type="tns:TowerActionsDTO" />
+  <xs:complexType name="MessageTypeConvertOutput">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MessageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NewXML" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MessageTypeConvertOutput" nillable="true" type="tns:MessageTypeConvertOutput" />
+  <xs:complexType name="ArrayOfOfficersLastLocationViewDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OfficersLastLocationViewDTO" nillable="true" type="tns:OfficersLastLocationViewDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOfficersLastLocationViewDTO" nillable="true" type="tns:ArrayOfOfficersLastLocationViewDTO" />
+  <xs:complexType name="OfficersLastLocationViewDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Altitude" type="xs:double" />
+      <xs:element minOccurs="0" name="CameraURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsNoticed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="0" name="LocationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:double" />
+      <xs:element minOccurs="0" name="OfficerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OfficerHeartPulse" type="xs:double" />
+      <xs:element minOccurs="0" name="OfficerId" type="xs:int" />
+      <xs:element minOccurs="0" name="OfficerLastLocationId" type="xs:int" />
+      <xs:element minOccurs="0" name="OfficerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Speed" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OfficersLastLocationViewDTO" nillable="true" type="tns:OfficersLastLocationViewDTO" />
+  <xs:simpleType name="PeriodCategory">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Daily">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Weekly">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Monthly">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Yearly">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PeriodCategory" nillable="true" type="tns:PeriodCategory" />
+  <xs:complexType name="ArrayOfViolationsHistoricalDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViolationsHistoricalDTO" nillable="true" type="tns:ViolationsHistoricalDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViolationsHistoricalDTO" nillable="true" type="tns:ArrayOfViolationsHistoricalDTO" />
+  <xs:complexType name="ViolationsHistoricalDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScheduleType" type="tns:PeriodCategory" />
+      <xs:element minOccurs="0" name="ViolationsByLocations" nillable="true" type="tns:ArrayOfViolationsGroupedByLocationsDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViolationsHistoricalDTO" nillable="true" type="tns:ViolationsHistoricalDTO" />
+  <xs:complexType name="ArrayOfIncidentHistoricalDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IncidentHistoricalDTO" nillable="true" type="tns:IncidentHistoricalDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIncidentHistoricalDTO" nillable="true" type="tns:ArrayOfIncidentHistoricalDTO" />
+  <xs:complexType name="IncidentHistoricalDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Incidents" nillable="true" type="tns:ArrayOfIncidentsDTO" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ScheduleType" type="tns:PeriodCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IncidentHistoricalDTO" nillable="true" type="tns:IncidentHistoricalDTO" />
+  <xs:complexType name="VehicleLiveTrackingDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CaptureTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="LicenseExpiryDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LicenseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerAge" type="xs:short" />
+      <xs:element minOccurs="0" name="OwnerMobileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerNationality" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateKind" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateSource" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TowerId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleLiveTrackingDTO" nillable="true" type="tns:VehicleLiveTrackingDTO" />
+  <xs:complexType name="ArrayOfUserUserControlDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserUserControlDTO" nillable="true" type="tns:UserUserControlDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserUserControlDTO" nillable="true" type="tns:ArrayOfUserUserControlDTO" />
+  <xs:complexType name="UserUserControlDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsNoticed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Notification" nillable="true" type="tns:NotificationDTO" />
+      <xs:element minOccurs="0" name="NotificationId" type="xs:long" />
+      <xs:element minOccurs="0" name="PopupContent" nillable="true" type="tns:MapNotificationPopUpDTO" />
+      <xs:element minOccurs="0" name="PriorityId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserUserControlsID" type="xs:long" />
+      <xs:element minOccurs="0" name="XML" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserUserControlDTO" nillable="true" type="tns:UserUserControlDTO" />
+  <xs:complexType name="MapNotificationPopUpDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Discription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneralType" type="xs:int" />
+      <xs:element minOccurs="0" name="Lat" type="xs:double" />
+      <xs:element minOccurs="0" name="Lon" type="xs:double" />
+      <xs:element minOccurs="0" name="Tabs" nillable="true" type="tns:ArrayOfTabDTO" />
+      <xs:element minOccurs="0" name="TypeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MapNotificationPopUpDTO" nillable="true" type="tns:MapNotificationPopUpDTO" />
+  <xs:complexType name="ArrayOfTabDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TabDTO" nillable="true" type="tns:TabDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTabDTO" nillable="true" type="tns:ArrayOfTabDTO" />
+  <xs:complexType name="TabDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Attributes" nillable="true" type="tns:ArrayOfTabItemDTO" />
+      <xs:element minOccurs="0" name="TabName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TabDTO" nillable="true" type="tns:TabDTO" />
+  <xs:complexType name="ArrayOfTabItemDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TabItemDTO" nillable="true" type="tns:TabItemDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTabItemDTO" nillable="true" type="tns:ArrayOfTabItemDTO" />
+  <xs:complexType name="TabItemDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="KeyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValueName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TabItemDTO" nillable="true" type="tns:TabItemDTO" />
+  <xs:complexType name="ArrayOfBusinessRulesDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BusinessRulesDTO" nillable="true" type="tns:BusinessRulesDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBusinessRulesDTO" nillable="true" type="tns:ArrayOfBusinessRulesDTO" />
+  <xs:complexType name="ArrayOfBusinessRulePriorityDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BusinessRulePriorityDTO" nillable="true" type="tns:BusinessRulePriorityDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBusinessRulePriorityDTO" nillable="true" type="tns:ArrayOfBusinessRulePriorityDTO" />
+  <xs:complexType name="BusinessRulePriorityDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsDeleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PriorityID" type="xs:int" />
+      <xs:element minOccurs="0" name="PriorityNameAr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PriorityNameEn" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BusinessRulePriorityDTO" nillable="true" type="tns:BusinessRulePriorityDTO" />
+  <xs:complexType name="ArrayOfOverSpeedDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OverSpeedDTO" nillable="true" type="tns:OverSpeedDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOverSpeedDTO" nillable="true" type="tns:ArrayOfOverSpeedDTO" />
+  <xs:complexType name="OverSpeedDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsDeleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OverSpeedId" type="xs:int" />
+      <xs:element minOccurs="0" name="OverSpeedValue" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OverSpeedDTO" nillable="true" type="tns:OverSpeedDTO" />
+  <xs:complexType name="ArrayOfTrafficCrossDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrafficCrossDTO" nillable="true" type="tns:TrafficCrossDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrafficCrossDTO" nillable="true" type="tns:ArrayOfTrafficCrossDTO" />
+  <xs:complexType name="TrafficCrossDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsDeleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TrafficCrossId" type="xs:int" />
+      <xs:element minOccurs="0" name="TrafficCrossValue" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TrafficCrossDTO" nillable="true" type="tns:TrafficCrossDTO" />
+  <xs:complexType name="ArrayOfVehicleTypeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VehicleTypeDTO" nillable="true" type="tns:VehicleTypeDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVehicleTypeDTO" nillable="true" type="tns:ArrayOfVehicleTypeDTO" />
+  <xs:complexType name="VehicleTypeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsDeleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="VehicleTypeAr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleTypeEn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleTypeID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleTypeDTO" nillable="true" type="tns:VehicleTypeDTO" />
+  <xs:complexType name="ArrayOfPatrolDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PatrolDTO" nillable="true" type="tns:PatrolDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPatrolDTO" nillable="true" type="tns:ArrayOfPatrolDTO" />
+  <xs:complexType name="PatrolDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentTaskId" type="xs:long" />
+      <xs:element minOccurs="0" name="IsPatrol" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OfficerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatrolCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatrolId" type="xs:long" />
+      <xs:element minOccurs="0" name="PatrolImage" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="PatrolOriginalId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PatrolPlateNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusId" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatrolDTO" nillable="true" type="tns:PatrolDTO" />
+  <xs:complexType name="ArrayOfVehicleLiveTrackingDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VehicleLiveTrackingDTO" nillable="true" type="tns:VehicleLiveTrackingDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVehicleLiveTrackingDTO" nillable="true" type="tns:ArrayOfVehicleLiveTrackingDTO" />
+</xs:schema>

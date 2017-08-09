@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfMapPointDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MapPointDTO" nillable="true" type="tns:MapPointDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMapPointDTO" nillable="true" type="tns:ArrayOfMapPointDTO" />
+  <xs:complexType name="MapPointDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MapPointDTO" nillable="true" type="tns:MapPointDTO" />
+  <xs:complexType name="ArrayOfAssetsDetailsViewDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AssetsDetailsViewDTO" nillable="true" type="tns:AssetsDetailsViewDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAssetsDetailsViewDTO" nillable="true" type="tns:ArrayOfAssetsDetailsViewDTO" />
+  <xs:complexType name="AssetsDetailsViewDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CameraURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SerialNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssetsDetailsViewDTO" nillable="true" type="tns:AssetsDetailsViewDTO" />
+</xs:schema>

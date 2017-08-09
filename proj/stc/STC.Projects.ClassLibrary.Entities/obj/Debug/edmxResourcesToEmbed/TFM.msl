@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TFMModelStoreContainer" CdmEntityContainer="TFMEntities">
+    <EntitySetMapping Name="iPatrolDuties">
+      <EntityTypeMapping TypeName="TFMModel.iPatrolDuty">
+        <MappingFragment StoreEntitySet="iPatrolDuties">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Duty" ColumnName="Duty" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="DutySource" ColumnName="DutySource" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="AcknowledgementTime" ColumnName="AcknowledgementTime" />
+          <ScalarProperty Name="PatrolId" ColumnName="PatrolId" />
+          <ScalarProperty Name="AcknowledgementLatitude" ColumnName="AcknowledgementLatitude" />
+          <ScalarProperty Name="AcknowledgementLongitude" ColumnName="AcknowledgementLongitude" />
+          <ScalarProperty Name="LocationType" ColumnName="LocationType" />
+          <ScalarProperty Name="Radius" ColumnName="Radius" />
+          <ScalarProperty Name="ArrivalLongitude" ColumnName="ArrivalLongitude" />
+          <ScalarProperty Name="ArrivalLatitude" ColumnName="ArrivalLatitude" />
+          <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+          <ScalarProperty Name="FinishLongitude" ColumnName="FinishLongitude" />
+          <ScalarProperty Name="FinishLatitude" ColumnName="FinishLatitude" />
+          <ScalarProperty Name="FinishTime" ColumnName="FinishTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="iPatrolDutiesUsers">
+      <EntityTypeMapping TypeName="TFMModel.iPatrolDutiesUser">
+        <MappingFragment StoreEntitySet="iPatrolDutiesUsers">
+          <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+          <ScalarProperty Name="DutyId" ColumnName="DutyId" />
+          <ScalarProperty Name="DutyCommunicationType" ColumnName="DutyCommunicationType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="iPatrolFilesSubmittedByUsers">
+      <EntityTypeMapping TypeName="TFMModel.iPatrolFilesSubmittedByUser">
+        <MappingFragment StoreEntitySet="iPatrolFilesSubmittedByUsers">
+          <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+          <ScalarProperty Name="FileId" ColumnName="FileId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staffs">
+      <EntityTypeMapping TypeName="TFMModel.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="descr" ColumnName="descr" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="subID" ColumnName="subID" />
+          <ScalarProperty Name="staffRoleID" ColumnName="staffRoleID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="isAllocated" ColumnName="isAllocated" />
+          <ScalarProperty Name="personalID" ColumnName="personalID" />
+          <ScalarProperty Name="AllocatedBranch" ColumnName="AllocatedBranch" />
+          <ScalarProperty Name="AllocatedLandmark" ColumnName="AllocatedLandmark" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="employmentType" ColumnName="employmentType" />
+          <ScalarProperty Name="employmentDate" ColumnName="employmentDate" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="mobileNumber" ColumnName="mobileNumber" />
+          <ScalarProperty Name="MonitorFlag" ColumnName="MonitorFlag" />
+          <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+          <ScalarProperty Name="LaborRate" ColumnName="LaborRate" />
+          <ScalarProperty Name="LisenceNumber" ColumnName="LisenceNumber" />
+          <ScalarProperty Name="LisenceIssueDate" ColumnName="LisenceIssueDate" />
+          <ScalarProperty Name="LisenceExpiryDate" ColumnName="LisenceExpiryDate" />
+          <ScalarProperty Name="InsuranceNumber" ColumnName="InsuranceNumber" />
+          <ScalarProperty Name="InsuranceIssueDate" ColumnName="InsuranceIssueDate" />
+          <ScalarProperty Name="InsuranceCompanyID" ColumnName="InsuranceCompanyID" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="EmergencyContactName1" ColumnName="EmergencyContactName1" />
+          <ScalarProperty Name="EmergencyContactName2" ColumnName="EmergencyContactName2" />
+          <ScalarProperty Name="EmergencyContactPhone1" ColumnName="EmergencyContactPhone1" />
+          <ScalarProperty Name="EmergencyContactPhone2" ColumnName="EmergencyContactPhone2" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="StaffRoleName" ColumnName="StaffRoleName" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="LastModificationDate" ColumnName="LastModificationDate" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TFMIncidents">
+      <EntityTypeMapping TypeName="TFMModel.TFMIncident">
+        <MappingFragment StoreEntitySet="Incidents">
+          <ScalarProperty Name="IncidentSource" ColumnName="IncidentSource" />
+          <ScalarProperty Name="DisposeIncident" ColumnName="DisposeIncident" />
+          <ScalarProperty Name="ClosedIncident" ColumnName="ClosedIncident" />
+          <ScalarProperty Name="AtSeenTime" ColumnName="AtSeenTime" />
+          <ScalarProperty Name="OnRoadTime" ColumnName="OnRoadTime" />
+          <ScalarProperty Name="DispatchToVehicle" ColumnName="DispatchToVehicle" />
+          <ScalarProperty Name="IncidentOpenedByDipatcher" ColumnName="IncidentOpenedByDipatcher" />
+          <ScalarProperty Name="TransferIncident" ColumnName="TransferIncident" />
+          <ScalarProperty Name="SaveIncident" ColumnName="SaveIncident" />
+          <ScalarProperty Name="IdentifiedLocation" ColumnName="IdentifiedLocation" />
+          <ScalarProperty Name="CallReceived" ColumnName="CallReceived" />
+          <ScalarProperty Name="Ringing" ColumnName="Ringing" />
+          <ScalarProperty Name="OwnerWorkStationName" ColumnName="OwnerWorkStationName" />
+          <ScalarProperty Name="CallTakerId" ColumnName="CallTakerId" />
+          <ScalarProperty Name="CallTakerName" ColumnName="CallTakerName" />
+          <ScalarProperty Name="DispatchedVehiclesNo" ColumnName="DispatchedVehiclesNo" />
+          <ScalarProperty Name="ISSINumber" ColumnName="ISSINumber" />
+          <ScalarProperty Name="FinalIncidentTypeId" ColumnName="FinalIncidentTypeId" />
+          <ScalarProperty Name="InitialIncidentTypeId" ColumnName="InitialIncidentTypeId" />
+          <ScalarProperty Name="LanguageOfCaller" ColumnName="LanguageOfCaller" />
+          <ScalarProperty Name="Injury" ColumnName="Injury" />
+          <ScalarProperty Name="Level5" ColumnName="Level5" />
+          <ScalarProperty Name="Level4" ColumnName="Level4" />
+          <ScalarProperty Name="Level3" ColumnName="Level3" />
+          <ScalarProperty Name="Level2" ColumnName="Level2" />
+          <ScalarProperty Name="Level1" ColumnName="Level1" />
+          <ScalarProperty Name="DispatcherId" ColumnName="DispatcherId" />
+          <ScalarProperty Name="ClosureFromWebReason" ColumnName="ClosureFromWebReason" />
+          <ScalarProperty Name="IncidentLateArrivalReasonId" ColumnName="IncidentLateArrivalReasonId" />
+          <ScalarProperty Name="IncidentSecondArrivalReasonId" ColumnName="IncidentSecondArrivalReasonId" />
+          <ScalarProperty Name="IncidentReportGeneralComments" ColumnName="IncidentReportGeneralComments" />
+          <ScalarProperty Name="CurrentStatusId" ColumnName="CurrentStatusId" />
+          <ScalarProperty Name="IncidentClosureReasonId" ColumnName="IncidentClosureReasonId" />
+          <ScalarProperty Name="DispatcherName" ColumnName="DispatcherName" />
+          <ScalarProperty Name="CallSource" ColumnName="CallSource" />
+          <ScalarProperty Name="SubId" ColumnName="SubId" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="IncidentDateTime" ColumnName="IncidentDateTime" />
+          <ScalarProperty Name="CallerLatitude" ColumnName="CallerLatitude" />
+          <ScalarProperty Name="CallerLongitude" ColumnName="CallerLongitude" />
+          <ScalarProperty Name="CallerAddress" ColumnName="CallerAddress" />
+          <ScalarProperty Name="CallerNumber" ColumnName="CallerNumber" />
+          <ScalarProperty Name="CallerName" ColumnName="CallerName" />
+          <ScalarProperty Name="PatrolId" ColumnName="PatrolId" />
+          <ScalarProperty Name="IncidentPriorityId" ColumnName="IncidentPriorityId" />
+          <ScalarProperty Name="IncidentTypeId" ColumnName="IncidentTypeId" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OfficersAttendances">
+      <EntityTypeMapping TypeName="TFMModel.OfficersAttendance">
+        <MappingFragment StoreEntitySet="OfficersAttendance">
+          <ScalarProperty Name="ViolationsNumber" ColumnName="ViolationsNumber" />
+          <ScalarProperty Name="SecurityNotesNumber" ColumnName="SecurityNotesNumber" />
+          <ScalarProperty Name="MDTLogoutDateTime" ColumnName="MDTLogoutDateTime" />
+          <ScalarProperty Name="ManualIncidentsNumber" ColumnName="ManualIncidentsNumber" />
+          <ScalarProperty Name="InquiriesNumber" ColumnName="InquiriesNumber" />
+          <ScalarProperty Name="FastResponseNumber" ColumnName="FastResponseNumber" />
+          <ScalarProperty Name="AssignedIncidentsNumber" ColumnName="AssignedIncidentsNumber" />
+          <ScalarProperty Name="AssignedDutiesNumber" ColumnName="AssignedDutiesNumber" />
+          <ScalarProperty Name="SeenAt" ColumnName="SeenAt" />
+          <ScalarProperty Name="IsSeen" ColumnName="IsSeen" />
+          <ScalarProperty Name="PatrolId" ColumnName="PatrolId" />
+          <ScalarProperty Name="MDTDeviceCode" ColumnName="MDTDeviceCode" />
+          <ScalarProperty Name="LogoutLatitude" ColumnName="LogoutLatitude" />
+          <ScalarProperty Name="LogoutLongitude" ColumnName="LogoutLongitude" />
+          <ScalarProperty Name="LogoutDateTime" ColumnName="LogoutDateTime" />
+          <ScalarProperty Name="LoginLatitude" ColumnName="LoginLatitude" />
+          <ScalarProperty Name="LoginLongitude" ColumnName="LoginLongitude" />
+          <ScalarProperty Name="LoginDateTime" ColumnName="LoginDateTime" />
+          <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transporters">
+      <EntityTypeMapping TypeName="TFMModel.Transporter">
+        <MappingFragment StoreEntitySet="Transporter">
+          <ScalarProperty Name="MDTDeviceCode" ColumnName="MDTDeviceCode" />
+          <ScalarProperty Name="currentMileageLastModificationDate" ColumnName="currentMileageLastModificationDate" />
+          <ScalarProperty Name="OldPlace" ColumnName="OldPlace" />
+          <ScalarProperty Name="AnalogInputFourMax" ColumnName="AnalogInputFourMax" />
+          <ScalarProperty Name="AnalogInputFourMin" ColumnName="AnalogInputFourMin" />
+          <ScalarProperty Name="AnalogInputThreeMax" ColumnName="AnalogInputThreeMax" />
+          <ScalarProperty Name="AnalogInputThreeMin" ColumnName="AnalogInputThreeMin" />
+          <ScalarProperty Name="AnalogInputTwoMax" ColumnName="AnalogInputTwoMax" />
+          <ScalarProperty Name="AnalogInputTwoMin" ColumnName="AnalogInputTwoMin" />
+          <ScalarProperty Name="AnalogInputOneMax" ColumnName="AnalogInputOneMax" />
+          <ScalarProperty Name="AnalogInputOneMin" ColumnName="AnalogInputOneMin" />
+          <ScalarProperty Name="TankCapacity" ColumnName="TankCapacity" />
+          <ScalarProperty Name="TotalWorkingHours" ColumnName="TotalWorkingHours" />
+          <ScalarProperty Name="FuelCalibrationConst_D" ColumnName="FuelCalibrationConst_D" />
+          <ScalarProperty Name="FuelCalibrationConst_C" ColumnName="FuelCalibrationConst_C" />
+          <ScalarProperty Name="FuelCalibrationConst_B" ColumnName="FuelCalibrationConst_B" />
+          <ScalarProperty Name="FuelCalibrationConst_A" ColumnName="FuelCalibrationConst_A" />
+          <ScalarProperty Name="SoldDate" ColumnName="SoldDate" />
+          <ScalarProperty Name="CurrentSituationNote" ColumnName="CurrentSituationNote" />
+          <ScalarProperty Name="NextExaminationDate" ColumnName="NextExaminationDate" />
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+          <ScalarProperty Name="TempSensorMaxValue" ColumnName="TempSensorMaxValue" />
+          <ScalarProperty Name="TempSensorMinValue" ColumnName="TempSensorMinValue" />
+          <ScalarProperty Name="FuelCost" ColumnName="FuelCost" />
+          <ScalarProperty Name="HourRate" ColumnName="HourRate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="LisenceImage" ColumnName="LisenceImage" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="LastModificationDate" ColumnName="LastModificationDate" />
+          <ScalarProperty Name="LastModifiedBy" ColumnName="LastModifiedBy" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="SubID" ColumnName="SubID" />
+          <ScalarProperty Name="isMonitored" ColumnName="isMonitored" />
+          <ScalarProperty Name="supplier" ColumnName="supplier" />
+          <ScalarProperty Name="insuranceEndDate" ColumnName="insuranceEndDate" />
+          <ScalarProperty Name="insuranceStartDate" ColumnName="insuranceStartDate" />
+          <ScalarProperty Name="insuredBy" ColumnName="insuredBy" />
+          <ScalarProperty Name="insuranceNo" ColumnName="insuranceNo" />
+          <ScalarProperty Name="entranceDate" ColumnName="entranceDate" />
+          <ScalarProperty Name="engineNo" ColumnName="engineNo" />
+          <ScalarProperty Name="chassisNo" ColumnName="chassisNo" />
+          <ScalarProperty Name="licenseExpiryDate" ColumnName="licenseExpiryDate" />
+          <ScalarProperty Name="licenseNo" ColumnName="licenseNo" />
+          <ScalarProperty Name="deviceCode" ColumnName="deviceCode" />
+          <ScalarProperty Name="providerName" ColumnName="providerName" />
+          <ScalarProperty Name="SIMCardNo" ColumnName="SIMCardNo" />
+          <ScalarProperty Name="deviceType" ColumnName="deviceType" />
+          <ScalarProperty Name="transporterManufacturer" ColumnName="transporterManufacturer" />
+          <ScalarProperty Name="transporterProductionYear" ColumnName="transporterProductionYear" />
+          <ScalarProperty Name="transporterBrand" ColumnName="transporterBrand" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="currentMileage" ColumnName="currentMileage" />
+          <ScalarProperty Name="literPerKm" ColumnName="literPerKm" />
+          <ScalarProperty Name="maxSpeed" ColumnName="maxSpeed" />
+          <ScalarProperty Name="landmark" ColumnName="landmark" />
+          <ScalarProperty Name="branch" ColumnName="branch" />
+          <ScalarProperty Name="transporterType" ColumnName="transporterType" />
+          <ScalarProperty Name="transporterTypeName" ColumnName="transporterTypeName" />
+          <ScalarProperty Name="plateNo" ColumnName="plateNo" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="IncidentAssignees" TypeName="TFMModel.IncidentAssignees" StoreEntitySet="IncidentAssignees">
+      <EndProperty Name="Staff">
+        <ScalarProperty Name="ID" ColumnName="StaffId" />
+      </EndProperty>
+      <EndProperty Name="TFMIncident">
+        <ScalarProperty Name="Id" ColumnName="IncidentId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

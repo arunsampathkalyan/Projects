@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ElrocModelStoreContainer" CdmEntityContainer="ElrocEntities">
+    <EntitySetMapping Name="elrocs">
+      <EntityTypeMapping TypeName="ElrocModel.elroc">
+        <MappingFragment StoreEntitySet="elroc">
+          <ScalarProperty Name="plate_code" ColumnName="plate_code" />
+          <ScalarProperty Name="webservice_state" ColumnName="webservice_state" />
+          <ScalarProperty Name="gps_data" ColumnName="gps_data" />
+          <ScalarProperty Name="send_state" ColumnName="send_state" />
+          <ScalarProperty Name="old_elroc_no" ColumnName="old_elroc_no" />
+          <ScalarProperty Name="location_code" ColumnName="location_code" />
+          <ScalarProperty Name="pic_filename" ColumnName="pic_filename" />
+          <ScalarProperty Name="lane_no" ColumnName="lane_no" />
+          <ScalarProperty Name="direction" ColumnName="direction" />
+          <ScalarProperty Name="altitude" ColumnName="altitude" />
+          <ScalarProperty Name="longtitude" ColumnName="longtitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="size_class" ColumnName="size_class" />
+          <ScalarProperty Name="alarm_status" ColumnName="alarm_status" />
+          <ScalarProperty Name="alarm_info" ColumnName="alarm_info" />
+          <ScalarProperty Name="captured_speed" ColumnName="captured_speed" />
+          <ScalarProperty Name="speed_limit" ColumnName="speed_limit" />
+          <ScalarProperty Name="speed" ColumnName="speed" />
+          <ScalarProperty Name="plate_color" ColumnName="plate_color" />
+          <ScalarProperty Name="plate_source" ColumnName="plate_source" />
+          <ScalarProperty Name="plate_type" ColumnName="plate_type" />
+          <ScalarProperty Name="plate_kind" ColumnName="plate_kind" />
+          <ScalarProperty Name="color_code" ColumnName="color_code" />
+          <ScalarProperty Name="license_plate" ColumnName="license_plate" />
+          <ScalarProperty Name="camera_no" ColumnName="camera_no" />
+          <ScalarProperty Name="server_no" ColumnName="server_no" />
+          <ScalarProperty Name="date_time" ColumnName="date_time" />
+          <ScalarProperty Name="no" ColumnName="no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="servers">
+      <EntityTypeMapping TypeName="ElrocModel.server">
+        <MappingFragment StoreEntitySet="server">
+          <ScalarProperty Name="radar_serial" ColumnName="radar_serial" />
+          <ScalarProperty Name="isactive" ColumnName="isactive" />
+          <ScalarProperty Name="ip_address" ColumnName="ip_address" />
+          <ScalarProperty Name="link_id" ColumnName="link_id" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="location_code" ColumnName="location_code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="no" ColumnName="no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://fugrows.manufaktura.rs:82/timsarmsservice/TimsArmsService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" />
+  <xs:element name="syncLocalDbForOnlineDb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="db_description" nillable="true" type="q1:DbDescriptionModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="syncLocalDbForOnlineDbResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="syncLocalDbForOnlineDbResult" nillable="true" type="q2:ArrayOfDbDescriptionModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getComboboxValues">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="table_info" nillable="true" type="q3:TableInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getComboboxValuesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="getComboboxValuesResult" nillable="true" type="q4:ArrayOfComboboxModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertAccidentToDb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="accident" nillable="true" type="q5:TR_ACC_ACCIDENTS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertAccidentToDbResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="insertAccidentToDbResult" nillable="true" type="q6:ArrayOfTR_ACC_ACCIDENTS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertInjuredToDb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="injured" nillable="true" type="q7:TR_ACC_INJURED_PERS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertInjuredToDbResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="insertInjuredToDbResult" nillable="true" type="q8:ArrayOfTR_ACC_INJURED_PERS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertACCCommentToDb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="comment" nillable="true" type="q9:TR_ACC_COMMENT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertACCCommentToDbResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="insertACCCommentToDbResult" nillable="true" type="q10:ArrayOfTR_ACC_COMMENT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAccidentComments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="param" nillable="true" type="q11:TR_ACC_COMMENT_SEARCH_PARAM" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAccidentCommentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="getAccidentCommentsResult" nillable="true" type="q12:ArrayOfTR_ACC_COMMENT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertAccidentImageToDb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="accident_images" nillable="true" type="q13:TRAFFIC_ACC_PHOTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertAccidentImageToDbResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="insertAccidentImageToDbResult" nillable="true" type="q14:ArrayOfTRAFFIC_ACC_PHOTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertAccidentImageToFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="accident_images" nillable="true" type="q15:TRAFFIC_ACC_PHOTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertAccidentImageToFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insertAccidentImageToFileResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendAccident">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="accident" nillable="true" type="q16:AccidentSaveModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendAccidentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="sendAccidentResult" nillable="true" type="q17:AccidentSaveModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAccident">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="accident" nillable="true" type="q18:TR_ACC_ACCIDENTS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAccidentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="getAccidentResult" nillable="true" type="q19:ArrayOfTR_ACC_ACCIDENTS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchVehicleInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="vehicle" nillable="true" type="q20:TR_VIW_VEHICLES" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchVehicleInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="fetchVehicleInfoResult" nillable="true" type="q21:ArrayOfTR_VIW_VEHICLES" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDescription">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="description" nillable="true" type="q22:DESCRIPTION_PARAMS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDescriptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="getDescriptionResult" nillable="true" type="q23:ArrayOfDESCRIPTION" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchBannedDriverInfoViaTCF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="banned_driving" nillable="true" type="q24:TR_VIW_BANNED_DRIVING" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchBannedDriverInfoViaTCFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="fetchBannedDriverInfoViaTCFResult" nillable="true" type="q25:ArrayOfTR_VIW_BANNED_DRIVING" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchWantedVehicleInfoViaTCF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="wanted_vehicle" nillable="true" type="q26:TR_VIW_WANTED_VEHICLE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchWantedVehicleInfoViaTCFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="fetchWantedVehicleInfoViaTCFResult" nillable="true" type="q27:ArrayOfTR_VIW_WANTED_VEHICLE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchImageViaTCF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="img_tcf" nillable="true" type="q28:TR_IMG_TCF" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchImageViaTCFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="fetchImageViaTCFResult" nillable="true" type="q29:ArrayOfTR_IMG_TCF" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchWantedVehicleInfoViaVIN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="wanted_vehicle" nillable="true" type="q30:TR_VIW_WANTED_VEHICLE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchWantedVehicleInfoViaVINResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="fetchWantedVehicleInfoViaVINResult" nillable="true" type="q31:ArrayOfTR_VIW_WANTED_VEHICLE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchWantedVehicleInfoViaPlate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="wanted_vehicle" nillable="true" type="q32:TR_VIW_WANTED_VEHICLE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchWantedVehicleInfoViaPlateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="fetchWantedVehicleInfoViaPlateResult" nillable="true" type="q33:ArrayOfTR_VIW_WANTED_VEHICLE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchTicketInfoViaTCF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="ticket" nillable="true" type="q34:TICKETS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchTicketInfoViaTCFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="fetchTicketInfoViaTCFResult" nillable="true" type="q35:ArrayOfTICKET_RESULT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchTicketInfoViaPlate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="ticket" nillable="true" type="q36:TICKETS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchTicketInfoViaPlateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="fetchTicketInfoViaPlateResult" nillable="true" type="q37:ArrayOfTICKET_RESULT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchTicketInfoViaLic">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="ticket" nillable="true" type="q38:TICKETS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchTicketInfoViaLicResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="fetchTicketInfoViaLicResult" nillable="true" type="q39:ArrayOfTICKET_RESULT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchTicketInfoByNo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="ticket" nillable="true" type="q40:TICKETS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchTicketInfoByNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="fetchTicketInfoByNoResult" nillable="true" type="q41:TICKET_RESULT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTicketTableLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="ticket_params" nillable="true" type="q42:LOG_TICKETS_PARAMS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTicketTableLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="getTicketTableLogResult" nillable="true" type="q43:ArrayOfLOG_TICKETS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchDiplomaticVehicleInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="vehicle" nillable="true" type="q44:TR_VIW_VEHICLES" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchDiplomaticVehicleInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="fetchDiplomaticVehicleInfoResult" nillable="true" type="q45:ArrayOfTR_VIW_VEHICLES" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchPoliceInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="police_officers" nillable="true" type="q46:TR_VIW_POLICE_OFFICERS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchPoliceInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="fetchPoliceInfoResult" nillable="true" type="q47:ArrayOfTR_VIW_POLICE_OFFICERS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="customSql">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="sql" nillable="true" type="q48:StringModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="customSqlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customSqlResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchUserInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="police_officers" nillable="true" type="q49:TR_VIW_POLICE_OFFICERS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchUserInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="fetchUserInfoResult" nillable="true" type="q50:ArrayOfTR_VIW_POLICE_OFFICERS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchLicenseInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="driver_licence" nillable="true" type="q51:TR_VIW_DRIVER_LICENCE_EXTENDED" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchLicenseInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="fetchLicenseInfoResult" nillable="true" type="q52:ArrayOfTR_VIW_DRIVER_LICENCE_EXTENDED" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchLicenseInfoBasic">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="driver_licence" nillable="true" type="q53:TR_VIW_DRIVER_LICENCE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchLicenseInfoBasicResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="fetchLicenseInfoBasicResult" nillable="true" type="q54:ArrayOfTR_VIW_DRIVER_LICENCE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchLicenseInfoViaTCF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="driver_licence" nillable="true" type="q55:TR_VIW_DRIVER_LICENCE_EXTENDED" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchLicenseInfoViaTCFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="fetchLicenseInfoViaTCFResult" nillable="true" type="q56:ArrayOfTR_VIW_DRIVER_LICENCE_EXTENDED" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchDriverInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="driver_licence" nillable="true" type="q57:TR_DRIVER_EXTENDED" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchDriverInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="fetchDriverInfoResult" nillable="true" type="q58:ArrayOfTR_DRIVER_EXTENDED" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="vehicleSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="vehicle" nillable="true" type="q59:TR_VEHICLE_EXTENDED" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="vehicleSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="vehicleSearchResult" nillable="true" type="q60:ArrayOfTR_VEHICLE_EXTENDED" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchPersonalAccInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="acc_personal" nillable="true" type="q61:TR_ACC_PERSONAL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchPersonalAccInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="fetchPersonalAccInfoResult" nillable="true" type="q62:ArrayOfTR_ACC_PERSONAL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchPersonalInfoViaTCF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="personal" nillable="true" type="q63:TR_VIW_PERSONAL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchPersonalInfoViaTCFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="fetchPersonalInfoViaTCFResult" nillable="true" type="q64:ArrayOfTR_VIW_PERSONAL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getNextAccidentRepNo">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getNextAccidentRepNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="getNextAccidentRepNoResult" nillable="true" type="q65:ArrayOfStringModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertTrafficControlToDb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="accident" nillable="true" type="q66:TRAFFIC_CONTROL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertTrafficControlToDbResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="insertTrafficControlToDbResult" nillable="true" type="q67:ArrayOfTRAFFIC_CONTROL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAccidentCoordinates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="acc_coord" nillable="true" type="q68:TRAFFIC_ACC_COORD" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAccidentCoordinatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="getAccidentCoordinatesResult" nillable="true" type="q69:ArrayOfTRAFFIC_ACC_COORD" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchPolice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="police_info" nillable="true" type="q70:POLICE_INFO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchPoliceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="fetchPoliceResult" nillable="true" type="q71:ArrayOfPOLICE_INFO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTicketInfoToOracleXYZ">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="tickets" nillable="true" type="q72:TICKETS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTicketInfoToOracleXYZResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="SaveTicketInfoToOracleXYZResult" nillable="true" type="q73:TR_TIC_TICKETS_RESPONSE" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginUsr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="user" nillable="true" type="q74:Login" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginUsrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="LoginUsrResult" nillable="true" type="q75:ArrayOfLogin" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="returnDateTimeFormat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="df" nillable="true" type="q76:DATE_FORMAT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="returnDateTimeFormatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="returnDateTimeFormatResult" nillable="true" type="q77:ArrayOfDATE_FORMAT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchPersonalName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="person" nillable="true" type="q78:PERSON_NAME" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fetchPersonalNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="fetchPersonalNameResult" nillable="true" type="q79:PERSON_NAME" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchMonitoredRequests">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="SearchParams" nillable="true" type="q80:MONITORING_SEARCH" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchMonitoredRequestsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="searchMonitoredRequestsResult" nillable="true" type="q81:MONITORING_SEARCH_RESULT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getNextRepNo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="acc_rep_No" nillable="true" type="q82:ACC_REP_NO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getNextRepNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/TIMS_ARMS.SharedClasses.Models" minOccurs="0" name="getNextRepNoResult" nillable="true" type="q83:ArrayOfACC_REP_NO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

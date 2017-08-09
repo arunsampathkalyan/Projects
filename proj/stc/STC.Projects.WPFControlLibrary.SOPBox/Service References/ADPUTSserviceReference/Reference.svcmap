@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ca508357-57db-43bd-8895-0e73382a950c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ADPUTSService1.wsdl" MetadataType="Wsdl" ID="b2a023ef-48fc-41f3-95eb-32a8808e1313" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?wsdl" />
+    <MetadataFile FileName="ADPUTSService7.xsd" MetadataType="Schema" ID="180cdced-509d-4d0d-bac0-5e10da5c2dc3" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?xsd=xsd6" />
+    <MetadataFile FileName="ADPUTSService71.xsd" MetadataType="Schema" ID="37ec0cc0-aa03-4bba-9edf-9ddd0a22d101" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?xsd=xsd4" />
+    <MetadataFile FileName="ADPUTSService72.xsd" MetadataType="Schema" ID="2bab0ef4-0244-43da-bc22-e2fda4bfa95a" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ADPUTSService73.xsd" MetadataType="Schema" ID="e4d68127-c2e3-44dd-820c-9cfbf29a70d7" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ADPUTSService74.xsd" MetadataType="Schema" ID="c3d06109-3f6f-44e0-a5f7-f0f881e97756" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ADPUTSService75.xsd" MetadataType="Schema" ID="4b1cfabf-ecee-4619-a43d-93c0a9df33d4" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ADPUTSService76.xsd" MetadataType="Schema" ID="85d7392e-65f4-47eb-ae36-782c28cae7b8" SourceId="1" SourceUrl="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

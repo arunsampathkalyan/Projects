@@ -1,0 +1,1457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://adpolice.gov.ae/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://adpolice.gov.ae/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://adpolice.gov.ae/">
+      <s:element name="GetTrafficProfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetTrafficProfileRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTrafficProfileRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TcfNo" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTrafficProfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTrafficProfileResult" type="tns:TrafficProfile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TrafficProfile">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TcfNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TcfKindCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArabicName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnglishName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnifiedID" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstablishmentNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EstablishmentSSourceCode" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TcfTypeCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BirthDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReligionCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EducationCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaritalCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OccupationCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NationalityCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PassportNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PassportIssueDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="PassportExpiryDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResidenceNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeAddress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HomeStreetCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeBuildingNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeFlatNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeTelephoneNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkAddress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorkStreetCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkBuildingNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkTelephoneNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="POBox" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mobile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TradeLicenseNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TradeLicenseSourceCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TradeLicenseIssueDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TradeLicenseExpiryDate" nillable="true" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ADPSoapHeaderIn" type="tns:ADPSoapHeaderIn" />
+      <s:complexType name="ADPSoapHeaderIn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="ErrorHeader" type="tns:ErrorHeader" />
+      <s:complexType name="ErrorHeader">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorEnglishDesc" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetTrafficProfileSummary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetTrafficProfileRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTrafficProfileSummaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTrafficProfileSummaryResult" type="tns:TrafficProfileSummary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TrafficProfileSummary">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TicketsCount" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VehiclesCount" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccidentsCount" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicensesCount" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TriesCount" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getNewTrfNoByOldTrfNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetNewTrfNoByOldTrfNoRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetNewTrfNoByOldTrfNoRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="OldTcfNo" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getNewTrfNoByOldTrfNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getNewTrfNoByOldTrfNoResult" type="tns:TrafficNo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TrafficNo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TcfNo" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateTrafficProfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:UpdateTrafficProfileRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdateTrafficProfileRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TcfNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TcfKindCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeAddress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HomeStreetCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeBuildingNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeFlatNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeTelephoneNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkAddress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="WorkStreetCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkBuildingNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkTelephoneNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="POBox" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mobile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateTrafficProfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateTrafficProfileResult" type="tns:TrafficProfile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateDeliveryAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:UpdateDeliveryAddressRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdateDeliveryAddressRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TcfNo" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="DeliveryAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="updateDeliveryAddressResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RegisterUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:RegisterUserRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RegisterUserRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NationalNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnifiedID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TcfNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegisterUserResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTrfNoByNationalID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetTrfNoByNationalIDRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTrfNoByNationalIDRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NationalNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTrfNoByNationalIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTrfNoByNationalIDResult" type="tns:TrafficNo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTrfNoByUnifiedID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetTrfNoByUnifiedIDRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTrfNoByUnifiedIDRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UnifiedID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTrfNoByUnifiedIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTrfNoByUnifiedIDResult" type="tns:TrafficNo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyTrafficProfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:VerifyTrafficProfileRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VerifyTrafficProfileRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CorporateTcfNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TcfNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="NationalNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnifiedID" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="BirthDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mobile" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="VerifyTrafficProfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifyTrafficProfileResult" type="tns:VerifyTrafficProfileResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VerifyTrafficProfileResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsVerifiedProfile" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckWantedPerson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CheckWantedPersonRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CheckWantedPersonRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TcfNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnifiedID" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckWantedPersonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckWantedPersonResult" type="tns:CheckWantedPersonResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CheckWantedPersonResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsWantedPerson" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUnifiedID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetUnifiedIDRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetUnifiedIDRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TrafficProfileNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseInfo" type="tns:LicenseKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LicenseKey">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseSourceCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseSourceArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseSourceEnglishDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUnifiedIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUnifiedIDResult" type="tns:GetUnifiedIDResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetUnifiedIDResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UnifiedID" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUTSNoFromRTANo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetUTSNoFromRTANoRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetUTSNoFromRTANoRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RTAProfileNo" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUTSNoFromRTANoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUTSNoFromRTANoResult" type="tns:TrafficNo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReciepts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetReceiptsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetReceiptsRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="0" maxOccurs="1" name="TrafficProfile" type="tns:TrafficNo" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PlateKey">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PlateNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateOrgNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateColorCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateKindCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateTypeCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlateSourceCode" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateColorArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateColorEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateSourceArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateSourceEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateKindArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateKindEnglishDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateTypeArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateTypeEnglishDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRecieptsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRecieptsResult" type="tns:GetReceiptsResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetReceiptsResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Receipts" type="tns:ArrayOfReceiptID" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReceiptID">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReceiptID" nillable="true" type="tns:ReceiptID" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReceiptID">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ReceiptNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceiptDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceiptTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceCenterCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceCenterArDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceCenterEnDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceKindCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceKindArDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceKindEnDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TypeCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeArDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TypeEnDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="VerifyRepresentative">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:VerifyRepresentativeRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VerifyRepresentativeRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CorporateTcfNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TcfNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="VerifyRepresentativeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifyRepresentativeResult" type="tns:VerifyRepresentativeResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VerifyRepresentativeResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsRepresentative" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UploadPersonImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:UploadPersonImageRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UploadPersonImageRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TcfNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmiratesId" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnifiedId" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="EIDIssueDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="PersonImage" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UploadPersonImageResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateTrafficProfileApp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CreateTrafficProfileAppRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateTrafficProfileAppRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceCenterCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnifiedId" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmiratesId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OldTrafficNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NationalitiyCode" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BirthDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="MotherName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeBuildingNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomeTelNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="POBox" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateTrafficProfileAppResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateTrafficProfileAppResult" type="tns:CreateTrafficProfileAppResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreateTrafficProfileAppResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExistingTrafficNo" nillable="true" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPrivileges">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetPrivilegesRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetPrivilegesRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UserTrafficNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompanyTrafficNo" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPrivilegesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPrivilegesResult" type="tns:GetPrivilegesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetPrivilegesResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Privileges" type="tns:ArrayOfPrivilege" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPrivilege">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Privilege" nillable="true" type="tns:Privilege" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Privilege">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PrivilegeCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrivilegeDescAr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrivilegeDescEn" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRepresentativeCompanies">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetRepresentativeCompaniesRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetRepresentativeCompaniesRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UserTrafficNo" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRepresentativeCompaniesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRepresentativeCompaniesResult" type="tns:GetRepresentativeCompaniesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetRepresentativeCompaniesResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Companies" type="tns:ArrayOfCompany" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfCompany">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Company" nillable="true" type="tns:Company" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Company">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CompanyTrafficNo" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyNameAr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyNameEn" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTrfProfileRestrictions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetTrfProfileRestrictionsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTrfProfileRestrictionsRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UserTrafficNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompanyTrafficNo" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTrfProfileRestrictionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTrfProfileRestrictionsResult" type="tns:GetTrfProfileRestrictionsResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTrfProfileRestrictionsResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LicenseInfo" type="tns:LicenseKey" />
+          <s:element minOccurs="1" maxOccurs="1" name="LicenseExpiryDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExpiredVehicles" type="tns:ArrayOfExpiredVehicle" />
+          <s:element minOccurs="0" maxOccurs="1" name="Restrictions" type="tns:ArrayOfRestrictionRecord" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfExpiredVehicle">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ExpiredVehicle" nillable="true" type="tns:ExpiredVehicle" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExpiredVehicle">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PlateInfo" type="tns:PlateKey" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationExpiryDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfRestrictionRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RestrictionRecord" nillable="true" type="tns:RestrictionRecord" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RestrictionRecord">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TCFNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="RestrictionCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RestrictionArabicDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RestrictionEnglishDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="RestrictionCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsExempted" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPrivilegeStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:GetPrivilegeStatusRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetPrivilegeStatusRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UserTrafficNo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompanyTrafficNo" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="PrivilegeCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemCode" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPrivilegeStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPrivilegeStatusResult" type="tns:GetPrivilegeStatusResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetPrivilegeStatusResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsAllowed" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetTrafficProfileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTrafficProfile" />
+  </wsdl:message>
+  <wsdl:message name="GetTrafficProfileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTrafficProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTrafficProfileADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetTrafficProfileErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTrafficProfileSummarySoapIn">
+    <wsdl:part name="parameters" element="tns:GetTrafficProfileSummary" />
+  </wsdl:message>
+  <wsdl:message name="GetTrafficProfileSummarySoapOut">
+    <wsdl:part name="parameters" element="tns:GetTrafficProfileSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTrafficProfileSummaryADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetTrafficProfileSummaryErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="getNewTrfNoByOldTrfNoSoapIn">
+    <wsdl:part name="parameters" element="tns:getNewTrfNoByOldTrfNo" />
+  </wsdl:message>
+  <wsdl:message name="getNewTrfNoByOldTrfNoSoapOut">
+    <wsdl:part name="parameters" element="tns:getNewTrfNoByOldTrfNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getNewTrfNoByOldTrfNoADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="getNewTrfNoByOldTrfNoErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTrafficProfileSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTrafficProfile" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTrafficProfileSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTrafficProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTrafficProfileADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTrafficProfileErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="updateDeliveryAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:updateDeliveryAddress" />
+  </wsdl:message>
+  <wsdl:message name="updateDeliveryAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:updateDeliveryAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateDeliveryAddressADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="updateDeliveryAddressErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="RegisterUserSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterUser" />
+  </wsdl:message>
+  <wsdl:message name="RegisterUserSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterUserADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="RegisterUserErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTrfNoByNationalIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTrfNoByNationalID" />
+  </wsdl:message>
+  <wsdl:message name="GetTrfNoByNationalIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTrfNoByNationalIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTrfNoByNationalIDADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetTrfNoByNationalIDErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTrfNoByUnifiedIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTrfNoByUnifiedID" />
+  </wsdl:message>
+  <wsdl:message name="GetTrfNoByUnifiedIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTrfNoByUnifiedIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTrfNoByUnifiedIDADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetTrfNoByUnifiedIDErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="VerifyTrafficProfileSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyTrafficProfile" />
+  </wsdl:message>
+  <wsdl:message name="VerifyTrafficProfileSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyTrafficProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyTrafficProfileADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="VerifyTrafficProfileErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="CheckWantedPersonSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckWantedPerson" />
+  </wsdl:message>
+  <wsdl:message name="CheckWantedPersonSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckWantedPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckWantedPersonADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="CheckWantedPersonErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetUnifiedIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUnifiedID" />
+  </wsdl:message>
+  <wsdl:message name="GetUnifiedIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUnifiedIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUnifiedIDADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetUnifiedIDErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetUTSNoFromRTANoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUTSNoFromRTANo" />
+  </wsdl:message>
+  <wsdl:message name="GetUTSNoFromRTANoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUTSNoFromRTANoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUTSNoFromRTANoADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetUTSNoFromRTANoErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRecieptsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReciepts" />
+  </wsdl:message>
+  <wsdl:message name="GetRecieptsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRecieptsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRecieptsADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetRecieptsErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="VerifyRepresentativeSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyRepresentative" />
+  </wsdl:message>
+  <wsdl:message name="VerifyRepresentativeSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyRepresentativeResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyRepresentativeADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="VerifyRepresentativeErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="UploadPersonImageSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadPersonImage" />
+  </wsdl:message>
+  <wsdl:message name="UploadPersonImageSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadPersonImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadPersonImageADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="UploadPersonImageErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateTrafficProfileAppSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTrafficProfileApp" />
+  </wsdl:message>
+  <wsdl:message name="CreateTrafficProfileAppSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTrafficProfileAppResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTrafficProfileAppADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="CreateTrafficProfileAppErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPrivilegesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPrivileges" />
+  </wsdl:message>
+  <wsdl:message name="GetPrivilegesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPrivilegesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPrivilegesADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetPrivilegesErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRepresentativeCompaniesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRepresentativeCompanies" />
+  </wsdl:message>
+  <wsdl:message name="GetRepresentativeCompaniesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRepresentativeCompaniesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRepresentativeCompaniesADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetRepresentativeCompaniesErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTrfProfileRestrictionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTrfProfileRestrictions" />
+  </wsdl:message>
+  <wsdl:message name="GetTrfProfileRestrictionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTrfProfileRestrictionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTrfProfileRestrictionsADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetTrfProfileRestrictionsErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPrivilegeStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPrivilegeStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetPrivilegeStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPrivilegeStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPrivilegeStatusADPSoapHeaderIn">
+    <wsdl:part name="ADPSoapHeaderIn" element="tns:ADPSoapHeaderIn" />
+  </wsdl:message>
+  <wsdl:message name="GetPrivilegeStatusErrorHeader">
+    <wsdl:part name="ErrorHeader" element="tns:ErrorHeader" />
+  </wsdl:message>
+  <wsdl:portType name="TrafficProfileServicesSoap">
+    <wsdl:operation name="GetTrafficProfile">
+      <wsdl:input message="tns:GetTrafficProfileSoapIn" />
+      <wsdl:output message="tns:GetTrafficProfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrafficProfileSummary">
+      <wsdl:input message="tns:GetTrafficProfileSummarySoapIn" />
+      <wsdl:output message="tns:GetTrafficProfileSummarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getNewTrfNoByOldTrfNo">
+      <wsdl:input message="tns:getNewTrfNoByOldTrfNoSoapIn" />
+      <wsdl:output message="tns:getNewTrfNoByOldTrfNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTrafficProfile">
+      <wsdl:input message="tns:UpdateTrafficProfileSoapIn" />
+      <wsdl:output message="tns:UpdateTrafficProfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateDeliveryAddress">
+      <wsdl:input message="tns:updateDeliveryAddressSoapIn" />
+      <wsdl:output message="tns:updateDeliveryAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input message="tns:RegisterUserSoapIn" />
+      <wsdl:output message="tns:RegisterUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrfNoByNationalID">
+      <wsdl:input message="tns:GetTrfNoByNationalIDSoapIn" />
+      <wsdl:output message="tns:GetTrfNoByNationalIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrfNoByUnifiedID">
+      <wsdl:input message="tns:GetTrfNoByUnifiedIDSoapIn" />
+      <wsdl:output message="tns:GetTrfNoByUnifiedIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyTrafficProfile">
+      <wsdl:input message="tns:VerifyTrafficProfileSoapIn" />
+      <wsdl:output message="tns:VerifyTrafficProfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckWantedPerson">
+      <wsdl:input message="tns:CheckWantedPersonSoapIn" />
+      <wsdl:output message="tns:CheckWantedPersonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnifiedID">
+      <wsdl:input message="tns:GetUnifiedIDSoapIn" />
+      <wsdl:output message="tns:GetUnifiedIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUTSNoFromRTANo">
+      <wsdl:input message="tns:GetUTSNoFromRTANoSoapIn" />
+      <wsdl:output message="tns:GetUTSNoFromRTANoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReciepts">
+      <wsdl:input message="tns:GetRecieptsSoapIn" />
+      <wsdl:output message="tns:GetRecieptsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyRepresentative">
+      <wsdl:input message="tns:VerifyRepresentativeSoapIn" />
+      <wsdl:output message="tns:VerifyRepresentativeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadPersonImage">
+      <wsdl:input message="tns:UploadPersonImageSoapIn" />
+      <wsdl:output message="tns:UploadPersonImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTrafficProfileApp">
+      <wsdl:input message="tns:CreateTrafficProfileAppSoapIn" />
+      <wsdl:output message="tns:CreateTrafficProfileAppSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrivileges">
+      <wsdl:input message="tns:GetPrivilegesSoapIn" />
+      <wsdl:output message="tns:GetPrivilegesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRepresentativeCompanies">
+      <wsdl:input message="tns:GetRepresentativeCompaniesSoapIn" />
+      <wsdl:output message="tns:GetRepresentativeCompaniesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTrfProfileRestrictions">
+      <wsdl:input message="tns:GetTrfProfileRestrictionsSoapIn" />
+      <wsdl:output message="tns:GetTrfProfileRestrictionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrivilegeStatus">
+      <wsdl:input message="tns:GetPrivilegeStatusSoapIn" />
+      <wsdl:output message="tns:GetPrivilegeStatusSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TrafficProfileServicesSoap" type="tns:TrafficProfileServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTrafficProfile">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetTrafficProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTrafficProfileADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTrafficProfileErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrafficProfileSummary">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetTrafficProfileSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTrafficProfileSummaryADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTrafficProfileSummaryErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNewTrfNoByOldTrfNo">
+      <soap:operation soapAction="http://adpolice.gov.ae/getNewTrfNoByOldTrfNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getNewTrfNoByOldTrfNoADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:getNewTrfNoByOldTrfNoErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTrafficProfile">
+      <soap:operation soapAction="http://adpolice.gov.ae/UpdateTrafficProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateTrafficProfileADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateTrafficProfileErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDeliveryAddress">
+      <soap:operation soapAction="http://adpolice.gov.ae/updateDeliveryAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateDeliveryAddressADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateDeliveryAddressErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <soap:operation soapAction="http://adpolice.gov.ae/RegisterUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RegisterUserADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:RegisterUserErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrfNoByNationalID">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetTrfNoByNationalID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTrfNoByNationalIDADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTrfNoByNationalIDErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrfNoByUnifiedID">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetTrfNoByUnifiedID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTrfNoByUnifiedIDADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTrfNoByUnifiedIDErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyTrafficProfile">
+      <soap:operation soapAction="http://adpolice.gov.ae/VerifyTrafficProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:VerifyTrafficProfileADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:VerifyTrafficProfileErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckWantedPerson">
+      <soap:operation soapAction="http://adpolice.gov.ae/CheckWantedPerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CheckWantedPersonADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:CheckWantedPersonErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnifiedID">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetUnifiedID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetUnifiedIDADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetUnifiedIDErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUTSNoFromRTANo">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetUTSNoFromRTANo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetUTSNoFromRTANoADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetUTSNoFromRTANoErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReciepts">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetReciepts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRecieptsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRecieptsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyRepresentative">
+      <soap:operation soapAction="http://adpolice.gov.ae/VerifyRepresentative" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:VerifyRepresentativeADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:VerifyRepresentativeErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadPersonImage">
+      <soap:operation soapAction="http://adpolice.gov.ae/UploadPersonImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UploadPersonImageADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:UploadPersonImageErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTrafficProfileApp">
+      <soap:operation soapAction="http://adpolice.gov.ae/CreateTrafficProfileApp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateTrafficProfileAppADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateTrafficProfileAppErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrivileges">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetPrivileges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPrivilegesADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPrivilegesErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRepresentativeCompanies">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetRepresentativeCompanies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRepresentativeCompaniesADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRepresentativeCompaniesErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrfProfileRestrictions">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetTrfProfileRestrictions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTrfProfileRestrictionsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTrfProfileRestrictionsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrivilegeStatus">
+      <soap:operation soapAction="http://adpolice.gov.ae/GetPrivilegeStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPrivilegeStatusADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPrivilegeStatusErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TrafficProfileServicesSoap12" type="tns:TrafficProfileServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTrafficProfile">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetTrafficProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTrafficProfileADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTrafficProfileErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrafficProfileSummary">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetTrafficProfileSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTrafficProfileSummaryADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTrafficProfileSummaryErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNewTrfNoByOldTrfNo">
+      <soap12:operation soapAction="http://adpolice.gov.ae/getNewTrfNoByOldTrfNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getNewTrfNoByOldTrfNoADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getNewTrfNoByOldTrfNoErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTrafficProfile">
+      <soap12:operation soapAction="http://adpolice.gov.ae/UpdateTrafficProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateTrafficProfileADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateTrafficProfileErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDeliveryAddress">
+      <soap12:operation soapAction="http://adpolice.gov.ae/updateDeliveryAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateDeliveryAddressADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateDeliveryAddressErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <soap12:operation soapAction="http://adpolice.gov.ae/RegisterUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RegisterUserADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RegisterUserErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrfNoByNationalID">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetTrfNoByNationalID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTrfNoByNationalIDADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTrfNoByNationalIDErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrfNoByUnifiedID">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetTrfNoByUnifiedID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTrfNoByUnifiedIDADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTrfNoByUnifiedIDErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyTrafficProfile">
+      <soap12:operation soapAction="http://adpolice.gov.ae/VerifyTrafficProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:VerifyTrafficProfileADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:VerifyTrafficProfileErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckWantedPerson">
+      <soap12:operation soapAction="http://adpolice.gov.ae/CheckWantedPerson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CheckWantedPersonADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CheckWantedPersonErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnifiedID">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetUnifiedID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetUnifiedIDADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetUnifiedIDErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUTSNoFromRTANo">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetUTSNoFromRTANo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetUTSNoFromRTANoADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetUTSNoFromRTANoErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReciepts">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetReciepts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRecieptsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRecieptsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyRepresentative">
+      <soap12:operation soapAction="http://adpolice.gov.ae/VerifyRepresentative" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:VerifyRepresentativeADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:VerifyRepresentativeErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadPersonImage">
+      <soap12:operation soapAction="http://adpolice.gov.ae/UploadPersonImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UploadPersonImageADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UploadPersonImageErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTrafficProfileApp">
+      <soap12:operation soapAction="http://adpolice.gov.ae/CreateTrafficProfileApp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateTrafficProfileAppADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateTrafficProfileAppErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrivileges">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetPrivileges" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPrivilegesADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPrivilegesErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRepresentativeCompanies">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetRepresentativeCompanies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRepresentativeCompaniesADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRepresentativeCompaniesErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTrfProfileRestrictions">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetTrfProfileRestrictions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTrfProfileRestrictionsADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTrfProfileRestrictionsErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrivilegeStatus">
+      <soap12:operation soapAction="http://adpolice.gov.ae/GetPrivilegeStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPrivilegeStatusADPSoapHeaderIn" part="ADPSoapHeaderIn" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPrivilegeStatusErrorHeader" part="ErrorHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TrafficProfileServices">
+    <wsdl:port name="TrafficProfileServicesSoap" binding="tns:TrafficProfileServicesSoap">
+      <soap:address location="http://194.170.200.102/trafficwebservices/TrafficProfileServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TrafficProfileServicesSoap12" binding="tns:TrafficProfileServicesSoap12">
+      <soap12:address location="http://194.170.200.102/trafficwebservices/TrafficProfileServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

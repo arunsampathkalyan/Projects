@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="46481400eca04144ac653a739d54fff7" Name="Diagram1" ZoomLevel="36">
+        <EntityTypeShape EntityType="TFMModel.iPatrolDuty" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TFMModel.iPatrolDutiesUser" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TFMModel.iPatrolFilesSubmittedByUser" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TFMModel.Staff" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="TFMModel.FK_iPatrolDutiesUsers_iPatrolDuties" ManuallyRouted="false" />
+        <AssociationConnector Association="TFMModel.FK_iPatrolDutiesUsers_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="TFMModel.FK_iPatrolFilesSubmittedByUsers_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="TFMModel.FK_Staff_Staff" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TFMModel.TFMIncident" Width="1.5" PointX="3" PointY="18.875" />
+        <EntityTypeShape EntityType="TFMModel.OfficersAttendance" Width="1.5" PointX="5.25" PointY="11.375" />
+        <EntityTypeShape EntityType="TFMModel.Transporter" Width="1.5" PointX="8.625" PointY="9.625" />
+        <AssociationConnector Association="TFMModel.FK_Incidents_Transporter" />
+        <AssociationConnector Association="TFMModel.FK_iPatrolDuties_Transporter" />
+        <AssociationConnector Association="TFMModel.FK_OfficersAttendance_Staff" />
+        <AssociationConnector Association="TFMModel.FK_OfficersAttendance_Transporter" />
+        <AssociationConnector Association="TFMModel.IncidentAssignees" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

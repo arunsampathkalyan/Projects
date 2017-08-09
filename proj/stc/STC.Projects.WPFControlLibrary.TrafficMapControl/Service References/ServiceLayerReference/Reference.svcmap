@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="73dfb6a7-315d-4ba0-b881-b32f88913d1a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8082/ServiceLayer.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceLayer.disco" MetadataType="Disco" ID="19bfe4be-cc58-48b5-b56b-36e3693225db" SourceId="1" SourceUrl="http://localhost:8082/ServiceLayer.svc?disco" />
+    <MetadataFile FileName="ServiceLayer.xsd" MetadataType="Schema" ID="75ffc3f1-92cf-45e1-8446-6992f13d602e" SourceId="1" SourceUrl="http://localhost:8082/ServiceLayer.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceLayer1.xsd" MetadataType="Schema" ID="d827772b-6b35-4fc8-a671-eefe8ef9ebc3" SourceId="1" SourceUrl="http://localhost:8082/ServiceLayer.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServiceLayer2.xsd" MetadataType="Schema" ID="d0695aff-90c6-4522-bc84-2e577afabb6a" SourceId="1" SourceUrl="http://localhost:8082/ServiceLayer.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceLayer.wsdl" MetadataType="Wsdl" ID="69ee6005-eea5-417f-8923-17447e60d25b" SourceId="1" SourceUrl="http://localhost:8082/ServiceLayer.svc?wsdl" />
+    <MetadataFile FileName="ServiceLayer3.xsd" MetadataType="Schema" ID="3fef62ea-0ef8-4d7f-8ea8-abd529a219cd" SourceId="1" SourceUrl="http://localhost:8082/ServiceLayer.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

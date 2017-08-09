@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TFMIntegrationService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://aghqsrv453/WCFServices/TFMIntegrationService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://aghqsrv453/WCFServices/TFMIntegrationService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://aghqsrv453/WCFServices/TFMIntegrationService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" />
+      <xsd:import schemaLocation="http://aghqsrv453/WCFServices/TFMIntegrationService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITFMIntegrationService_AddDuty_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDuty" />
+  </wsdl:message>
+  <wsdl:message name="ITFMIntegrationService_AddDuty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDutyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITFMIntegrationService_AddIncident_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddIncident" />
+  </wsdl:message>
+  <wsdl:message name="ITFMIntegrationService_AddIncident_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddIncidentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITFMIntegrationService_GetPatrolsLocations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatrolsLocations" />
+  </wsdl:message>
+  <wsdl:message name="ITFMIntegrationService_GetPatrolsLocations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatrolsLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITFMIntegrationService_UpdatePatrolLocations_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatrolLocations" />
+  </wsdl:message>
+  <wsdl:message name="ITFMIntegrationService_UpdatePatrolLocations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatrolLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITFMIntegrationService_GetPatrolDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatrolDetails" />
+  </wsdl:message>
+  <wsdl:message name="ITFMIntegrationService_GetPatrolDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatrolDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITFMIntegrationService_UpdatePatrolCurrentTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatrolCurrentTask" />
+  </wsdl:message>
+  <wsdl:message name="ITFMIntegrationService_UpdatePatrolCurrentTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatrolCurrentTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITFMIntegrationService_GetTaskImagesURLs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskImagesURLs" />
+  </wsdl:message>
+  <wsdl:message name="ITFMIntegrationService_GetTaskImagesURLs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskImagesURLsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITFMIntegrationService_GetTaskVideosURLs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskVideosURLs" />
+  </wsdl:message>
+  <wsdl:message name="ITFMIntegrationService_GetTaskVideosURLs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskVideosURLsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITFMIntegrationService_GetPatrolDetailsFromTFM_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatrolDetailsFromTFM" />
+  </wsdl:message>
+  <wsdl:message name="ITFMIntegrationService_GetPatrolDetailsFromTFM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatrolDetailsFromTFMResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITFMIntegrationService">
+    <wsdl:operation name="AddDuty">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITFMIntegrationService/AddDuty" message="tns:ITFMIntegrationService_AddDuty_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITFMIntegrationService/AddDutyResponse" message="tns:ITFMIntegrationService_AddDuty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddIncident">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITFMIntegrationService/AddIncident" message="tns:ITFMIntegrationService_AddIncident_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITFMIntegrationService/AddIncidentResponse" message="tns:ITFMIntegrationService_AddIncident_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatrolsLocations">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITFMIntegrationService/GetPatrolsLocations" message="tns:ITFMIntegrationService_GetPatrolsLocations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITFMIntegrationService/GetPatrolsLocationsResponse" message="tns:ITFMIntegrationService_GetPatrolsLocations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatrolLocations">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITFMIntegrationService/UpdatePatrolLocations" message="tns:ITFMIntegrationService_UpdatePatrolLocations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITFMIntegrationService/UpdatePatrolLocationsResponse" message="tns:ITFMIntegrationService_UpdatePatrolLocations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatrolDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITFMIntegrationService/GetPatrolDetails" message="tns:ITFMIntegrationService_GetPatrolDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITFMIntegrationService/GetPatrolDetailsResponse" message="tns:ITFMIntegrationService_GetPatrolDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatrolCurrentTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITFMIntegrationService/UpdatePatrolCurrentTask" message="tns:ITFMIntegrationService_UpdatePatrolCurrentTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITFMIntegrationService/UpdatePatrolCurrentTaskResponse" message="tns:ITFMIntegrationService_UpdatePatrolCurrentTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskImagesURLs">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITFMIntegrationService/GetTaskImagesURLs" message="tns:ITFMIntegrationService_GetTaskImagesURLs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITFMIntegrationService/GetTaskImagesURLsResponse" message="tns:ITFMIntegrationService_GetTaskImagesURLs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskVideosURLs">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITFMIntegrationService/GetTaskVideosURLs" message="tns:ITFMIntegrationService_GetTaskVideosURLs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITFMIntegrationService/GetTaskVideosURLsResponse" message="tns:ITFMIntegrationService_GetTaskVideosURLs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatrolDetailsFromTFM">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITFMIntegrationService/GetPatrolDetailsFromTFM" message="tns:ITFMIntegrationService_GetPatrolDetailsFromTFM_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITFMIntegrationService/GetPatrolDetailsFromTFMResponse" message="tns:ITFMIntegrationService_GetPatrolDetailsFromTFM_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITFMIntegrationService" type="tns:ITFMIntegrationService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddDuty">
+      <soap:operation soapAction="http://tempuri.org/ITFMIntegrationService/AddDuty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddIncident">
+      <soap:operation soapAction="http://tempuri.org/ITFMIntegrationService/AddIncident" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatrolsLocations">
+      <soap:operation soapAction="http://tempuri.org/ITFMIntegrationService/GetPatrolsLocations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatrolLocations">
+      <soap:operation soapAction="http://tempuri.org/ITFMIntegrationService/UpdatePatrolLocations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatrolDetails">
+      <soap:operation soapAction="http://tempuri.org/ITFMIntegrationService/GetPatrolDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatrolCurrentTask">
+      <soap:operation soapAction="http://tempuri.org/ITFMIntegrationService/UpdatePatrolCurrentTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskImagesURLs">
+      <soap:operation soapAction="http://tempuri.org/ITFMIntegrationService/GetTaskImagesURLs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskVideosURLs">
+      <soap:operation soapAction="http://tempuri.org/ITFMIntegrationService/GetTaskVideosURLs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatrolDetailsFromTFM">
+      <soap:operation soapAction="http://tempuri.org/ITFMIntegrationService/GetPatrolDetailsFromTFM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TFMIntegrationService">
+    <wsdl:port name="BasicHttpBinding_ITFMIntegrationService" binding="tns:BasicHttpBinding_ITFMIntegrationService">
+      <soap:address location="http://aghqsrv453/WCFServices/TFMIntegrationService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

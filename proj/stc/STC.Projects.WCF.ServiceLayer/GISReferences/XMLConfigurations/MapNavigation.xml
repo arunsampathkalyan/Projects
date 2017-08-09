@@ -1,0 +1,24 @@
+﻿<MapNavigationConfiguration NorthArrow="NorthArrow.png" InitialExtnet="5619625.60666934,3021632.04644211,5639193.47253855,3031765.94898401" FullExtent="5619625.60666934,3021632.04644211,5639193.47253855,3031765.94898401">
+<!--<MapNavigationConfiguration NorthArrow="NorthArrow.png">-->
+
+  <MapService ID="0"/>
+  <MapService ID="1">
+    <Layers>
+      <!--<Layer ID="0"/>-->
+      <Layer ID="1"/>
+    </Layers>
+  </MapService>
+</MapNavigationConfiguration>
+
+<!--InitialExtnet="5619625.60666934,3021632.04644211,5639193.47253855,3031765.94898401" FullExtent="5619625.60666934,3021632.04644211,5639193.47253855,3031765.94898401"-->
+<!--<MapNavigationConfiguration NorthArrow="NorthArrow.png" InitialExtnet="-117.24377026205757,32.61710761167467,-116.95879261773452,32.841266856294624,4326" FullExtent="-117.24377026205757,32.61710761167467,-116.95879261773452,32.841266856294624,4326">
+  <MapService ID="0"/>
+  <MapService ID="1">
+    <Layers>
+      <Layer ID="0"/>
+      <Layer ID="0"/>
+
+    </Layers>
+  </MapService>
+
+</MapNavigationConfiguration>-->

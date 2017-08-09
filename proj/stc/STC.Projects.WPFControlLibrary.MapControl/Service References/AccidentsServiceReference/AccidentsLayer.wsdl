@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AccidentsLayer" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://stc-connect.cloudapp.net/WCFService/AccidentsLayer.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://stc-connect.cloudapp.net/WCFService/AccidentsLayer.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://stc-connect.cloudapp.net/WCFService/AccidentsLayer.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/STC.Projects.ClassLibrary.DTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAccidentsLayer_UploadAccidentImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadAccidentImage" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_UploadAccidentImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadAccidentImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_SearchAccidents_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchAccidents" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_SearchAccidents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchAccidentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllAreas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAreas" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllAreas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllCities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCities" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllCities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllEmirates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEmirates" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllEmirates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEmiratesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllLocations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLocations" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllLocations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllLocationTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLocationTypes" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllLocationTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLocationTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllRoadTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRoadTypes" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllRoadTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRoadTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllCrashTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCrashTypes" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllCrashTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCrashTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllWeather_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllWeather" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllWeather_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllWeatherResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllLighting_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLighting" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllLighting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLightingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllSeverties_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSeverties" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllSeverties_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSevertiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllPCondition_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPCondition" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllPCondition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPConditionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllPoliceStations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPoliceStations" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllPoliceStations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPoliceStationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllReportTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllReportTypes" />
+  </wsdl:message>
+  <wsdl:message name="IAccidentsLayer_GetAllReportTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllReportTypesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAccidentsLayer">
+    <wsdl:operation name="UploadAccidentImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccidentsLayer/UploadAccidentImage" message="tns:IAccidentsLayer_UploadAccidentImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccidentsLayer/UploadAccidentImageResponse" message="tns:IAccidentsLayer_UploadAccidentImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchAccidents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccidentsLayer/SearchAccidents" message="tns:IAccidentsLayer_SearchAccidents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccidentsLayer/SearchAccidentsResponse" message="tns:IAccidentsLayer_SearchAccidents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAreas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllAreas" message="tns:IAccidentsLayer_GetAllAreas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllAreasResponse" message="tns:IAccidentsLayer_GetAllAreas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllCities" message="tns:IAccidentsLayer_GetAllCities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllCitiesResponse" message="tns:IAccidentsLayer_GetAllCities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEmirates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllEmirates" message="tns:IAccidentsLayer_GetAllEmirates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllEmiratesResponse" message="tns:IAccidentsLayer_GetAllEmirates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLocations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllLocations" message="tns:IAccidentsLayer_GetAllLocations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllLocationsResponse" message="tns:IAccidentsLayer_GetAllLocations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLocationTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllLocationTypes" message="tns:IAccidentsLayer_GetAllLocationTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllLocationTypesResponse" message="tns:IAccidentsLayer_GetAllLocationTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRoadTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllRoadTypes" message="tns:IAccidentsLayer_GetAllRoadTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllRoadTypesResponse" message="tns:IAccidentsLayer_GetAllRoadTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCrashTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllCrashTypes" message="tns:IAccidentsLayer_GetAllCrashTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllCrashTypesResponse" message="tns:IAccidentsLayer_GetAllCrashTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllWeather">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllWeather" message="tns:IAccidentsLayer_GetAllWeather_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllWeatherResponse" message="tns:IAccidentsLayer_GetAllWeather_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLighting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllLighting" message="tns:IAccidentsLayer_GetAllLighting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllLightingResponse" message="tns:IAccidentsLayer_GetAllLighting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSeverties">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllSeverties" message="tns:IAccidentsLayer_GetAllSeverties_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllSevertiesResponse" message="tns:IAccidentsLayer_GetAllSeverties_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPCondition">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllPCondition" message="tns:IAccidentsLayer_GetAllPCondition_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllPConditionResponse" message="tns:IAccidentsLayer_GetAllPCondition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPoliceStations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllPoliceStations" message="tns:IAccidentsLayer_GetAllPoliceStations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllPoliceStationsResponse" message="tns:IAccidentsLayer_GetAllPoliceStations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReportTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllReportTypes" message="tns:IAccidentsLayer_GetAllReportTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccidentsLayer/GetAllReportTypesResponse" message="tns:IAccidentsLayer_GetAllReportTypes_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAccidentsLayer" type="tns:IAccidentsLayer">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadAccidentImage">
+      <soap:operation soapAction="http://tempuri.org/IAccidentsLayer/UploadAccidentImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchAccidents">
+      <soap:operation soapAction="http://tempuri.org/IAccidentsLayer/SearchAccidents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAreas">
+      <soap:operation soapAction="http://tempuri.org/IAccidentsLayer/GetAllAreas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCities">
+      <soap:operation soapAction="http://tempuri.org/IAccidentsLayer/GetAllCities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEmirates">
+      <soap:operation soapAction="http://tempuri.org/IAccidentsLayer/GetAllEmirates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLocations">
+      <soap:operation soapAction="http://tempuri.org/IAccidentsLayer/GetAllLocations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLocationTypes">
+      <soap:operation soapAction="http://tempuri.org/IAccidentsLayer/GetAllLocationTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRoadTypes">
+      <soap:operation soapAction="http://tempuri.org/IAccidentsLayer/GetAllRoadTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCrashTypes">
+      <soap:operation soapAction="http://tempuri.org/IAccidentsLayer/GetAllCrashTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllWeather">
+      <soap:operation soapAction="http://tempuri.org/IAccidentsLayer/GetAllWeather" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLighting">
+      <soap:operation soapAction="http://tempuri.org/IAccidentsLayer/GetAllLighting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSeverties">
+      <soap:operation soapAction="http://tempuri.org/IAccidentsLayer/GetAllSeverties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPCondition">
+      <soap:operation soapAction="http://tempuri.org/IAccidentsLayer/GetAllPCondition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPoliceStations">
+      <soap:operation soapAction="http://tempuri.org/IAccidentsLayer/GetAllPoliceStations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllReportTypes">
+      <soap:operation soapAction="http://tempuri.org/IAccidentsLayer/GetAllReportTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AccidentsLayer">
+    <wsdl:port name="BasicHttpBinding_IAccidentsLayer" binding="tns:BasicHttpBinding_IAccidentsLayer">
+      <soap:address location="http://stc-connect.cloudapp.net/WCFService/AccidentsLayer.svc/accidentsoap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

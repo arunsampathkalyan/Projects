@@ -1,0 +1,11 @@
+﻿<Window x:Class="STC.Projects.WPFControlLibrary.SOPBox.UserControls.ImageViewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        ResizeMode="CanMinimize"
+        ShowInTaskbar="False"
+        SizeToContent="WidthAndHeight">
+    <Grid Cursor="Hand">
+        <!--<MediaElement x:Name="mplayer" LoadedBehavior="Play"/>-->
+        <Image x:Name="imgChild" ClipToBounds="True" Height="400" MinWidth="600" Stretch="Uniform" StretchDirection="Both" Panel.ZIndex="6"/>
+    </Grid>
+</Window>

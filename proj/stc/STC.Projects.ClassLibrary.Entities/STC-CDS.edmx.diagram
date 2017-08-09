@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9ccf93efa6fe4afbbdc1806fe2f460e2" Name="Diagram1" ZoomLevel="92">
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ViolationView" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ViolationImageView" Width="1.875" PointX="2.375" PointY="1.875" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.CallOfServiceHistoricalView" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.DangerousVehicleViolation" Width="1.5" PointX="3.375" PointY="4.75" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.DangerousVehicleView" Width="1.375" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.Activity" Width="3.375" PointX="11.25" PointY="0.5" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_DangerousVehicleViolations_Activity" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_DangerousVehicleViolations_OldViolationActivity" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ActivityItemView" Width="2.25" PointX="6" PointY="13.625" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ActivityLocationView" Width="1.5" PointX="2.875" PointY="9" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ActivityOrganization" Width="1.5" PointX="15.75" PointY="0.5" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ActivityPersonView" Width="2.125" PointX="4.75" PointY="9.75" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ItemView" Width="1.5" PointX="16.75" PointY="6.5" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.OrganizationView" Width="1.5" PointX="7" PointY="9.375" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.PersonView" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ServiceCallDriver" Width="1.5" PointX="11.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ServiceCallInsurance" Width="1.5" PointX="12.75" PointY="0.625" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ServiceCallVehicle" Width="2" PointX="2.75" PointY="13.75" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ServiceCall" Width="1.5" PointX="18.375" PointY="0.5" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.LocationView" Width="1.5" PointX="9.375" PointY="15.75" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.LocationActivityLocation" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.ServiceCallActivityLocation" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.ServiceCallActivityPerson" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.PersonActivityPerson" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.OrganizationActivityOrganization" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.ServiceCallActivityOrganization" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.ItemActivityItem" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.ServiceCallActivityItem" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.ServiceCallDriverActivityPerson" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.ServiceCallInsuranceActivityOrganization" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.ServiceCallVehicleActivityItem" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.ActivityActivityPerson" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ItemRegistration" Width="1.5" PointX="13.625" PointY="16.125" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ItemRegistrationAuthorityDIM" Width="1.5" PointX="11.375" PointY="33.625" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ItemRegistrationPlateCategoryDIM" Width="1.5" PointX="11.375" PointY="37.5" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ItemRegistrationPlateCodeDIM" Width="1.5" PointX="11.375" PointY="17.625" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ItemRegistrationPlateKindDIM" Width="1.5" PointX="11.375" PointY="40.625" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_ItemRegistration_ItemRegistrationAuthorityDIM" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_ItemRegistration_ItemRegistrationPlateCategoryDIM" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_ItemRegistration_ItemRegistrationPlateCodeDIM" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_ItemRegistration_ItemRegistrationPlateKindDIM" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.Source" Width="1.5" PointX="9" PointY="6.125" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_Activity_Source" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_ItemRegistration_Source" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ActivityCategoryDIM" Width="1.5" PointX="16.375" PointY="16" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_Activity_ActivityCategoryDIM" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ItemCategoryDIM" Width="1.5" PointX="5.375" PointY="18.75" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.Item" Width="1.5" PointX="14.625" PointY="7.375" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_Item_Source" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_ItemRegistration_Item" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.ItemCategoryDIM_Object_FK1" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ItemInvolvementDIM" Width="1.5" PointX="18.375" PointY="15.75" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ActivityItem" Width="1.5" PointX="20.375" PointY="4.75" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_ActivityItem_Activity" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_ActivityItem_Item" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_ActivityItem_ItemInvolvementDIM" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ActivityLocation" Width="1.5" PointX="13.5" PointY="28.25" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ActivityPerson" Width="1.5" PointX="13.5" PointY="22.75" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.Location" Width="1.5" PointX="11.25" PointY="49.625" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.Person" Width="1.5" PointX="20.25" PointY="43.5" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_ActivityLocation_Activity" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_PersonActivity_Activity" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_ActivityLocation_Location" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_ActivityLocation_Source" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_ActivityPerson_Source" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_PersonActivity_Person" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_Location_Source" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_Person_Source" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.ActivityReasonDIM" Width="1.5" PointX="18.375" PointY="19.125" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.ActivityReasonDIM_Activity_FK1" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.PersonEducation" Width="1.5" PointX="16.5" PointY="25.25" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.PersonGenderDIM" Width="1.5" PointX="9" PointY="45.5" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.PersonMaritalStatusDIM" Width="3.375" PointX="22.5" PointY="0.875" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_Person_PersonGenderDIM" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_PersonEducation_Person" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_PersonEducation_Source" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.PersonCategoryDIM" Width="3.5" PointX="27.375" PointY="8.125" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.PersonDriverLicense" Width="1.5" PointX="16.5" PointY="30.875" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_PersonDriverLicense_Person" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_PersonDriverLicense_Source" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.PersonCategoryDIMPerson" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.EducationCategoryDIM" Width="1.5" PointX="20.375" PointY="9.875" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_PersonEducation_EducationCategory" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.EducationDegreeDIM" Width="1.5" PointX="20.375" PointY="13.875" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_PersonEducation_EducationDegree" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.EducationStatusDIM" Width="1.5" PointX="20.375" PointY="17.875" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_PersonEducation_EducationStatus" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.Organization" Width="1.5" PointX="11.25" PointY="63.375" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_Organization_Source" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_PersonEducation_Organization" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.LocationDatumDIM" Width="1.5" PointX="20.375" PointY="21.875" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_Location_LocationDatum" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.LocationCategoryDIM" Width="1.5" PointX="22.375" PointY="4" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.LocationTypeDIM_Location_FK1" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.StatusDIM" Width="1.5" PointX="5.375" PointY="22.875" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_Activity_StatusDIM" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.LocationInvolvementDIM" Width="1.5" PointX="22.375" PointY="12" />
+        <EntityTypeShape EntityType="Microsoft.JPS.CDS.ADPModel.PersonInvolvementDIM" Width="1.5" PointX="22.375" PointY="8" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.FK_ActivityLocation_LocationInvolvementDIM" />
+        <AssociationConnector Association="Microsoft.JPS.CDS.ADPModel.PersonInvolvementDIM_PersonActivity_FK1" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

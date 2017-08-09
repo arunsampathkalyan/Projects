@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d2952d33-51ea-4a27-b90b-d41589eaf1bc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://13.82.52.255/WCFService/ServiceLayer.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceLayer.xsd" MetadataType="Schema" ID="b280e0a2-8945-4062-9f10-98cc6beaef42" SourceId="1" SourceUrl="http://13.82.52.255/WCFService/ServiceLayer.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServiceLayer1.xsd" MetadataType="Schema" ID="1a560b1b-2162-499f-9775-61ef688b533c" SourceId="1" SourceUrl="http://13.82.52.255/WCFService/ServiceLayer.svc?xsd=xsd6" />
+    <MetadataFile FileName="ServiceLayer2.xsd" MetadataType="Schema" ID="2301e0b9-a21b-45e8-9be4-38327211cdc3" SourceId="1" SourceUrl="http://13.82.52.255/WCFService/ServiceLayer.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceLayer3.xsd" MetadataType="Schema" ID="5b632524-df0d-4649-8b9a-bd6ca99f5db3" SourceId="1" SourceUrl="http://13.82.52.255/WCFService/ServiceLayer.svc?xsd=xsd4" />
+    <MetadataFile FileName="ServiceLayer4.xsd" MetadataType="Schema" ID="5aa33f6e-8649-45ba-90f1-783974bcfc62" SourceId="1" SourceUrl="http://13.82.52.255/WCFService/ServiceLayer.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceLayer5.xsd" MetadataType="Schema" ID="3c41b3a1-8bc8-48bf-97b6-1ca154d5ff96" SourceId="1" SourceUrl="http://13.82.52.255/WCFService/ServiceLayer.svc?xsd=xsd7" />
+    <MetadataFile FileName="ServiceLayer6.xsd" MetadataType="Schema" ID="48946602-5e01-4186-a738-b76ba15644c1" SourceId="1" SourceUrl="http://13.82.52.255/WCFService/ServiceLayer.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceLayer.disco" MetadataType="Disco" ID="5b7a5043-2fa9-4d22-802d-4145e03024ed" SourceId="1" SourceUrl="http://13.82.52.255/WCFService/ServiceLayer.svc?disco" />
+    <MetadataFile FileName="ServiceLayer.wsdl" MetadataType="Wsdl" ID="9a16bb3f-6beb-41c4-86fd-cdbafe2d6988" SourceId="1" SourceUrl="http://13.82.52.255/WCFService/ServiceLayer.svc?wsdl" />
+    <MetadataFile FileName="ServiceLayer7.xsd" MetadataType="Schema" ID="b1ce3bc1-03bc-4d64-a7c8-94d13940055c" SourceId="1" SourceUrl="http://13.82.52.255/WCFService/ServiceLayer.svc?xsd=xsd5" />
+    <MetadataFile FileName="ServiceLayer8.xsd" MetadataType="Schema" ID="2ef633c4-b235-4421-8688-e72862b306ac" SourceId="1" SourceUrl="http://13.82.52.255/WCFService/ServiceLayer.svc?xsd=xsd8" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

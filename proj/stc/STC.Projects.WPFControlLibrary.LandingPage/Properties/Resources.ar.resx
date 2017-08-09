@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="strAccidents" xml:space="preserve">
+    <value>حوادث</value>
+  </data>
+  <data name="strAccidentsDailyTrend" xml:space="preserve">
+    <value>معدل اتجاه الحوادث اليومي</value>
+  </data>
+  <data name="strAccidentsMonthTrend" xml:space="preserve">
+    <value>معدل اتجاه الحوادث الشهري</value>
+  </data>
+  <data name="strAccidentsQtrTrend" xml:space="preserve">
+    <value>معدل اتجاه الحوادث الربع سنوي</value>
+  </data>
+  <data name="strAccidentsWeeklyTrend" xml:space="preserve">
+    <value>معدل اتجاه الحوادث الاسبوعي</value>
+  </data>
+  <data name="strAnalysis" xml:space="preserve">
+    <value>إحصائيات</value>
+  </data>
+  <data name="strDangerousViolationsDailyTrend" xml:space="preserve">
+    <value>معدل اتجاه المخالفات الخطرة اليومي</value>
+  </data>
+  <data name="strDangerousViolationsWeeklyTrend" xml:space="preserve">
+    <value>معدل اتجاه المخالفات الخطرة الاسبوعي</value>
+  </data>
+  <data name="strDangerousViolator" xml:space="preserve">
+    <value>مخالفات خطرة</value>
+  </data>
+  <data name="strDangerousVoilationsMonthTrend" xml:space="preserve">
+    <value>معدل اتجاه المخالفات الخطرة الشهري</value>
+  </data>
+  <data name="strDangerViolationQtrTrend" xml:space="preserve">
+    <value>معدل اتجاه المخالفات الخطرة الربع سنوي</value>
+  </data>
+  <data name="strForeCast" xml:space="preserve">
+    <value>FORECAST</value>
+  </data>
+  <data name="strFrom" xml:space="preserve">
+    <value>من</value>
+  </data>
+  <data name="strGeneral" xml:space="preserve">
+    <value>الصفحة الرئيسية</value>
+  </data>
+  <data name="strHeatMap" xml:space="preserve">
+    <value>خريطة العرض التصويري</value>
+  </data>
+  <data name="strHighestQuarter" xml:space="preserve">
+    <value>الفترة العظمى</value>
+  </data>
+  <data name="strHome" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="strKPITableCharts" xml:space="preserve">
+    <value>مؤشرات الأداء</value>
+  </data>
+  <data name="strPatrolCar" xml:space="preserve">
+    <value>دوريات المرور</value>
+  </data>
+  <data name="strStatisticsAnalysis" xml:space="preserve">
+    <value>STATISTICS ANALYSIS</value>
+  </data>
+  <data name="strTargets" xml:space="preserve">
+    <value>TARGETS</value>
+  </data>
+  <data name="strTo" xml:space="preserve">
+    <value>الى</value>
+  </data>
+  <data name="strTrendAnalysis" xml:space="preserve">
+    <value>معدلات التغير</value>
+  </data>
+  <data name="strTruckPermissionDailyTrend" xml:space="preserve">
+    <value>معدل اتجاه مخالفات الشاحنات اليومي</value>
+  </data>
+  <data name="strTruckPermissionMonthTrend" xml:space="preserve">
+    <value>معدل اتجاه مخالفات الشاحنات الشهري</value>
+  </data>
+  <data name="strTruckPermissionQtrTrend" xml:space="preserve">
+    <value>معدل اتجاه مخالفات الشاحنات الربع سنوي</value>
+  </data>
+  <data name="strTruckPermissions" xml:space="preserve">
+    <value>مخالفات شاحنات</value>
+  </data>
+  <data name="strTruckPermissionWeeklyTrend" xml:space="preserve">
+    <value>معدل اتجاه مخالفات الشاحنات الاسبوعي</value>
+  </data>
+  <data name="strViolationQtrTrend" xml:space="preserve">
+    <value>معدل اتجاه المخالفات الربع سنوي</value>
+  </data>
+  <data name="strViolations" xml:space="preserve">
+    <value>مخالفات</value>
+  </data>
+  <data name="strViolationsDailyTrend" xml:space="preserve">
+    <value>معدل اتجاه المخالفات اليومي</value>
+  </data>
+  <data name="strViolationsMonthTrend" xml:space="preserve">
+    <value>معدل اتجاه المخالفات الشهري</value>
+  </data>
+  <data name="strViolationsWeeklyTrend" xml:space="preserve">
+    <value>معدل اتجاه المخالفات الأسبوعي</value>
+  </data>
+  <data name="strWorkZones" xml:space="preserve">
+    <value>مناطق العمل</value>
+  </data>
+  <data name="strAccidentsDailyStatis" xml:space="preserve">
+    <value>مقارنة عدد الحوادث طبقا للمنطقة يوميا</value>
+  </data>
+  <data name="strAccidentsMonthsStatis" xml:space="preserve">
+    <value>مقارنة عدد الحوادث طبقا للمنطقة شهريا</value>
+  </data>
+  <data name="strAccidentsWeekStatis" xml:space="preserve">
+    <value>مقارنة عدد الحوادث طبقا للمنطقة اسبوعيا</value>
+  </data>
+  <data name="strAccidentsYearStatis" xml:space="preserve">
+    <value>مقارنة عدد الحوادث طبقا للمنطقة سنويا</value>
+  </data>
+  <data name="strDangViolnDailyStatis" xml:space="preserve">
+    <value>مقارنة المخالفات الخطرة طبقا للمنطقة يوميا</value>
+  </data>
+  <data name="strDangViolnMonthsStatis" xml:space="preserve">
+    <value>مقارنة المخالفات الخطرة طبقا للمنطقة شهريا</value>
+  </data>
+  <data name="strDangViolnWeekStatis" xml:space="preserve">
+    <value>مقارنة المخالفات الخطرة طبقا للمنطقة اسبوعيا</value>
+  </data>
+  <data name="strDangViolnYearStatis" xml:space="preserve">
+    <value>مقارنة المخالفات الخطرة طبقا للمنطقة سنويا</value>
+  </data>
+  <data name="strViolationsDailyStatis" xml:space="preserve">
+    <value>Violations Count by Region Comparision with Daily</value>
+  </data>
+  <data name="strViolationsMonthsStatis" xml:space="preserve">
+    <value>Violations Count by Region Comparision with Monthly</value>
+  </data>
+  <data name="strViolationsWeekStatis" xml:space="preserve">
+    <value>Violations Count by Region Comparision with Weekly</value>
+  </data>
+  <data name="strViolationsYearStatis" xml:space="preserve">
+    <value>Violations Count by Region Comparision with Yearly </value>
+  </data>
+  <data name="strViolationsComparisonDaily" xml:space="preserve">
+    <value>مقارنة عدد المخالفات يوميا</value>
+  </data>
+  <data name="strViolationsComparisonMonthly" xml:space="preserve">
+    <value>مقارنة عدد المخالفات شهريا</value>
+  </data>
+  <data name="strViolationsComparisonWeekly" xml:space="preserve">
+    <value>مقارنة عدد المخالفات شهريا</value>
+  </data>
+  <data name="strViolationsComparisonYearly" xml:space="preserve">
+    <value>مقارنة عدد المخالفات سنويا</value>
+  </data>
+  <data name="strViolationsCountDaily" xml:space="preserve">
+    <value>عدد المخالفات يوميا</value>
+  </data>
+  <data name="strViolationsCountMonthly" xml:space="preserve">
+    <value>عدد المخالفات شهريا</value>
+  </data>
+  <data name="strViolationsCountWeekly" xml:space="preserve">
+    <value>عدد المخالفات اسبوعيا</value>
+  </data>
+  <data name="strViolationsCountYearly" xml:space="preserve">
+    <value>عدد المخالفات سنويا</value>
+  </data>
+  <data name="strHighestDay" xml:space="preserve">
+    <value>أكثر يوم</value>
+  </data>
+  <data name="strHighestMonth" xml:space="preserve">
+    <value>أكثر شهر</value>
+  </data>
+  <data name="strHighestWeek" xml:space="preserve">
+    <value>أكثر اسبوع</value>
+  </data>
+  <data name="strFatality" xml:space="preserve">
+    <value>الخطه المستقبليه 2030</value>
+  </data>
+  <data name="strIncidentsReasons" xml:space="preserve">
+    <value>Incidents Reasons Comparison</value>
+  </data>
+  <data name="strMainAccidentsYearRegion" xml:space="preserve">
+    <value>الحوادث مقارنة مع</value>
+  </data>
+  <data name="strand" xml:space="preserve">
+    <value>و</value>
+  </data>
+  <data name="strOverview" xml:space="preserve">
+    <value>نظرة عامة</value>
+  </data>
+  <data name="strPerformance" xml:space="preserve">
+    <value>مؤشرات الأداء</value>
+  </data>
+  <data name="strPrediction" xml:space="preserve">
+    <value>توقعات</value>
+  </data>
+  <data name="strStatistics" xml:space="preserve">
+    <value>إحصائيات</value>
+  </data>
+  <data name="strDashboard" xml:space="preserve">
+    <value>تحاليل احصائية</value>
+  </data>
+  <data name="strMainIncidentsCount" xml:space="preserve">
+    <value>عدد الحوادث</value>
+  </data>
+  <data name="strMainViolationsComparisonYearly" xml:space="preserve">
+    <value>المخالفات مقارنة مع</value>
+  </data>
+  <data name="strMainViolationsCount" xml:space="preserve">
+    <value>عدد المخالفات</value>
+  </data>
+  <data name="strTrcukViolationsComparisonDaily" xml:space="preserve">
+    <value>مقارنة عدد مخالفات الشاحنات يوميا</value>
+  </data>
+  <data name="strTrcukViolationsComparisonMonthly" xml:space="preserve">
+    <value>مقارنة عدد مخالفات الشاحنات شهريا</value>
+  </data>
+  <data name="strTrcukViolationsComparisonWeekly" xml:space="preserve">
+    <value>مقارنة عدد مخالفات الشاحنات اسبوعيا</value>
+  </data>
+  <data name="strTrcukViolationsComparisonYearly" xml:space="preserve">
+    <value>مقارنة عدد مخالفات الشاحنات سنويا</value>
+  </data>
+  <data name="strActualPercentage" xml:space="preserve">
+    <value>النسبة الفعلية</value>
+  </data>
+  <data name="strCurrentValue" xml:space="preserve">
+    <value>القيمة الحالية</value>
+  </data>
+  <data name="strKPIName" xml:space="preserve">
+    <value>اسم مؤشر الأداء</value>
+  </data>
+  <data name="strKPITableChart" xml:space="preserve">
+    <value>مؤشرات الأداء</value>
+  </data>
+  <data name="strPercentage" xml:space="preserve">
+    <value>النسبة</value>
+  </data>
+  <data name="strPreviousValue" xml:space="preserve">
+    <value>القيمة السابقة</value>
+  </data>
+  <data name="strTargetValue" xml:space="preserve">
+    <value>القيمة المرجوة</value>
+  </data>
+  <data name="strAccidentsCountDaily" xml:space="preserve">
+    <value>عدد الحوادث يوميا</value>
+  </data>
+  <data name="strAccidentsCountMonthly" xml:space="preserve">
+    <value>عدد الحوادث شهريا</value>
+  </data>
+  <data name="strAccidentsCountWeekly" xml:space="preserve">
+    <value>عدد الحوادث اسبوعيا</value>
+  </data>
+  <data name="strAccidentsCountYearly" xml:space="preserve">
+    <value>عدد الحوادث سنويا</value>
+  </data>
+  <data name="strByComparison" xml:space="preserve">
+    <value>بالمقارنة</value>
+  </data>
+  <data name="strByType" xml:space="preserve">
+    <value>بالنوع</value>
+  </data>
+  <data name="strDangerViolationsCountDaily" xml:space="preserve">
+    <value>عدد المخالفات الخطرة يوميا</value>
+  </data>
+  <data name="strDangerViolationsCountMonthly" xml:space="preserve">
+    <value>عدد المخالفات الخطرة شهريا</value>
+  </data>
+  <data name="strDangerViolationsCountWeekly" xml:space="preserve">
+    <value>عدد المخالفات الخطرة اسبوعيا</value>
+  </data>
+  <data name="strDangerViolationsCountYearly" xml:space="preserve">
+    <value>عدد المخالفات الخطرة سنويا</value>
+  </data>
+  <data name="strTruckViolationsCountDaily" xml:space="preserve">
+    <value>عدد مخالفات الشاحنات يوميا</value>
+  </data>
+  <data name="strTruckViolationsCountMonthly" xml:space="preserve">
+    <value>عدد مخالفات الشاحنات شهريا</value>
+  </data>
+  <data name="strTruckViolationsCountWeekly" xml:space="preserve">
+    <value>عدد مخالفات الشاحنات اسبوعيا</value>
+  </data>
+  <data name="strTruckViolationsCountYearly" xml:space="preserve">
+    <value>عدد مخالفات الشاحنات سنويا</value>
+  </data>
+  <data name="strManualKPI" xml:space="preserve">
+    <value>MANUAL KPI</value>
+  </data>
+  <data name="strNoofaccidentwithfatality" xml:space="preserve">
+    <value>عدد الحوادث التي بها وفيات</value>
+  </data>
+  <data name="strNoofDangerousViolations" xml:space="preserve">
+    <value>عدد المخالفات الخطرة</value>
+  </data>
+  <data name="strNoOfFatalities" xml:space="preserve">
+    <value>عدد الوفيات</value>
+  </data>
+  <data name="strNoSevereAccident" xml:space="preserve">
+    <value>عدد الحوادث الجسيمة</value>
+  </data>
+  <data name="strValue" xml:space="preserve">
+    <value>القيمة</value>
+  </data>
+  <data name="strNoOfinjuries" xml:space="preserve">
+    <value>No Of Injuries</value>
+  </data>
+</root>

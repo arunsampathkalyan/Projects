@@ -1,0 +1,776 @@
+﻿<UserControl x:Class="STC.Projects.WPFControlLibrary.AdminPage.AdminPageUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:local="clr-namespace:STC.Projects.WPFControlLibrary.AdminPage" VerticalAlignment="Center" HorizontalAlignment="Center"
+             xmlns:Converter="clr-namespace:STC.Projects.ClassLibrary.Common.Converters;assembly=STC.Projects.ClassLibrary.Common" 
+             xmlns:VM="clr-namespace:STC.Projects.WPFControlLibrary.AdminPage.ViewModel"
+             xmlns:p="clr-namespace:STC.Projects.WPFControlLibrary.AdminPage.Properties"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+
+        <Converter:BoolInverterConverter x:Key="BoolInverterConverter"/>
+
+        <Style TargetType="TextBlock">
+
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#00ffcc"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="3" Opacity=".9" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="#00ffcc" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+
+            <!--<Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="BorderBrush" Value="#00ffcc"/>-->
+
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="15" Opacity="1" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type Button}">
+
+                        <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="#00ffcc">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand"/>
+                                <Setter Property="Background" Value="#49b13c" TargetName="bg" />
+                                <Setter Property="Foreground" Value="#ffffff" />
+                            </Trigger>
+
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="TextBox">
+
+
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#00ffcc"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="BorderBrush" Value="#00ffcc"/>
+            <!--<Setter Property="BorderThickness" Value="1"/>-->
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="4" Opacity=".6" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="True">
+                    <Setter Property="ToolTip" Value="{Binding (Validation.Errors)[0].ErrorContent,RelativeSource={x:Static RelativeSource.Self}}"></Setter>
+                    <Setter Property="BorderBrush" Value="Pink"></Setter>
+                    <!--<Setter Property="Background" Value="Yellow"></Setter>-->
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+
+        <ControlTemplate x:Key="CustomCheckBox" TargetType="CheckBox">
+            <Grid>
+                <Path x:Name="Equis"
+          Opacity="0"
+          Stroke="Red"
+          Fill="Red"
+          Stretch="UniformToFill"
+          StrokeThickness="20"
+          Data="M 30,100 L 80,140 L 160,60"
+          Margin="0,0,2,2" />
+                <ContentPresenter Margin="4"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top" />
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsChecked"
+             Value="true">
+                    <Setter TargetName="Equis"
+              Property="Opacity"
+              Value="1" />
+                </Trigger>
+                <Trigger Property="IsChecked"
+             Value="false">
+                    <Setter TargetName="Equis"
+              Property="Opacity"
+              Value="0" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <Style TargetType="CheckBox" x:Key="chkboxStylekey">
+
+
+            <Setter Property="Background" Value="Transparent"/>
+
+            <Setter Property="BorderBrush" Value="#00ffcc"/>
+
+            <Setter Property="Foreground" Value="#00ffcc"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Opacity" Value=".9"/>
+
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="4" Opacity=".6" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Gray"/>
+                    <Setter Property="Opacity" Value="1"/>
+                </Trigger>
+
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="BorderBrush" Value="#ffd452"/>
+                    <Setter Property="Background" Value="Gray"/>
+                    <Setter Property="Opacity" Value="1"/>
+                </Trigger>
+
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="BorderBrush" Value="#ffd452"/>
+                    <Setter Property="Background" Value="LightGray"/>
+                    <Setter Property="Opacity" Value="1"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="ComboBox">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#00ffcc"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="IsEditable" Value="True"/>
+            <Setter Property="BorderBrush" Value="#00ffcc"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="4" Opacity=".6" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="telrikCombBoxStyle" TargetType="Telerik:RadComboBox">
+            <Setter Property="Foreground" Value="#00ffcc"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Telerik:RadComboBox">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter 
+                                              Margin="{TemplateBinding Margin}"
+                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="Images\dotted_bg.png"/>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style x:Name="comboBoxItemStyle" TargetType="Telerik:RadComboBoxItem">
+                        <Setter Property="Foreground" Value="#00ffcc"/>
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <ImageBrush ImageSource="Images\dotted_bg.png"/>
+                            </Setter.Value>
+                        </Setter>
+                        <!--<Setter Property="Effect">
+                            <Setter.Value>
+                                <DropShadowEffect Color="#00ffcc" BlurRadius="3" Opacity=".9" ShadowDepth="0"/>
+                            </Setter.Value>
+                        </Setter>-->
+                    </Style>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="3" Opacity=".9" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+        <Style x:Key="RadioButtonFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border>
+                            <Rectangle 
+            Margin="15,0,0,0"
+            StrokeThickness="1"
+            Stroke="#60000000"
+            StrokeDashArray="1 2"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+
+        <!-- Fill Brushes -->
+
+        <LinearGradientBrush x:Key="NormalBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#FFF" Offset="0.0"/>
+                    <GradientStop Color="#CCC" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="HorizontalNormalBrush" StartPoint="0,0" EndPoint="1,0">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#FFF" Offset="0.0"/>
+                    <GradientStop Color="#CCC" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="LightBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#FFF" Offset="0.0"/>
+                    <GradientStop Color="#EEE" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="HorizontalLightBrush" StartPoint="0,0" EndPoint="1,0">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#FFF" Offset="0.0"/>
+                    <GradientStop Color="#EEE" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="DarkBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#FFF" Offset="0.0"/>
+                    <GradientStop Color="#AAA" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="PressedBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#BBB" Offset="0.0"/>
+                    <GradientStop Color="#EEE" Offset="0.1"/>
+                    <GradientStop Color="#EEE" Offset="0.9"/>
+                    <GradientStop Color="#FFF" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
+
+        <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="#EEE" />
+
+        <SolidColorBrush x:Key="WindowBackgroundBrush" Color="#FFF" />
+
+        <SolidColorBrush x:Key="SelectedBackgroundBrush" Color="#DDD" />
+
+        <!-- Border Brushes -->
+
+        <LinearGradientBrush x:Key="NormalBorderBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#CCC" Offset="0.0"/>
+                    <GradientStop Color="#444" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="HorizontalNormalBorderBrush" StartPoint="0,0" EndPoint="1,0">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#CCC" Offset="0.0"/>
+                    <GradientStop Color="#444" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="DefaultedBorderBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#777" Offset="0.0"/>
+                    <GradientStop Color="#000" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="PressedBorderBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#444" Offset="0.0"/>
+                    <GradientStop Color="#888" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <SolidColorBrush x:Key="DisabledBorderBrush" Color="#AAA" />
+
+        <SolidColorBrush x:Key="SolidBorderBrush" Color="#888" />
+
+        <SolidColorBrush x:Key="LightBorderBrush" Color="#AAA" />
+
+        <!-- Miscellaneous Brushes -->
+        <SolidColorBrush x:Key="GlyphBrush" Color="#00ffcc" />
+
+        <SolidColorBrush x:Key="LightColorBrush" Color="#DDD" />
+
+
+        <Style x:Key="{x:Type RadioButton}" TargetType="{x:Type RadioButton}">
+            <Setter Property="Foreground" Value="#00ffcc"/>
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="2" Opacity=".9" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FocusVisualStyle"    Value="{StaticResource RadioButtonFocusVisual}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                        <BulletDecorator Background="Transparent">
+                            <BulletDecorator.Bullet>
+                                <Grid Width="13"  Background="Transparent"
+              Height="13" VerticalAlignment="Bottom" >
+                                    <Ellipse x:Name="Border"  
+                Fill="Transparent"
+                StrokeThickness="1"
+                Stroke="{StaticResource NormalBorderBrush}" />
+                                    <Ellipse x:Name="CheckMark"
+                Margin="3"
+                Fill="{StaticResource GlyphBrush}" />
+                                </Grid>
+                            </BulletDecorator.Bullet>
+                            <ContentPresenter 
+            Margin="5,-2,0,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            RecognizesAccessKey="True"/>
+                        </BulletDecorator>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="false">
+                                <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="Border" Property="Fill" Value="{StaticResource DarkBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="Border" Property="Fill" Value="{StaticResource PressedBrush}" />
+                                <Setter TargetName="Border" Property="Stroke" Value="{StaticResource GlyphBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter TargetName="Border" Property="Fill" Value="{StaticResource DisabledBackgroundBrush}" />
+                                <Setter TargetName="Border" Property="Stroke" Value="#40000000" />
+                                <Setter Property="Foreground" Value="#80000000"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--Checkbox Base Style-->
+
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <SolidColorBrush x:Key="OptionMark.Static.Background" Color="#0e171b"/>
+        <SolidColorBrush x:Key="OptionMark.Static.Border" Color="#00ffcc"/>
+
+        <Style x:Key="OptionMarkFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="14,0,0,0" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+
+        <SolidColorBrush x:Key="OptionMark.MouseOver.Background" Color="#0e171b"/>
+        <SolidColorBrush x:Key="OptionMark.MouseOver.Border" Color="#00ffcc"/>
+        <SolidColorBrush x:Key="OptionMark.MouseOver.Glyph" Color="#00ffcc"/>
+        <SolidColorBrush x:Key="OptionMark.Disabled.Background" Color="Transparent"/>
+        <SolidColorBrush x:Key="OptionMark.Disabled.Border" Color="#00ffcc"/>
+        <SolidColorBrush x:Key="OptionMark.Disabled.Glyph" Color="#00ffcc"/>
+        <SolidColorBrush x:Key="OptionMark.Pressed.Background" Color="#0e171b"/>
+        <SolidColorBrush x:Key="OptionMark.Pressed.Border" Color="#00ffcc"/>
+        <SolidColorBrush x:Key="OptionMark.Pressed.Glyph" Color="#00ffcc"/>
+        <SolidColorBrush x:Key="OptionMark.Static.Glyph" Color="#00ffcc"/>
+        <Style x:Key="CheckBoxBaseStyleKey" TargetType="{x:Type CheckBox}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <!--<Setter Property="Background" Value="{StaticResource OptionMark.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource OptionMark.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>-->
+
+            <Setter Property="BorderThickness" Value="1"/>
+
+            <Setter Property="Background" Value="Transparent"/>
+
+            <Setter Property="BorderBrush" Value="#00ffcc"/>
+
+            <Setter Property="Foreground" Value="#00ffcc"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Opacity" Value=".7"/>
+
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="2" Opacity=".6" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type CheckBox}">
+                        <Grid x:Name="templateRoot" Background="Transparent" SnapsToDevicePixels="True">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border x:Name="checkBoxBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="1" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                <Grid x:Name="markGrid">
+                                    <Path x:Name="optionMark" FlowDirection="LeftToRight" Data="F1 M 9.97498,1.22334L 4.6983,9.09834L 4.52164,9.09834L 0,5.19331L 1.27664,3.52165L 4.255,6.08833L 8.33331,1.52588e-005L 9.97498,1.22334 Z " Fill="{StaticResource OptionMark.Static.Glyph}" Margin="1" Opacity="0" Stretch="None"/>
+                                    <Rectangle x:Name="indeterminateMark" Fill="{StaticResource OptionMark.Static.Glyph}" Margin="2" Opacity="0"/>
+                                </Grid>
+                            </Border>
+                            <ContentPresenter x:Name="contentPresenter" Grid.Column="1" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="HasContent" Value="true">
+                                <Setter Property="FocusVisualStyle" Value="{StaticResource OptionMarkFocusVisual}"/>
+                                <Setter Property="Padding" Value="4,-1,0,0"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.MouseOver.Border}"/>
+                                <Setter Property="Fill" TargetName="optionMark" Value="{StaticResource OptionMark.MouseOver.Glyph}"/>
+                                <Setter Property="Fill" TargetName="indeterminateMark" Value="{StaticResource OptionMark.MouseOver.Glyph}"/>
+                                <Setter Property="Opacity" Value="1"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="checkBoxBorder" Value="Transparent"/>
+                                <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Disabled.Border}"/>
+                                <Setter Property="Fill" TargetName="optionMark" Value="{StaticResource OptionMark.Disabled.Glyph}"/>
+                                <Setter Property="Fill" TargetName="indeterminateMark" Value="{StaticResource OptionMark.Disabled.Glyph}"/>
+                                <Setter Property="Opacity" Value=".6"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Pressed.Border}"/>
+                                <Setter Property="Fill" TargetName="optionMark" Value="{StaticResource OptionMark.Pressed.Glyph}"/>
+                                <Setter Property="Fill" TargetName="indeterminateMark" Value="{StaticResource OptionMark.Pressed.Glyph}"/>
+                                <Setter Property="Opacity" Value="1"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter Property="Opacity" TargetName="optionMark" Value="1"/>
+                                <Setter Property="Opacity" TargetName="indeterminateMark" Value="0"/>
+                                <Setter Property="Opacity" Value="1"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="{x:Null}">
+                                <Setter Property="Opacity" TargetName="optionMark" Value="0"/>
+                                <Setter Property="Opacity" TargetName="indeterminateMark" Value="1"/>
+                                <Setter Property="Opacity" Value="1"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--Checkbox Base Style-->
+
+    </UserControl.Resources>
+
+    <!--<UserControl.DataContext>
+        <VM:AdminPageControlViewModel/>
+    </UserControl.DataContext>-->
+    <Viewbox>
+        <Canvas MinWidth="850" MinHeight="620">
+            <Canvas.Background>
+                <ImageBrush ImageSource="Images/dotted_bg.png"/>
+            </Canvas.Background>
+
+            <Button x:Name="btnClose" Height="20" Width="25" 
+                    Background="Transparent" BorderThickness="0"
+                    Canvas.Right="5" Canvas.Top="3" Click="btnClose_Click"
+                    Visibility="Collapsed">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image x:Name="imgLogout" Source="Images/close_normal.jpg" Width="32" Height="24" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="Uniform"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand"/>
+                                <Setter TargetName="imgLogout" Property="Source" Value="Images/close_hover.jpg"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+
+            <Grid Height="600" VerticalAlignment="Center" Width="750" HorizontalAlignment="Center" Margin="30,20,30,0"
+                  IsEnabled="{Binding IsAddGridEnabled}">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <!--<Grid x:Name="gridTitle" Grid.Row="0">
+                    <TextBlock x:Name="txtBlkTitle" Text="{x:Static p:Resources.strAddBusinessRuleScreen}" HorizontalAlignment="Left" FontSize="20"/>
+                </Grid>-->
+                <Border Grid.Row="1" BorderBrush="#00ffcc" BorderThickness=".5">
+
+                    <Grid Margin="20,0,20,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="50"/>
+
+                        </Grid.RowDefinitions>
+
+                        <TextBlock x:Name="txtBlkSubHeader" Text="{x:Static p:Resources.strAddBusinessRule}" FontSize="16"
+                                   Foreground="#ffd452" HorizontalAlignment="Left" Margin="15,0,10,0"></TextBlock>
+
+
+
+                        <Grid x:Name="gridBody" Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1.2*"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock x:Name="txtBlkRuleName" Text="{x:Static p:Resources.strBusinessRuleName}" Grid.Row="0" Grid.Column="0"/>
+                            <TextBox x:Name="txtBoxRule" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
+                             Width="200" Height="25"
+                             Text="{Binding BusinessRuleName, ValidatesOnDataErrors=True}"/>
+                            <!--<TextBlock x:Name="txtBlkPriority" Grid.Row="0" Grid.Column="3" Text="{x:Static p:Resources.strPriority}"/>
+                    <Telerik:RadComboBox x:Name="cmbBoxPriority"  ItemsSource="{Binding PriorityTypesList}" DisplayMemberPath="PriorityNameEn" SelectedValuePath="PriorityID" 
+                                         Grid.Row="0" Grid.Column="4" Height="25" Width="120"
+                                         Style="{StaticResource telrikCombBoxStyle}"                                         
+                                         SelectedItem="{Binding RulePriority}"></Telerik:RadComboBox>-->
+
+                            <TextBlock x:Name="txtBlkVehicleType" Text="{x:Static p:Resources.strVehicleType}" Grid.Row="1" Grid.Column="0"/>
+                            <Telerik:RadComboBox x:Name="cmbBoxVehicleType" ItemsSource="{Binding VehicleTypesList}" DisplayMemberPath="VehicleTypeEn" SelectedValuePath="VehicleTypeID"
+                                         Height="25" Width="200" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                                         Style="{StaticResource telrikCombBoxStyle}" 
+                                         SelectedItem="{Binding VehicleType}" SelectedIndex="{Binding SelectedIndexVehicleType}">
+                                <!--Telerik:RadComboBox.ItemContainerStyle>
+                            <Style TargetType="ComboBoxItem">
+                                <Setter Property="Background" Value="Transparent"></Setter>
+                            </Style>
+                        </Telerik:RadComboBox.ItemContainerStyle>-->
+                            </Telerik:RadComboBox>
+
+                            <CheckBox x:Name="chkBoxSpdInCity"  Content="{x:Static p:Resources.strSpeedInsideCity}"
+                              Grid.Row="2" Grid.Column="0" Width="140" Style="{StaticResource CheckBoxBaseStyleKey}"
+                              IsChecked="{Binding SpeedInsideCityAdded}"></CheckBox>
+                            <TextBlock x:Name="txtBlkSpdThldInCity" Text="{x:Static p:Resources.strExceedBy}" Grid.Row="2" Grid.Column="1"/>
+                            <Telerik:RadComboBox x:Name="cmbBoxSpdThldInCity"
+                                         Height="25" Width="120" Grid.Row="2" Grid.Column="2" ItemsSource="{Binding OverSpeedList}" DisplayMemberPath="OverSpeedValue" SelectedValuePath="OverSpeedId"
+                                         Style="{StaticResource telrikCombBoxStyle}"
+                                         SelectedItem="{Binding SpeedThshldInCity}"
+                                                 IsEnabled="{Binding ElementName=chkBoxSpdInCity, Path=IsChecked}">
+                            </Telerik:RadComboBox>
+
+                            <!--<TextBox x:Name="txtBoxSpdThldInCity" 
+                             Grid.Row="2" Grid.Column="2" Height="25" Width="120"
+                             Text="{Binding SpeedThshldInCity}"></TextBox>-->
+                            <TextBlock x:Name="txtBlkNumOfVlnsInCity" Text="{x:Static p:Resources.strNumOfViolation}" Grid.Row="2" Grid.Column="3"/>
+
+                            <!--<Telerik:RadComboBox x:Name="cmbBoxNumOfViolnsInCity"
+                                         Grid.Row="2" Grid.Column="4" Height="25" Width="120"
+                                         Style="{StaticResource telrikCombBoxStyle}"
+                                         SelectedItem="{Binding NumOfViolnsInCity}"></Telerik:RadComboBox>-->
+                            <TextBox x:Name="txtBoxNumOfViolnsInCity" 
+                             Grid.Row="2" Grid.Column="4" Height="25" Width="120"
+                             Text="{Binding NumOfViolnsInCity, ValidatesOnDataErrors=True}"
+                                     IsEnabled="{Binding ElementName=chkBoxSpdInCity, Path=IsChecked}"/>
+
+                            <CheckBox x:Name="chkBoxSpdOutCity"   Content="{x:Static p:Resources.strSpeedOutsideCity}"
+                              Grid.Row="3" Grid.Column="0" Width="140" Style="{StaticResource CheckBoxBaseStyleKey}"
+                              IsChecked="{Binding SpeedOutsideCityAdded}"></CheckBox>
+                            <TextBlock x:Name="txtBlkSpdThldOutCity" Text="{x:Static p:Resources.strExceedBy}" Grid.Row="3" Grid.Column="1"/>
+                            <Telerik:RadComboBox x:Name="cmbBoxSpdThldOutCity" ItemsSource="{Binding OverSpeedList}" DisplayMemberPath="OverSpeedValue" SelectedValuePath="OverSpeedId"                                         Height="25" Width="120" Grid.Row="3" Grid.Column="2"
+                                         Style="{StaticResource telrikCombBoxStyle}"
+                                         SelectedItem="{Binding SpeedThshldOutCity}"
+                                                 IsEnabled="{Binding ElementName=chkBoxSpdOutCity, Path=IsChecked}">
+                            </Telerik:RadComboBox>
+
+
+                            <!--<TextBox x:Name="txtBoxSpdThldOutCity"
+                             Grid.Row="3" Grid.Column="2" Height="25" Width="120"
+                             Text="{Binding SpeedThshldOutCity}" ></TextBox>-->
+                            <TextBlock x:Name="txtBlkNumOfVlnsOutCity" Text="{x:Static p:Resources.strNumOfViolation}" Grid.Row="3" Grid.Column="3"/>
+                            <TextBox x:Name="txtBoxNumOfViolnsOutCity" 
+                             Grid.Row="3" Grid.Column="4" Height="25" Width="120"
+                             Text="{Binding NumOfViolnsOutCity, ValidatesOnDataErrors=True}"
+                                     IsEnabled="{Binding ElementName=chkBoxSpdOutCity, Path=IsChecked}"></TextBox>
+
+                            <!--<Telerik:RadComboBox x:Name="cmbBoxNumOfViolnsOutCity"
+                                         Grid.Row="3" Grid.Column="4" Height="25" Width="120"
+                                         Style="{StaticResource telrikCombBoxStyle}"
+                                         SelectedItem="{Binding NumOfViolnsOutCity}"></Telerik:RadComboBox>-->
+
+                            <CheckBox x:Name="chkBoxRedLgtCrosd"   Content="{x:Static p:Resources.strRedLightCrossed}" 
+                              Grid.Row="4" Grid.Column="0" Width="140" Style="{StaticResource CheckBoxBaseStyleKey}"
+                              IsChecked="{Binding RedLgtCrosdAdded}"></CheckBox>
+
+                            <!--<Telerik:RadComboBox x:Name="cmbBoxNumOfViolnsRedLgtCrsd" 
+                                         Grid.Row="4" Grid.Column="1" Height="25" Width="120"
+                                         Style="{StaticResource telrikCombBoxStyle}" 
+                                         SelectedItem="{Binding RedLgtCrosdValue}"></Telerik:RadComboBox>-->
+
+
+                            <!--<CheckBox x:Name="chkBoxRedLgtCrsTime" Content="{x:Static p:Resources.strRedLightCrossingTime}" 
+                              Grid.Row="5" Grid.Column="0" Width="155" Style="{StaticResource chkboxStylekey}"
+                              IsChecked="{Binding RedLgtCrosngTimeAdded}" IsEnabled="{Binding ElementName=chkBoxRedLgtCrosd, Path=IsChecked}"></CheckBox>-->
+
+                            <TextBlock x:Name="TxtBlkRedLgtCrsTime" Text="{x:Static p:Resources.strRedLightCrossingTime}" Grid.Row="5" Grid.Column="0"
+                                       IsEnabled="{Binding ElementName=chkBoxRedLgtCrosd, Path=IsChecked}"/>
+                            <Telerik:RadComboBox x:Name="cmbBoxRedLgtCrsTime" ItemsSource="{Binding TrafficCrossList}"
+                                         DisplayMemberPath="TrafficCrossValue" SelectedValuePath="TrafficCrossId"
+                                         Height="25" Width="120" Grid.Row="5" Grid.Column="1"
+                                         Style="{StaticResource telrikCombBoxStyle}"
+                                         SelectedItem="{Binding RedLgtCrosngSecondsValue}"
+                                                 IsEnabled="{Binding ElementName=chkBoxRedLgtCrosd, Path=IsChecked}">
+                            </Telerik:RadComboBox>
+
+                            <!--<TextBox x:Name="txtBoxRedLgtCrsTime" 
+                             Grid.Row="5" Grid.Column="1" Width="120"
+                             Text="{Binding RedLgtCrosngSecondsValue}" ></TextBox>-->
+                            <TextBlock x:Name="txtBlkNumOfVlnsRedLgtCrsng" Text="{x:Static p:Resources.strNumOfViolation}" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2"/>
+                            <TextBox x:Name="txtBoxNumOfViolnsRedLgtCrosng" 
+                             Grid.Row="5" Grid.Column="4" Height="25" Width="120"
+                             Text="{Binding RedLgtCrosngNumOfViolnsValue, ValidatesOnDataErrors=True}"
+                                     IsEnabled="{Binding ElementName=chkBoxRedLgtCrosd, Path=IsChecked}"/>
+
+                            <!--<Telerik:RadComboBox x:Name="cmbBoxNumOfViolnsRedLgtCrosng" 
+                                         Grid.Row="5" Grid.Column="4" Height="25" Width="120"
+                                         Style="{StaticResource telrikCombBoxStyle}" 
+                                         SelectedItem="{Binding RedLgtCrosngNumOfViolnsValue}"></Telerik:RadComboBox>-->
+
+                            <TextBlock x:Name="txtBlkRuleIntvlTime" Text="{x:Static p:Resources.strBsnRuleIntvlTime}" Grid.Row="6" Grid.Column="0"/>
+                            <TextBox x:Name="txtBoxRuleTimeIntvlValue" 
+                             Grid.Row="6" Grid.Column="1" Height="25" Width="120"
+                             Text="{Binding RuleIntTimeValue, ValidatesOnDataErrors=True}"/>
+
+                            <!--<Telerik:RadComboBox x:Name="cmbBoxRuleIntvlTime" 
+                                         Grid.Row="6" Grid.Column="1" Height="25" Width="150" Grid.ColumnSpan="2"
+                                         Style="{StaticResource telrikCombBoxStyle}" 
+                                         SelectedItem="{Binding RuleIntTimeCategory}"></Telerik:RadComboBox>
+                    
+                    <Telerik:RadComboBox x:Name="cmbBoxRuleTimeIntvlValue" 
+                                         Grid.Row="6" Grid.Column="3" Height="25" Width="120"
+                                         Style="{StaticResource telrikCombBoxStyle}" 
+                                         SelectedItem="{Binding RuleIntTimeValue}"></Telerik:RadComboBox>-->
+                            <StackPanel x:Name="spanelEnableDisableRule" Orientation="Horizontal" Grid.Row="7" Grid.ColumnSpan="3" Visibility="Collapsed">
+                                <RadioButton Grid.Row="7"  Content="{x:Static p:Resources.strEnable}" IsChecked="{Binding IsRuleDisabled, Converter={StaticResource BoolInverterConverter}}"
+                                 Height="20" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="2,5,0,5"/>
+                                <RadioButton Grid.Row="7" Grid.Column="1" Content="{x:Static p:Resources.strDisable}" IsChecked="{Binding IsRuleDisabled}"
+                                 Height="20" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="2,5,0,5"/>
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid x:Name="gridButtons" Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="220"/>
+                            </Grid.ColumnDefinitions>
+
+
+
+
+                            <StackPanel Orientation="Horizontal" Grid.Column="2">
+                                <Button x:Name="btnAddRule" Content="{x:Static p:Resources.strSaveRule}" 
+                            Grid.Row="8" Width="90" Height="25" Margin="10,0,10,0" 
+                            Command="{Binding AddBusinessRuleCommand}"></Button>
+
+                                <Button x:Name="btnBack" Content="{x:Static p:Resources.strBack}" 
+                            Grid.Row="8" Width="90" Height="25" Margin="10,0,10,0"
+                            Command="{Binding GoBackCommand}"></Button>
+                                
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+
+                </Border>
+
+
+
+            </Grid>
+
+
+
+        </Canvas>
+    </Viewbox>
+
+</UserControl>

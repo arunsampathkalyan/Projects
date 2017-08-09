@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Response" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Response" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://stc-connect.cloudapp.net/WCFService/ADPUTSService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Class" />
+  <xs:complexType name="TrafficProfileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ArabicName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BirthDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EducationCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnglishName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstablishmentNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstablishmentSSourceCode" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomeAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomeBuildingNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomeFlatNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomeStreetCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="HomeTelephoneNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaritalCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalityCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OccupationCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="POBox" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PassportExpiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PassportIssueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PassportNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReligionCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ResidenceNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TcfKindCode" type="xs:int" />
+      <xs:element minOccurs="0" name="TcfNo" type="xs:long" />
+      <xs:element minOccurs="0" name="TcfTypeCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TradeLicenseExpiryDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TradeLicenseIssueDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TradeLicenseNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TradeLicenseSourceCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UnifiedID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="WorkAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkBuildingNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkStreetCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkTelephoneNo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TrafficProfileResponse" nillable="true" type="tns:TrafficProfileResponse" />
+  <xs:complexType name="VehicleDetailsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AxisCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Chairs" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChassisNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColorArabicDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColorCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColorEnglishDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cylinder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoorCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EngineNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FuelArabicDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FuelCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FuelEnglishDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GearArabicDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GearCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GearEnglishDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasColorGlassPermit" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasHandicapPermit" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HorsePower" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InsuranceCompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InsuranceExpiryDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InsuranceKindArabicDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InsuranceKindEnglishDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InsurancePolicyNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDrivingBanned" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="KindArabicDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KindCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="KindEnglishDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MakeArabicDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MakeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MakeEnglishDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelArabicDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelEnglishDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MortgageDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MortgageRef" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalityArabicDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalityCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationalityEnglishDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerTcfArabicName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerTcfEnglishName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerTcfNo" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Class" minOccurs="0" name="PlateInfo" nillable="true" type="q1:PlateKey" />
+      <xs:element minOccurs="0" name="RegistrationDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistrationExpiryDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistrationRemarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SteeringArabicDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SteeringCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SteeringEnglishDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeArabicDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeEnglishDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WeightArabicDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WeightCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WeightEmpty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WeightEnglishDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WeightFull" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WheelsCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Year" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleDetailsResponse" nillable="true" type="tns:VehicleDetailsResponse" />
+  <xs:complexType name="TrafficNoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TcfNo" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TrafficNoResponse" nillable="true" type="tns:TrafficNoResponse" />
+  <xs:complexType name="ArrayOfTicketsDetailsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TicketsDetailsResponse" nillable="true" type="tns:TicketsDetailsResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTicketsDetailsResponse" nillable="true" type="tns:ArrayOfTicketsDetailsResponse" />
+  <xs:complexType name="TicketsDetailsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BlackPoints" type="xs:int" />
+      <xs:element minOccurs="0" name="DiscountRate" type="xs:double" />
+      <xs:element minOccurs="0" name="DriverTcfNo" type="xs:long" />
+      <xs:element minOccurs="0" name="IsExternalTicket" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsWebPayable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LateCharges" type="xs:int" />
+      <xs:element minOccurs="0" name="LicenseNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="LicenseSourceCode" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationDescriptionAr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationDescriptionEn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateColorCode" type="xs:int" />
+      <xs:element minOccurs="0" name="PlateKindCode" type="xs:int" />
+      <xs:element minOccurs="0" name="PlateNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlateOrgNo" type="xs:long" />
+      <xs:element minOccurs="0" name="PlateSourceCode" type="xs:int" />
+      <xs:element minOccurs="0" name="PlateTypeCode" type="xs:int" />
+      <xs:element minOccurs="0" name="TicketDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TicketNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="TicketSourceCode" type="xs:int" />
+      <xs:element minOccurs="0" name="TicketTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TicketType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TicketYear" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="TotalAmountAfterDiscount" type="xs:double" />
+      <xs:element minOccurs="0" name="VehicleOwnerTcfNo" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TicketsDetailsResponse" nillable="true" type="tns:TicketsDetailsResponse" />
+  <xs:complexType name="NewTicketResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TicketNo" type="xs:long" />
+      <xs:element minOccurs="0" name="TicketSourceCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NewTicketResponse" nillable="true" type="tns:NewTicketResponse" />
+  <xs:complexType name="ArrayOfLookupRecordResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LookupRecordResponse" nillable="true" type="tns:LookupRecordResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLookupRecordResponse" nillable="true" type="tns:ArrayOfLookupRecordResponse" />
+  <xs:complexType name="LookupRecordResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ArabicDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnglishDescription" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LookupRecordResponse" nillable="true" type="tns:LookupRecordResponse" />
+  <xs:complexType name="LicenseDetailsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BlackPoints" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DriverArabicName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DriverEnglishName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FLSCode" type="xs:int" />
+      <xs:element minOccurs="0" name="FLSDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasBlackPointsFile" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsBanned" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LicenseIssueDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Class" minOccurs="0" name="LicenseKey" nillable="true" type="q2:LicenseKey" />
+      <xs:element minOccurs="0" name="LicenseKindArabicDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicenseKindCode" type="xs:int" />
+      <xs:element minOccurs="0" name="LicenseKindEnglishDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicenseRenewingDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LicesenExpiryDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PhysicalStatusArabicDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhysicalStatusCode" type="xs:int" />
+      <xs:element minOccurs="0" name="PhysicalStatusEnglishDesc" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/STC.Projects.WCF.ServiceLayer.Class" minOccurs="0" name="SubLicenses" nillable="true" type="q3:ArrayOfSubLicense" />
+      <xs:element minOccurs="0" name="TcfNo" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LicenseDetailsResponse" nillable="true" type="tns:LicenseDetailsResponse" />
+</xs:schema>

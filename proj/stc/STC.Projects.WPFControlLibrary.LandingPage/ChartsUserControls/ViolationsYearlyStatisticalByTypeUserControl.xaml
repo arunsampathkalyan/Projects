@@ -1,0 +1,418 @@
+﻿<UserControl x:Class="STC.Projects.WPFControlLibrary.LandingPage.ChartsUserControls.ViolationsYearlyStatisticalByTypeUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:ChartAnimation="clr-namespace:STC.Projects.ClassLibrary.Common.ChartAnimation;assembly=STC.Projects.ClassLibrary.Common"
+             xmlns:ViewModel="clr-namespace:STC.Projects.WPFControlLibrary.LandingPage.ViewModel"
+             xmlns:p="clr-namespace:STC.Projects.WPFControlLibrary.LandingPage.Properties"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+
+        <DataTemplate x:Key="labol">
+            <TextBlock Foreground="#00ffcc" FontFamily="Hevetica" Text="{Binding}" Margin="4">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="5" Opacity=".9" ShadowDepth="0"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </DataTemplate>
+
+        <Telerik:ChartPalette x:Key="customPalette">
+            <Telerik:ChartPalette.SeriesEntries>
+
+                <Telerik:PaletteEntryCollection SeriesFamily="Bar">
+                    <Telerik:PaletteEntry Fill="#fffc21" Stroke="#fffc21"/>
+                    <Telerik:PaletteEntry Fill="#ff0012" Stroke="#ff0012"/>
+                    <Telerik:PaletteEntry Fill="#00d8ff" Stroke="#00d8ff"/>
+                    <Telerik:PaletteEntry Fill="#18ff00" Stroke="#18ff00"/>
+                    <Telerik:PaletteEntry Fill="#73a337" Stroke="#73a337"/>
+
+                    <Telerik:PaletteEntry Fill="#1e48e2" Stroke="#00ffcc"/>
+                    <Telerik:PaletteEntry Fill="#00afba" Stroke="#00ffcc"/>
+                    <Telerik:PaletteEntry Fill="#0eb04f" Stroke="#00ffcc"/>
+                    <Telerik:PaletteEntry Fill="#87af26" Stroke="#00ffcc"/>
+                    <Telerik:PaletteEntry Fill="#f3dd4b" Stroke="#00ffcc"/>
+                    <Telerik:PaletteEntry Fill="#ff9c31" Stroke="#00ffcc"/>
+                    <Telerik:PaletteEntry Fill="#ff4a4a" Stroke="#00ffcc"/>
+                    <Telerik:PaletteEntry Fill="#ff5c92" Stroke="#00ffcc"/>
+                    <Telerik:PaletteEntry Fill="#a53fd0" Stroke="#00ffcc"/>
+                    <Telerik:PaletteEntry Fill="#584bd2" Stroke="#00ffcc"/>
+                    <Telerik:PaletteEntry Fill="#2e698e" Stroke="#00ffcc"/>
+                    <Telerik:PaletteEntry Fill="#6c7c86" Stroke="#00ffcc"/>
+                    <Telerik:PaletteEntry Fill="#a9b6b7" Stroke="#00ffcc"/>
+                    <Telerik:PaletteEntry Fill="#a3eaff" Stroke="#00ffcc"/>
+                    <Telerik:PaletteEntry Fill="#14f7ff" Stroke="#00ffcc"/>
+                    <Telerik:PaletteEntry Fill="#00bfc6" Stroke="#00ffcc"/>
+                    <Telerik:PaletteEntry Fill="#38b2ff" Stroke="#00ffcc"/>
+                    <Telerik:PaletteEntry Fill="#3b6fc7" Stroke="#00ffcc"/>
+                    <Telerik:PaletteEntry Fill="#607D8B" Stroke="#00ffcc"/>
+                    <Telerik:PaletteEntry Fill="#FFCB00" Stroke="#00ffcc"/>
+                </Telerik:PaletteEntryCollection>
+            </Telerik:ChartPalette.SeriesEntries>
+
+            <Telerik:ChartPalette.GlobalEntries>
+
+                <Telerik:PaletteEntry Fill="#fff799" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#f26522" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#0051a0" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#f06eaa" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#73a337" Stroke="#00ffcc"/>
+
+                <Telerik:PaletteEntry Fill="#1e48e2" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#00afba" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#0eb04f" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#87af26" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#f3dd4b" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#ff9c31" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#ff4a4a" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#ff5c92" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#a53fd0" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#584bd2" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#2e698e" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#6c7c86" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#a9b6b7" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#a3eaff" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#14f7ff" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#00bfc6" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#38b2ff" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#3b6fc7" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#607D8B" Stroke="#00ffcc"/>
+                <Telerik:PaletteEntry Fill="#FFCB00" Stroke="#00ffcc"/>
+            </Telerik:ChartPalette.GlobalEntries>
+
+        </Telerik:ChartPalette>
+
+        <Style x:Key="telrikCombBoxStyle" TargetType="Telerik:RadComboBox">
+            <Setter Property="Foreground" Value="#00ffcc"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Telerik:RadComboBox">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter 
+                                              Margin="{TemplateBinding Margin}"
+                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="..\Images\dotted_bg.png"/>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style x:Name="comboBoxItemStyle" TargetType="Telerik:RadComboBoxItem">
+                        <Setter Property="Foreground" Value="#00ffcc"/>
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <ImageBrush ImageSource="..\Images\dotted_bg.png"/>
+                            </Setter.Value>
+                        </Setter>
+                        <!--<Setter Property="Effect">
+                            <Setter.Value>
+                                <DropShadowEffect Color="#00ffcc" BlurRadius="3" Opacity=".9" ShadowDepth="0"/>
+                            </Setter.Value>
+                        </Setter>-->
+                    </Style>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="3" Opacity=".9" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="TextBlock">
+
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#00ffcc"/>
+            <Setter Property="FontFamily" Value="Hevetica"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="FontSize" Value="12"></Setter>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="3" Opacity=".9" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="#00ffcc" />
+            <Setter Property="FontFamily" Value="Hevetica"/>
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+
+            <!--<Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="BorderBrush" Value="#00ffcc"/>-->
+
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="15" Opacity="1" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type Button}">
+
+                        <Border x:Name="bg" Background="{TemplateBinding Background}" BorderThickness="1" BorderBrush="#00ffcc">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#49b13c" TargetName="bg" />
+                                <Setter Property="Foreground" Value="#ffffff" />
+                            </Trigger>
+
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#00ffcc"/>
+            <Setter Property="FontFamily" Value="Hevetica"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="BorderBrush" Value="#00ffcc"/>
+            <!--<Setter Property="BorderThickness" Value="1"/>-->
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="4" Opacity=".6" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="CheckBox">
+
+
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#00ffcc"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#00ffcc"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="4" Opacity=".6" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="ComboBox">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#00ffcc"/>
+            <Setter Property="FontFamily" Value="Hevetica"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="IsEditable" Value="True"/>
+            <Setter Property="BorderBrush" Value="#00ffcc"/>
+            <Setter Property="BorderThickness" Value="1"/>
+
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="4" Opacity=".6" ShadowDepth="0"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <UserControl.DataContext>
+        <ViewModel:ViolationsYearlyStatisticalByTypeViewModel/>
+    </UserControl.DataContext>
+
+    <Grid MinWidth="600" MinHeight="290">
+        <Grid.Style>
+            <Style>
+                <Style.Triggers>
+                    <EventTrigger RoutedEvent="Page.Loaded">
+                        <EventTrigger.Actions>
+                            <!--<BeginStoryboard>
+                                <Storyboard>
+
+                                    <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+                                                    BeginTime="0:0:0.1" Duration="0:0:1"  From="-500" To="0"/>
+                                </Storyboard>
+                            </BeginStoryboard>-->
+                            <BeginStoryboard>
+                                <Storyboard>
+
+                                    <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                                    BeginTime="0:0:0.1" Duration="0:0:1"  From="500" To="0"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger.Actions>
+                    </EventTrigger>
+
+
+
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>
+        <Grid.RenderTransform>
+
+            <TransformGroup>
+                <TranslateTransform/>
+
+                <ScaleTransform/>
+            </TransformGroup>
+
+        </Grid.RenderTransform>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+
+        <Grid Background="Transparent">
+            <TextBlock FontSize="15" Margin="10,0,10,0" Text="{x:Static p:Resources.strViolationsCountYearly}" Foreground="#00ffcc" VerticalAlignment="Center" HorizontalAlignment="Left">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="#00ffcc" BlurRadius="3" Opacity=".5" ShadowDepth="0"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <!--<RowDefinition Height="50"/>-->
+                <RowDefinition />
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="5"/>
+            </Grid.ColumnDefinitions>
+
+            <!--<Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <Telerik:RadComboBox x:Name="cmbBoxType" Height="25" Width="110" Grid.Column="0"
+                                     HorizontalAlignment="Left" Margin="20,0,0,0"
+                                     Style="{StaticResource telrikCombBoxStyle}" 
+                                     ItemsSource="{Binding FromYearValueColl}"
+                                     SelectedItem="{Binding FromYearValue}"/>
+
+            </Grid>-->
+
+            <Telerik:RadCartesianChart x:Name="barChart" MouseDoubleClick="Chart_MouseDoubleClick"  HoverMode="FadeOtherSeries" Palette="{StaticResource customPalette}" ScrollViewer.HorizontalScrollBarVisibility="Auto" Grid.Row="0" Foreground="#00ffcc">
+                <Telerik:RadCartesianChart.VerticalAxis>
+                    <Telerik:LinearAxis Title="عدد المخالفات" LabelTemplate="{StaticResource labol}"/>
+                </Telerik:RadCartesianChart.VerticalAxis>
+                <Telerik:RadCartesianChart.HorizontalAxis>
+                    <Telerik:CategoricalAxis LabelTemplate="{StaticResource labol}" LabelFitMode="MultiLine"/>
+                </Telerik:RadCartesianChart.HorizontalAxis>
+
+                <Telerik:RadCartesianChart.Behaviors>
+                    <Telerik:ChartTooltipBehavior VerticalOffset="7"/>
+                </Telerik:RadCartesianChart.Behaviors>
+
+                <Telerik:RadCartesianChart.TooltipTemplate>
+                    <DataTemplate>
+                        <Grid IsHitTestVisible="False">
+                            <Border BorderBrush="#008c99" BorderThickness="1" CornerRadius="0">
+                                <StackPanel Background="#00ffcc" >
+                                    <TextBlock FontSize="11" Foreground="Black" Text="{Binding Value}" Padding="2,2,2,2" />
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </Telerik:RadCartesianChart.TooltipTemplate>
+
+                <Telerik:RadCartesianChart.SeriesProvider>
+                    <Telerik:ChartSeriesProvider Source="{Binding ViolationsCollection}">
+                        <Telerik:ChartSeriesProvider.SeriesDescriptors>
+                            <Telerik:CategoricalSeriesDescriptor ItemsSourcePath="Details" ValuePath="Value" CategoryPath="Key">
+                                <Telerik:CategoricalSeriesDescriptor.Style>
+                                    <Style TargetType="Telerik:BarSeries">
+                                        <Setter Property="CombineMode" Value="Cluster"/>
+
+                                        <Setter Property="ShowLabels" Value="False"/>
+
+                                        <!--<Setter Property="PointTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate >
+                                                <Grid >
+                                                    <Rectangle Fill="{StaticResource barColorStyle}"/>
+                                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="9" Text="{Binding Value}"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>-->
+
+                                        <Setter Property="LegendSettings">
+                                            <Setter.Value>
+                                                <Telerik:SeriesLegendSettings Title="{Binding LegendName}" />
+                                            </Setter.Value>
+                                        </Setter>
+
+                                        <!--<Setter Property="DefaultVisualStyle" Value="{StaticResource barColorStyle}"/>-->
+                                    </Style>
+                                </Telerik:CategoricalSeriesDescriptor.Style>
+
+                            </Telerik:CategoricalSeriesDescriptor>
+                        </Telerik:ChartSeriesProvider.SeriesDescriptors>
+                    </Telerik:ChartSeriesProvider>
+                </Telerik:RadCartesianChart.SeriesProvider>
+
+            </Telerik:RadCartesianChart>
+
+            <Telerik:RadLegend x:Name="chartLegend" Foreground="#00ffcc" ScrollViewer.HorizontalScrollBarVisibility="Auto" 
+                               Items="{Binding ElementName=barChart, Path=LegendItems}" Grid.Row="1" 
+                               HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Telerik:RadLegend.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </Telerik:RadLegend.ItemsPanel>
+                <Telerik:RadLegend.ItemTemplate>
+                    <DataTemplate>
+
+                        <Border Name="brdr" MouseDown="Legend_MouseDown" BorderBrush="{Binding MarkerFill}" BorderThickness="0" Margin="5,5,5,0">
+                            <StackPanel Orientation="Horizontal">
+
+
+                                <Rectangle Width="10" Height="10" Fill="{Binding MarkerFill}" Stroke="{Binding MarkerFill}"/>
+
+                                <TextBlock Name="txtBlk" TextWrapping="Wrap" MaxHeight="100" Text="{Binding Title}" Foreground="{Binding MarkerFill}" Margin="3 0 0 0" />
+
+                                <!--<Path Width="60" Data="M 0 10 L 10 0 L 20 10 L 30 0"
+                          Height="12" 
+                          Stroke="{Binding MarkerFill}" StrokeThickness="3"
+                          HorizontalAlignment="Left"/>-->
+                            </StackPanel>
+                        </Border>
+
+
+                    </DataTemplate>
+
+                </Telerik:RadLegend.ItemTemplate>
+            </Telerik:RadLegend>
+
+        </Grid>
+
+    </Grid>
+</UserControl>

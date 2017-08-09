@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0da1b418-86db-4a1d-bee8-1a9fc0462e00" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://aghqsrv453/TFM/TFMService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TFMService.xsd" MetadataType="Schema" ID="c5e32d0d-d77d-4992-8e4c-d6478eb3f6d8" SourceId="1" SourceUrl="http://aghqsrv453/TFM/TFMService.svc?xsd=xsd3" />
+    <MetadataFile FileName="TFMService1.xsd" MetadataType="Schema" ID="5d722ec7-a8f7-4a42-8d40-de7cfec5980d" SourceId="1" SourceUrl="http://aghqsrv453/TFM/TFMService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TFMService2.xsd" MetadataType="Schema" ID="47f8571d-61c6-4f3f-aa37-288713a4fc8e" SourceId="1" SourceUrl="http://aghqsrv453/TFM/TFMService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TFMService3.xsd" MetadataType="Schema" ID="9e328246-3241-4d60-9299-166458c0950c" SourceId="1" SourceUrl="http://aghqsrv453/TFM/TFMService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TFMService.disco" MetadataType="Disco" ID="e1f91019-75a6-419b-922c-0d840067eaa0" SourceId="1" SourceUrl="http://aghqsrv453/TFM/TFMService.svc?disco" />
+    <MetadataFile FileName="TFMService.wsdl" MetadataType="Wsdl" ID="24a96b59-308c-4d73-8a7c-5622fd55fa62" SourceId="1" SourceUrl="http://aghqsrv453/TFM/TFMService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

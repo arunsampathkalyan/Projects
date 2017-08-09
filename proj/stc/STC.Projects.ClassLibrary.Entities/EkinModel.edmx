@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ElrocModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="elroc">
+          <Key>
+            <PropertyRef Name="no" />
+          </Key>
+          <Property Name="no" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="date_time" Type="datetime" />
+          <Property Name="server_no" Type="int" />
+          <Property Name="camera_no" Type="int" />
+          <Property Name="license_plate" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="color_code" Type="varchar" MaxLength="5" />
+          <Property Name="plate_kind" Type="int" />
+          <Property Name="plate_type" Type="int" />
+          <Property Name="plate_source" Type="int" />
+          <Property Name="plate_color" Type="int" />
+          <Property Name="speed" Type="int" />
+          <Property Name="speed_limit" Type="int" />
+          <Property Name="captured_speed" Type="int" />
+          <Property Name="alarm_info" Type="int" />
+          <Property Name="alarm_status" Type="int" />
+          <Property Name="size_class" Type="int" />
+          <Property Name="latitude" Type="nvarchar" MaxLength="15" />
+          <Property Name="longtitude" Type="nvarchar" MaxLength="15" />
+          <Property Name="altitude" Type="nvarchar" MaxLength="15" />
+          <Property Name="direction" Type="int" />
+          <Property Name="lane_no" Type="int" />
+          <Property Name="pic_filename" Type="nvarchar" MaxLength="255" />
+          <Property Name="location_code" Type="int" />
+          <Property Name="old_elroc_no" Type="int" />
+          <Property Name="send_state" Type="bit" />
+          <Property Name="gps_data" Type="varchar" MaxLength="25" />
+          <Property Name="webservice_state" Type="bit" />
+          <Property Name="plate_code" Type="int" />
+        </EntityType>
+        <EntityType Name="server">
+          <Key>
+            <PropertyRef Name="no" />
+          </Key>
+          <Property Name="no" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="location_code" Type="int" />
+          <Property Name="alias" Type="nvarchar" MaxLength="50" />
+          <Property Name="link_id" Type="bigint" />
+          <Property Name="ip_address" Type="varchar" MaxLength="50" />
+          <Property Name="isactive" Type="bit" />
+          <Property Name="radar_serial" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Elroc.dbo.ElrocView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityContainer Name="ElrocModelStoreContainer">
+          <EntitySet Name="elroc" EntityType="Self.elroc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="server" EntityType="Self.server" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ElrocModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ElrocEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="elrocs" EntityType="ElrocModel.elroc" />
+          <EntitySet Name="servers" EntityType="ElrocModel.server" />
+          <AssociationSet Name="serverelroc" Association="ElrocModel.serverelroc">
+            <End Role="server" EntitySet="servers" />
+            <End Role="elroc" EntitySet="elrocs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="elroc">
+          <Key>
+            <PropertyRef Name="no" />
+          </Key>
+          <Property Name="no" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date_time" Type="DateTime" Precision="3" />
+          <Property Name="server_no" Type="Int32" />
+          <Property Name="camera_no" Type="Int32" />
+          <Property Name="license_plate" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="color_code" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="plate_kind" Type="Int32" />
+          <Property Name="plate_type" Type="Int32" />
+          <Property Name="plate_source" Type="Int32" />
+          <Property Name="plate_color" Type="Int32" />
+          <Property Name="speed" Type="Int32" />
+          <Property Name="speed_limit" Type="Int32" />
+          <Property Name="captured_speed" Type="Int32" />
+          <Property Name="alarm_info" Type="Int32" />
+          <Property Name="alarm_status" Type="Int32" />
+          <Property Name="size_class" Type="Int32" />
+          <Property Name="latitude" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="longtitude" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="altitude" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="direction" Type="Int32" />
+          <Property Name="lane_no" Type="Int32" />
+          <Property Name="pic_filename" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="location_code" Type="Int32" />
+          <Property Name="old_elroc_no" Type="Int32" />
+          <Property Name="send_state" Type="Boolean" />
+          <Property Name="gps_data" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="webservice_state" Type="Boolean" />
+          <Property Name="plate_code" Type="Int32" />
+          <NavigationProperty Name="server" Relationship="ElrocModel.serverelroc" FromRole="elroc" ToRole="server" />
+        </EntityType>
+        <EntityType Name="server">
+          <Key>
+            <PropertyRef Name="no" />
+          </Key>
+          <Property Name="no" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="location_code" Type="Int32" />
+          <Property Name="alias" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="link_id" Type="Int64" />
+          <Property Name="ip_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isactive" Type="Boolean" />
+          <Property Name="radar_serial" Type="Int32" />
+          <NavigationProperty Name="elrocs" Relationship="ElrocModel.serverelroc" FromRole="server" ToRole="elroc" />
+        </EntityType>
+        <Association Name="serverelroc">
+          <End Type="ElrocModel.server" Role="server" Multiplicity="0..1" />
+          <End Type="ElrocModel.elroc" Role="elroc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="server">
+              <PropertyRef Name="no" />
+            </Principal>
+            <Dependent Role="elroc">
+              <PropertyRef Name="server_no" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ElrocModelStoreContainer" CdmEntityContainer="ElrocEntities">
+          <EntitySetMapping Name="elrocs">
+            <EntityTypeMapping TypeName="ElrocModel.elroc">
+              <MappingFragment StoreEntitySet="elroc">
+                <ScalarProperty Name="plate_code" ColumnName="plate_code" />
+                <ScalarProperty Name="webservice_state" ColumnName="webservice_state" />
+                <ScalarProperty Name="gps_data" ColumnName="gps_data" />
+                <ScalarProperty Name="send_state" ColumnName="send_state" />
+                <ScalarProperty Name="old_elroc_no" ColumnName="old_elroc_no" />
+                <ScalarProperty Name="location_code" ColumnName="location_code" />
+                <ScalarProperty Name="pic_filename" ColumnName="pic_filename" />
+                <ScalarProperty Name="lane_no" ColumnName="lane_no" />
+                <ScalarProperty Name="direction" ColumnName="direction" />
+                <ScalarProperty Name="altitude" ColumnName="altitude" />
+                <ScalarProperty Name="longtitude" ColumnName="longtitude" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="size_class" ColumnName="size_class" />
+                <ScalarProperty Name="alarm_status" ColumnName="alarm_status" />
+                <ScalarProperty Name="alarm_info" ColumnName="alarm_info" />
+                <ScalarProperty Name="captured_speed" ColumnName="captured_speed" />
+                <ScalarProperty Name="speed_limit" ColumnName="speed_limit" />
+                <ScalarProperty Name="speed" ColumnName="speed" />
+                <ScalarProperty Name="plate_color" ColumnName="plate_color" />
+                <ScalarProperty Name="plate_source" ColumnName="plate_source" />
+                <ScalarProperty Name="plate_type" ColumnName="plate_type" />
+                <ScalarProperty Name="plate_kind" ColumnName="plate_kind" />
+                <ScalarProperty Name="color_code" ColumnName="color_code" />
+                <ScalarProperty Name="license_plate" ColumnName="license_plate" />
+                <ScalarProperty Name="camera_no" ColumnName="camera_no" />
+                <ScalarProperty Name="server_no" ColumnName="server_no" />
+                <ScalarProperty Name="date_time" ColumnName="date_time" />
+                <ScalarProperty Name="no" ColumnName="no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="servers">
+            <EntityTypeMapping TypeName="ElrocModel.server">
+              <MappingFragment StoreEntitySet="server">
+                <ScalarProperty Name="radar_serial" ColumnName="radar_serial" />
+                <ScalarProperty Name="isactive" ColumnName="isactive" />
+                <ScalarProperty Name="ip_address" ColumnName="ip_address" />
+                <ScalarProperty Name="link_id" ColumnName="link_id" />
+                <ScalarProperty Name="alias" ColumnName="alias" />
+                <ScalarProperty Name="location_code" ColumnName="location_code" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="no" ColumnName="no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

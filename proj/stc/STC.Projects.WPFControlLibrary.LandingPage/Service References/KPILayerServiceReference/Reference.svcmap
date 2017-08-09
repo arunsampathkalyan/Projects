@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f85692dd-294c-430b-a72e-86f0cd8aa344" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://stc-01.cloudapp.net/wcfservice/KPILayer.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="KPILayer.xsd" MetadataType="Schema" ID="a2dd9840-da4a-470c-b6b2-b3fff06b3261" SourceId="1" SourceUrl="http://stc-01.cloudapp.net/WCFService/KPILayer.svc?xsd=xsd7" />
+    <MetadataFile FileName="KPILayer1.xsd" MetadataType="Schema" ID="7814a461-d3b3-4026-8cbb-2b8ccb28b8de" SourceId="1" SourceUrl="http://stc-01.cloudapp.net/WCFService/KPILayer.svc?xsd=xsd6" />
+    <MetadataFile FileName="KPILayer2.xsd" MetadataType="Schema" ID="f86a29a6-3dc9-4600-a7c2-14aceaad621e" SourceId="1" SourceUrl="http://stc-01.cloudapp.net/WCFService/KPILayer.svc?xsd=xsd0" />
+    <MetadataFile FileName="KPILayer.wsdl" MetadataType="Wsdl" ID="184888eb-9b2c-4311-9a64-6e2fbff1ceec" SourceId="1" SourceUrl="http://stc-01.cloudapp.net/WCFService/KPILayer.svc?wsdl" />
+    <MetadataFile FileName="KPILayer3.xsd" MetadataType="Schema" ID="796543bb-4f34-4935-ade9-10c59a20541f" SourceId="1" SourceUrl="http://stc-01.cloudapp.net/WCFService/KPILayer.svc?xsd=xsd3" />
+    <MetadataFile FileName="KPILayer4.xsd" MetadataType="Schema" ID="64efcbc6-1ab6-4363-aa87-d666311d5436" SourceId="1" SourceUrl="http://stc-01.cloudapp.net/WCFService/KPILayer.svc?xsd=xsd2" />
+    <MetadataFile FileName="KPILayer5.xsd" MetadataType="Schema" ID="376d05c3-3775-471a-9f46-c7a60fcdd035" SourceId="1" SourceUrl="http://stc-01.cloudapp.net/WCFService/KPILayer.svc?xsd=xsd4" />
+    <MetadataFile FileName="KPILayer6.xsd" MetadataType="Schema" ID="dfc49c37-8ee4-4d0f-8f72-ed875e395e2a" SourceId="1" SourceUrl="http://stc-01.cloudapp.net/WCFService/KPILayer.svc?xsd=xsd1" />
+    <MetadataFile FileName="KPILayer7.xsd" MetadataType="Schema" ID="30277a45-d30b-4a18-99dd-879c4fc3095c" SourceId="1" SourceUrl="http://stc-01.cloudapp.net/WCFService/KPILayer.svc?xsd=xsd5" />
+    <MetadataFile FileName="KPILayer.disco" MetadataType="Disco" ID="2729da1e-d632-4832-a57d-9040da19acd1" SourceId="1" SourceUrl="http://stc-01.cloudapp.net/WCFService/KPILayer.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

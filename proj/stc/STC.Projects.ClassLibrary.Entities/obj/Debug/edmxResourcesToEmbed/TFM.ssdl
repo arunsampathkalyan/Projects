@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TFMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="IncidentAssignees">
+    <Key>
+      <PropertyRef Name="IncidentId" />
+      <PropertyRef Name="StaffId" />
+    </Key>
+    <Property Name="IncidentId" Type="bigint" Nullable="false" />
+    <Property Name="StaffId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Incidents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Number" Type="nvarchar" MaxLength="250" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Longitude" Type="float" />
+    <Property Name="Latitude" Type="float" />
+    <Property Name="IncidentTypeId" Type="int" />
+    <Property Name="IncidentPriorityId" Type="int" />
+    <Property Name="PatrolId" Type="uniqueidentifier" />
+    <Property Name="CallerName" Type="nvarchar(max)" />
+    <Property Name="CallerNumber" Type="nvarchar" MaxLength="250" />
+    <Property Name="CallerAddress" Type="nvarchar(max)" />
+    <Property Name="CallerLongitude" Type="float" />
+    <Property Name="CallerLatitude" Type="float" />
+    <Property Name="IncidentDateTime" Type="datetime" />
+    <Property Name="CreationTime" Type="datetime" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="Remarks" Type="nvarchar(max)" />
+    <Property Name="SubId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CallSource" Type="int" />
+    <Property Name="DispatcherName" Type="nvarchar(max)" />
+    <Property Name="IncidentClosureReasonId" Type="int" />
+    <Property Name="CurrentStatusId" Type="int" />
+    <Property Name="IncidentReportGeneralComments" Type="nvarchar(max)" />
+    <Property Name="IncidentSecondArrivalReasonId" Type="int" />
+    <Property Name="IncidentLateArrivalReasonId" Type="int" />
+    <Property Name="ClosureFromWebReason" Type="nvarchar(max)" />
+    <Property Name="DispatcherId" Type="int" />
+    <Property Name="Level1" Type="nvarchar(max)" />
+    <Property Name="Level2" Type="nvarchar(max)" />
+    <Property Name="Level3" Type="nvarchar(max)" />
+    <Property Name="Level4" Type="nvarchar(max)" />
+    <Property Name="Level5" Type="nvarchar(max)" />
+    <Property Name="Injury" Type="nvarchar" MaxLength="50" />
+    <Property Name="LanguageOfCaller" Type="nvarchar" MaxLength="5" />
+    <Property Name="InitialIncidentTypeId" Type="int" />
+    <Property Name="FinalIncidentTypeId" Type="int" />
+    <Property Name="ISSINumber" Type="int" />
+    <Property Name="DispatchedVehiclesNo" Type="int" />
+    <Property Name="CallTakerName" Type="nvarchar" MaxLength="500" />
+    <Property Name="CallTakerId" Type="int" />
+    <Property Name="OwnerWorkStationName" Type="nvarchar" MaxLength="500" />
+    <Property Name="Ringing" Type="datetime" />
+    <Property Name="CallReceived" Type="datetime" />
+    <Property Name="IdentifiedLocation" Type="datetime" />
+    <Property Name="SaveIncident" Type="datetime" />
+    <Property Name="TransferIncident" Type="datetime" />
+    <Property Name="IncidentOpenedByDipatcher" Type="datetime" />
+    <Property Name="DispatchToVehicle" Type="datetime" />
+    <Property Name="OnRoadTime" Type="datetime" />
+    <Property Name="AtSeenTime" Type="datetime" />
+    <Property Name="ClosedIncident" Type="datetime" />
+    <Property Name="DisposeIncident" Type="datetime" />
+    <Property Name="IncidentSource" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="iPatrolDuties">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Duty" Type="nvarchar(max)" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="DutySource" Type="int" />
+    <Property Name="Longitude" Type="float" />
+    <Property Name="Latitude" Type="float" />
+    <Property Name="AcknowledgementTime" Type="datetime" />
+    <Property Name="PatrolId" Type="uniqueidentifier" />
+    <Property Name="AcknowledgementLatitude" Type="float" />
+    <Property Name="AcknowledgementLongitude" Type="float" />
+    <Property Name="LocationType" Type="int" />
+    <Property Name="Radius" Type="int" />
+    <Property Name="ArrivalLongitude" Type="float" />
+    <Property Name="ArrivalLatitude" Type="float" />
+    <Property Name="ArrivalTime" Type="datetime" />
+    <Property Name="FinishLongitude" Type="float" />
+    <Property Name="FinishLatitude" Type="float" />
+    <Property Name="FinishTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="iPatrolDutiesUsers">
+    <Key>
+      <PropertyRef Name="StaffId" />
+      <PropertyRef Name="DutyId" />
+    </Key>
+    <Property Name="StaffId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DutyId" Type="bigint" Nullable="false" />
+    <Property Name="DutyCommunicationType" Type="int" />
+  </EntityType>
+  <EntityType Name="iPatrolFilesSubmittedByUsers">
+    <Key>
+      <PropertyRef Name="StaffId" />
+      <PropertyRef Name="FileId" />
+    </Key>
+    <Property Name="StaffId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FileId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OfficersAttendance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StaffId" Type="uniqueidentifier" />
+    <Property Name="LoginDateTime" Type="datetime" />
+    <Property Name="LoginLongitude" Type="float" />
+    <Property Name="LoginLatitude" Type="float" />
+    <Property Name="LogoutDateTime" Type="datetime" />
+    <Property Name="LogoutLongitude" Type="float" />
+    <Property Name="LogoutLatitude" Type="float" />
+    <Property Name="MDTDeviceCode" Type="nvarchar(max)" />
+    <Property Name="PatrolId" Type="uniqueidentifier" />
+    <Property Name="IsSeen" Type="bit" />
+    <Property Name="SeenAt" Type="datetime" />
+    <Property Name="AssignedDutiesNumber" Type="int" />
+    <Property Name="AssignedIncidentsNumber" Type="int" />
+    <Property Name="FastResponseNumber" Type="int" />
+    <Property Name="InquiriesNumber" Type="int" />
+    <Property Name="ManualIncidentsNumber" Type="int" />
+    <Property Name="MDTLogoutDateTime" Type="datetime" />
+    <Property Name="SecurityNotesNumber" Type="int" />
+    <Property Name="ViolationsNumber" Type="int" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="100" />
+    <Property Name="descr" Type="nvarchar" MaxLength="4000" />
+    <Property Name="code" Type="nvarchar" MaxLength="100" />
+    <Property Name="subID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="staffRoleID" Type="uniqueidentifier" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="image" Type="nvarchar(max)" />
+    <Property Name="isAllocated" Type="bit" Nullable="false" />
+    <Property Name="personalID" Type="nvarchar" MaxLength="50" />
+    <Property Name="AllocatedBranch" Type="uniqueidentifier" />
+    <Property Name="AllocatedLandmark" Type="uniqueidentifier" />
+    <Property Name="status" Type="uniqueidentifier" />
+    <Property Name="employmentType" Type="uniqueidentifier" />
+    <Property Name="employmentDate" Type="smalldatetime" />
+    <Property Name="salary" Type="money" />
+    <Property Name="mobileNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="MonitorFlag" Type="bit" />
+    <Property Name="HireDate" Type="datetime" />
+    <Property Name="LaborRate" Type="float" />
+    <Property Name="LisenceNumber" Type="nvarchar(max)" />
+    <Property Name="LisenceIssueDate" Type="datetime" />
+    <Property Name="LisenceExpiryDate" Type="datetime" />
+    <Property Name="InsuranceNumber" Type="nvarchar(max)" />
+    <Property Name="InsuranceIssueDate" Type="datetime" />
+    <Property Name="InsuranceCompanyID" Type="uniqueidentifier" />
+    <Property Name="Birthday" Type="datetime" />
+    <Property Name="MaritalStatus" Type="int" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="PostalCode" Type="nvarchar(max)" />
+    <Property Name="EmergencyContactName1" Type="nvarchar(max)" />
+    <Property Name="EmergencyContactName2" Type="nvarchar(max)" />
+    <Property Name="EmergencyContactPhone1" Type="nvarchar(max)" />
+    <Property Name="EmergencyContactPhone2" Type="nvarchar(max)" />
+    <Property Name="MiddleName" Type="nvarchar(max)" />
+    <Property Name="LastName" Type="nvarchar(max)" />
+    <Property Name="UserID" Type="uniqueidentifier" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="StaffRoleName" Type="nvarchar(max)" />
+    <Property Name="LastModifiedBy" Type="uniqueidentifier" />
+    <Property Name="LastModificationDate" Type="datetime" />
+    <Property Name="isDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Transporter">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="code" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="plateNo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="transporterTypeName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="transporterType" Type="uniqueidentifier" />
+    <Property Name="branch" Type="uniqueidentifier" />
+    <Property Name="landmark" Type="uniqueidentifier" />
+    <Property Name="maxSpeed" Type="float" Nullable="false" />
+    <Property Name="literPerKm" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="currentMileage" Type="float" />
+    <Property Name="image" Type="nvarchar(max)" />
+    <Property Name="color" Type="nvarchar(max)" />
+    <Property Name="transporterBrand" Type="uniqueidentifier" />
+    <Property Name="transporterProductionYear" Type="uniqueidentifier" />
+    <Property Name="transporterManufacturer" Type="uniqueidentifier" />
+    <Property Name="deviceType" Type="bit" />
+    <Property Name="SIMCardNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="providerName" Type="nvarchar" MaxLength="100" />
+    <Property Name="deviceCode" Type="nvarchar" MaxLength="25" />
+    <Property Name="licenseNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="licenseExpiryDate" Type="datetime" />
+    <Property Name="chassisNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="engineNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="entranceDate" Type="datetime" />
+    <Property Name="insuranceNo" Type="nvarchar" MaxLength="100" />
+    <Property Name="insuredBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="insuranceStartDate" Type="datetime" />
+    <Property Name="insuranceEndDate" Type="datetime" />
+    <Property Name="supplier" Type="uniqueidentifier" />
+    <Property Name="isMonitored" Type="bit" />
+    <Property Name="SubID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreationTime" Type="datetime" Nullable="false" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="LastModifiedBy" Type="uniqueidentifier" />
+    <Property Name="LastModificationDate" Type="datetime" />
+    <Property Name="SupplierName" Type="nvarchar" MaxLength="100" />
+    <Property Name="LisenceImage" Type="nvarchar(max)" />
+    <Property Name="status" Type="int" />
+    <Property Name="HourRate" Type="float" />
+    <Property Name="FuelCost" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TempSensorMinValue" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TempSensorMaxValue" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DeviceID" Type="uniqueidentifier" />
+    <Property Name="NextExaminationDate" Type="datetime" />
+    <Property Name="CurrentSituationNote" Type="nvarchar" MaxLength="50" />
+    <Property Name="SoldDate" Type="datetime" />
+    <Property Name="FuelCalibrationConst_A" Type="float" />
+    <Property Name="FuelCalibrationConst_B" Type="float" />
+    <Property Name="FuelCalibrationConst_C" Type="float" />
+    <Property Name="FuelCalibrationConst_D" Type="float" />
+    <Property Name="TotalWorkingHours" Type="float" />
+    <Property Name="TankCapacity" Type="float" />
+    <Property Name="AnalogInputOneMin" Type="float" />
+    <Property Name="AnalogInputOneMax" Type="float" />
+    <Property Name="AnalogInputTwoMin" Type="float" />
+    <Property Name="AnalogInputTwoMax" Type="float" />
+    <Property Name="AnalogInputThreeMin" Type="float" />
+    <Property Name="AnalogInputThreeMax" Type="float" />
+    <Property Name="AnalogInputFourMin" Type="float" />
+    <Property Name="AnalogInputFourMax" Type="float" />
+    <Property Name="OldPlace" Type="uniqueidentifier" />
+    <Property Name="currentMileageLastModificationDate" Type="datetime" />
+    <Property Name="MDTDeviceCode" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_IncidentAssignees_Incidents">
+    <End Role="Incidents" Type="Self.Incidents" Multiplicity="1" />
+    <End Role="IncidentAssignees" Type="Self.IncidentAssignees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Incidents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="IncidentAssignees">
+        <PropertyRef Name="IncidentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncidentAssignees_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="IncidentAssignees" Type="Self.IncidentAssignees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IncidentAssignees">
+        <PropertyRef Name="StaffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Incidents_Transporter">
+    <End Role="Transporter" Type="Self.Transporter" Multiplicity="0..1" />
+    <End Role="Incidents" Type="Self.Incidents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transporter">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Incidents">
+        <PropertyRef Name="PatrolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_iPatrolDuties_Transporter">
+    <End Role="Transporter" Type="Self.Transporter" Multiplicity="0..1" />
+    <End Role="iPatrolDuties" Type="Self.iPatrolDuties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transporter">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="iPatrolDuties">
+        <PropertyRef Name="PatrolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_iPatrolDutiesUsers_iPatrolDuties">
+    <End Role="iPatrolDuties" Type="Self.iPatrolDuties" Multiplicity="1" />
+    <End Role="iPatrolDutiesUsers" Type="Self.iPatrolDutiesUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iPatrolDuties">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="iPatrolDutiesUsers">
+        <PropertyRef Name="DutyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_iPatrolDutiesUsers_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="iPatrolDutiesUsers" Type="Self.iPatrolDutiesUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="iPatrolDutiesUsers">
+        <PropertyRef Name="StaffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_iPatrolFilesSubmittedByUsers_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="iPatrolFilesSubmittedByUsers" Type="Self.iPatrolFilesSubmittedByUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="iPatrolFilesSubmittedByUsers">
+        <PropertyRef Name="StaffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OfficersAttendance_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+    <End Role="OfficersAttendance" Type="Self.OfficersAttendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OfficersAttendance">
+        <PropertyRef Name="StaffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OfficersAttendance_Transporter">
+    <End Role="Transporter" Type="Self.Transporter" Multiplicity="0..1" />
+    <End Role="OfficersAttendance" Type="Self.OfficersAttendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transporter">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OfficersAttendance">
+        <PropertyRef Name="PatrolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Staff_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Staff1" Type="Self.Staff" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Staff1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TFMModelStoreContainer">
+    <EntitySet Name="IncidentAssignees" EntityType="Self.IncidentAssignees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Incidents" EntityType="Self.Incidents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="iPatrolDuties" EntityType="Self.iPatrolDuties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="iPatrolDutiesUsers" EntityType="Self.iPatrolDutiesUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="iPatrolFilesSubmittedByUsers" EntityType="Self.iPatrolFilesSubmittedByUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OfficersAttendance" EntityType="Self.OfficersAttendance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transporter" EntityType="Self.Transporter" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_IncidentAssignees_Incidents" Association="Self.FK_IncidentAssignees_Incidents">
+      <End Role="Incidents" EntitySet="Incidents" />
+      <End Role="IncidentAssignees" EntitySet="IncidentAssignees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncidentAssignees_Staff" Association="Self.FK_IncidentAssignees_Staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="IncidentAssignees" EntitySet="IncidentAssignees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Incidents_Transporter" Association="Self.FK_Incidents_Transporter">
+      <End Role="Transporter" EntitySet="Transporter" />
+      <End Role="Incidents" EntitySet="Incidents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_iPatrolDuties_Transporter" Association="Self.FK_iPatrolDuties_Transporter">
+      <End Role="Transporter" EntitySet="Transporter" />
+      <End Role="iPatrolDuties" EntitySet="iPatrolDuties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_iPatrolDutiesUsers_iPatrolDuties" Association="Self.FK_iPatrolDutiesUsers_iPatrolDuties">
+      <End Role="iPatrolDuties" EntitySet="iPatrolDuties" />
+      <End Role="iPatrolDutiesUsers" EntitySet="iPatrolDutiesUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_iPatrolDutiesUsers_Staff" Association="Self.FK_iPatrolDutiesUsers_Staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="iPatrolDutiesUsers" EntitySet="iPatrolDutiesUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_iPatrolFilesSubmittedByUsers_Staff" Association="Self.FK_iPatrolFilesSubmittedByUsers_Staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="iPatrolFilesSubmittedByUsers" EntitySet="iPatrolFilesSubmittedByUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OfficersAttendance_Staff" Association="Self.FK_OfficersAttendance_Staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="OfficersAttendance" EntitySet="OfficersAttendance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OfficersAttendance_Transporter" Association="Self.FK_OfficersAttendance_Transporter">
+      <End Role="Transporter" EntitySet="Transporter" />
+      <End Role="OfficersAttendance" EntitySet="OfficersAttendance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Staff_Staff" Association="Self.FK_Staff_Staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Staff1" EntitySet="Staff" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
